@@ -35,7 +35,7 @@ chrome.action.onClicked.addListener((tab) => {
 })
 
 function toggleContentVisibility() {
-	const injectedElement = document.getElementById('my-extension-widget')
+	const injectedElement = document.getElementById('font-selector')
 	if (injectedElement) {
 		injectedElement.remove()  // Remove the element if it exists
 	}
