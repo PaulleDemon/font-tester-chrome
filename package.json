@@ -1,0 +1,29 @@
+{
+    
+    "name": "font_tester",
+    "version": "1.0.0",
+    "description": "Test font types on your pages",
+    "scripts": {
+		"start:tailwind": "cross-env NODE_ENV=development tailwindcss --postcss -i ./src/styles/tailwind.css -o ./src/styles/tailwind-runtime.css -w",
+    "build:tailwind": "cross-env NODE_ENV=production tailwindcss --postcss -i ./src/styles/tailwind.css -o ./src/styles/tailwind-build.css --minify",
+		"test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+		"Font tester",
+		"fonts",
+		"test fonts",
+		"developer tool",
+		"chrome extension"
+    ],
+    "author": "Paul",
+    "license": "AGPL-3.0-only",
+    "devDependencies": {
+		"tailwindcss": "^3.4.1",
+		"chrome-types": "^0.1.299"
+    },
+    "dependencies": {
+		"postcss": "^8.4.33",
+		"postcss-simple-vars": "^7.0.1"
+    }
+  
+}
