@@ -1,6 +1,6 @@
 chrome.runtime.onInstalled.addListener(() => {
 
-})
+});
 
 let isContentScriptInjected = false
 
@@ -10,7 +10,7 @@ chrome.action.onClicked.addListener((tab) => {
 	if (!isContentScriptInjected) {
 		chrome.scripting.executeScript({
 			target: { tabId: tab.id },
-			files: ['content.js']
+			files: ['src/scripts/content.js']
 		}, (injectionResults) => {
 			// failed to inject script
 			if (chrome.runtime.lastError) {
@@ -35,13 +35,9 @@ chrome.action.onClicked.addListener((tab) => {
 })
 
 function toggleContentVisibility() {
-	const injectedElement = document.getElementById('font-selector-root')
-	const injectedScript = document.getElementById('font-tester-script')
+	const injectedElement = document.getElementById('font-selector')
 	if (injectedElement) {
 		injectedElement.remove()  // Remove the element if it exists
-	}
-	if (injectedScript){
-		injectedScript.remove()
 	}
 }
 

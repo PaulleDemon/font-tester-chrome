@@ -1,0 +1,30 @@
+{
+    "manifest_version": 3,
+    "name": "Font tester",
+    "description": "Test different fonts types on a webpage. Made for developers",
+    "version": "1.0",
+    "action": {
+        // "default_popup": "src/index.html",
+        "default_title": "Font tester - Test different font types"
+    },
+    "permissions": ["activeTab", "scripting", "tabs"],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "web_accessible_resources": [{
+        "resources": [
+            "index.js", 
+            "dist/*.js", 
+            "dist/*.css" 
+        ],
+        "matches": ["<all_urls>"]
+    }],
+    "content_scripts": [
+        {
+            "js": ["content.js"],
+            "matches": ["<all_urls>"]
+        }
+    ]
+
+    
+}

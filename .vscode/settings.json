@@ -1,0 +1,8 @@
+{
+  "color-picker": [
+      "python",
+      "javascript",
+      "typescript"
+  ],
+  "editor.colorDecorators": true
+}
