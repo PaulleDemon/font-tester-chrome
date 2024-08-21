@@ -1,28 +1,31 @@
 // Check if the container already exists
-console.log("font selector: ", document.getElementById('font-selector-root'))
-let script = null
-if (!document.getElementById('font-selector-root')) {
-    // Create a container for your React app
+import React from "react"
+import ReactDOM from "react-dom/client"
 
-    const container = document.createElement('div');
-    container.id = 'font-selector-root';
-    // container.style.position = 'fixed';
-    // container.style.top = '10px';
-    // container.style.right = '10px';
-    // container.style.width = "1000px"
-    // container.style.height = "1000px"
-    // container.style.zIndex = '10000';
-    // container.style.backgroundColor = '#fff';
-    document.body.appendChild(container);
-  
-    // Inject the React app
-    script = document.createElement('script');
-    script.src = chrome.runtime.getURL('index.js');
-    script.setAttribute("id", "font-tester-script")
-    console.log("YAA2", script.src)
-    document.body.appendChild(script);
-  } else {
-    // Toggle visibility of the React app
+window.React = React
 
-  }
-  
+import "./styles/tailwind.css"
+import "./styles/index.css"
+
+import App from "./App"
+
+
+(function () {
+	if (!document.getElementById('font-selector-root')) {
+		// Create a container for your React app
+
+		const container = document.createElement('div')
+		container.id = 'font-selector-root'
+		document.body.appendChild(container)
+		
+		const root = ReactDOM.createRoot(document.getElementById('font-selector-root'))
+		root.render(
+			<React.StrictMode>
+				<App />
+			</React.StrictMode>
+		)
+	} else {
+		// Toggle visibility of the React app
+
+	}
+})()

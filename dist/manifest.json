@@ -13,18 +13,20 @@
     },
     "web_accessible_resources": [{
         "resources": [
+            "content.js",
             "index.js", 
             "dist/*.js", 
             "dist/*.css" 
         ],
         "matches": ["<all_urls>"]
-    }],
-    "content_scripts": [
-        {
-            "js": ["content.js"],
-            "matches": ["<all_urls>"]
-        }
-    ]
+    }]
+
+    // "content_scripts": [
+    //     {
+    //         "js": ["index.js"],
+    //         "matches": ["<all_urls>"]
+    //     }
+    // ]
 
     
 }
