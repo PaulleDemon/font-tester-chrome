@@ -10,7 +10,7 @@ module.exports = {
   entry: {
     background: './src/background.js',
     content: './src/content.js',
-    index: './src/index.js', 
+    // index: './src/index.js', 
     // css: './src/styles/index.css', 
     // popup: './src/popup.js', // If you have a popup script
   },
