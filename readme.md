@@ -1,6 +1,11 @@
 ## Font tester - Fonts made easy (chrome extension)
 
-Test different free font types for your website.
+Finding it difficult to choose the right font? 
+Now test 1000+ free google font types on your website.
+
+
+
+
 
 
 

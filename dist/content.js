@@ -4325,6 +4325,24 @@ var GithubFilled = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 89
 
 /***/ }),
 
+/***/ "./node_modules/@ant-design/icons-svg/es/asn/HighlightOutlined.js":
+/*!************************************************************************!*\
+  !*** ./node_modules/@ant-design/icons-svg/es/asn/HighlightOutlined.js ***!
+  \************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+// This icon file is generated automatically.
+var HighlightOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M957.6 507.4L603.2 158.2a7.9 7.9 0 00-11.2 0L353.3 393.4a8.03 8.03 0 00-.1 11.3l.1.1 40 39.4-117.2 115.3a8.03 8.03 0 00-.1 11.3l.1.1 39.5 38.9-189.1 187H72.1c-4.4 0-8.1 3.6-8.1 8V860c0 4.4 3.6 8 8 8h344.9c2.1 0 4.1-.8 5.6-2.3l76.1-75.6 40.4 39.8a7.9 7.9 0 0011.2 0l117.1-115.6 40.1 39.5a7.9 7.9 0 0011.2 0l238.7-235.2c3.4-3 3.4-8 .3-11.2zM389.8 796.2H229.6l134.4-133 80.1 78.9-54.3 54.1zm154.8-62.1L373.2 565.2l68.6-67.6 171.4 168.9-68.6 67.6zM713.1 658L450.3 399.1 597.6 254l262.8 259-147.3 145z" } }] }, "name": "highlight", "theme": "outlined" };
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (HighlightOutlined);
+
+
+/***/ }),
+
 /***/ "./node_modules/@ant-design/icons-svg/es/asn/HolderOutlined.js":
 /*!*********************************************************************!*\
   !*** ./node_modules/@ant-design/icons-svg/es/asn/HolderOutlined.js ***!
@@ -5272,6 +5290,45 @@ var GithubFilled = function GithubFilled(props, ref) {
 var RefIcon = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.forwardRef(GithubFilled);
 if (true) {
   RefIcon.displayName = 'GithubFilled';
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (RefIcon);
+
+/***/ }),
+
+/***/ "./node_modules/@ant-design/icons/es/icons/HighlightOutlined.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/@ant-design/icons/es/icons/HighlightOutlined.js ***!
+  \**********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _ant_design_icons_svg_es_asn_HighlightOutlined__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ant-design/icons-svg/es/asn/HighlightOutlined */ "./node_modules/@ant-design/icons-svg/es/asn/HighlightOutlined.js");
+/* harmony import */ var _components_AntdIcon__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/AntdIcon */ "./node_modules/@ant-design/icons/es/components/AntdIcon.js");
+
+// GENERATE BY ./scripts/generate.ts
+// DON NOT EDIT IT MANUALLY
+
+
+
+
+var HighlightOutlined = function HighlightOutlined(props, ref) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_components_AntdIcon__WEBPACK_IMPORTED_MODULE_2__["default"], (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, props, {
+    ref: ref,
+    icon: _ant_design_icons_svg_es_asn_HighlightOutlined__WEBPACK_IMPORTED_MODULE_3__["default"]
+  }));
+};
+
+/**![highlight](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIGZpbGw9IiNjYWNhY2EiIHZpZXdCb3g9IjY0IDY0IDg5NiA4OTYiIGZvY3VzYWJsZT0iZmFsc2UiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTk1Ny42IDUwNy40TDYwMy4yIDE1OC4yYTcuOSA3LjkgMCAwMC0xMS4yIDBMMzUzLjMgMzkzLjRhOC4wMyA4LjAzIDAgMDAtLjEgMTEuM2wuMS4xIDQwIDM5LjQtMTE3LjIgMTE1LjNhOC4wMyA4LjAzIDAgMDAtLjEgMTEuM2wuMS4xIDM5LjUgMzguOS0xODkuMSAxODdINzIuMWMtNC40IDAtOC4xIDMuNi04LjEgOFY4NjBjMCA0LjQgMy42IDggOCA4aDM0NC45YzIuMSAwIDQuMS0uOCA1LjYtMi4zbDc2LjEtNzUuNiA0MC40IDM5LjhhNy45IDcuOSAwIDAwMTEuMiAwbDExNy4xLTExNS42IDQwLjEgMzkuNWE3LjkgNy45IDAgMDAxMS4yIDBsMjM4LjctMjM1LjJjMy40LTMgMy40LTggLjMtMTEuMnpNMzg5LjggNzk2LjJIMjI5LjZsMTM0LjQtMTMzIDgwLjEgNzguOS01NC4zIDU0LjF6bTE1NC44LTYyLjFMMzczLjIgNTY1LjJsNjguNi02Ny42IDE3MS40IDE2OC45LTY4LjYgNjcuNnpNNzEzLjEgNjU4TDQ1MC4zIDM5OS4xIDU5Ny42IDI1NGwyNjIuOCAyNTktMTQ3LjMgMTQ1eiIgLz48L3N2Zz4=) */
+var RefIcon = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.forwardRef(HighlightOutlined);
+if (true) {
+  RefIcon.displayName = 'HighlightOutlined';
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (RefIcon);
 
@@ -26171,26 +26228,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! antd */ "./node_modules/antd/es/select/index.js");
-/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! antd */ "./node_modules/antd/es/slider/index.js");
-/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! antd */ "./node_modules/antd/es/tooltip/index.js");
-/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! antd */ "./node_modules/antd/es/tag/index.js");
-/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! antd */ "./node_modules/antd/es/tabs/index.js");
-/* harmony import */ var _ant_design_icons__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ant-design/icons */ "./node_modules/@ant-design/icons/es/icons/HolderOutlined.js");
-/* harmony import */ var _ant_design_icons__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @ant-design/icons */ "./node_modules/@ant-design/icons/es/icons/QuestionCircleOutlined.js");
-/* harmony import */ var _ant_design_icons__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @ant-design/icons */ "./node_modules/@ant-design/icons/es/icons/CloseOutlined.js");
-/* harmony import */ var _ant_design_icons__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @ant-design/icons */ "./node_modules/@ant-design/icons/es/icons/ItalicOutlined.js");
-/* harmony import */ var _ant_design_icons__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @ant-design/icons */ "./node_modules/@ant-design/icons/es/icons/UnderlineOutlined.js");
-/* harmony import */ var _ant_design_icons__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @ant-design/icons */ "./node_modules/@ant-design/icons/es/icons/UndoOutlined.js");
-/* harmony import */ var _ant_design_icons__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @ant-design/icons */ "./node_modules/@ant-design/icons/es/icons/ShareAltOutlined.js");
-/* harmony import */ var _ant_design_icons__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @ant-design/icons */ "./node_modules/@ant-design/icons/es/icons/GithubFilled.js");
-/* harmony import */ var _ant_design_icons__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @ant-design/icons */ "./node_modules/@ant-design/icons/es/icons/CrownFilled.js");
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! antd */ "./node_modules/antd/es/select/index.js");
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! antd */ "./node_modules/antd/es/slider/index.js");
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! antd */ "./node_modules/antd/es/tooltip/index.js");
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! antd */ "./node_modules/antd/es/tag/index.js");
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! antd */ "./node_modules/antd/es/tabs/index.js");
+/* harmony import */ var _ant_design_icons__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @ant-design/icons */ "./node_modules/@ant-design/icons/es/icons/HolderOutlined.js");
+/* harmony import */ var _ant_design_icons__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @ant-design/icons */ "./node_modules/@ant-design/icons/es/icons/QuestionCircleOutlined.js");
+/* harmony import */ var _ant_design_icons__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @ant-design/icons */ "./node_modules/@ant-design/icons/es/icons/CloseOutlined.js");
+/* harmony import */ var _ant_design_icons__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @ant-design/icons */ "./node_modules/@ant-design/icons/es/icons/HighlightOutlined.js");
+/* harmony import */ var _ant_design_icons__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @ant-design/icons */ "./node_modules/@ant-design/icons/es/icons/ItalicOutlined.js");
+/* harmony import */ var _ant_design_icons__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @ant-design/icons */ "./node_modules/@ant-design/icons/es/icons/UnderlineOutlined.js");
+/* harmony import */ var _ant_design_icons__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @ant-design/icons */ "./node_modules/@ant-design/icons/es/icons/UndoOutlined.js");
+/* harmony import */ var _ant_design_icons__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @ant-design/icons */ "./node_modules/@ant-design/icons/es/icons/ShareAltOutlined.js");
+/* harmony import */ var _ant_design_icons__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @ant-design/icons */ "./node_modules/@ant-design/icons/es/icons/GithubFilled.js");
+/* harmony import */ var _ant_design_icons__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @ant-design/icons */ "./node_modules/@ant-design/icons/es/icons/CrownFilled.js");
 /* harmony import */ var _utils_hooks__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils/hooks */ "./src/utils/hooks.js");
 /* harmony import */ var _db_google_fonts_json__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./db/google-fonts.json */ "./src/db/google-fonts.json");
 /* harmony import */ var _codeSection__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./codeSection */ "./src/codeSection.js");
 /* harmony import */ var _assets_logos_bmc_svg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./assets/logos/bmc.svg */ "./src/assets/logos/bmc.svg");
 /* harmony import */ var _utils_share__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./utils/share */ "./src/utils/share.js");
 /* harmony import */ var _utils_premium__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./utils/premium */ "./src/utils/premium.js");
+/* harmony import */ var _utils_selection__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./utils/selection */ "./src/utils/selection.js");
+
 
 
 
@@ -26203,8 +26263,8 @@ __webpack_require__.r(__webpack_exports__);
 // import { ReactComponent as BMC } from './assets/logos/bmc.svg'
 
 // const bmcBase64 = `data:image/svg+xml;base64,${BMC.toString('base64')}`
-const bmcBase64 = `https://raw.githubusercontent.com/PaulleDemon/landing-pages-browsable/main/src/assets/images/brand-logos/bmc.svg`;
-console.log("base64: ", bmcBase64, _assets_logos_bmc_svg__WEBPACK_IMPORTED_MODULE_4__);
+// some websites such as StackOverflow keeps interfering with local image paths, so added github raw content
+const BMC_IMG = `https://raw.githubusercontent.com/PaulleDemon/landing-pages-browsable/main/src/assets/images/brand-logos/bmc.svg`;
 
 // TODO: prevent selection on the modal
 function App() {
@@ -26217,6 +26277,8 @@ function App() {
     x: 10,
     y: 10
   });
+  const [enableSelection, setEnableSelection] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true);
+  const [selectedNodes, setSelectedNodes] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]);
   const [fontOptions, setFontOptions] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]);
   const [currentFont, setCurrentFont] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
     family: "",
@@ -26266,28 +26328,49 @@ function App() {
     return () => {
       window.document.removeEventListener("selectionchange", updateSelection);
     };
-  }, []);
+  }, [enableSelection]);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
     // update font styles like, weight, line height, underline and more 
     if (currentFont.family !== "" && selectionFontPreview.current) {
       const currentFontStyle = {
+        fontFamily: `${currentFont.family}, ${currentFont.category}`,
         fontWeight: currentFont.fontWeight,
         lineHeight: currentFont.lineHeight,
         textDecoration: currentFont.underline ? 'underline' : 'none',
         fontStyle: currentFont.italics ? 'italic' : 'normal'
       };
       Object.assign(selectionFontPreview.current.style, currentFontStyle);
+      document.querySelectorAll("[data-font-selector]").forEach(e => {
+        // assign it to all the elements that the user had selected
+        Object.assign(e.style, currentFontStyle);
+      });
     }
   }, [currentFont, selectionFontPreview.current]);
-  const updateSelection = evt => {
+  const updateSelection = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(evt => {
+    if (!enableSelection) return;
     const selection = window.getSelection();
     const selectedText = selection.toString();
     if (!selectedText) {
       return;
     }
-    console.log('Selected text:', selectedText);
+    const range = selection.getRangeAt(0);
+
+    // also for wrapping elements, see https://stackoverflow.com/questions/6328718/how-to-wrap-surround-highlighted-text-with-an-element
+    const selectedNodes = (0,_utils_selection__WEBPACK_IMPORTED_MODULE_7__.getRangeSelectedNodes)(range);
+    selectedNodes.forEach(node => {
+      if (node.nodeType === node.ELEMENT_NODE) {
+        const defaultStyle = node.getAttribute("style");
+        node.setAttribute("data-default-style", defaultStyle || "");
+        node.setAttribute("data-font-selector", "true");
+      }
+    });
+
+    // setSelectedNodes(selectedNodes)
+
+    // console.log('Selected text:', selectedNodes, range)
+
     selectionFontPreview.current.innerText = selectedText;
-  };
+  }, [enableSelection]);
   const handleClose = () => {
     console.log("run time: ", chrome.runtime);
     chrome.runtime.sendMessage({
@@ -26295,15 +26378,16 @@ function App() {
     });
   };
   const onFontUpdate = value => {
-    console.log("selected:", _db_google_fonts_json__WEBPACK_IMPORTED_MODULE_2__[value], value);
     const fontFamily = _db_google_fonts_json__WEBPACK_IMPORTED_MODULE_2__[value].family;
     const fontCategory = _db_google_fonts_json__WEBPACK_IMPORTED_MODULE_2__[value].category;
     const styleElement = document.querySelector("#font-selector-link");
     const url = `https://fonts.googleapis.com/css2?family=${encodeURIComponent(fontFamily)}`;
     styleElement.innerHTML = `@import url(${url})`;
-    setTimeout(() => {
-      selectionFontPreview.current.style.fontFamily = `${fontFamily}, ${fontCategory}`;
-    }, 100);
+
+    // setTimeout(() => {
+    // 	selectionFontPreview.current.style.fontFamily = `${fontFamily}, ${fontCategory}`
+    // }, 100)
+
     setCurrentFont({
       ...currentFont,
       family: fontFamily,
@@ -26319,6 +26403,13 @@ function App() {
       italics: false,
       underline: false
     });
+    document.querySelectorAll("[data-font-selector]").forEach(e => {
+      // reset the styles
+      const defaultStyle = e.getAttribute("data-default-style");
+      e.setAttribute("style", defaultStyle);
+      e.removeAttribute("data-default-style");
+      e.removeAttribute("data-font-selector");
+    });
   };
   return /*#__PURE__*/React.createElement("div", {
     ref: widgetRef,
@@ -26331,21 +26422,21 @@ function App() {
       height: "700px"
     }
   }, /*#__PURE__*/React.createElement("div", {
-    className: "tw-flex tw-items-center tw-w-full tw-justify-between"
+    className: "tw-flex !tw-select-none tw-items-center tw-w-full tw-justify-between"
   }, /*#__PURE__*/React.createElement("div", {
     className: "tw-bg-[#f4f4f4] tw-cursor-move tw-p-1 tw-px-3 tw-rounded-md",
     onMouseDown: handleMouseDown
-  }, /*#__PURE__*/React.createElement(_ant_design_icons__WEBPACK_IMPORTED_MODULE_7__["default"], null)), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement(_ant_design_icons__WEBPACK_IMPORTED_MODULE_8__["default"], null)), /*#__PURE__*/React.createElement("div", {
     className: "tw-flex tw-gap-1"
   }, /*#__PURE__*/React.createElement("a", {
     href: "https://github.com/PaulleDemon/font-tester-chrome?tab=readme-ov-file#font-tester---fonts-made-easy-chrome-extension",
     target: "_blank",
     rel: "noopener noreferrer",
     className: "tw-cursor-pointer hover:!tw-text-black hover:tw-bg-gray-100 tw-px-2 tw-rounded-md  tw-p-1"
-  }, /*#__PURE__*/React.createElement(_ant_design_icons__WEBPACK_IMPORTED_MODULE_8__["default"], null)), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement(_ant_design_icons__WEBPACK_IMPORTED_MODULE_9__["default"], null)), /*#__PURE__*/React.createElement("div", {
     onClick: handleClose,
     className: "tw-cursor-pointer hover:tw-bg-gray-100 tw-px-2 tw-rounded-md  tw-p-1"
-  }, /*#__PURE__*/React.createElement(_ant_design_icons__WEBPACK_IMPORTED_MODULE_9__["default"], null)))), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement(_ant_design_icons__WEBPACK_IMPORTED_MODULE_10__["default"], null)))), /*#__PURE__*/React.createElement("div", {
     className: "tw-w-full tw-p-2 tw-gap-2 tw-h-full tw-flex tw-flex-col"
   }, /*#__PURE__*/React.createElement("div", {
     className: "tw-h-[100px] tw-select-none tw-bg-[#f0f0f0ef] tw-rounded-lg tw-p-2  tw-min-h-[100px] tw-flex tw-flex-col tw-overflow-y-auto"
@@ -26356,7 +26447,7 @@ function App() {
     className: "tw-flex tw-flex-col tw-gap-1"
   }, /*#__PURE__*/React.createElement("h2", {
     className: "tw-text-lg"
-  }, "Google fonts"), /*#__PURE__*/React.createElement(antd__WEBPACK_IMPORTED_MODULE_10__["default"], {
+  }, "Google fonts"), /*#__PURE__*/React.createElement(antd__WEBPACK_IMPORTED_MODULE_11__["default"], {
     showSearch: true,
     dropdownStyle: {
       zIndex: "11000"
@@ -26369,7 +26460,7 @@ function App() {
     className: "tw-flex tw-flex-col tw-gap-1"
   }, /*#__PURE__*/React.createElement("div", {
     className: "tw-flex tw-flex-col"
-  }, /*#__PURE__*/React.createElement("span", null, "Line Height"), /*#__PURE__*/React.createElement(antd__WEBPACK_IMPORTED_MODULE_11__["default"], {
+  }, /*#__PURE__*/React.createElement("span", null, "Line Height"), /*#__PURE__*/React.createElement(antd__WEBPACK_IMPORTED_MODULE_12__["default"], {
     defaultValue: 1,
     min: 1,
     max: 3,
@@ -26386,7 +26477,7 @@ function App() {
     }
   })), /*#__PURE__*/React.createElement("div", {
     className: "tw-flex tw-flex-col"
-  }, /*#__PURE__*/React.createElement("span", null, "Weight"), /*#__PURE__*/React.createElement(antd__WEBPACK_IMPORTED_MODULE_11__["default"], {
+  }, /*#__PURE__*/React.createElement("span", null, "Weight"), /*#__PURE__*/React.createElement(antd__WEBPACK_IMPORTED_MODULE_12__["default"], {
     defaultValue: 400,
     min: 100,
     max: 900,
@@ -26403,12 +26494,34 @@ function App() {
     }
   }))), /*#__PURE__*/React.createElement("div", {
     className: "tw-flex tw-gap-3"
-  }, /*#__PURE__*/React.createElement(antd__WEBPACK_IMPORTED_MODULE_12__["default"], {
+  }, /*#__PURE__*/React.createElement(antd__WEBPACK_IMPORTED_MODULE_13__["default"], {
+    title: "Enable selection",
+    overlayStyle: {
+      zIndex: "12000"
+    }
+  }, /*#__PURE__*/React.createElement(antd__WEBPACK_IMPORTED_MODULE_14__["default"].CheckableTag, {
+    checked: enableSelection,
+    onChange: checked => {
+      setEnableSelection(checked);
+      console.log("checked: ", checked);
+    },
+    className: `${enableSelection && "!tw-bg-gray-100"} !tw-text-lg hover:!tw-bg-gray-100 hover:!tw-color-black`,
+    style: {
+      outline: "none",
+      border: "none",
+      color: "#000",
+      backgroundColor: "transparent",
+      display: "flex",
+      justifyContent: "center",
+      padding: "0.5rem 0.75rem",
+      borderRadius: "0.375rem"
+    }
+  }, /*#__PURE__*/React.createElement(_ant_design_icons__WEBPACK_IMPORTED_MODULE_15__["default"], null))), /*#__PURE__*/React.createElement(antd__WEBPACK_IMPORTED_MODULE_13__["default"], {
     title: "Italics",
     overlayStyle: {
       zIndex: "12000"
     }
-  }, /*#__PURE__*/React.createElement(antd__WEBPACK_IMPORTED_MODULE_13__["default"].CheckableTag, {
+  }, /*#__PURE__*/React.createElement(antd__WEBPACK_IMPORTED_MODULE_14__["default"].CheckableTag, {
     checked: currentFont.italics,
     onChange: checked => setCurrentFont({
       ...currentFont,
@@ -26425,12 +26538,12 @@ function App() {
       padding: "0.5rem 0.75rem",
       borderRadius: "0.375rem"
     }
-  }, /*#__PURE__*/React.createElement(_ant_design_icons__WEBPACK_IMPORTED_MODULE_14__["default"], null))), /*#__PURE__*/React.createElement(antd__WEBPACK_IMPORTED_MODULE_12__["default"], {
+  }, /*#__PURE__*/React.createElement(_ant_design_icons__WEBPACK_IMPORTED_MODULE_16__["default"], null))), /*#__PURE__*/React.createElement(antd__WEBPACK_IMPORTED_MODULE_13__["default"], {
     title: "Underline",
     overlayStyle: {
       zIndex: "12000"
     }
-  }, /*#__PURE__*/React.createElement(antd__WEBPACK_IMPORTED_MODULE_13__["default"].CheckableTag, {
+  }, /*#__PURE__*/React.createElement(antd__WEBPACK_IMPORTED_MODULE_14__["default"].CheckableTag, {
     checked: currentFont.underline,
     onChange: checked => setCurrentFont({
       ...currentFont,
@@ -26447,7 +26560,7 @@ function App() {
       padding: "0.5rem 0.75rem",
       borderRadius: "0.375rem"
     }
-  }, /*#__PURE__*/React.createElement(_ant_design_icons__WEBPACK_IMPORTED_MODULE_15__["default"], null))), /*#__PURE__*/React.createElement(antd__WEBPACK_IMPORTED_MODULE_12__["default"], {
+  }, /*#__PURE__*/React.createElement(_ant_design_icons__WEBPACK_IMPORTED_MODULE_17__["default"], null))), /*#__PURE__*/React.createElement(antd__WEBPACK_IMPORTED_MODULE_13__["default"], {
     title: "Reset",
     overlayStyle: {
       zIndex: "12000"
@@ -26463,9 +26576,9 @@ function App() {
       padding: "0.5rem 0.75rem",
       borderRadius: "0.375rem"
     }
-  }, /*#__PURE__*/React.createElement(_ant_design_icons__WEBPACK_IMPORTED_MODULE_16__["default"], null)))), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement(_ant_design_icons__WEBPACK_IMPORTED_MODULE_18__["default"], null)))), /*#__PURE__*/React.createElement("div", {
     className: "tw-flex tw-w-full tw-h-full tw-max-h-[120px]"
-  }, /*#__PURE__*/React.createElement(antd__WEBPACK_IMPORTED_MODULE_17__["default"], {
+  }, /*#__PURE__*/React.createElement(antd__WEBPACK_IMPORTED_MODULE_19__["default"], {
     className: "tw-w-full tw-h-full",
     items: [{
       key: "link",
@@ -26491,19 +26604,19 @@ function App() {
     target: "_blank",
     rel: "noopener noreferrer"
   }, /*#__PURE__*/React.createElement("img", {
-    src: bmcBase64,
+    src: BMC_IMG,
     className: "tw-w-8 tw-h-8",
     alt: "BMC"
   })), /*#__PURE__*/React.createElement(_utils_share__WEBPACK_IMPORTED_MODULE_5__["default"], {
     className: "tw-w-8 tw-h-8 tw-cursor-pointer tw-flex tw-place-items-center"
-  }, /*#__PURE__*/React.createElement(_ant_design_icons__WEBPACK_IMPORTED_MODULE_18__["default"], null)), /*#__PURE__*/React.createElement("a", {
+  }, /*#__PURE__*/React.createElement(_ant_design_icons__WEBPACK_IMPORTED_MODULE_20__["default"], null)), /*#__PURE__*/React.createElement("a", {
     href: "https://github.com/PaulleDemon/font-tester-chrome",
     target: "_blank",
     className: "hover:!tw-text-black !tw-text-black !tw-no-underline",
     rel: "noopener noreferrer"
-  }, /*#__PURE__*/React.createElement(_ant_design_icons__WEBPACK_IMPORTED_MODULE_19__["default"], null)), /*#__PURE__*/React.createElement(_utils_premium__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }, /*#__PURE__*/React.createElement(_ant_design_icons__WEBPACK_IMPORTED_MODULE_21__["default"], null)), /*#__PURE__*/React.createElement(_utils_premium__WEBPACK_IMPORTED_MODULE_6__["default"], {
     className: "tw-w-8 tw-h-8 tw-cursor-pointer tw-flex tw-place-items-center tw-text-purple-500 tw-text-xl"
-  }, /*#__PURE__*/React.createElement(_ant_design_icons__WEBPACK_IMPORTED_MODULE_20__["default"], null))));
+  }, /*#__PURE__*/React.createElement(_ant_design_icons__WEBPACK_IMPORTED_MODULE_22__["default"], null))));
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);
 
@@ -26714,7 +26827,7 @@ function Premium({
     open: premiumModalOpen
   }, /*#__PURE__*/React.createElement("div", {
     className: "tw-mt-5 tw-text-lg tw-place-content-center tw-w-full tw-place-items-center"
-  }, "I am an indie open-source dev, funding open-source projects by providing custom works. If you find this tool useful or are using for commercial works, consider buying a ", /*#__PURE__*/React.createElement("b", null, "one time license"), ".", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("br", null), "By buying license, you help me fund my upcoming open-source python tool. Plus you get all upcoming advance features, priority support, early access, upcoming Edge/Firefox Extension and", /*#__PURE__*/React.createElement("a", {
+  }, "I am Paul, an indie open-source dev, funding open-source projects by providing custom works. If you find this tool useful or are using for commercial works, consider buying a ", /*#__PURE__*/React.createElement("b", null, "one time license"), ".", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("br", null), "By buying license, you help me fund my upcoming open-source python tool. Plus you get all upcoming advance features, priority support, early access, upcoming Edge/Firefox Extension and", /*#__PURE__*/React.createElement("a", {
     href: "https://github.com/PaulleDemon/font-tester-chrome",
     target: "_blank",
     rel: "noreferrer noopener",
@@ -26727,6 +26840,83 @@ function Premium({
   }, /*#__PURE__*/React.createElement("span", null, "Buy License"), /*#__PURE__*/React.createElement(_ant_design_icons__WEBPACK_IMPORTED_MODULE_2__["default"], null))));
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Premium);
+
+/***/ }),
+
+/***/ "./src/utils/selection.js":
+/*!********************************!*\
+  !*** ./src/utils/selection.js ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getNodesInRange: () => (/* binding */ getNodesInRange),
+/* harmony export */   getRangeSelectedNodes: () => (/* binding */ getRangeSelectedNodes)
+/* harmony export */ });
+// Function to recursively get all nodes within the selection range
+//  @depreciated
+function getNodesInRange(range) {
+  const nodes = [];
+  const walker = document.createTreeWalker(range.commonAncestorContainer,
+  // Start walking from the common ancestor
+  NodeFilter.SHOW_ELEMENT | NodeFilter.SHOW_TEXT,
+  // Show both elements and text nodes
+  {
+    acceptNode: node => {
+      if (range.intersectsNode(node)) {
+        return NodeFilter.FILTER_ACCEPT;
+      }
+      return NodeFilter.FILTER_REJECT;
+    }
+  });
+  while (walker.nextNode()) {
+    nodes.push(walker.currentNode);
+  }
+  return nodes;
+}
+function nextNode(node) {
+  if (node.hasChildNodes()) {
+    return node.firstChild;
+  } else {
+    while (node && !node.nextSibling) {
+      node = node.parentNode;
+    }
+    if (!node) {
+      return null;
+    }
+    return node.nextSibling;
+  }
+}
+function getRangeSelectedNodes(range) {
+  // https://stackoverflow.com/questions/7781963/js-get-array-of-all-selected-nodes-in-contenteditable-div
+  let node = range.startContainer;
+  let endNode = range.endContainer;
+
+  // Special case for a range that is contained within a single node
+  if (node == endNode) {
+    if (node.nodeType === node.TEXT_NODE) {
+      // if the node is a text node, get the immediate parent
+      return [node.parentNode];
+    }
+    return [node];
+  }
+
+  // Iterate nodes until we hit the end container
+  let rangeNodes = [];
+  while (node && node != endNode) {
+    rangeNodes.push(node = nextNode(node));
+  }
+
+  // Add partially selected nodes at the start of the range
+  node = range.startContainer;
+  while (node && node != range.commonAncestorContainer) {
+    rangeNodes.unshift(node);
+    node = node.parentNode;
+  }
+  return rangeNodes;
+}
 
 /***/ }),
 
@@ -27535,6 +27725,10 @@ video {
 .tw-cursor-pointer {
   cursor: pointer;
 }
+.\\!tw-select-none {
+  -webkit-user-select: none !important;
+          user-select: none !important;
+}
 .tw-select-none {
   -webkit-user-select: none;
           user-select: none;
@@ -27649,6 +27843,10 @@ video {
 .tw-font-medium {
   font-weight: 500;
 }
+.\\!tw-text-black {
+  --tw-text-opacity: 1 !important;
+  color: rgb(0 0 0 / var(--tw-text-opacity)) !important;
+}
 .\\!tw-text-blue-500 {
   --tw-text-opacity: 1 !important;
   color: rgb(59 130 246 / var(--tw-text-opacity)) !important;
@@ -27668,10 +27866,6 @@ video {
 .tw-text-purple-500 {
   --tw-text-opacity: 1;
   color: rgb(168 85 247 / var(--tw-text-opacity));
-}
-.\\!tw-text-black {
-  --tw-text-opacity: 1 !important;
-  color: rgb(0 0 0 / var(--tw-text-opacity)) !important;
 }
 .\\!tw-no-underline {
   text-decoration-line: none !important;
@@ -27702,7 +27896,7 @@ video {
   color: rgb(0 0 0 / var(--tw-text-opacity)) !important;
 }
 
-  `, "",{"version":3,"sources":["webpack://./src/styles/tailwind.css"],"names":[],"mappings":"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","sourcesContent":["@tailwind base;\n@tailwind components;\n@tailwind utilities;\n\n\n@layer base {\n}\n\n@layer components{\n\n}\n\n  "],"sourceRoot":""}]);
+  `, "",{"version":3,"sources":["webpack://./src/styles/tailwind.css"],"names":[],"mappings":"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","sourcesContent":["@tailwind base;\n@tailwind components;\n@tailwind utilities;\n\n\n@layer base {\n}\n\n@layer components{\n\n}\n\n  "],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
