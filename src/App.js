@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from "react"
 
 import { Select, Slider, Tabs, Tooltip, Button } from "antd"
-import { BoldOutlined, CloseOutlined, CrownFilled, EllipsisOutlined, GithubFilled, HolderOutlined, ItalicOutlined, RestOutlined, UnderlineOutlined, UndoOutlined } from "@ant-design/icons"
+import { BoldOutlined, CloseOutlined, CrownFilled, EllipsisOutlined, GithubFilled, HolderOutlined, ItalicOutlined, QuestionCircleOutlined, RestOutlined, ShareAltOutlined, UnderlineOutlined, UndoOutlined } from "@ant-design/icons"
 
 import { useMovable } from "./utils/hooks"
 
@@ -10,6 +10,7 @@ import Fonts from "./db/google-fonts.json"
 import CodeSection from "./codeSection"
 
 import BMC from "./assets/logos/bmc.svg"
+import Share from "./utils/share"
 // import { ReactComponent as BMC } from './assets/logos/bmc.svg'
 
 
@@ -28,7 +29,11 @@ function App() {
 	const [fontOptions, setFontOptions] = useState([])
 	const [currentFont, setCurrentFont] = useState({
 											family: "",
-											category: ""
+											category: "",
+											weight: 400,
+											lineHeight: "normal",
+											underline: false,
+											italics:  false
 											})
 
 
@@ -125,14 +130,20 @@ function App() {
 			category:  fontCategory
 		})
 	}
-	const onSearch = (value) => {
-		console.log('search:', value)
-	}
 
 	const onReset = () => {
 		selectionFontPreview.current.innerText = "Selection Text"
+		
+		const resetStyle = {
+			lineHeight: "normal",
+			fontWeight: 400,
+		}
+
+		Object.assign(selectionFontPreview.current.style, resetStyle)
+
 	}
 	
+
 	return (
 		<div ref={widgetRef} className="tw-bg-white tw-overflow-hidden tw-text-black tw-z-[10000] tw-flex tw-flex-col tw-shadow-xl tw-p-3 tw-rounded-xl" 
 				style={{
@@ -148,8 +159,16 @@ function App() {
 					<HolderOutlined />
 				</div>
 
-				<div onClick={handleClose} className="tw-cursor-pointer hover:tw-bg-gray-100 tw-px-2 tw-rounded-md  tw-p-1">
-					<CloseOutlined />
+				<div className="tw-flex tw-gap-1">
+					<a href="https://github.com/PaulleDemon/font-tester-chrome?tab=readme-ov-file#font-tester---fonts-made-easy-chrome-extension" 
+						target="_blank"
+						rel="noopener noreferrer"
+						className="tw-cursor-pointer hover:tw-bg-gray-100 tw-px-2 tw-rounded-md  tw-p-1">
+						<QuestionCircleOutlined />
+					</a>
+					<div onClick={handleClose} className="tw-cursor-pointer hover:tw-bg-gray-100 tw-px-2 tw-rounded-md  tw-p-1">
+						<CloseOutlined />
+					</div>
 				</div>
 			</div>
 
@@ -177,12 +196,20 @@ function App() {
 				<div className="tw-flex tw-flex-col tw-gap-1">
 					<div className="tw-flex tw-flex-col">
 						<span>Line Height</span>
-						<Slider />
+						<Slider defaultValue={400} 
+								min={100} max={900} 
+								step={100}
+								tooltip={{overlayStyle: {zIndex: "12000"}}}
+								/>
 					</div>
 				
 					<div className="tw-flex tw-flex-col">
 						<span>Weight</span>
-						<Slider />
+						<Slider defaultValue={400} 
+								min={100} max={900} 
+								step={100}
+								tooltip={{overlayStyle: {zIndex: "12000"}}}
+								/>
 					</div>
 				</div>
 						  
@@ -246,6 +273,9 @@ function App() {
 					target="_blank" rel="noopener noreferrer">
 					<img src={BMC} className="tw-w-8 tw-h-8" alt='BMC' />
 				</a>
+				<Share className="tw-w-8 tw-h-8 tw-cursor-pointer tw-flex tw-place-items-center">
+					<ShareAltOutlined />
+				</Share>
 				<a href="https://github.com/PaulleDemon/font-tester-chrome" 
 					target="_blank" rel="noopener noreferrer">
 					<GithubFilled />

@@ -4,23 +4,11 @@ import { CopyOutlined } from "@ant-design/icons"
 
 import { message } from "antd"
 
-
+/**
+ * Formats literal strings, removes extra spaces, preserves tab spaces \t and new lines \n
+ */
 function formatCodeString(code) {
-    console.log("text in: ", code)
-
-    const text = code.split('\n').map(line => line.replace(/^[ ]+|[ ]+$/g,'') // Preserve tabs at the beginning of the line
-        // .replace(/\s+\t$/, '\t') // Preserve tabs at the end of the line
-    ).join('\n')
-
-    console.log("text: ", text)
-
-    if (text.includes('\t')) {
-        console.log("Tab character exists in the string.");
-    } else {
-        console.log("No tab character found.");
-    }
-
-    return text
+    return code.split('\n').map(line => line.replace(/^[ ]+|[ ]+$/g,'')).join('\n')
 }
 
 /**
@@ -33,34 +21,37 @@ function CodeSection({font="", category="", type="import"}){
     const codeRef = useRef()
 
     const codeString = useMemo(() => {
-        console.log("text: ", font, font.replace(" ", "+"))
+        
+        const fontFamily = `"${font}", ${category === "display"? "system-ui": category}`
+        const fontURL = `https://fonts.googleapis.com/css2?family=${font.replace(/ /g, "+")}`
+
         if (type === "import"){
             return `<style>
-                        \t@import url('https://fonts.googleapis.com/css2?family=${font.replace(/ /g, "+")}')
+                        \t@import url('${fontURL}');
 
-                        \t.${font}-family{
-                            \t\tfont-family: "${font}", ${category === "display"? "system-ui": category};
+                        \t.${font.toLowerCase().replace(/ /g, "-")}-family{
+                            \t\tfont-family: ${fontFamily};
                         \t}
                     </style>
                     `
         }else if(type === "link"){
             return `<link rel="preconnect" href="https://fonts.googleapis.com">
-                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-                <link href="https://fonts.googleapis.com/css2?family=${font.replace(/\s+/g, "+")}" rel="stylesheet">
+                    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                    <link href="${fontURL}" rel="stylesheet">
 
-                <style>
+                    <style>
 
-                    \t.${font}-family{
-                        \t\tfont-family: "${font}", ${category === "display"? "system-ui": category};
-                    \t}
-                </style>
-            `
+                        \t.${font.toLowerCase().replace(/ /g, "-")}-family{
+                            \t\tfont-family: ${fontFamily};
+                        \t}
+                    </style>
+                    `
         }
 
     }, [type, font, category])
 
     const onCopy = () => {
-        navigator.clipboard.writeText(codeRef.current.innerText).then(function() {
+        navigator.clipboard.writeText(codeRef.current?.innerText).then(function() {
             message.success("Copied to clipboard")
     
         }, function(err) {
@@ -81,7 +72,7 @@ function CodeSection({font="", category="", type="import"}){
                 </button>
             </div>
             
-            <div className="tw-whitespace-break-spaces tw-w-full tw-h-full tw-text-gray-700" ref={codeRef}>
+            <div className="tw-whitespace-break-spaces tw-w-full tw-h-fit tw-text-gray-700" ref={codeRef}>
                 {font && formatCodeString(codeString)}
             </div>
         </div>

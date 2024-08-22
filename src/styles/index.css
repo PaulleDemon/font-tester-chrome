@@ -1,3 +1,21 @@
-.tw-bg-green-500{
-    color: #fff;
+/* width */
+#font-selector-root ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
 }
+  
+  /* Track */
+#font-selector-root  ::-webkit-scrollbar-track {
+    background: transparent; 
+  }
+   
+  /* Handle */
+#font-selector-root  ::-webkit-scrollbar-thumb {
+    background: #c2c2c2; 
+    border-radius: 5px;
+  }
+  
+  /* Handle on hover */
+#font-selector-root  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
