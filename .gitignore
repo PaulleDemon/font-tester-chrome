@@ -3,7 +3,10 @@
 # dependencies
 /node_modules
 /.pnp
-.pnp.js
+.pnp.
+google-fonts-raw.json
+
+.env
 
 dist.zip
 dist/

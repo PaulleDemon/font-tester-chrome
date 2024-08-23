@@ -34,7 +34,7 @@ Now you can go to your website, click on the extension, test fonts and pick the 
 ✅ Test 1000+ google fonts <br>
 ✅ Move the modal around the webpage. <br>
 ✅ Set italics, underline, weights, line height etc. <br>
-✅ Set font size (coming soon...)<br>
+✅ Set font size, filter (coming soon...)<br>
 🔥 More on [Roadmap](roadmap.md)
 
 ## License / support
@@ -50,6 +50,13 @@ Pluse you get more advanced features, early access, Upcoming Edge/Firefox addons
 
 * Order a [custom work](https://tally.so/r/woO0Kx).
 * Order a premium SaaS [Landing page template](https://foxcraft.gumroad.com/l/ai-saas-landingpage/saasboost)
+
+## Other free and open-source tools
+
+* [Awesome landing pages](https://github.com/PaulleDemon/awesome-landing-pages)
+* [Hover preview - Preview on hover](https://github.com/PaulleDemon/Hover-Preview)
+* [Django SaaS Boilerplate](https://github.com/PaulleDemon/Django-SAAS-Boilerplate)
+
 
 ### Follow for updates and open-source
 

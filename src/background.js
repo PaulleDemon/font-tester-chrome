@@ -8,9 +8,9 @@ let isContentScriptInjected = false
 chrome.action.onClicked.addListener((tab) => {
 	// alert("action performed")
 	// tabId = tab.id
-	console.log('Extension icon clicked, attempting to inject content.js...', isContentScriptInjected)
+	// console.log('Extension icon clicked, attempting to inject content.js...', isContentScriptInjected)
 	if (!isContentScriptInjected) {
-		console.log("Running....")
+		// console.log("Running....")
 		chrome.scripting.executeScript({
 			target: { tabId: tab.id },
 			files: ['content.js']
@@ -52,7 +52,7 @@ function removeContent() {
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     // if widget closed from content.js file, by clicking on the close button
 	if (message.action === 'widgetClosed') {
-        console.log("closed from content.js: ", sender.tab.id, sender)
+        // console.log("closed from content.js: ", sender.tab.id, sender)
 
         isContentScriptInjected  = false
 		

@@ -1,6 +1,12 @@
 import { useState, useRef, useEffect } from 'react'
 
-export const useMovable = (initialPosition = { x: 10, y: 10 }) => {
+/**
+ * 
+ * @param {{x: number, y: number}} initialPosition 
+ * @param {function} onWidgetMove - a function that should be called when the widget's position is being moved
+ * @returns {position, handleMouseDown} - position returns the current mouse pos, the handleMouseDown should receive mouse event from your component
+ */
+export const useMovable = (initialPosition = { x: 10, y: 10 }, onWidgetMove) => {
     const [position, setPosition] = useState(initialPosition)
     const [isDragging, setIsDragging] = useState(false)
     const offset = useRef({ x: 0, y: 0 })
@@ -19,6 +25,10 @@ export const useMovable = (initialPosition = { x: 10, y: 10 }) => {
             x: e.clientX - offset.current.x,
             y: e.clientY - offset.current.y,
         })
+
+        if (onWidgetMove)
+            onWidgetMove({x: e.clientX - offset.current.x, 
+                            y: e.clientY - offset.current.y})
     }
 
     const handleMouseUp = () => {

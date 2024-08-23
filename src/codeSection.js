@@ -4,6 +4,9 @@ import { CopyOutlined } from "@ant-design/icons"
 
 import { message } from "antd"
 
+
+// for improvements refer: https://developers.google.com/fonts/docs/developer_api
+
 /**
  * Formats literal strings, removes extra spaces, preserves tab spaces \t and new lines \n
  */
@@ -13,25 +16,51 @@ function formatCodeString(code) {
 
 /**
  * 
- * @param {{font: string, category: string, type: "import"|"link"}} param0 
+ * @param {{fontStyle: object, type: "import"|"link"}} param0 
  * @returns 
  */
-function CodeSection({font="", category="", type="import"}){
+function CodeSection({fontStyle, type="import"}){
 
     const codeRef = useRef()
 
+    const { family: fontType, 
+            category, fontWeight, 
+            lineHeight, underline, italics } = fontStyle;
+
+    
     const codeString = useMemo(() => {
         
-        const fontFamily = `"${font}", ${category === "display"? "system-ui": category}`
-        const fontURL = `https://fonts.googleapis.com/css2?family=${font.replace(/ /g, "+")}`
+        const fontFamily = `"${fontType}", ${category === "display"? "system-ui": category}`
+        const fontURL = `https://fonts.googleapis.com/css2?family=${fontType.replace(/ /g, "+")}`
+
+        const cssRule = [`\t\tfont-family: ${fontFamily};`]
+
+        if (fontWeight !== "normal"){
+            cssRule.push(`\t\tfont-weight: ${fontWeight};`)
+        }
+
+        if (lineHeight !== "normal"){
+            cssRule.push(`\t\tline-height: ${lineHeight};`)
+        }
+
+        if (underline){
+            cssRule.push(`\t\ttext-decoration: underline;`)
+        }
+
+        if (italics){
+            cssRule.push(`\t\tfont-style: italic;`)
+        }
+
+        const fontCode = `
+                    \t.${fontType.toLowerCase().replace(/ /g, "-")}-family{
+                        ${cssRule.join("\n")}
+                    \t}
+        `
 
         if (type === "import"){
             return `<style>
                         \t@import url('${fontURL}');
-
-                        \t.${font.toLowerCase().replace(/ /g, "-")}-family{
-                            \t\tfont-family: ${fontFamily};
-                        \t}
+                        ${fontCode}
                     </style>
                     `
         }else if(type === "link"){
@@ -40,15 +69,12 @@ function CodeSection({font="", category="", type="import"}){
                     <link href="${fontURL}" rel="stylesheet">
 
                     <style>
-
-                        \t.${font.toLowerCase().replace(/ /g, "-")}-family{
-                            \t\tfont-family: ${fontFamily};
-                        \t}
+                        ${fontCode}
                     </style>
                     `
         }
 
-    }, [type, font, category])
+    }, [type, fontStyle])
 
     const onCopy = () => {
         navigator.clipboard.writeText(codeRef.current?.innerText).then(function() {
@@ -73,7 +99,7 @@ function CodeSection({font="", category="", type="import"}){
             </div>
             
             <div className="tw-whitespace-break-spaces tw-w-full tw-h-fit tw-text-gray-700" ref={codeRef}>
-                {font && formatCodeString(codeString)}
+                {fontType && formatCodeString(codeString)}
             </div>
         </div>
     )

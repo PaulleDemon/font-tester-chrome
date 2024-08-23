@@ -11,7 +11,7 @@ function Share({children, className=""}){
     const shareInfo = useMemo(() => {
 
         return {
-            url: encodeURI("https://github.com/PaulleDemon"),
+            url: encodeURI("https://github.com/PaulleDemon/font-tester-chrome"),
             text: "Super charge your web fonts, Check out Font Tester"
         }
     }, [])

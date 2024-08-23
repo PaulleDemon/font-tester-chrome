@@ -19,41 +19,33 @@ import { getRangeSelectedNodes } from "./utils/selection"
 // some websites such as StackOverflow keeps interfering with local image paths, so added github raw content
 const BMC_IMG = `https://raw.githubusercontent.com/PaulleDemon/landing-pages-browsable/main/src/assets/images/brand-logos/bmc.svg`
 
+
+const defaultPosition = {
+	x: (window.innerWidth - 300) - 15,
+	y: (window.innerHeight - 700) - 15
+}
+
 // TODO: prevent selection on the modal
 function App() {
 
 	const widgetRef = useRef()
 	const selectionFontPreview = useRef()
 
-	const { position, handleMouseDown } = useMovable({ x: 10, y: 10 })
+
+	const { position, handleMouseDown } = useMovable({ x: defaultPosition.x, y: defaultPosition.y}) // set the current position, if useEffect is used, recursion error occurs
+	
 	
 	const [enableSelection, setEnableSelection] = useState(true)
 	const [fontOptions, setFontOptions] = useState([])
 	const [currentFont, setCurrentFont] = useState({
-											family: "",
-											category: "",
-											fontWeight: "normal",
-											lineHeight: "normal",
-											underline: false,
-											italics:  false
+												family: "",
+												category: "",
+												fontWeight: "normal",
+												lineHeight: "normal",
+												underline: false,
+												italics:  false
 											})
-											
-
-	useEffect(() => {
-
-		if (widgetRef.current && position){
-
-			const pos = {
-				top: `${position.y}px`,
-				left: `${position.x}px`,
-				right: `auto`,
-				bottom: `auto`,
-			}
-
-			Object.assign(widgetRef.current.style, pos)
-		}
-
-	}, [position])
+	
 
 	useEffect(() => {
 
@@ -68,6 +60,7 @@ function App() {
 		}
 
 	}, [Fonts])
+
 
 	useEffect(() => {
 		// check if the font cdn style link exists, else add the link once
@@ -146,15 +139,12 @@ function App() {
 			}
 		})
 
-		// setSelectedNodes(selectedNodes)
-
-		// console.log('Selected text:', selectedNodes, range)
-
 		selectionFontPreview.current.innerText = selectedText
+	
 	}, [enableSelection])
 
 	const handleClose = () => {
-		console.log("run time: ", chrome.runtime)
+		// console.log("run time: ", chrome.runtime)
         chrome.runtime.sendMessage({ action: 'widgetClosed' })
     }
 
@@ -209,8 +199,10 @@ function App() {
 		<div ref={widgetRef} className="tw-bg-white tw-overflow-hidden tw-text-black tw-z-[10000] tw-flex tw-flex-col tw-shadow-xl tw-p-3 tw-rounded-xl" 
 				style={{
 					position: "fixed",
-					right: "15px",
-					bottom: "15px",
+					top: position.y,
+					left: position.x,
+					right: "auto",
+					bottom: "auto",
 					width: "300px",
 					height: "700px",
 				}}>
@@ -282,7 +274,7 @@ function App() {
 
 					<Tooltip title="Enable selection" overlayStyle={{zIndex: "12000"}}>
 						<Tag.CheckableTag checked={enableSelection}
-								onChange={(checked) => {setEnableSelection(checked); console.log("checked: ", checked)}}
+								onChange={(checked) => {setEnableSelection(checked)}}
 								className={`${enableSelection && "!tw-bg-gray-100"} !tw-text-lg hover:!tw-bg-gray-100 hover:!tw-color-black`}
 								style={{outline: "none", border: "none", color: "#000", 
 										backgroundColor: "transparent", display: "flex",
@@ -332,16 +324,14 @@ function App() {
 							{
 								key: "link",
 								label: "link",
-								children: <CodeSection font={currentFont.family} 
-														category={currentFont.category}
+								children: <CodeSection fontStyle={currentFont} 
 														type="link"
 														/>
 							},
 							{
 								key: "@import",
 								label: "@import",
-								children: <CodeSection  font={currentFont.family} 
-														category={currentFont.category}
+								children: <CodeSection  fontStyle={currentFont} 
 														type="import"/>
 							}
 						]
