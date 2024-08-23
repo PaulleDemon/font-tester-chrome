@@ -12,6 +12,8 @@ one of the reason I created Font Tester.
 
 Now you can go to your website, click on the extension, test fonts and pick the one you like along with the code.
 
+![](./extra/demo/font-tester.gif)
+
 ## Whom is the meant for?
 * Frontend developers.
 * Website Designers.
@@ -58,6 +60,7 @@ Pluse you get more advanced features, early access, Upcoming Edge/Firefox addons
 ### Tech stack
 * Reactjs
 * Tailwind css
+
 
 ### Contributing
 
