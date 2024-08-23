@@ -12,7 +12,7 @@ one of the reason I created Font Tester.
 
 Now you can go to your website, click on the extension, test fonts and pick the one you like along with the code.
 
-![](./docs/demo/font-tester2.gif)
+![](./docs/demo/font-tester.gif)
 
 ## Whom is the meant for?
 * Frontend developers.
