@@ -31,7 +31,7 @@ Now you can go to your website, click on the extension, test fonts and pick the 
 ## Features of Font Tester
 ✅ Test 1000+ google fonts <br>
 ✅ Move the modal around the webpage. <br>
-✅ Set italics, underline, weights, line height <br>
+✅ Set italics, underline, weights, line height etc. <br>
 ✅ Set font size (coming soon...)<br>
 🔥 More on [Roadmap](roadmap.md)
 
@@ -44,7 +44,7 @@ Pluse you get more advanced features, early access, Upcoming Edge/Firefox addons
 
 
 ---
-Other ways to support open-source
+**Other ways to support open-source**
 
 * Order a [custom work](https://tally.so/r/woO0Kx).
 * Order a premium SaaS [Landing page template](https://foxcraft.gumroad.com/l/ai-saas-landingpage/saasboost)
