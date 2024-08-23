@@ -9,7 +9,6 @@ import { useMovable } from "./utils/hooks"
 import Fonts from "./db/google-fonts.json"
 import CodeSection from "./codeSection"
 
-import BMC from "./assets/logos/bmc.svg"
 import Share from "./utils/share"
 import Premium from "./utils/premium"
 import { getRangeSelectedNodes } from "./utils/selection"
@@ -29,7 +28,6 @@ function App() {
 	const { position, handleMouseDown } = useMovable({ x: 10, y: 10 })
 	
 	const [enableSelection, setEnableSelection] = useState(true)
-	const [selectedNodes, setSelectedNodes] = useState([])
 	const [fontOptions, setFontOptions] = useState([])
 	const [currentFont, setCurrentFont] = useState({
 											family: "",
