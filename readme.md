@@ -51,7 +51,7 @@ You can either download the dist folder from releases and load it manually
 
 ## License / support
 
-Though the extension is free to use forever, there is an optional license you can buy to support open-source development. This will provide me with funds to develop upcoming tool for Python developers.
+Though the extension is free to use forever, there is an optional license you can buy to support open-source development. This will provide me with funds to develop an upcoming tool for Python developers.
 
 Pluse you get more advanced features, early access, Upcoming Edge/Firefox addons.
 
@@ -78,7 +78,7 @@ Pre-order from store at a limited period discount price: [License](https://foxcr
 
 ### Follow for updates and open-source
 
-* [Twitter](https://twitter.com)
+* [Twitter](https://x.com/pauls_freeman)
 * [Github](https://github.com/PaulleDemon)
 
 
