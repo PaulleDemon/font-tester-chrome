@@ -3,8 +3,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { DefinePlugin } = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+
 
 const isProduction = process.env.NODE_ENV === 'production';
+
+
 module.exports = {
   mode: isProduction ? 'production' : 'development',
   entry: {
@@ -38,7 +42,7 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          isProduction ? MiniCssExtractPlugin.loader : 'style-loader',
+          'style-loader',
           'css-loader',
           'postcss-loader', // Add postcss-loader here
         ],
@@ -74,6 +78,13 @@ module.exports = {
       ],
     }),
   ],
+  optimization: {
+    minimize: isProduction,
+    minimizer: [
+      `...`, // extends the default minimizers
+      new CssMinimizerPlugin(),
+    ],
+  },
   devtool: isProduction ? false : 'source-map',
   devServer: {
     static: {
