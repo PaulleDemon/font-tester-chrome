@@ -12,7 +12,19 @@ one of the reason I created Font Tester.
 
 Now you can go to your website, click on the extension, test fonts and pick the one you like along with the code.
 
-![](./docs/demo/font-tester.gif)
+![font tester demo](./docs/demo/font-tester.gif)
+
+### Add to waitlist
+
+The extension is submitted to store for review, once its done, you'll be notified. 
+
+Join the waitlist with others: [Join waitlist](https://getwaitlist.com/waitlist/19742)
+
+or 
+
+---
+You can either download the dist folder from releases and load it manually
+
 
 ## Whom is the meant for?
 * Frontend developers.
@@ -43,13 +55,19 @@ Though the extension is free to use forever, there is an optional license you ca
 
 Pluse you get more advanced features, early access, Upcoming Edge/Firefox addons.
 
-
+Pre-order from store at a limited period discount price: [License](https://foxcraft.gumroad.com/l/font-tester/preorder)
 
 ---
 **Other ways to support open-source**
 
 * Order a [custom work](https://tally.so/r/woO0Kx).
 * Order a premium SaaS [Landing page template](https://foxcraft.gumroad.com/l/ai-saas-landingpage/saasboost)
+
+
+## Current limitations
+* Cannot execute the script in chrome extension store, its blocked by default
+* If the font tester doesn't open even after double click on a website, please file an issue
+
 
 ## Other free and open-source tools
 
@@ -84,3 +102,6 @@ won't have to rebuild on every save.
 
 For development you can also use 
 `npm start`, but you won't be able to load it as extension but as a react app.
+
+Some important notes:
+* The extension attaches to a [shadowdom](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_shadow_DOM), this is to avoid page style affecting the widget style.

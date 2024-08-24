@@ -21,7 +21,7 @@ const BMC_IMG = `https://raw.githubusercontent.com/PaulleDemon/landing-pages-bro
 
 
 const defaultPosition = {
-	x: (window.innerWidth - 300) - 15,
+	x: (window.innerWidth - 300) - 25,
 	y: (window.innerHeight - 700) - 15
 }
 
@@ -145,6 +145,7 @@ function App() {
 
 	const handleClose = () => {
 		// console.log("run time: ", chrome.runtime)
+		onReset() // reset the selection before closing
         chrome.runtime.sendMessage({ action: 'widgetClosed' })
     }
 

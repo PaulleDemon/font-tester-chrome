@@ -38,12 +38,12 @@ function Premium({children, className=""}){
                     By buying license, you 
                     help me fund my upcoming open-source python tool. Plus you get all upcoming 
                     advance features, priority support, early access, upcoming Edge/Firefox Extension and
-                    <a href="https://github.com/PaulleDemon/font-tester-chrome"
+                    <a href="https://github.com/PaulleDemon/font-tester-chrome?tab=readme-ov-file"
                         target="_blank" rel="noreferrer noopener" className="!tw-text-blue-500"
                     > more.</a> 
                 </div>
 
-                <a  href="https://github.com/PaulleDemon/font-tester-chrome"
+                <a  href="https://foxcraft.gumroad.com/l/font-tester/preorder"
                     target="_blank" rel="noreferrer noopener" 
                     className="tw-mt-8 !tw-bg-purple-500 !tw-text-white tw-gap-2 tw-text-lg tw-rounded-md !tw-font-semibold tw-w-full tw-flex tw-place-content-center tw-p-2 tw-mx-2">
                     <span>Buy License</span>

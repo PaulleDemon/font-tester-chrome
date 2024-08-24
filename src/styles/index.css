@@ -18,4 +18,8 @@
   /* Handle on hover */
 #font-selector-root  ::-webkit-scrollbar-thumb:hover {
     background: #555; 
-  }
+}
+
+.ant-message {
+  z-index: 14000 !important; /* Ensure high zIndex and use !important to override defaults */
+}

@@ -42,11 +42,17 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          'style-loader',
+          // 'style-loader', // can't use style loader because we need to import as string
+          // 'to-string-loader',
           'css-loader',
-          'postcss-loader', // Add postcss-loader here
+          'postcss-loader', // Add postcss-loader here,
+          // 'raw-loader', // Use raw-loader to get CSS as a string
         ],
       },
+      // {
+      //   test: /\.css$/,
+      //   use: 'raw-loader', // Use raw-loader to get CSS as a string
+      // },
       {
         test: /\.(png|jpe?g|gif|svg|ico)$/,
         type: 'asset/resource',

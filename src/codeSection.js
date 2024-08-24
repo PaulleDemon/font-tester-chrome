@@ -78,10 +78,10 @@ function CodeSection({fontStyle, type="import"}){
 
     const onCopy = () => {
         navigator.clipboard.writeText(codeRef.current?.innerText).then(function() {
-            message.success("Copied to clipboard")
+            message.success({content: "Copied to clipboard"})  
     
         }, function(err) {
-            message.error("Error copying to clipboard")
+            message.error({content: "Error copying to clipboard"})
         })
     }
 
