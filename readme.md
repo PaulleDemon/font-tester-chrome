@@ -14,7 +14,7 @@ Now you can go to your website, click on the extension, test fonts and pick the 
 
 ![font tester demo](./docs/demo/font-tester.gif)
 
-### Add to waitlist
+## Add to waitlist
 
 The extension is submitted to store for review, once its done, you'll be notified. 
 
