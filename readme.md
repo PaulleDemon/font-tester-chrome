@@ -54,8 +54,19 @@ You can either download the dist folder from releases and load it manually
 Though the extension is free to use forever, there is an optional license you can buy to support open-source development. This will provide me with funds to develop an upcoming tool for Python developers.
 
 Pluse you get more advanced features, early access, Upcoming Edge/Firefox addons.
-
-Pre-order from store at a limited period discount price: [License](https://foxcraft.gumroad.com/l/font-tester/preorder)
+| Type                                                              | Free              | Premium                                                            |
+|-------------------------------------------------------------------|-------------------|--------------------------------------------------------------------|
+| **Support open-source development**                               | 👍️                 | 😎                                                                  |
+| **Priority support** - (priorities your feature requests, issues) | community support | ✅                                                                  |
+| **Lifetime license** (one-time  purchase)                         | 👍️                 | ✅                                                                  |
+| **Lifetime updates**                                              | ❓️                 | ✅                                                                  |
+| **Early access** to upcoming features                             | ❌                 | ✅                                                                  |
+| **Adjust font size** (upcoming)                                   | ❌                 | ✅                                                                  |
+| **Adjust font color**(upcoming)                                   | ❌                 | ✅                                                                  |
+| **Dark theme** (upcoming)                                         | ❌                 | ✅                                                                  |
+| **Extension for Edge and Firefox** (upcoming)                     | ❌                 | ✅                                                                  |
+| **Price**                                                         | Free             | ~~$49~~ $19 (save 61.22%. for limited time)                        |
+| Pre-order now!                                                    |  -                | [Get license](https://foxcraft.gumroad.com/l/font-tester/preorder) |
 
 ---
 **Other ways to support open-source**

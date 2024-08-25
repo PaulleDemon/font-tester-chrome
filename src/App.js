@@ -230,13 +230,13 @@ function App() {
 
 				<div className="tw-h-[100px] tw-select-none tw-bg-[#f0f0f0ef] tw-rounded-lg tw-p-2  tw-min-h-[100px] tw-flex tw-flex-col tw-overflow-y-auto">
 					<div ref={selectionFontPreview} 
-							className=" tw-m-auto tw-text-xl">
+							className=" tw-m-auto tw-text-[18px]"> {/*The font sizes are more explicit, because some website interfere with the font size*/}
 						Selection Text
 					</div>
 				</div>
 				<hr />
 				<div className="tw-flex tw-flex-col tw-gap-1">
-					<h2 className="tw-text-lg">Google fonts</h2>
+					<h2 className="tw-text-[18px]">Google fonts</h2>
 					<Select showSearch dropdownStyle={{zIndex: "11000"}} 
 						options={fontOptions}
 						placeholder="select font"

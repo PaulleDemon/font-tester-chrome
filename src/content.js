@@ -39,6 +39,7 @@ const createStyleElement = (cssContent) => {
 
 		// Create a root element inside the shadow DOM
 		const shadowRootContainer = document.createElement('div')
+		shadowRootContainer.id = "font-selector-shadow-dom"
 		shadowRoot.appendChild(shadowRootContainer)
 
 		shadowRoot.appendChild(createStyleElement(tailwindStyles))

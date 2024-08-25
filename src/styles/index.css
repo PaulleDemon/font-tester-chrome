@@ -1,22 +1,29 @@
+/* :host {
+  font-size: 16px; 
+  font-family: sans-serif;
+} */
+
+:host { font-size: initial }
+
 /* width */
-#font-selector-root ::-webkit-scrollbar {
+#font-selector-shadow-dom ::-webkit-scrollbar {
     width: 5px;
     height: 5px;
 }
   
   /* Track */
-#font-selector-root  ::-webkit-scrollbar-track {
+#font-selector-shadow-dom  ::-webkit-scrollbar-track {
     background: transparent; 
   }
    
   /* Handle */
-#font-selector-root  ::-webkit-scrollbar-thumb {
+#font-selector-shadow-dom  ::-webkit-scrollbar-thumb {
     background: #c2c2c2; 
     border-radius: 5px;
   }
   
   /* Handle on hover */
-#font-selector-root  ::-webkit-scrollbar-thumb:hover {
+#font-selector-shadow-dom  ::-webkit-scrollbar-thumb:hover {
     background: #555; 
 }
 
