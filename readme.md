@@ -14,16 +14,13 @@ Now you can go to your website, click on the extension, test fonts and pick the 
 
 ![font tester demo](./docs/demo/font-tester.gif)
 
-## Add to waitlist
+## Download
 
-The extension is submitted to store for review, once its done, you'll be notified. 
+Download the extension from [Chrome Extension store](https://chromewebstore.google.com/detail/font-tester/deachoodakeofjlfikfkohihnpcgiaim)
 
-Join the waitlist with others: [Join waitlist](https://getwaitlist.com/waitlist/19742)
+or
 
-or 
-
----
-You can either download the dist folder from releases and load it manually
+You can download the dist folder from releases and load it manually
 
 
 ## Whom is the meant for?
