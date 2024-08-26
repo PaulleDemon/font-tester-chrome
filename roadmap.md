@@ -11,5 +11,6 @@ Any feature that has 👑 beside it, is meant only for premium users
 - [ ]  Font Color - directly manipulate font color 👑
 
 ### 2.0.0
+- [ ] Filter fonts - Eg: sans, display etc 
 - [ ] Dark theme 👑
 - [ ] Extension for FireFox and Edge 👑
