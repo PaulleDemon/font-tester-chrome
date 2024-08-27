@@ -19,6 +19,7 @@
     "start": "NODE_ENV=development webpack serve --config webpack.config.js",
     "build": "NODE_ENV=production webpack --config webpack.config.js",
     "build:dev": "NODE_ENV=development webpack --config webpack.config.js",
+    "build:widget": "NODE_ENV=production BUILD_FOLDER='./landing-page/widget' webpack --config webpack.config.js",
     "start:tailwind": "cross-env NODE_ENV=development tailwindcss --postcss -i ./landing-page/css/tailwind.css -o ./landing-page/css/tailwind-runtime.css -w",
     "build:tailwind": "cross-env NODE_ENV=production tailwindcss --postcss -i ./landing-page/css/tailwind.css -o ./landing-page/css/tailwind-build.css --minify",
     "test": "react-scripts test",

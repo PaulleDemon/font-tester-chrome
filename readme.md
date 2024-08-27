@@ -39,6 +39,10 @@ You can download the dist folder from releases and load it manually
 5. Select a font.
 6. Copy the code and use it. Yes, that's it
 
+> [!NOTE]
+During partial text selection, the fonts applied will affect the entire text between the elements, because, inserting elements around selection may affect the style. However, 
+In the future we may wrap an element around the selection, based on the user feedback. 
+
 ## Features of Font Tester
 ✅ Test 1000+ google fonts <br>
 ✅ Move the modal around the webpage. <br>

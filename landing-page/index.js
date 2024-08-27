@@ -102,7 +102,31 @@ const swiper = new Swiper(".slideshow-container", {
     },
 })
 
+const videoBg = document.querySelector("#video-container-bg")
+const videoContainer = document.querySelector("#video-container")
 
+function openVideo(){
+    videoBg.classList.remove("tw-scale-0", "tw-opacity-0")
+    videoBg.classList.add("tw-scale-100", "tw-opacity-100")
+    videoContainer.classList.remove("tw-scale-0")
+    videoContainer.classList.add("tw-scale-100")
+
+    document.body.classList.add("modal-open")
+}
+
+function closeVideo(){
+    videoContainer.classList.add("tw-scale-0")
+    videoContainer.classList.remove("tw-scale-100")
+
+    setTimeout(() => {
+        videoBg.classList.remove("tw-scale-100", "tw-opacity-100")
+        videoBg.classList.add("tw-scale-0", "tw-opacity-0")
+    }, 400)
+   
+
+    document.body.classList.remove("modal-open")
+
+}
 
 const faqAccordion = document.querySelectorAll('.faq-accordion')
 

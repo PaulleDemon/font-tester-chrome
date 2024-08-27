@@ -14,6 +14,7 @@ module.exports = {
   entry: {
     background: './src/background.js',
     content: './src/content.js',
+    // content: './src/contentOriginal.js',
     // index: './src/index.js', 
     // css: './src/styles/index.css', 
     // popup: './src/popup.js', // If you have a popup script
@@ -24,7 +25,7 @@ module.exports = {
   },
   output: {
     filename: '[name].js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, process.env.BUILD_FOLDER || 'dist'),
     clean: true,
   },
   module: {
