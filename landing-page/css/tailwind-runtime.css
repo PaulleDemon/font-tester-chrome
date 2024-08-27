@@ -707,6 +707,10 @@ video {
   height: fit-content;
 }
 
+.tw-h-\[80vh\] {
+  height: 80vh;
+}
+
 .tw-max-h-\[800px\] {
   max-height: 800px;
 }
@@ -753,6 +757,18 @@ video {
 
 .tw-min-h-\[100px\] {
   min-height: 100px;
+}
+
+.tw-min-h-\[80vh\] {
+  min-height: 80vh;
+}
+
+.tw-min-h-\[60vh\] {
+  min-height: 60vh;
+}
+
+.tw-min-h-\[70vh\] {
+  min-height: 70vh;
 }
 
 .\!tw-w-full {
