@@ -32,7 +32,7 @@ You can download the dist folder from releases and load it manually
 * People who want to learn how to create chrome extension with ReactJs.
 
 ## How to use Font Tester?
-1. Go to chrome extensions and download: 
+1. Go to chrome extensions store and download [Font tester](https://github.com/PaulleDemon/font-tester-chrome/blob/main/roadmap.md)
 2. Now pin the extension from the puzzle extension icon, located at the top right.
 3. Click on the extension, wait few seconds for it to load on your website.
 4. Now highlight a text.
