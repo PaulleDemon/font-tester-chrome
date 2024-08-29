@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "Font tester",
-    "description": "Test different fonts types on a webpage. Made for developers",
+    "description": "Test and preview 1000+ font on any webpage. Made for developers",
     "version": "1.0",
     "icons": {
         "16": "icons/icon16.png",

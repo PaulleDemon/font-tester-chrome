@@ -8,6 +8,9 @@ google-fonts-raw.json
 
 .env
 
+dist.crx
+dist.pem
+
 dist.zip
 dist/
 
