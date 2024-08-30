@@ -2,6 +2,8 @@ chrome.runtime.onInstalled.addListener(() => {
 
 })
 
+// FIXME: isContentScript seems to be global, so sometimes if the extension 
+// is opened on another webpage, we'll have to double click to open on other pages.
 let isContentScriptInjected = false
 // let tabId = null
 
@@ -68,3 +70,5 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 		})
     }
 })
+
+chrome.runtime.setUninstallURL("https://tally.so/r/mKLXVX") // ask for feedback

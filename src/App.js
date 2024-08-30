@@ -2,7 +2,10 @@
 import { useCallback, useEffect, useRef, useState } from "react"
 
 import { Select, Slider, Tabs, Tooltip, Button, message, Tag } from "antd"
-import { BoldOutlined, CloseOutlined, CrownFilled, EllipsisOutlined, GithubFilled, HighlightOutlined, HolderOutlined, ItalicOutlined, QuestionCircleOutlined, RestOutlined, ShareAltOutlined, UnderlineOutlined, UndoOutlined } from "@ant-design/icons"
+import { CloseOutlined, CrownFilled, 
+		GithubFilled, HighlightOutlined, HolderOutlined, ItalicOutlined, 
+		QuestionCircleOutlined, RetweetOutlined, ShareAltOutlined, 
+		UnderlineOutlined, UndoOutlined } from "@ant-design/icons"
 
 import { useMovable } from "./utils/hooks"
 
@@ -192,12 +195,23 @@ function App() {
 			e.removeAttribute("data-font-selector")
 		})
 		
+	}
+
+	function randomFont(){
+
+		const randomType = Fonts[randomInt(0, Fonts.length)]
+
+		setCurrentFont(prev => ({
+			...prev, 
+			family: randomType.family,
+			category: randomType.category,
+		}))
 
 	}
 	
 
 	return (
-		<div ref={widgetRef} className="tw-bg-white tw-overflow-hidden tw-text-black tw-z-[10000] tw-flex tw-flex-col tw-shadow-xl tw-p-3 tw-rounded-xl" 
+		<div ref={widgetRef} className="tw-bg-white tw-overflow-hidden tw-text-black !tw-z-[100000] tw-flex tw-flex-col tw-shadow-xl tw-p-3 tw-rounded-xl" 
 				style={{
 					position: "fixed",
 					top: position.y,
@@ -237,14 +251,28 @@ function App() {
 				<hr />
 				<div className="tw-flex tw-flex-col tw-gap-1">
 					<h2 className="tw-text-[18px]">Google fonts</h2>
-					<Select showSearch dropdownStyle={{zIndex: "11000"}} 
-						options={fontOptions}
-						placeholder="select font"
-						onChange={onFontUpdate}
-						filterOption={(input, option) =>
-							(option?.label ?? '').toLowerCase().includes(input.toLowerCase())
-						  }
-						/>
+					<div class="tw-flex tw-gap-2">
+						<Select showSearch dropdownStyle={{zIndex: "11000"}} 
+							options={fontOptions}
+							placeholder="select font"
+							onChange={onFontUpdate}
+							filterOption={(input, option) =>
+								(option?.label ?? '').toLowerCase().includes(input.toLowerCase())
+							}
+							/>
+						
+						<Tooltip title="Random fonts" overlayStyle={{zIndex: "12000"}}>
+							<Button 
+									onChange={randomFont}
+									className={`!tw-text-lg hover:!tw-bg-gray-100 hover:!tw-color-black`}
+									style={{outline: "none", border: "none", color: "#000", 
+											backgroundColor: "transparent", display: "flex",
+											justifyContent: "center",
+											padding: "0.5rem 0.75rem", borderRadius: "0.375rem"}}>
+								<RetweetOutlined />
+							</Button>
+						</Tooltip>
+					</div>
 				</div>
 
 				<div className="tw-flex tw-flex-col tw-gap-1">
