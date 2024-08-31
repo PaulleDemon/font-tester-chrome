@@ -1,9 +1,10 @@
 # Font tester - Fonts made easy (chrome extension)
 
 
-[Font tester](https://font-type.vercel.app)
-
 <p><img src="./public/logos/logox500.png" alt="font tester logo" width="100" height="100"></p>
+
+[Font tester about](https://font-type.vercel.app)
+
 
 Finding it difficult to choose the right font? 
 Now test 1000+ free google font types on your website.
