@@ -1,6 +1,8 @@
 # Font tester - Fonts made easy (chrome extension)
 
 
+[Font tester](https://font-type.vercel.app)
+
 <p><img src="./public/logos/logox500.png" alt="font tester logo" width="100" height="100"></p>
 
 Finding it difficult to choose the right font? 
@@ -12,7 +14,7 @@ one of the reason I created Font Tester.
 
 Now you can go to your website, click on the extension, test fonts and pick the one you like along with the code.
 
-![font tester demo](./docs/demo/font-tester.gif)
+![font tester demo](./docs/demo/fonttester.gif)
 
 ## Download
 
@@ -32,7 +34,7 @@ You can download the dist folder from releases and load it manually
 * People who want to learn how to create chrome extension with ReactJs.
 
 ## How to use Font Tester?
-1. Go to chrome extensions store and download [Font tester](https://github.com/PaulleDemon/font-tester-chrome/blob/main/roadmap.md)
+1. Go to chrome extensions store and download [Font tester](https://chromewebstore.google.com/detail/font-tester/deachoodakeofjlfikfkohihnpcgiaim)
 2. Now pin the extension from the puzzle extension icon, located at the top right.
 3. Click on the extension, wait few seconds for it to load on your website.
 4. Now highlight a text.
@@ -99,7 +101,7 @@ Pluse you get more advanced features, early access, Upcoming Edge/Firefox addons
 * Tailwind css
 
 
-### Contributing
+### Running it locally
 
 The `manifest.json` required for extension is located inside the public folder.
 
