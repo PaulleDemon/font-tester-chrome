@@ -6,7 +6,7 @@
 [Font tester about ↗️](https://font-type.vercel.app)
 
 <a href="https://chromewebstore.google.com/detail/font-tester/deachoodakeofjlfikfkohihnpcgiaim">
-    <img src="./docs/badges/chrom-store.png" width="150">
+    <img src="./docs/badges/chrom-store.png" width="180">
 </a>
 
 Finding it difficult to choose the right font? 
