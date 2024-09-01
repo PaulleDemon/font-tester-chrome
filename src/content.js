@@ -4,8 +4,10 @@ import root from 'react-shadow'
 
 window.React = React
 
+// TODO: remove the below styling, because repetition
 import "./styles/tailwind.css"
 import "./styles/index.css"
+
 import tailwindStyles from './styles/tailwind.css'
 import styles from './styles/index.css'
 
