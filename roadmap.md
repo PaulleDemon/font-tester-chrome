@@ -1,6 +1,6 @@
 ## Road map for Font Tester
 
-Any feature that has 👑 beside it, is meant only for premium users
+Any feature that has 👑 beside it, is meant only for [premium users](./readme.md#license--support)
 
 ### 1.0.0
 - [x] Create the initial version for Font Tester 
