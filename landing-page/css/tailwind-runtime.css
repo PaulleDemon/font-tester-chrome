@@ -631,6 +631,10 @@ video {
   margin-top: 2.5rem;
 }
 
+.tw-mt-2 {
+  margin-top: 0.5rem;
+}
+
 .tw-mt-3 {
   margin-top: 0.75rem;
 }
@@ -655,12 +659,24 @@ video {
   margin-top: auto;
 }
 
+.tw-mt-\[2\%\] {
+  margin-top: 2%;
+}
+
 .tw-flex {
   display: flex;
 }
 
 .\!tw-hidden {
   display: none !important;
+}
+
+.tw-hidden {
+  display: none;
+}
+
+.\!tw-h-\[150px\] {
+  height: 150px !important;
 }
 
 .tw-h-10 {
@@ -831,6 +847,10 @@ video {
   max-width: 50%;
 }
 
+.tw-max-w-\[550px\] {
+  max-width: 550px;
+}
+
 .tw-max-w-\[80vw\] {
   max-width: 80vw;
 }
@@ -958,6 +978,10 @@ video {
 
 .tw-gap-\[20px\] {
   gap: 20px;
+}
+
+.tw-gap-\[5\%\] {
+  gap: 5%;
 }
 
 .tw-overflow-hidden {
@@ -1155,6 +1179,10 @@ video {
   text-align: center;
 }
 
+.tw-text-justify {
+  text-align: justify;
+}
+
 .\!tw-text-4xl {
   font-size: 2.25rem !important;
   line-height: 2.5rem !important;
@@ -1225,6 +1253,10 @@ video {
   text-transform: uppercase;
 }
 
+.tw-italic {
+  font-style: italic;
+}
+
 .tw-ordinal {
   --tw-ordinal: ordinal;
   font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction);
@@ -1291,6 +1323,11 @@ video {
 .tw-text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.tw-text-yellow-400 {
+  --tw-text-opacity: 1;
+  color: rgb(250 204 21 / var(--tw-text-opacity));
 }
 
 .tw-underline {
@@ -1583,6 +1620,11 @@ video {
   .max-md\:tw-text-3xl {
     font-size: 1.875rem;
     line-height: 2.25rem;
+  }
+
+  .max-md\:tw-text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
 
   .max-md\:tw-text-lg {

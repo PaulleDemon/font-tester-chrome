@@ -175,3 +175,9 @@ sections.forEach((sec) => {
 
 
 })
+
+
+
+const reviewContainer = document.querySelector(".review-container")
+const reviewSlideShow = new SlideShow(reviewContainer, true, 10000)
+

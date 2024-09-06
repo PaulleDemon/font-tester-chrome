@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Fondamento&family=chivo&family=Bellota&family=Battambang&family=Archivo+Black&family=Didact+Gothic&family=Sedgwick+Ave');
+@import url('https://fonts.googleapis.com/css2?family=Fondamento&family=chivo&family=Bellota&family=Battambang&family=Archivo+Black&family=Didact+Gothic&family=Sedgwick+Ave&family=Rowdies');
 /* @import url('https://fonts.googleapis.com/css2?family=Chivo');
 @import url('https://fonts.googleapis.com/css2?family=Bellota');
 @import url('https://fonts.googleapis.com/css2?family=Battambang');
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black'); 
-@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic'); */
+@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic');
+@import url('https://fonts.googleapis.com/css2?family=Rowdies'); */
 
-
-
+	
 :root{
 
     --bg-color: #fff;
@@ -65,7 +65,10 @@ html {
     line-height: 1.5;
 }
 
-
+.rowdies-family{
+    font-family: "Rowdies", system-ui;
+    font-weight: 400;
+}
 
 
 header{
@@ -223,6 +226,27 @@ header > .collapsible-header{
 
 .footer-link:hover{
     color: #0b0b0b;
+}
+
+/* Navigation dots styling */
+.dots-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.dots-container .active,
+.dot:hover {
+    background-color: #717171;
 }
 
 /* Next & previous buttons */
