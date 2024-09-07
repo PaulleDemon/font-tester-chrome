@@ -74,34 +74,6 @@ gsap.fromTo(".slide-in", {
 })
 
 
-const swiper = new Swiper(".slideshow-container", {
-    effect: "creative",
-    grabCursor: true,
-    loop: true,
-    centeredSlides: true,
-    slidesPerView: "auto",
-    creativeEffect: {
-        prev: {
-          shadow: true,
-          origin: "left center",
-          translate: ["-5%", 0, -200],
-          rotate: [0, 100, 0],
-        },
-        next: {
-          origin: "right center",
-          translate: ["5%", 0, -200],
-          rotate: [0, -100, 0],
-        },
-    },
-    navigation: {
-        nextEl: '.next',
-        prevEl: '.prev',
-    },
-    autoplay: {
-        delay: 3000,
-    },
-})
-
 const videoBg = document.querySelector("#video-container-bg")
 const videoContainer = document.querySelector("#video-container")
 
