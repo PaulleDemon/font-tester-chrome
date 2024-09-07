@@ -28,6 +28,11 @@ or
 
 You can download the dist folder from releases and load it manually
 
+## Want to support open-source
+To keep open-source running consider buying a one time [license](https://font-type.vercel.app/) or feel free to buy me a coffee.
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/L3L612WN7K)
+
 
 ## Whom is the meant for?
 * Frontend developers.
@@ -79,8 +84,6 @@ Pluse you get more advanced features, early access, Upcoming Edge/Firefox addons
 **Other ways to support open-source**
 
 * Order a [custom work](https://tally.so/r/woO0Kx).
-* Order a premium SaaS [Landing page template](https://foxcraft.gumroad.com/l/ai-saas-landingpage/saasboost)
-
 
 ## Current limitations
 * Cannot execute the script in chrome extension store, its blocked by default
