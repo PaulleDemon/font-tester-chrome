@@ -102,6 +102,35 @@ function App({ container }) {
 	}, [])
 
 	useEffect(() => {
+		
+		
+		const hideFilterDropDown = (event) => {
+			// console.log("Hide: ", event.target, event.composedPath(), event.target.classList, filterDropDownRef.current?.nativeElement.contains(event.target))
+			
+			const eventTarget = event.target
+
+			if (showFilter && 
+					!filterDropDownRef.current?.nativeElement.contains(eventTarget) &&
+					!eventTarget.classList.contains("ant-select-dropdown") &&
+					!eventTarget.classList.contains("ant-select-item-option-content")
+				){
+				setShowFilter(false)
+			}
+		}
+
+		if (showFilter){
+			setTimeout( () => container.addEventListener("click", hideFilterDropDown), 10)
+		}else{
+			container.removeEventListener("click", hideFilterDropDown)
+		}
+
+		return () => {
+			container.removeEventListener("click", hideFilterDropDown)
+		}
+
+	}, [filterDropDownRef, showFilter])
+
+	useEffect(() => {
 
 		window.document.addEventListener("selectionchange", updateSelection)
 
@@ -253,33 +282,6 @@ function App({ container }) {
 
 	}
 
-	const hideFilterOnBlur = (event) => {
-
-		console.log("filter dorpdown: ", event.target, filterDropDownRef, filterDropDownRef.current?.contains(event.target))
-
-		if (!filterDropDownRef.current?.contains(event.target)) {
-			setShowFilter(false); // Close the filter dropdown
-		}
-
-	}
-
-
-	const toggleFilter = () => {
-		setShowFilter(!showFilter)
-		if (!showFilter === true) {
-
-			// setTimeout(() => {
-			// 	document.addEventListener("click", hideFilterOnBlur)
-			// }, 10)
-
-		} else {
-			filterDropDownRef.current?.focus()
-
-			// document.removeEventListener("click", hideFilterOnBlur)
-		}
-
-	}
-
 
 	return (
 		<div ref={widgetRef} className="tw-bg-white tw-overflow-hidden tw-text-black tw-flex tw-flex-col tw-shadow-xl tw-p-3 tw-rounded-xl"
@@ -328,7 +330,8 @@ function App({ container }) {
 						<div className="tw-relative">
 							<Tooltip title="Filter fonts" overlayStyle={{ zIndex: 1200000000 }}>
 								<Tag.CheckableTag checked={showFilter}
-									onClick={toggleFilter}
+									onClick={() => setShowFilter(!showFilter)}
+									// onChange={(val) => setShowFilter(val)}
 									className={` 
 													${filter.length > 0 ? "!tw-border-[#2076c7] !tw-bg-gray-100" : "!tw-border-transparent"}
 													!tw-border-[1px] !tw-border-solid 
@@ -344,7 +347,7 @@ function App({ container }) {
 									<SlidersOutlined />
 								</Tag.CheckableTag>
 							</Tooltip>
-
+							{showFilter}
 							{
 								showFilter && (
 									<div className="tw-absolute tw-bg-white tw-right-0 tw-top-10 tw-p-2  
@@ -354,14 +357,17 @@ function App({ container }) {
 										<Select
 											mode="multiple"
 											allowClear
+											ref={filterDropDownRef}
+											dropdownStyle={{ zIndex: 1200000000 }}
 											style={{
 												width: '100%',
 											}}
-											placeholder="Please select"
+											// onBlur={() => setShowFilter(false)}
+											placeholder="Filter by family"
 											value={filter}
 											onChange={(value) => setFilter(value)}
 											options={fontCategoryOptions}
-											/>
+										/>
 
 										
 									</div>

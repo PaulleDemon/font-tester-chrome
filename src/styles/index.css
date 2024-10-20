@@ -1,9 +1,13 @@
-/* :host {
-  font-size: 16px; 
+:host {
+  font-size: initial;
   font-family: sans-serif;
+}
+
+/* #font-selector-root{
+  font-size: initial;
 } */
 
-:host { font-size: initial }
+/* :host { font-size: initial } */
 
 /* width */
 #font-selector-shadow-dom ::-webkit-scrollbar {

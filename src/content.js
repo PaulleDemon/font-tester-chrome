@@ -49,15 +49,17 @@ function init() {
 		shadowRoot.addEventListener('keydown', function(event) {
 			// used to prevent webpage from hijacking focus on keydown, this happens in certain websites include Github.
 			const shadowActiveElement = shadowRoot.activeElement;
-			
-			console.log("key down")
-			
-			// Check if the active element is inside the shadow DOM and belongs to extension
-			if (shadowActiveElement) {
-				console.log("key down2")
-				// Let the event propagate within the shadow DOM but prevent the webpage from responding
+
+			// allow arrow up and drown to be propagated so, select components can use arrows to cycle up and down 
+			if (shadowActiveElement && ["ArrowUp", "ArrowDown", "Enter"].includes(event.key)) {
+				// Allow event propagation for Ant Design Select components
+				return;
 			}
-			// event.stopPropagation();
+	
+			if (shadowActiveElement) {
+				event.stopPropagation();
+			}
+	
 		}, true);
 
 		const root = ReactDOM.createRoot(shadowRootContainer)
