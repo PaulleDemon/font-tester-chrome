@@ -4,9 +4,6 @@ import root from 'react-shadow'
 
 window.React = React
 
-// TODO: remove the below styling, because repetition
-import "./styles/tailwind.css"
-import "./styles/index.css"
 
 import tailwindStyles from './styles/tailwind.css'
 import styles from './styles/index.css'
@@ -26,7 +23,7 @@ const createStyleElement = (cssContent) => {
 }
 
 
-(function () {
+function init() {
 	const containerId = 'font-selector-root'
 	const existingContainer = document.getElementById(containerId)
 
@@ -49,7 +46,19 @@ const createStyleElement = (cssContent) => {
         
 		document.body.appendChild(createStyleElement(styles)) // this is to ensure that the antd message is always on top
 
+		shadowRoot.addEventListener('keydown', function(event) {
+			// used to prevent webpage from hijacking focus on keydown, this happens in certain websites include Github.
+			const shadowActiveElement = shadowRoot.activeElement;
+			
+			// Check if the active element is inside the shadow DOM and belongs to extension
+			if (shadowActiveElement) {
+				// Let the event propagate within the shadow DOM but prevent the webpage from responding
+				event.stopPropagation();
+			}
+		}, true);
+
 		const root = ReactDOM.createRoot(shadowRootContainer)
+
 		root.render(
 			<React.StrictMode>
 				<StyleProvider container={shadowRoot}>
@@ -58,7 +67,7 @@ const createStyleElement = (cssContent) => {
 						theme={{
 							components: {
 								Message: {
-									zIndexPopup: 14000
+									zIndexPopup: 1400000000
 								}
 							},
                         }}
@@ -69,4 +78,6 @@ const createStyleElement = (cssContent) => {
 			</React.StrictMode>
 		)
 	}
-})()
+}
+
+init()

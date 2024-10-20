@@ -5,6 +5,7 @@ import { Select, Slider, Tabs, Tooltip, Button, message, Tag } from "antd"
 import { CloseOutlined, CrownFilled, 
 		GithubFilled, HighlightOutlined, HolderOutlined, ItalicOutlined, 
 		QuestionCircleOutlined, RetweetOutlined, ShareAltOutlined, 
+		SlidersOutlined, 
 		UnderlineOutlined, UndoOutlined } from "@ant-design/icons"
 
 import { useMovable } from "./utils/hooks"
@@ -15,6 +16,7 @@ import CodeSection from "./codeSection"
 import Share from "./utils/share"
 import Premium from "./utils/premium"
 import { getRangeSelectedNodes } from "./utils/selection"
+import { randomInt } from "./utils/utils"
 // import { ReactComponent as BMC } from './assets/logos/bmc.svg'
 
 
@@ -33,7 +35,7 @@ function App() {
 
 	const widgetRef = useRef()
 	const selectionFontPreview = useRef()
-
+	const selectDropDownRef = useRef()
 
 	const { position, handleMouseDown } = useMovable({ x: defaultPosition.x, y: defaultPosition.y}) // set the current position, if useEffect is used, recursion error occurs
 	
@@ -211,7 +213,7 @@ function App() {
 	
 
 	return (
-		<div ref={widgetRef} className="tw-bg-white tw-overflow-hidden tw-text-black !tw-z-[100000] tw-flex tw-flex-col tw-shadow-xl tw-p-3 tw-rounded-xl" 
+		<div ref={widgetRef} className="tw-bg-white tw-overflow-hidden tw-text-black tw-flex tw-flex-col tw-shadow-xl tw-p-3 tw-rounded-xl" 
 				style={{
 					position: "fixed",
 					top: position.y,
@@ -220,6 +222,7 @@ function App() {
 					bottom: "auto",
 					width: "300px",
 					height: "700px",
+					zIndex: 1000000000 // alway stay on top
 				}}>
 			<div className="tw-flex !tw-select-none tw-items-center tw-w-full tw-justify-between">
 				<div className="tw-bg-[#f4f4f4] tw-cursor-move tw-p-1 tw-px-3 tw-rounded-md"
@@ -250,28 +253,46 @@ function App() {
 				</div>
 				<hr />
 				<div className="tw-flex tw-flex-col tw-gap-1">
-					<h2 className="tw-text-[18px]">Google fonts</h2>
-					<div class="tw-flex tw-gap-2">
-						<Select showSearch dropdownStyle={{zIndex: "11000"}} 
-							options={fontOptions}
-							placeholder="select font"
-							onChange={onFontUpdate}
-							filterOption={(input, option) =>
-								(option?.label ?? '').toLowerCase().includes(input.toLowerCase())
-							}
-							/>
-						
-						<Tooltip title="Random fonts" overlayStyle={{zIndex: "12000"}}>
+					
+					<div className="tw-flex tw-justify-between tw-place-content-center">
+						<h2 className="tw-text-[18px]">Google fonts</h2>
+						<Tooltip title="Filter fonts" overlayStyle={{zIndex: 1200000000}}>
+						<Tag.CheckableTag checked={false}
+								onChange={(checked) => {setEnableSelection(checked)}}
+								className={`${enableSelection && "!tw-bg-gray-100"} !tw-text-lg hover:!tw-bg-gray-100 hover:!tw-color-black`}
+								style={{outline: "none", border: "none", color: "#000", 
+										backgroundColor: "transparent", display: "flex",
+										justifyContent: "center",
+										padding: "0.5rem 0.75rem", borderRadius: "0.375rem"}}>
+							<SlidersOutlined />
+						</Tag.CheckableTag>
+					</Tooltip>
+					</div>
+					<div className="tw-flex tw-gap-2">
+						<Tooltip title="Pick random font" overlayStyle={{zIndex: 1200000000}}>
 							<Button 
-									onChange={randomFont}
-									className={`!tw-text-lg hover:!tw-bg-gray-100 hover:!tw-color-black`}
+									onClick={randomFont}
+									className={`!tw-text-base hover:!tw-bg-gray-100 hover:!tw-color-black`}
 									style={{outline: "none", border: "none", color: "#000", 
 											backgroundColor: "transparent", display: "flex",
 											justifyContent: "center",
+											maxWidth: "40px",
 											padding: "0.5rem 0.75rem", borderRadius: "0.375rem"}}>
 								<RetweetOutlined />
 							</Button>
 						</Tooltip>
+						<Select showSearch 
+							ref={selectDropDownRef}
+							value={currentFont.family}
+							dropdownStyle={{zIndex: 1200000000}} 
+							options={fontOptions}
+							placeholder="select font"
+							onChange={onFontUpdate}
+							style={{width: "100%"}}
+							filterOption={(input, option) =>
+								(option?.label ?? '').toLowerCase().includes(input.toLowerCase())
+							}
+						/>
 					</div>
 				</div>
 
@@ -283,7 +304,7 @@ function App() {
 								step={0.1}
 								value={currentFont.lineHeight === "normal" ? 1 : currentFont.lineHeight}
 								onChange={(val) => setCurrentFont({...currentFont, lineHeight: val})}
-								tooltip={{overlayStyle: {zIndex: "12000"}}}
+								tooltip={{overlayStyle: {zIndex: 1200000000}}}
 								/>
 					</div>
 				
@@ -294,14 +315,14 @@ function App() {
 								step={100}
 								value={currentFont.fontWeight === "normal" ? 400 : currentFont.fontWeight}
 								onChange={(val) => setCurrentFont({...currentFont, fontWeight: val})}
-								tooltip={{overlayStyle: {zIndex: "12000"}}}
+								tooltip={{overlayStyle: {zIndex: 1200000000}}}
 								/>
 					</div>
 				</div>
 						  
 				<div className="tw-flex tw-gap-3">
 
-					<Tooltip title="Enable selection" overlayStyle={{zIndex: "12000"}}>
+					<Tooltip title="Enable selection" overlayStyle={{zIndex: 1200000000}}>
 						<Tag.CheckableTag checked={enableSelection}
 								onChange={(checked) => {setEnableSelection(checked)}}
 								className={`${enableSelection && "!tw-bg-gray-100"} !tw-text-lg hover:!tw-bg-gray-100 hover:!tw-color-black`}
@@ -312,7 +333,7 @@ function App() {
 							<HighlightOutlined />
 						</Tag.CheckableTag>
 					</Tooltip>
-					<Tooltip title="Italics" overlayStyle={{zIndex: "12000"}}>
+					<Tooltip title="Italics" overlayStyle={{zIndex: 1200000000}}>
 						<Tag.CheckableTag checked={currentFont.italics}
 								onChange={(checked) => setCurrentFont({...currentFont, italics: checked})}
 								className={`${currentFont.italics && "!tw-bg-gray-100"} !tw-text-lg hover:!tw-bg-gray-100 hover:!tw-color-black`}
@@ -323,7 +344,7 @@ function App() {
 							<ItalicOutlined />
 						</Tag.CheckableTag>
 					</Tooltip>
-					<Tooltip title="Underline" overlayStyle={{zIndex: "12000"}}>
+					<Tooltip title="Underline" overlayStyle={{zIndex: 1200000000}}>
 						<Tag.CheckableTag checked={currentFont.underline}
 								onChange={(checked) => setCurrentFont({...currentFont, underline: checked})}
 								className={`${currentFont.underline && "!tw-bg-gray-100"} !tw-text-lg hover:!tw-bg-gray-100 hover:!tw-color-black`}
@@ -335,7 +356,7 @@ function App() {
 						</Tag.CheckableTag>
 					</Tooltip>
 
-					<Tooltip title="Reset" overlayStyle={{zIndex: "12000"}}>
+					<Tooltip title="Reset" overlayStyle={{zIndex: 1200000000}}>
 						<button onClick={onReset} className="hover:!tw-bg-gray-100 hover:!tw-color-black" 
 													style={{outline: "none", border: "none", color: "#000", 
 															backgroundColor: "transparent",

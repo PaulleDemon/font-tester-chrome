@@ -23,7 +23,7 @@ function Premium({children, className=""}){
         <div onClick={onClick} className={className}>
             {children}
             <Modal title={<h3 className="tw-text-xl tw-font-medium">Buy One Time License</h3>} 
-                    styles={{wrapper: {zIndex: 14000, gap: "10px"}}}
+                    styles={{wrapper: {zIndex: 1400000000, gap: "10px"}}}
                     onCancel={onClose}
                     onOk={onClose}
                     footer={null}
