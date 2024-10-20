@@ -1,12 +1,14 @@
 
-import { useCallback, useEffect, useRef, useState } from "react"
+import React, { useCallback, useEffect, useRef, useState } from "react"
 
 import { Select, Slider, Tabs, Tooltip, Button, message, Tag } from "antd"
-import { CloseOutlined, CrownFilled, 
-		GithubFilled, HighlightOutlined, HolderOutlined, ItalicOutlined, 
-		QuestionCircleOutlined, RetweetOutlined, ShareAltOutlined, 
-		SlidersOutlined, 
-		UnderlineOutlined, UndoOutlined } from "@ant-design/icons"
+import {
+	CloseOutlined, CrownFilled,
+	GithubFilled, HighlightOutlined, HolderOutlined, ItalicOutlined,
+	QuestionCircleOutlined, RetweetOutlined, ShareAltOutlined,
+	SlidersOutlined,
+	UnderlineOutlined, UndoOutlined
+} from "@ant-design/icons"
 
 import { useMovable } from "./utils/hooks"
 
@@ -31,54 +33,68 @@ const defaultPosition = {
 }
 
 // TODO: prevent selection on the modal
-function App() {
+function App({ container }) {
 
 	const widgetRef = useRef()
 	const selectionFontPreview = useRef()
 	const selectDropDownRef = useRef()
+	const filterDropDownRef = useRef()
 
-	const { position, handleMouseDown } = useMovable({ x: defaultPosition.x, y: defaultPosition.y}) // set the current position, if useEffect is used, recursion error occurs
-	
-	
+	const { position, handleMouseDown } = useMovable({ x: defaultPosition.x, y: defaultPosition.y }) // set the current position, if useEffect is used, recursion error occurs
+
+	const [filter, setFilter] = useState([])
+	const [showFilter, setShowFilter] = useState(false)
+
+	const [fontCategoryOptions, setFontCategoryOptions] = useState([])
+
 	const [enableSelection, setEnableSelection] = useState(true)
 	const [fontOptions, setFontOptions] = useState([])
 	const [currentFont, setCurrentFont] = useState({
-												family: "",
-												category: "",
-												fontWeight: "normal",
-												lineHeight: "normal",
-												underline: false,
-												italics:  false
-											})
-	
+		family: "",
+		category: "",
+		fontWeight: "normal",
+		lineHeight: "normal",
+		underline: false,
+		italics: false
+	})
+
 
 	useEffect(() => {
 
 		// parse and transform the json fonts to a format that can be put into autocomplete dropdown
-		if (Fonts.length > 0){
+		if (Fonts.length > 0) {
 
 			const transformedFonts = Fonts.map((x, index) => ({
 				label: x.family,
 				value: index
 			}))
 			setFontOptions(transformedFonts)
+
+			const uniqueCategories = [...new Set(Fonts.map(font => font.category))]
+
+			const categoriesOption = uniqueCategories.map(category => ({
+				label: category,
+				value: category
+			}))
+
+			setFontCategoryOptions(categoriesOption)
+
 		}
 
 	}, [Fonts])
-
 
 	useEffect(() => {
 		// check if the font cdn style link exists, else add the link once
 		const fontsLink = document.querySelector("#font-selector-link")
 
 		const styleElement = document.createElement('style')
-		if (!fontsLink){
+		if (!fontsLink) {
 			styleElement.id = "font-selector-link"
 			document.head.appendChild(styleElement)
 		}
 
 		return () => {
-			if (fontsLink){
+			if (fontsLink) {
 				styleElement.remove()
 			}
 		}
@@ -98,7 +114,7 @@ function App() {
 	useEffect(() => {
 
 		// update font styles like, weight, line height, underline and more 
-		if (currentFont.family !== "" && selectionFontPreview.current){
+		if (currentFont.family !== "" && selectionFontPreview.current) {
 			const currentFontStyle = {
 				fontFamily: `${currentFont.family}, ${currentFont.category}`,
 				fontWeight: currentFont.fontWeight,
@@ -119,6 +135,32 @@ function App() {
 
 	}, [currentFont, selectionFontPreview.current])
 
+	useEffect(() => {
+
+		// parse and transform the json fonts to a format that can be put into autocomplete dropdown
+		if (Fonts.length > 0) {
+
+			let transformedFonts
+
+			if (filter.length > 0){
+				transformedFonts = Fonts.filter((value) => filter.includes(value.category))
+									.map((x, index) => ({
+										label: x.family,
+										value: index
+									}))
+			}else{
+				transformedFonts = Fonts.map((x, index) => ({
+										label: x.family,
+										value: index
+									}))
+
+			}
+
+			setFontOptions(transformedFonts)
+		}
+
+	}, [filter])
+
 
 	const updateSelection = useCallback((evt) => {
 
@@ -128,7 +170,7 @@ function App() {
 		const selection = window.getSelection()
 		const selectedText = selection.toString()
 
-		if (!selectedText){
+		if (!selectedText) {
 			return
 		}
 		const range = selection.getRangeAt(0)
@@ -137,7 +179,7 @@ function App() {
 		const selectedNodes = getRangeSelectedNodes(range)
 
 		selectedNodes.forEach(node => {
-			if (node.nodeType === node.ELEMENT_NODE){
+			if (node.nodeType === node.ELEMENT_NODE) {
 				const defaultStyle = node.getAttribute("style")
 				node.setAttribute("data-default-style", defaultStyle || "")
 				node.setAttribute("data-font-selector", "true")
@@ -145,17 +187,17 @@ function App() {
 		})
 
 		selectionFontPreview.current.innerText = selectedText
-	
+
 	}, [enableSelection])
 
 	const handleClose = () => {
 		// console.log("run time: ", chrome.runtime)
 		onReset() // reset the selection before closing
-        chrome.runtime.sendMessage({ action: 'widgetClosed' })
-    }
+		chrome.runtime.sendMessage({ action: 'widgetClosed' })
+	}
 
 	const onFontUpdate = (value) => {
-		
+
 		const fontFamily = Fonts[value].family
 		const fontCategory = Fonts[value].category
 
@@ -170,15 +212,15 @@ function App() {
 		setCurrentFont({
 			...currentFont,
 			family: fontFamily,
-			category:  fontCategory
+			category: fontCategory
 		})
 	}
 
 
 	const onReset = () => {
 		selectionFontPreview.current.innerText = "Selection Text"
-		
-		
+
+
 		setCurrentFont({
 			...currentFont,
 			lineHeight: "normal",
@@ -192,46 +234,73 @@ function App() {
 			const defaultStyle = e.getAttribute("data-default-style")
 
 			e.setAttribute("style", defaultStyle)
-			
+
 			e.removeAttribute("data-default-style")
 			e.removeAttribute("data-font-selector")
 		})
-		
+
 	}
 
-	function randomFont(){
+	function randomFont() {
 
 		const randomType = Fonts[randomInt(0, Fonts.length)]
 
 		setCurrentFont(prev => ({
-			...prev, 
+			...prev,
 			family: randomType.family,
 			category: randomType.category,
 		}))
 
 	}
-	
+
+	const hideFilterOnBlur = (event) => {
+
+		console.log("filter dorpdown: ", event.target, filterDropDownRef, filterDropDownRef.current?.contains(event.target))
+
+		if (!filterDropDownRef.current?.contains(event.target)) {
+			setShowFilter(false); // Close the filter dropdown
+		}
+
+	}
+
+
+	const toggleFilter = () => {
+		setShowFilter(!showFilter)
+		if (!showFilter === true) {
+
+			// setTimeout(() => {
+			// 	document.addEventListener("click", hideFilterOnBlur)
+			// }, 10)
+
+		} else {
+			filterDropDownRef.current?.focus()
+
+			// document.removeEventListener("click", hideFilterOnBlur)
+		}
+
+	}
+
 
 	return (
-		<div ref={widgetRef} className="tw-bg-white tw-overflow-hidden tw-text-black tw-flex tw-flex-col tw-shadow-xl tw-p-3 tw-rounded-xl" 
-				style={{
-					position: "fixed",
-					top: position.y,
-					left: position.x,
-					right: "auto",
-					bottom: "auto",
-					width: "300px",
-					height: "700px",
-					zIndex: 1000000000 // alway stay on top
-				}}>
+		<div ref={widgetRef} className="tw-bg-white tw-overflow-hidden tw-text-black tw-flex tw-flex-col tw-shadow-xl tw-p-3 tw-rounded-xl"
+			style={{
+				position: "fixed",
+				top: position.y,
+				left: position.x,
+				right: "auto",
+				bottom: "auto",
+				width: "300px",
+				height: "700px",
+				zIndex: 1000000000 // alway stay on top
+			}}>
 			<div className="tw-flex !tw-select-none tw-items-center tw-w-full tw-justify-between">
 				<div className="tw-bg-[#f4f4f4] tw-cursor-move tw-p-1 tw-px-3 tw-rounded-md"
-					 onMouseDown={handleMouseDown}	>
+					onMouseDown={handleMouseDown}	>
 					<HolderOutlined />
 				</div>
 
 				<div className="tw-flex tw-gap-1">
-					<a href="https://github.com/PaulleDemon/font-tester-chrome?tab=readme-ov-file#font-tester---fonts-made-easy-chrome-extension" 
+					<a href="https://github.com/PaulleDemon/font-tester-chrome?tab=readme-ov-file#font-tester---fonts-made-easy-chrome-extension"
 						target="_blank"
 						rel="noopener noreferrer"
 						className="tw-cursor-pointer hover:!tw-text-black hover:tw-bg-gray-100 tw-px-2 tw-rounded-md  tw-p-1">
@@ -246,121 +315,171 @@ function App() {
 			<div className="tw-w-full tw-p-2 tw-gap-2 tw-h-full tw-flex tw-flex-col">
 
 				<div className="tw-h-[100px] tw-select-none tw-bg-[#f0f0f0ef] tw-rounded-lg tw-p-2  tw-min-h-[100px] tw-flex tw-flex-col tw-overflow-y-auto">
-					<div ref={selectionFontPreview} 
-							className=" tw-m-auto tw-text-[18px]"> {/*The font sizes are more explicit, because some website interfere with the font size*/}
+					<div ref={selectionFontPreview}
+						className=" tw-m-auto tw-text-[18px]"> {/*The font sizes are more explicit, because some website interfere with the font size*/}
 						Selection Text
 					</div>
 				</div>
 				<hr />
 				<div className="tw-flex tw-flex-col tw-gap-1">
-					
+
 					<div className="tw-flex tw-justify-between tw-place-content-center">
 						<h2 className="tw-text-[18px]">Google fonts</h2>
-						<Tooltip title="Filter fonts" overlayStyle={{zIndex: 1200000000}}>
-						<Tag.CheckableTag checked={false}
-								onChange={(checked) => {setEnableSelection(checked)}}
-								className={`${enableSelection && "!tw-bg-gray-100"} !tw-text-lg hover:!tw-bg-gray-100 hover:!tw-color-black`}
-								style={{outline: "none", border: "none", color: "#000", 
+						<div className="tw-relative">
+							<Tooltip title="Filter fonts" overlayStyle={{ zIndex: 1200000000 }}>
+								<Tag.CheckableTag checked={showFilter}
+									onClick={toggleFilter}
+									className={` 
+													${filter.length > 0 ? "!tw-border-[#2076c7] !tw-bg-gray-100" : "!tw-border-transparent"}
+													!tw-border-[1px] !tw-border-solid 
+													!tw-text-lg hover:!tw-bg-gray-100
+													hover:!tw-color-black tw-relative
+											`}
+									style={{
+										outline: "none", border: "none", color: "#000",
 										backgroundColor: "transparent", display: "flex",
 										justifyContent: "center",
-										padding: "0.5rem 0.75rem", borderRadius: "0.375rem"}}>
-							<SlidersOutlined />
-						</Tag.CheckableTag>
-					</Tooltip>
+										padding: "0.5rem 0.75rem", borderRadius: "0.375rem"
+									}}>
+									<SlidersOutlined />
+								</Tag.CheckableTag>
+							</Tooltip>
+
+							{
+								showFilter && (
+									<div className="tw-absolute tw-bg-white tw-right-0 tw-top-10 tw-p-2  
+												tw-w-[200px] tw-h-fit tw-shadow-xl tw-rounded-md tw-max-h-[100px]"
+										style={{ zIndex: 1300000000 }}
+									>
+										<Select
+											mode="multiple"
+											allowClear
+											style={{
+												width: '100%',
+											}}
+											placeholder="Please select"
+											value={filter}
+											onChange={(value) => setFilter(value)}
+											options={fontCategoryOptions}
+											/>
+
+										
+									</div>
+								)
+							}
+
+						</div>
 					</div>
-					<div className="tw-flex tw-gap-2">
-						<Tooltip title="Pick random font" overlayStyle={{zIndex: 1200000000}}>
-							<Button 
-									onClick={randomFont}
-									className={`!tw-text-base hover:!tw-bg-gray-100 hover:!tw-color-black`}
-									style={{outline: "none", border: "none", color: "#000", 
-											backgroundColor: "transparent", display: "flex",
-											justifyContent: "center",
-											maxWidth: "40px",
-											padding: "0.5rem 0.75rem", borderRadius: "0.375rem"}}>
+					<div className="tw-flex tw-gap-1 tw-w-full">
+
+						<Tooltip title="Pick random font" overlayStyle={{ zIndex: 1200000000 }}>
+							<Button
+								onClick={randomFont}
+								className={`!tw-text-base hover:!tw-bg-gray-100 hover:!tw-color-black`}
+								style={{
+									outline: "none", border: "none", color: "#000",
+									backgroundColor: "transparent", display: "flex",
+									justifyContent: "center",
+									maxWidth: "40px",
+									padding: "0.5rem 0.75rem", borderRadius: "0.375rem"
+								}}>
 								<RetweetOutlined />
 							</Button>
 						</Tooltip>
-						<Select showSearch 
+
+						<Select showSearch
 							ref={selectDropDownRef}
 							value={currentFont.family}
-							dropdownStyle={{zIndex: 1200000000}} 
+							dropdownStyle={{ zIndex: 1200000000 }}
 							options={fontOptions}
 							placeholder="select font"
 							onChange={onFontUpdate}
-							style={{width: "100%"}}
+							style={{ width: "100%" }}
 							filterOption={(input, option) =>
 								(option?.label ?? '').toLowerCase().includes(input.toLowerCase())
 							}
 						/>
+
 					</div>
+					
+					{/* <div className="tw-flex">
+					</div> */}
+
 				</div>
 
 				<div className="tw-flex tw-flex-col tw-gap-1">
 					<div className="tw-flex tw-flex-col">
 						<span>Line Height</span>
-						<Slider defaultValue={1} 
-								min={1} max={3} 
-								step={0.1}
-								value={currentFont.lineHeight === "normal" ? 1 : currentFont.lineHeight}
-								onChange={(val) => setCurrentFont({...currentFont, lineHeight: val})}
-								tooltip={{overlayStyle: {zIndex: 1200000000}}}
-								/>
+						<Slider defaultValue={1}
+							min={1} max={3}
+							step={0.1}
+							value={currentFont.lineHeight === "normal" ? 1 : currentFont.lineHeight}
+							onChange={(val) => setCurrentFont({ ...currentFont, lineHeight: val })}
+							tooltip={{ overlayStyle: { zIndex: 1200000000 } }}
+						/>
 					</div>
-				
+
 					<div className="tw-flex tw-flex-col">
 						<span>Weight</span>
-						<Slider defaultValue={400} 
-								min={100} max={900} 
-								step={100}
-								value={currentFont.fontWeight === "normal" ? 400 : currentFont.fontWeight}
-								onChange={(val) => setCurrentFont({...currentFont, fontWeight: val})}
-								tooltip={{overlayStyle: {zIndex: 1200000000}}}
-								/>
+						<Slider defaultValue={400}
+							min={100} max={900}
+							step={100}
+							value={currentFont.fontWeight === "normal" ? 400 : currentFont.fontWeight}
+							onChange={(val) => setCurrentFont({ ...currentFont, fontWeight: val })}
+							tooltip={{ overlayStyle: { zIndex: 1200000000 } }}
+						/>
 					</div>
 				</div>
-						  
+
 				<div className="tw-flex tw-gap-3">
 
-					<Tooltip title="Enable selection" overlayStyle={{zIndex: 1200000000}}>
+					<Tooltip title="Enable selection" overlayStyle={{ zIndex: 1200000000 }}>
 						<Tag.CheckableTag checked={enableSelection}
-								onChange={(checked) => {setEnableSelection(checked)}}
-								className={`${enableSelection && "!tw-bg-gray-100"} !tw-text-lg hover:!tw-bg-gray-100 hover:!tw-color-black`}
-								style={{outline: "none", border: "none", color: "#000", 
-										backgroundColor: "transparent", display: "flex",
-										justifyContent: "center",
-										padding: "0.5rem 0.75rem", borderRadius: "0.375rem"}}>
+							onChange={(checked) => { setEnableSelection(checked) }}
+							className={`${enableSelection && "!tw-bg-gray-100"} !tw-text-lg hover:!tw-bg-gray-100 hover:!tw-color-black`}
+							style={{
+								outline: "none", border: "none", color: "#000",
+								backgroundColor: "transparent", display: "flex",
+								justifyContent: "center",
+								padding: "0.5rem 0.75rem", borderRadius: "0.375rem"
+							}}>
 							<HighlightOutlined />
 						</Tag.CheckableTag>
 					</Tooltip>
-					<Tooltip title="Italics" overlayStyle={{zIndex: 1200000000}}>
+					<Tooltip title="Italics" overlayStyle={{ zIndex: 1200000000 }}>
 						<Tag.CheckableTag checked={currentFont.italics}
-								onChange={(checked) => setCurrentFont({...currentFont, italics: checked})}
-								className={`${currentFont.italics && "!tw-bg-gray-100"} !tw-text-lg hover:!tw-bg-gray-100 hover:!tw-color-black`}
-								style={{outline: "none", border: "none", color: "#000", 
-										backgroundColor: "transparent", display: "flex",
-										justifyContent: "center",
-										padding: "0.5rem 0.75rem", borderRadius: "0.375rem"}}>
+							onChange={(checked) => setCurrentFont({ ...currentFont, italics: checked })}
+							className={`${currentFont.italics && "!tw-bg-gray-100"} !tw-text-lg hover:!tw-bg-gray-100 hover:!tw-color-black`}
+							style={{
+								outline: "none", border: "none", color: "#000",
+								backgroundColor: "transparent", display: "flex",
+								justifyContent: "center",
+								padding: "0.5rem 0.75rem", borderRadius: "0.375rem"
+							}}>
 							<ItalicOutlined />
 						</Tag.CheckableTag>
 					</Tooltip>
-					<Tooltip title="Underline" overlayStyle={{zIndex: 1200000000}}>
+					<Tooltip title="Underline" overlayStyle={{ zIndex: 1200000000 }}>
 						<Tag.CheckableTag checked={currentFont.underline}
-								onChange={(checked) => setCurrentFont({...currentFont, underline: checked})}
-								className={`${currentFont.underline && "!tw-bg-gray-100"} !tw-text-lg hover:!tw-bg-gray-100 hover:!tw-color-black`}
-								style={{outline: "none", border: "none", color: "#000", 
-										backgroundColor: "transparent", display: "flex",
-										justifyContent: "center",
-										padding: "0.5rem 0.75rem", borderRadius: "0.375rem"}}>
+							onChange={(checked) => setCurrentFont({ ...currentFont, underline: checked })}
+							className={`${currentFont.underline && "!tw-bg-gray-100"} !tw-text-lg hover:!tw-bg-gray-100 hover:!tw-color-black`}
+							style={{
+								outline: "none", border: "none", color: "#000",
+								backgroundColor: "transparent", display: "flex",
+								justifyContent: "center",
+								padding: "0.5rem 0.75rem", borderRadius: "0.375rem"
+							}}>
 							<UnderlineOutlined />
 						</Tag.CheckableTag>
 					</Tooltip>
 
-					<Tooltip title="Reset" overlayStyle={{zIndex: 1200000000}}>
-						<button onClick={onReset} className="hover:!tw-bg-gray-100 hover:!tw-color-black" 
-													style={{outline: "none", border: "none", color: "#000", 
-															backgroundColor: "transparent",
-															padding: "0.5rem 0.75rem", borderRadius: "0.375rem"}}>
+					<Tooltip title="Reset" overlayStyle={{ zIndex: 1200000000 }}>
+						<button onClick={onReset} className="hover:!tw-bg-gray-100 hover:!tw-color-black"
+							style={{
+								outline: "none", border: "none", color: "#000",
+								backgroundColor: "transparent",
+								padding: "0.5rem 0.75rem", borderRadius: "0.375rem"
+							}}>
 							<UndoOutlined />
 						</button>
 					</Tooltip>
@@ -374,31 +493,31 @@ function App() {
 							{
 								key: "link",
 								label: "link",
-								children: <CodeSection fontStyle={currentFont} 
-														type="link"
-														/>
+								children: <CodeSection fontStyle={currentFont}
+									type="link"
+								/>
 							},
 							{
 								key: "@import",
 								label: "@import",
-								children: <CodeSection  fontStyle={currentFont} 
-														type="import"/>
+								children: <CodeSection fontStyle={currentFont}
+									type="import" />
 							}
 						]
-					}/>
+					} />
 				</div>
 
 			</div>
-			
+
 			<div className="tw-flex tw-w-full tw-place-items-center tw-gap-2 tw-h-10 tw-justify-between">
-				<a href="https://buymeacoffee.com/artpaul" 
+				<a href="https://buymeacoffee.com/artpaul"
 					target="_blank" rel="noopener noreferrer">
 					<img src={BMC_IMG} className="tw-w-8 tw-h-8" alt='BMC' />
 				</a>
 				<Share className="tw-w-8 tw-h-8 tw-cursor-pointer tw-flex tw-place-items-center">
 					<ShareAltOutlined />
 				</Share>
-				<a href="https://github.com/PaulleDemon/font-tester-chrome" 
+				<a href="https://github.com/PaulleDemon/font-tester-chrome"
 					target="_blank" className="hover:!tw-text-black !tw-text-black !tw-no-underline" rel="noopener noreferrer">
 					<GithubFilled />
 				</a>
@@ -411,4 +530,4 @@ function App() {
 	)
 }
 
-export default App
+export default React.memo(App)

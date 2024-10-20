@@ -50,11 +50,14 @@ function init() {
 			// used to prevent webpage from hijacking focus on keydown, this happens in certain websites include Github.
 			const shadowActiveElement = shadowRoot.activeElement;
 			
+			console.log("key down")
+			
 			// Check if the active element is inside the shadow DOM and belongs to extension
 			if (shadowActiveElement) {
+				console.log("key down2")
 				// Let the event propagate within the shadow DOM but prevent the webpage from responding
-				event.stopPropagation();
 			}
+			// event.stopPropagation();
 		}, true);
 
 		const root = ReactDOM.createRoot(shadowRootContainer)
@@ -72,7 +75,7 @@ function init() {
 							},
                         }}
 						>
-						<App />
+						<App container={shadowRoot}/>
 					</ConfigProvider>
 				</StyleProvider>
 			</React.StrictMode>
