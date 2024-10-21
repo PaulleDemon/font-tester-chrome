@@ -4,21 +4,26 @@ import React, { useCallback, useEffect, useRef, useState } from "react"
 import { Select, Slider, Tabs, Tooltip, Button, message, Tag } from "antd"
 import {
 	CloseOutlined, CrownFilled,
+	FilterOutlined,
+	FilterTwoTone,
 	GithubFilled, HighlightOutlined, HolderOutlined, ItalicOutlined,
-	QuestionCircleOutlined, RetweetOutlined, ShareAltOutlined,
-	SlidersOutlined,
+	QuestionCircleOutlined, RetweetOutlined, SettingFilled, ShareAltOutlined,
 	UnderlineOutlined, UndoOutlined
 } from "@ant-design/icons"
 
 import { useMovable } from "./utils/hooks"
 
 import Fonts from "./db/google-fonts.json"
-import CodeSection from "./codeSection"
+import CodeSection from "./components/codeSection"
 
 import Share from "./utils/share"
 import Premium from "./utils/premium"
+import Settings from "./components/settings"
+
 import { getRangeSelectedNodes } from "./utils/selection"
 import { randomInt } from "./utils/utils"
+
+
 // import { ReactComponent as BMC } from './assets/logos/bmc.svg'
 
 
@@ -46,6 +51,11 @@ function App({ container }) {
 	const [showFilter, setShowFilter] = useState(false)
 
 	const [fontCategoryOptions, setFontCategoryOptions] = useState([])
+
+	const [settings, setSettings] = useState({
+		cycleFonts: false,
+		previewFonts: false
+	})
 
 	const [enableSelection, setEnableSelection] = useState(true)
 	const [fontOptions, setFontOptions] = useState([])
@@ -175,12 +185,12 @@ function App({ container }) {
 				transformedFonts = Fonts.filter((value) => filter.includes(value.category))
 									.map((x, index) => ({
 										label: x.family,
-										value: index
+										value: x.family
 									}))
 			}else{
 				transformedFonts = Fonts.map((x, index) => ({
 										label: x.family,
-										value: index
+										value: x.family
 									}))
 
 			}
@@ -227,8 +237,12 @@ function App({ container }) {
 
 	const onFontUpdate = (value) => {
 
-		const fontFamily = Fonts[value].family
-		const fontCategory = Fonts[value].category
+		const fontIndex = Fonts.findIndex(val => val.family === value)
+
+		if (fontIndex === -1) return
+
+		const fontFamily = Fonts[fontIndex].family
+		const fontCategory = Fonts[fontIndex].category
 
 		const styleElement = document.querySelector("#font-selector-link")
 		const url = `https://fonts.googleapis.com/css2?family=${encodeURIComponent(fontFamily)}`
@@ -243,6 +257,43 @@ function App({ container }) {
 			family: fontFamily,
 			category: fontCategory
 		})
+	}
+
+	// TODO: handle Hover on option
+	const cycleFontsWithKeys = (event) => {
+
+		// if (!settings.cycleFonts)
+		// 	return
+
+		const key = event.key
+    	let currentIndex = fontOptions.findIndex(option => option.value === currentFont.family)
+
+		console.log("current index: ", currentIndex)
+
+		// if (currentIndex === -1){
+		// 	currentIndex = 0
+		// }
+
+		if (key === 'ArrowDown') {
+			// Move to the next font
+			const nextIndex = (currentIndex + 1) % fontOptions.length;
+			console.log("next index: ", nextIndex, fontOptions[nextIndex])
+			setCurrentFont({
+							...currentFont,
+							family: Fonts[nextIndex].family, 
+							category: Fonts[nextIndex].category
+						});
+		} else if (key === 'ArrowUp') {
+			// Move to the previous font
+			const prevIndex = (currentIndex - 1 + fontOptions.length) % fontOptions.length;
+			setCurrentFont({
+				...currentFont,
+				family: Fonts[prevIndex].family, 
+				category: Fonts[prevIndex].category
+			});
+		}
+
+
 	}
 
 
@@ -284,7 +335,7 @@ function App({ container }) {
 
 
 	return (
-		<div ref={widgetRef} className="tw-bg-white tw-overflow-hidden tw-text-black tw-flex tw-flex-col tw-shadow-xl tw-p-3 tw-rounded-xl"
+		<div ref={widgetRef} className="tw-bg-white tw-text-base tw-overflow-hidden tw-text-black tw-flex tw-flex-col tw-shadow-xl tw-p-3 tw-rounded-xl"
 			style={{
 				position: "fixed",
 				top: position.y,
@@ -302,12 +353,11 @@ function App({ container }) {
 				</div>
 
 				<div className="tw-flex tw-gap-1">
-					<a href="https://github.com/PaulleDemon/font-tester-chrome?tab=readme-ov-file#font-tester---fonts-made-easy-chrome-extension"
-						target="_blank"
-						rel="noopener noreferrer"
+					<Settings
+						onSettingsChange={(value) => setSettings(value)}
 						className="tw-cursor-pointer hover:!tw-text-black hover:tw-bg-gray-100 tw-px-2 tw-rounded-md  tw-p-1">
-						<QuestionCircleOutlined />
-					</a>
+						<SettingFilled />
+					</Settings>
 					<div onClick={handleClose} className="tw-cursor-pointer hover:tw-bg-gray-100 tw-px-2 tw-rounded-md  tw-p-1">
 						<CloseOutlined />
 					</div>
@@ -326,17 +376,17 @@ function App({ container }) {
 				<div className="tw-flex tw-flex-col tw-gap-1">
 
 					<div className="tw-flex tw-justify-between tw-place-content-center">
-						<h2 className="tw-text-[18px]">Google fonts</h2>
+						<h2 className="tw-text-lg">Google fonts</h2>
 						<div className="tw-relative">
 							<Tooltip title="Filter fonts" overlayStyle={{ zIndex: 1200000000 }}>
 								<Tag.CheckableTag checked={showFilter}
 									onClick={() => setShowFilter(!showFilter)}
 									// onChange={(val) => setShowFilter(val)}
 									className={` 
-													${filter.length > 0 ? "!tw-border-[#2076c7] !tw-bg-gray-100" : "!tw-border-transparent"}
-													!tw-border-[1px] !tw-border-solid 
-													!tw-text-lg hover:!tw-bg-gray-100
-													hover:!tw-color-black tw-relative
+												${filter.length > 0 ? "!tw-border-[#2076c7] !tw-bg-gray-100" : "!tw-border-transparent"}
+												!tw-border-[1px] !tw-border-solid 
+												!tw-text-lg hover:!tw-bg-gray-100
+												hover:!tw-color-black tw-relative
 											`}
 									style={{
 										outline: "none", border: "none", color: "#000",
@@ -344,10 +394,17 @@ function App({ container }) {
 										justifyContent: "center",
 										padding: "0.5rem 0.75rem", borderRadius: "0.375rem"
 									}}>
-									<SlidersOutlined />
+										
+										{
+											filter.length > 0 ?
+												<FilterTwoTone />
+												:
+												<FilterOutlined />
+										}
+										
 								</Tag.CheckableTag>
 							</Tooltip>
-							{showFilter}
+						
 							{
 								showFilter && (
 									<div className="tw-absolute tw-bg-white tw-right-0 tw-top-10 tw-p-2  
@@ -400,6 +457,29 @@ function App({ container }) {
 							options={fontOptions}
 							placeholder="select font"
 							onChange={onFontUpdate}
+							onKeyDown={cycleFontsWithKeys}
+							dropdownRender={(menu) => {
+										
+									const keyDown =	menu.ref.current?.onKeyDown
+
+									// console.log("key down: ", keyDown, menu, menu.ref.current)
+
+									// if (menu.ref.current && keyDown){
+									// 	console.log("EvENT: ", )
+									// 	menu.ref.current.onKeyDown = (event) => {
+									// 		console.log("event: ", event)
+									// 		keyDown(event)
+									// 		cycleFontsWithKeys(event)
+									// 	}
+									// }
+
+									return (
+										<div tabIndex={0} className="tw-bg-red-600">
+											{menu}
+										</div>
+									)
+								}
+							}	
 							style={{ width: "100%" }}
 							filterOption={(input, option) =>
 								(option?.label ?? '').toLowerCase().includes(input.toLowerCase())

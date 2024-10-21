@@ -12,7 +12,7 @@
     "action": {
         "default_title": "Font tester - Test different font types"
     },
-    "permissions": ["activeTab", "scripting"],
+    "permissions": ["activeTab", "scripting", "storage"],
     "background": {
         "service_worker": "background.js"
     },
