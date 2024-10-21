@@ -55,8 +55,14 @@ module.exports = {
       //   use: 'raw-loader', // Use raw-loader to get CSS as a string
       // },
       {
+        test: /\.(png|jpe?g|gif|svg)$/,
+        include: path.resolve(__dirname, 'src/assets/font-images'),  // Only images in this folder
+        type: 'asset/inline'  // Convert images to base64 and inline them in the bundle
+      },
+      {
         test: /\.(png|jpe?g|gif|svg|ico)$/,
         type: 'asset/resource',
+        exclude: path.resolve(__dirname, 'src/assets/font-images'),
         generator: {
           filename: 'assets/[name][ext][query]',
         },

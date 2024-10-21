@@ -3,9 +3,9 @@
   font-family: sans-serif;
 }
 
-/* #font-selector-root{
-  font-size: initial;
-} */
+#font-selector-root{
+  font-size: initial !important;
+}
 
 /* :host { font-size: initial } */
 

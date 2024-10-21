@@ -3,18 +3,14 @@ import { useEffect, useState } from "react"
 import { Modal, Switch } from "antd"
 import { CrownFilled } from "@ant-design/icons"
 import Premium from "../utils/premium"
+import { useSettingsContext } from "../context/settingsContext"
 
 
-function Settings({children, className="", onSettingsChange}){
+function Settings({children, className=""}){
 
     const [fontModalOpen, setFontModalOpen] = useState(false)
 
-    const [fontSettings, setFontSettings] = useState({
-        darkTheme: false,
-        cycleFonts: false, // cycle fonts with arrow
-        previewFonts: false, // display fonts as image in dropdown 
-    })
-
+    const {settings, setSettings} = useSettingsContext()
 
     const onClick = () => {
         setFontModalOpen(true)
@@ -28,17 +24,14 @@ function Settings({children, className="", onSettingsChange}){
     const handleSettingsChange = (key, value) => {
 
         const updatedSettings = {
-            ...fontSettings,
+            ...settings,
             [key]: value
         }
 
-        setFontSettings(updatedSettings)
+        setSettings(updatedSettings)
 
-
-		chrome.runtime.sendMessage({ action: 'saveSettings', settings: updatedSettings })
+		chrome.runtime?.sendMessage({ action: 'saveSettings', settings: updatedSettings })
         
-
-        onSettingsChange(updatedSettings)
     }
 
     return (
@@ -65,14 +58,14 @@ function Settings({children, className="", onSettingsChange}){
                     
                     <div className="tw-flex tw-gap-2 tw-place-items-center">
                         <div className="tw-text-base tw-font-medium">Cycle fonts with arrow keys</div>
-                        <Switch value={fontSettings.cycleFonts} 
+                        <Switch value={settings.cycleFonts} 
                                 onChange={(value) => handleSettingsChange('cycleFonts', value)}
                             />
                     </div>
 
                     <div className="tw-flex tw-gap-2 tw-place-items-center">
                         <div className="tw-text-base tw-font-medium">Preview font on dropdown</div>
-                        <Switch value={fontSettings.previewFonts} 
+                        <Switch value={settings.previewFonts} 
                                 onChange={(value) => handleSettingsChange('previewFonts', value)}
                             />
                     </div>

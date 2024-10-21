@@ -1,8 +1,13 @@
-chrome.runtime.onInstalled.addListener(() => {
+chrome.runtime.onInstalled.addListener((reason) => {
+
+	if (reason === 'install') {
+		chrome.tabs.create({
+		//   url: "onboarding.html"
+		})
+	}
 
 })
 
-// TODO: add settings context
 
 // FIXME: isContentScript seems to be global, so sometimes if the extension 
 // is opened on another webpage, we'll have to double click to open on other pages.
@@ -59,10 +64,13 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 	if (message.action === 'saveSettings') {
         const settings = message.settings
 
+		// console.log("settings: ", settings)
+
         // save settings to chrome.storage.sync
         chrome.storage.local.set({settings: settings}, () => {
             if (chrome.runtime.lastError) {
                 console.error('Error saving settings:', chrome.runtime.lastError)
+				sendResponse({ success: false, error: chrome.runtime.lastError.message });
             } else {
                 // console.log('Settings saved successfully')
                 sendResponse({ success: true })
@@ -74,20 +82,17 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     }
 
 	else if (message.action === "getSettings"){
-		chrome.storage.sync.get("settings", (settings) => {
-			console.log("settings: ", settings)
-            if (chrome.runtime.lastError) {
-                console.error('Error retrieving settings:', chrome.runtime.lastError)
+		chrome.storage.local.get("settings", (result) => {
+			if (chrome.runtime.lastError) {
+				console.error('Error retrieving settings:', chrome.runtime.lastError)
             } else {
                 // Send the settings to the content script
-                chrome.tabs.sendMessage(sender.tab.id, {
-                    action: "getSettings",
-                    settings: settings
-                }, () => {
-                    sendResponse({ success: true })
-                })
+				sendResponse({ success: true, settings: result.settings })
             }
         })
+
+		// !important return true if you plan to send response
+        return true 
 	}
 
     // if widget closed from content.js file, by clicking on the close button

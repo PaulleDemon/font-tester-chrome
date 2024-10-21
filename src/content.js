@@ -13,6 +13,7 @@ import { StyleProvider } from '@ant-design/cssinjs'
 import { ConfigProvider } from 'antd'
 
 import App from "./App"
+import { SettingsProvider } from "./context/settingsContext"
 
 
 // Function to create a style element with the provided CSS content
@@ -77,7 +78,9 @@ function init() {
 							},
                         }}
 						>
-						<App container={shadowRoot}/>
+						<SettingsProvider>
+							<App container={shadowRoot}/>
+						</SettingsProvider>
 					</ConfigProvider>
 				</StyleProvider>
 			</React.StrictMode>

@@ -22,6 +22,7 @@ import Settings from "./components/settings"
 
 import { getRangeSelectedNodes } from "./utils/selection"
 import { randomInt } from "./utils/utils"
+import { useSettingsContext } from "./context/settingsContext"
 
 
 // import { ReactComponent as BMC } from './assets/logos/bmc.svg'
@@ -31,6 +32,18 @@ import { randomInt } from "./utils/utils"
 // some websites such as StackOverflow keeps interfering with local image paths, so added github raw content
 const BMC_IMG = `https://raw.githubusercontent.com/PaulleDemon/landing-pages-browsable/main/src/assets/images/brand-logos/bmc.svg`
 
+
+const importAll = (r) => {
+	return r.keys().map((item) => {
+	  const url = r(item)  // Get the image URL
+	  const name = item.replace('./', '').replace(/\.[^/.]+$/, '')  // Remove './' and the file extension
+	  return { name, url }  // Return name and the normal URL initially
+	})
+  }
+
+const FontImages = importAll(require.context('./assets/font-images', false, /\.(png|jpe?g|svg)$/));
+
+console.log("Font images: ", FontImages)
 
 const defaultPosition = {
 	x: (window.innerWidth - 300) - 25,
@@ -52,10 +65,7 @@ function App({ container }) {
 
 	const [fontCategoryOptions, setFontCategoryOptions] = useState([])
 
-	const [settings, setSettings] = useState({
-		cycleFonts: false,
-		previewFonts: false
-	})
+	const {settings} = useSettingsContext()
 
 	const [enableSelection, setEnableSelection] = useState(true)
 	const [fontOptions, setFontOptions] = useState([])
@@ -73,13 +83,6 @@ function App({ container }) {
 
 		// parse and transform the json fonts to a format that can be put into autocomplete dropdown
 		if (Fonts.length > 0) {
-
-			const transformedFonts = Fonts.map((x, index) => ({
-				label: x.family,
-				value: index
-			}))
-			setFontOptions(transformedFonts)
-
 			const uniqueCategories = [...new Set(Fonts.map(font => font.category))]
 
 			const categoriesOption = uniqueCategories.map(category => ({
@@ -92,6 +95,43 @@ function App({ container }) {
 		}
 
 	}, [Fonts])
+
+
+	useEffect(() => {
+
+		// parse and transform the json fonts to a format that can be put into autocomplete dropdown
+		if (Fonts.length > 0) {
+
+			let transformedFonts
+
+			if (filter.length > 0){
+				transformedFonts = Fonts.filter((value) => filter.includes(value.category))
+									.map((x, index) => ({
+										label: x.family,
+										value: x.family
+									}))
+
+
+			}else{
+				transformedFonts = Fonts.map((x, index) => ({
+										label: <b>{x.family}</b>,
+										value: x.family
+									}))
+
+				// transformedFonts = FontImages.map((x, index) => ({
+				// 	label: <img src={x.url} alt={x.name}/>,
+				// 	value: x.name
+				// }))
+
+
+			}
+
+			setFontOptions(transformedFonts)
+		}
+
+	}, [filter, Fonts])
+
+
 
 	useEffect(() => {
 		// check if the font cdn style link exists, else add the link once
@@ -174,33 +214,6 @@ function App({ container }) {
 
 	}, [currentFont, selectionFontPreview.current])
 
-	useEffect(() => {
-
-		// parse and transform the json fonts to a format that can be put into autocomplete dropdown
-		if (Fonts.length > 0) {
-
-			let transformedFonts
-
-			if (filter.length > 0){
-				transformedFonts = Fonts.filter((value) => filter.includes(value.category))
-									.map((x, index) => ({
-										label: x.family,
-										value: x.family
-									}))
-			}else{
-				transformedFonts = Fonts.map((x, index) => ({
-										label: x.family,
-										value: x.family
-									}))
-
-			}
-
-			setFontOptions(transformedFonts)
-		}
-
-	}, [filter])
-
-
 	const updateSelection = useCallback((evt) => {
 
 		if (!enableSelection)
@@ -262,8 +275,8 @@ function App({ container }) {
 	// TODO: handle Hover on option
 	const cycleFontsWithKeys = (event) => {
 
-		// if (!settings.cycleFonts)
-		// 	return
+		if (!settings.cycleFonts)
+			return
 
 		const key = event.key
     	let currentIndex = fontOptions.findIndex(option => option.value === currentFont.family)
@@ -354,7 +367,6 @@ function App({ container }) {
 
 				<div className="tw-flex tw-gap-1">
 					<Settings
-						onSettingsChange={(value) => setSettings(value)}
 						className="tw-cursor-pointer hover:!tw-text-black hover:tw-bg-gray-100 tw-px-2 tw-rounded-md  tw-p-1">
 						<SettingFilled />
 					</Settings>
@@ -458,28 +470,12 @@ function App({ container }) {
 							placeholder="select font"
 							onChange={onFontUpdate}
 							onKeyDown={cycleFontsWithKeys}
-							dropdownRender={(menu) => {
-										
-									const keyDown =	menu.ref.current?.onKeyDown
-
-									// console.log("key down: ", keyDown, menu, menu.ref.current)
-
-									// if (menu.ref.current && keyDown){
-									// 	console.log("EvENT: ", )
-									// 	menu.ref.current.onKeyDown = (event) => {
-									// 		console.log("event: ", event)
-									// 		keyDown(event)
-									// 		cycleFontsWithKeys(event)
-									// 	}
-									// }
-
-									return (
-										<div tabIndex={0} className="tw-bg-red-600">
-											{menu}
-										</div>
-									)
-								}
-							}	
+							// dropdownRender={(menu) => {
+							// 		return (
+							// 			{menu}
+							// 		)
+							// 	}
+							// }	
 							style={{ width: "100%" }}
 							filterOption={(input, option) =>
 								(option?.label ?? '').toLowerCase().includes(input.toLowerCase())
