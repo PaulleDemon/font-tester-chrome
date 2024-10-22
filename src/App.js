@@ -3,11 +3,12 @@ import React, { useCallback, useEffect, useRef, useState } from "react"
 
 import { Select, Slider, Tabs, Tooltip, Button, message, Tag } from "antd"
 import {
+	AimOutlined,
 	CloseOutlined, CrownFilled,
 	FilterOutlined,
 	FilterTwoTone,
 	GithubFilled, HighlightOutlined, HolderOutlined, ItalicOutlined,
-	QuestionCircleOutlined, RetweetOutlined, SettingFilled, ShareAltOutlined,
+	QuestionCircleOutlined, RetweetOutlined, SettingFilled, SettingOutlined, ShareAltOutlined,
 	UnderlineOutlined, UndoOutlined
 } from "@ant-design/icons"
 
@@ -36,19 +37,21 @@ const BMC_IMG = `https://raw.githubusercontent.com/PaulleDemon/landing-pages-bro
 const importAll = (r) => {
 	return r.keys().map((item) => {
 	  const url = r(item)  // Get the image URL
-	  const name = item.replace('./', '').replace(/\.[^/.]+$/, '')  // Remove './' and the file extension
+	  const name = item.replace('./', '')
+						.replace(/\.[^/.]+$/, '')
+						.replace(/_/g, ' ')  // Remove './' and the file extension
 	  return { name, url }  // Return name and the normal URL initially
 	})
   }
 
 const FontImages = importAll(require.context('./assets/font-images', false, /\.(png|jpe?g|svg)$/));
 
-console.log("Font images: ", FontImages)
 
 const defaultPosition = {
 	x: (window.innerWidth - 300) - 25,
-	y: (window.innerHeight - 700) - 15
+	y: (window.innerHeight - 750) - 15
 }
+
 
 // TODO: prevent selection on the modal
 function App({ container }) {
@@ -68,6 +71,9 @@ function App({ container }) {
 	const {settings} = useSettingsContext()
 
 	const [enableSelection, setEnableSelection] = useState(true)
+
+	const [findFontEnabled, setFindFontEnabled] = useState(false)
+
 	const [fontOptions, setFontOptions] = useState([])
 	const [currentFont, setCurrentFont] = useState({
 		family: "",
@@ -99,6 +105,26 @@ function App({ container }) {
 
 	useEffect(() => {
 
+		const renderFontImage = (family) => {
+
+			const imageEquivalent = FontImages.find((val) => family === val.name)
+		
+			// console.log("image equivalent: ", family, imageEquivalent, settings.previewFonts)
+		
+			let label = family
+		
+			if (imageEquivalent && settings.previewFonts){
+				label = (<div className="tw-h-full tw-w-full">
+							<img src={imageEquivalent.url} alt={family} className="tw-h-full tw-object-contain" />
+						</div>)
+			}
+		
+			return ({
+				label: label,
+				value: family
+			})
+		}
+
 		// parse and transform the json fonts to a format that can be put into autocomplete dropdown
 		if (Fonts.length > 0) {
 
@@ -106,30 +132,17 @@ function App({ container }) {
 
 			if (filter.length > 0){
 				transformedFonts = Fonts.filter((value) => filter.includes(value.category))
-									.map((x, index) => ({
-										label: x.family,
-										value: x.family
-									}))
+									.map((x, index) => (renderFontImage(x.family)))
 
 
 			}else{
-				transformedFonts = Fonts.map((x, index) => ({
-										label: <b>{x.family}</b>,
-										value: x.family
-									}))
-
-				// transformedFonts = FontImages.map((x, index) => ({
-				// 	label: <img src={x.url} alt={x.name}/>,
-				// 	value: x.name
-				// }))
-
-
+				transformedFonts = Fonts.map((x, index) => (renderFontImage(x.family)))
 			}
 
 			setFontOptions(transformedFonts)
 		}
 
-	}, [filter, Fonts])
+	}, [filter, Fonts, settings?.previewFonts])
 
 
 
@@ -356,7 +369,7 @@ function App({ container }) {
 				right: "auto",
 				bottom: "auto",
 				width: "300px",
-				height: "700px",
+				height: "750px",
 				zIndex: 1000000000 // alway stay on top
 			}}>
 			<div className="tw-flex !tw-select-none tw-items-center tw-w-full tw-justify-between">
@@ -366,10 +379,12 @@ function App({ container }) {
 				</div>
 
 				<div className="tw-flex tw-gap-1">
-					<Settings
-						className="tw-cursor-pointer hover:!tw-text-black hover:tw-bg-gray-100 tw-px-2 tw-rounded-md  tw-p-1">
-						<SettingFilled />
-					</Settings>
+						<Settings
+							className="tw-cursor-pointer hover:!tw-text-black hover:tw-bg-gray-100 tw-px-2 tw-rounded-md  tw-p-1">
+							<Tooltip title="Settings" overlayStyle={{ zIndex: 1200000000 }}>
+								<SettingOutlined />
+							</Tooltip>
+						</Settings>
 					<div onClick={handleClose} className="tw-cursor-pointer hover:tw-bg-gray-100 tw-px-2 tw-rounded-md  tw-p-1">
 						<CloseOutlined />
 					</div>
@@ -469,16 +484,10 @@ function App({ container }) {
 							options={fontOptions}
 							placeholder="select font"
 							onChange={onFontUpdate}
-							onKeyDown={cycleFontsWithKeys}
-							// dropdownRender={(menu) => {
-							// 		return (
-							// 			{menu}
-							// 		)
-							// 	}
-							// }	
+							onKeyDown={cycleFontsWithKeys}	
 							style={{ width: "100%" }}
 							filterOption={(input, option) =>
-								(option?.label ?? '').toLowerCase().includes(input.toLowerCase())
+								(option?.value ?? '').toLowerCase().includes(input.toLowerCase())
 							}
 						/>
 
@@ -513,61 +522,84 @@ function App({ container }) {
 					</div>
 				</div>
 
-				<div className="tw-flex tw-gap-3">
+				<div className="tw-flex tw-flex-col tw-gap-1">
 
-					<Tooltip title="Enable selection" overlayStyle={{ zIndex: 1200000000 }}>
-						<Tag.CheckableTag checked={enableSelection}
-							onChange={(checked) => { setEnableSelection(checked) }}
-							className={`${enableSelection && "!tw-bg-gray-100"} !tw-text-lg hover:!tw-bg-gray-100 hover:!tw-color-black`}
-							style={{
-								outline: "none", border: "none", color: "#000",
-								backgroundColor: "transparent", display: "flex",
-								justifyContent: "center",
-								padding: "0.5rem 0.75rem", borderRadius: "0.375rem"
-							}}>
-							<HighlightOutlined />
-						</Tag.CheckableTag>
-					</Tooltip>
-					<Tooltip title="Italics" overlayStyle={{ zIndex: 1200000000 }}>
-						<Tag.CheckableTag checked={currentFont.italics}
-							onChange={(checked) => setCurrentFont({ ...currentFont, italics: checked })}
-							className={`${currentFont.italics && "!tw-bg-gray-100"} !tw-text-lg hover:!tw-bg-gray-100 hover:!tw-color-black`}
-							style={{
-								outline: "none", border: "none", color: "#000",
-								backgroundColor: "transparent", display: "flex",
-								justifyContent: "center",
-								padding: "0.5rem 0.75rem", borderRadius: "0.375rem"
-							}}>
-							<ItalicOutlined />
-						</Tag.CheckableTag>
-					</Tooltip>
-					<Tooltip title="Underline" overlayStyle={{ zIndex: 1200000000 }}>
-						<Tag.CheckableTag checked={currentFont.underline}
-							onChange={(checked) => setCurrentFont({ ...currentFont, underline: checked })}
-							className={`${currentFont.underline && "!tw-bg-gray-100"} !tw-text-lg hover:!tw-bg-gray-100 hover:!tw-color-black`}
-							style={{
-								outline: "none", border: "none", color: "#000",
-								backgroundColor: "transparent", display: "flex",
-								justifyContent: "center",
-								padding: "0.5rem 0.75rem", borderRadius: "0.375rem"
-							}}>
-							<UnderlineOutlined />
-						</Tag.CheckableTag>
-					</Tooltip>
+					<div className="tw-flex tw-gap-3">
 
-					<Tooltip title="Reset" overlayStyle={{ zIndex: 1200000000 }}>
-						<button onClick={onReset} className="hover:!tw-bg-gray-100 hover:!tw-color-black"
-							style={{
-								outline: "none", border: "none", color: "#000",
-								backgroundColor: "transparent",
-								padding: "0.5rem 0.75rem", borderRadius: "0.375rem"
-							}}>
-							<UndoOutlined />
-						</button>
-					</Tooltip>
+						<Tooltip title="Italics" overlayStyle={{ zIndex: 1200000000 }}>
+							<Tag.CheckableTag checked={currentFont.italics}
+								onChange={(checked) => setCurrentFont({ ...currentFont, italics: checked })}
+								className={`${currentFont.italics && "!tw-bg-gray-100"} !tw-text-lg hover:!tw-bg-gray-100 hover:!tw-color-black`}
+								style={{
+									outline: "none", border: "none", color: "#000",
+									backgroundColor: "transparent", display: "flex",
+									justifyContent: "center",
+									padding: "0.5rem 0.75rem", borderRadius: "0.375rem"
+								}}>
+								<ItalicOutlined />
+							</Tag.CheckableTag>
+						</Tooltip>
+						<Tooltip title="Underline" overlayStyle={{ zIndex: 1200000000 }}>
+							<Tag.CheckableTag checked={currentFont.underline}
+								onChange={(checked) => setCurrentFont({ ...currentFont, underline: checked })}
+								className={`${currentFont.underline && "!tw-bg-gray-100"} !tw-text-lg hover:!tw-bg-gray-100 hover:!tw-color-black`}
+								style={{
+									outline: "none", border: "none", color: "#000",
+									backgroundColor: "transparent", display: "flex",
+									justifyContent: "center",
+									padding: "0.5rem 0.75rem", borderRadius: "0.375rem"
+								}}>
+								<UnderlineOutlined />
+							</Tag.CheckableTag>
+						</Tooltip>
 
+					</div>
+
+					<div className="tw-flex tw-gap-3">
+
+						<Tooltip title="Enable selection" overlayStyle={{ zIndex: 1200000000 }}>
+							<Tag.CheckableTag checked={enableSelection}
+								onChange={(checked) => { setEnableSelection(checked) }}
+								className={`${enableSelection && "!tw-bg-gray-100"} !tw-text-lg hover:!tw-bg-gray-100 hover:!tw-color-black`}
+								style={{
+									outline: "none", border: "none", color: "#000",
+									backgroundColor: "transparent", display: "flex",
+									justifyContent: "center",
+									padding: "0.5rem 0.75rem", borderRadius: "0.375rem"
+								}}>
+								<HighlightOutlined />
+							</Tag.CheckableTag>
+						</Tooltip>
+
+						<Tooltip title="Reset" overlayStyle={{ zIndex: 1200000000 }}>
+							<button onClick={onReset} className="hover:!tw-bg-gray-100 hover:!tw-color-black"
+								style={{
+									outline: "none", border: "none", color: "#000",
+									backgroundColor: "transparent",
+									padding: "0.5rem 0.75rem", borderRadius: "0.375rem"
+								}}>
+								<UndoOutlined />
+							</button>
+						</Tooltip>
+
+						<Tooltip title="What font?" overlayStyle={{ zIndex: 1200000000 }}>
+							<Tag.CheckableTag checked={findFontEnabled}
+								onChange={(checked) => { setFindFontEnabled(checked) }}
+								className={`${findFontEnabled && "!tw-bg-gray-100"} !tw-text-lg hover:!tw-bg-gray-100 hover:!tw-color-black`}
+								style={{
+									outline: "none", border: "none", color: "#000",
+									backgroundColor: "transparent", display: "flex",
+									justifyContent: "center",
+									padding: "0.5rem 0.75rem", borderRadius: "0.375rem"
+								}}>
+								<AimOutlined />
+							</Tag.CheckableTag>
+						</Tooltip>
+
+					</div>
+
+					
 				</div>
-
 				{/* <CodeSection /> */}
 				<div className="tw-flex tw-w-full tw-h-full tw-max-h-[120px]">
 					<Tabs className="tw-w-full tw-h-full" items={

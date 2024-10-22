@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 import { Modal } from "antd"
-import { CrownFilled } from "@ant-design/icons"
+import { CheckCircleFilled, CloseCircleFilled, CrownFilled } from "@ant-design/icons"
 
 
 function Premium({ children, className = "" }) {
@@ -22,8 +22,9 @@ function Premium({ children, className = "" }) {
         <div onClick={onClick} className={`${className}`}>
             {children}
             <Modal
-                title={<h3 className="tw-text-xl tw-font-medium">Fund development. Pre-order one Time License</h3>}
-                style={{ zIndex: 1000000000, gap: '5px', placeItems: "center" }}
+                title={<h3 className="tw-text-xl tw-font-medium">Upgrade to pro with one time license</h3>}
+                style={{ zIndex: 1400000000, gap: '5px', placeItems: "center" }}
+                styles={{wrapper: {zIndex: 1400000000}, mask: {zIndex: 1200000000}}}
                 className="max-xl:tw-max-w-full"
                 onCancel={onClose}
                 centered
@@ -37,7 +38,7 @@ function Premium({ children, className = "" }) {
                     If you find this tool useful and want to fund and support it's development, consider buying a <b>one time license</b>.
                     <br />
                     <br />
-                    By buying pre-order license, you get advance features, priority support, early access, upcoming features, and &nbsp;
+                    By buying license, you get advance features, priority support, early access to upcoming features, and &nbsp;
                     <a
                         href="https://github.com/PaulleDemon/tab=readme-ov-file"
                         target="_blank"
@@ -75,33 +76,45 @@ function Premium({ children, className = "" }) {
                                 className="tw-mt-4 tw-flex tw-flex-col tw-gap-2 tw-text-lg tw-text-gray-600"
                             >
                                 <li className="tw-flex tw-place-items-center tw-gap-2">
-                                    <i className="bi bi-check-circle-fill tw-text-green-600 tw-text-base"></i>
+                                    <CheckCircleFilled className="tw-text-green-600"/>
                                     <span>Select from 1000+ google fonts</span>
                                 </li>
 
                                 <li className="tw-flex tw-place-items-center tw-gap-2">
-                                    <i className="bi bi-question-circle-fill tw-text-red-600  tw-text-base"></i>
-                                    <span>Lifetime updates</span>
+                                    <CloseCircleFilled className="tw-text-red-600"/>
+                                    <span>Upload local fonts</span>
                                 </li>
                                 <li className="tw-flex tw-place-items-center tw-gap-2">
-                                    <i className="bi bi-x-circle-fill tw-text-red-600  tw-text-base"></i>
+                                    <CloseCircleFilled className="tw-text-red-600"/>
+                                    <span>Free updates</span>
+                                </li>
+                                <li className="tw-flex tw-place-items-center tw-gap-2">
+                                    <CloseCircleFilled className="tw-text-red-600"/>
                                     <span>Priority support</span>
                                 </li>
                                 <li className="tw-flex tw-place-items-center tw-gap-2">
-                                    <i className="bi bi-x-circle-fill tw-text-red-600  tw-text-base"></i>
+                                    <CloseCircleFilled className="tw-text-red-600"/>
                                     <span>Early access to new features</span>
                                 </li>
                                 <li className="tw-flex tw-place-items-center tw-gap-2">
-                                    <i className="bi bi-x-circle-fill tw-text-red-600  tw-text-base"></i>
-                                    <span>Firefox, Safari and Edge addons (upcoming)</span>
+                                    <CloseCircleFilled className="tw-text-red-600"/>
+                                    <span>Firefox, Safari and Edge addons</span>
                                 </li>
                                 <li className="tw-flex tw-place-items-center tw-gap-2">
-                                    <i className="bi bi-x-circle-fill tw-text-red-600  tw-text-base"></i>
-                                    <span>Dark theme (upcoming)</span>
+                                    <CloseCircleFilled className="tw-text-red-600"/>
+                                    <span>Dark theme</span>
                                 </li>
                                 <li className="tw-flex tw-place-items-center tw-gap-2">
-                                    <i className="bi bi-x-circle-fill tw-text-red-600  tw-text-base"></i>
-                                    <span>Adjust font-size and colors (upcoming)</span>
+                                    <CloseCircleFilled className="tw-text-red-600"/>
+                                    <span>Adjust font-size and colors</span>
+                                </li>
+                                <li className="tw-flex tw-place-items-center tw-gap-2">
+                                    <CloseCircleFilled className="tw-text-red-600"/>
+                                    <span>Adjust letter spacing and more</span>
+                                </li>
+                                <li className="tw-flex tw-place-items-center tw-gap-2">
+                                    <CloseCircleFilled className="tw-text-red-600"/>
+                                    <span>Free access to upcoming features</span>
                                 </li>
                             </ul>
                             {/* <a
@@ -135,33 +148,44 @@ function Premium({ children, className = "" }) {
                                 className="tw-mt-4 tw-flex tw-flex-col tw-gap-2 tw-text-lg tw-text-gray-600"
                             >
                                 <li className="tw-flex tw-place-items-center tw-gap-2">
-                                    <i className="bi bi-check-circle-fill tw-text-green-600 tw-text-base"></i>
+                                    <CheckCircleFilled className="tw-text-green-600"/>
                                     <span>Select from 1000+ google fonts</span>
                                 </li>
-
                                 <li className="tw-flex tw-place-items-center tw-gap-2">
-                                    <i className="bi bi-check-circle-fill tw-text-green-600  tw-text-base"></i>
-                                    <span>Lifetime updates</span>
+                                    <CheckCircleFilled className="tw-text-green-600"/>
+                                    <span>Upload local fonts</span>
                                 </li>
                                 <li className="tw-flex tw-place-items-center tw-gap-2">
-                                    <i className="bi bi-check-circle-fill tw-text-green-600  tw-text-base"></i>
+                                    <CheckCircleFilled className="tw-text-green-600"/>
+                                    <span>Free updates</span>
+                                </li>
+                                <li className="tw-flex tw-place-items-center tw-gap-2">
+                                    <CheckCircleFilled className="tw-text-green-600"/>
                                     <span>Priority support</span>
                                 </li>
                                 <li className="tw-flex tw-place-items-center tw-gap-2">
-                                    <i className="bi bi-check-circle-fill tw-text-green-600  tw-text-base"></i>
+                                    <CheckCircleFilled className="tw-text-green-600"/>
                                     <span>Early access to new features</span>
                                 </li>
                                 <li className="tw-flex tw-place-items-center tw-gap-2">
-                                    <i className="bi bi-check-circle-fill tw-text-green-600  tw-text-base"></i>
-                                    <span>Firefox, Safari and Edge addons (upcoming)</span>
+                                    <CheckCircleFilled className="tw-text-green-600"/>
+                                    <span>Firefox, Safari and Edge addons</span>
                                 </li>
                                 <li className="tw-flex tw-place-items-center tw-gap-2">
-                                    <i className="bi bi-check-circle-fill tw-text-green-600  tw-text-base"></i>
-                                    <span>Dark theme (upcoming)</span>
+                                    <CheckCircleFilled className="tw-text-green-600"/>
+                                    <span>Dark theme</span>
                                 </li>
                                 <li className="tw-flex tw-place-items-center tw-gap-2">
-                                    <i className="bi bi-check-circle-fill tw-text-green-600  tw-text-base"></i>
-                                    <span>Adjust font-size and colors (upcoming)</span>
+                                    <CheckCircleFilled className="tw-text-green-600"/>
+                                    <span>Adjust font-size and colors</span>
+                                </li>
+                                <li className="tw-flex tw-place-items-center tw-gap-2">
+                                    <CheckCircleFilled className="tw-text-green-600"/>
+                                    <span>Adjust letter spacing and more</span>
+                                </li>
+                                <li className="tw-flex tw-place-items-center tw-gap-2">
+                                    <CheckCircleFilled className="tw-text-green-600"/>
+                                    <span>Free access to upcoming features</span>
                                 </li>
                             </ul>
                         
@@ -171,7 +195,7 @@ function Premium({ children, className = "" }) {
                                 rel="noreferrer noopener"
                                 className="tw-mt-8 !tw-bg-purple-500 !tw-text-white tw-gap-2 tw-text-lg tw-rounded-md !tw-font-semibold tw-w-full tw-flex tw-place-content-center tw-p-2 tw-mx-2"
                             >
-                                <span>Upgrade to Pro</span>
+                                <span>Buy Full License</span>
                                 <CrownFilled />
                             </a>
                         </div>

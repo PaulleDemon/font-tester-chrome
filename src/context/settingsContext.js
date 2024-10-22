@@ -10,7 +10,7 @@ export const SettingsProvider = ({ children }) => {
     const [settings, setSettings] = useState({
                                                 darkTheme: false,
                                                 cycleFonts: false, // cycle fonts with arrow
-                                                previewFonts: false, // display fonts as image in dropdown 
+                                                previewFonts: true, // display fonts as image in dropdown 
                                             })
 
     useEffect(() => {
