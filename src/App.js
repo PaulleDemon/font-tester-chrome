@@ -9,7 +9,8 @@ import {
 	FilterTwoTone,
 	GithubFilled, HighlightOutlined, HolderOutlined, ItalicOutlined,
 	QuestionCircleOutlined, RetweetOutlined, SettingFilled, SettingOutlined, ShareAltOutlined,
-	UnderlineOutlined, UndoOutlined
+	UnderlineOutlined, UndoOutlined,
+	UploadOutlined
 } from "@ant-design/icons"
 
 import { useMovable } from "./utils/hooks"
@@ -24,6 +25,8 @@ import Settings from "./components/settings"
 import { getRangeSelectedNodes } from "./utils/selection"
 import { randomInt } from "./utils/utils"
 import { useSettingsContext } from "./context/settingsContext"
+import WhatFontSection from "./components/whatFontSection"
+import FindFontToolTip from "./utils/findFontTooltip"
 
 
 // import { ReactComponent as BMC } from './assets/logos/bmc.svg'
@@ -71,7 +74,6 @@ function App({ container }) {
 	const {settings} = useSettingsContext()
 
 	const [enableSelection, setEnableSelection] = useState(true)
-
 	const [findFontEnabled, setFindFontEnabled] = useState(false)
 
 	const [fontOptions, setFontOptions] = useState([])
@@ -193,6 +195,16 @@ function App({ container }) {
 
 	}, [filterDropDownRef, showFilter])
 
+	// useEffect(() => {
+
+	// 	if (findFontEnabled){
+	// 		setEnableSelection(false)
+	// 	}else{
+	// 		setEnableSelection(true)
+	// 	}
+
+	// }, [findFontEnabled])
+
 	useEffect(() => {
 
 		window.document.addEventListener("selectionchange", updateSelection)
@@ -201,7 +213,7 @@ function App({ container }) {
 			window.document.removeEventListener("selectionchange", updateSelection)
 		}
 
-	}, [enableSelection])
+	}, []) // enableSelection dependency
 
 	useEffect(() => {
 
@@ -372,6 +384,9 @@ function App({ container }) {
 				height: "750px",
 				zIndex: 1000000000 // alway stay on top
 			}}>
+			
+			<FindFontToolTip enabled={findFontEnabled} />
+
 			<div className="tw-flex !tw-select-none tw-items-center tw-w-full tw-justify-between">
 				<div className="tw-bg-[#f4f4f4] tw-cursor-move tw-p-1 tw-px-3 tw-rounded-md"
 					onMouseDown={handleMouseDown}	>
@@ -595,6 +610,20 @@ function App({ container }) {
 								<AimOutlined />
 							</Tag.CheckableTag>
 						</Tooltip>
+						
+						<Premium>
+							<Tooltip title="Upload local font" overlayStyle={{ zIndex: 1200000000 }}>
+								<button className="tw-relative hover:!tw-bg-gray-100 hover:!tw-color-black"
+									style={{
+										outline: "none", border: "none", color: "#000",
+										backgroundColor: "transparent",
+										padding: "0.5rem 0.75rem", borderRadius: "0.375rem"
+									}}>
+									<UploadOutlined />
+									<CrownFilled  className="tw-absolute tw-bottom-[1px] tw-right-1 tw-text-purple-600 tw-text-sm"/>
+								</button>
+							</Tooltip>
+						</Premium>
 
 					</div>
 
@@ -616,6 +645,11 @@ function App({ container }) {
 								label: "@import",
 								children: <CodeSection fontStyle={currentFont}
 									type="import" />
+							},
+							{
+								key: "find-font",
+								label: "Font type",
+								children: <WhatFontSection />
 							}
 						]
 					} />

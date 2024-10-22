@@ -35,7 +35,7 @@ function Premium({ children, className = "" }) {
             >
                 <div className="tw-mt-5 tw-text-lg tw-max-w-[850px]  tw-w-full ">
                     I am Paul, a indie open-source dev.
-                    If you find this tool useful and want to fund and support it's development, consider buying a <b>one time license</b>.
+                    If you find this tool useful and want to support open-source development, consider buying a <b>one time license</b>.
                     <br />
                     <br />
                     By buying license, you get advance features, priority support, early access to upcoming features, and &nbsp;
@@ -79,14 +79,17 @@ function Premium({ children, className = "" }) {
                                     <CheckCircleFilled className="tw-text-green-600"/>
                                     <span>Select from 1000+ google fonts</span>
                                 </li>
-
+                                <li className="tw-flex tw-place-items-center tw-gap-2">
+                                    <CheckCircleFilled className="tw-text-green-600"/>
+                                    <span>Individuals and hobbyists</span>
+                                </li>
                                 <li className="tw-flex tw-place-items-center tw-gap-2">
                                     <CloseCircleFilled className="tw-text-red-600"/>
                                     <span>Upload local fonts</span>
                                 </li>
                                 <li className="tw-flex tw-place-items-center tw-gap-2">
                                     <CloseCircleFilled className="tw-text-red-600"/>
-                                    <span>Free updates</span>
+                                    <span>Team's and startups</span>
                                 </li>
                                 <li className="tw-flex tw-place-items-center tw-gap-2">
                                     <CloseCircleFilled className="tw-text-red-600"/>
@@ -136,7 +139,7 @@ function Premium({ children, className = "" }) {
                             <h3 className="">
                                 <span className="tw-text-5xl tw-font-semibold">
                                     <s className="tw-font-medium tw-text-4xl">$49</s>
-                                    <span>$19</span>
+                                    <span className="tw-bg-green-100">$19</span>
                                 </span>
                                 <span className="tw-text-2xl tw-text-gray-600 tw-ml-1">Forever</span>
                             </h3>
@@ -153,8 +156,13 @@ function Premium({ children, className = "" }) {
                                 </li>
                                 <li className="tw-flex tw-place-items-center tw-gap-2">
                                     <CheckCircleFilled className="tw-text-green-600"/>
+                                    <span>Commercial use</span>
+                                </li>
+                                <li className="tw-flex tw-place-items-center tw-gap-2">
+                                    <CheckCircleFilled className="tw-text-green-600"/>
                                     <span>Upload local fonts</span>
                                 </li>
+                               
                                 <li className="tw-flex tw-place-items-center tw-gap-2">
                                     <CheckCircleFilled className="tw-text-green-600"/>
                                     <span>Free updates</span>
@@ -201,6 +209,11 @@ function Premium({ children, className = "" }) {
                         </div>
 
                     </div>
+                    <br />
+                        <span className="tw-p-1 tw-bg-green-200">
+                            <b>Note:</b> If you are already a premium user, you can find your premium extension from the shop you purchased. (Gumroad/Ko-fi)
+                        </span>
+                    <br />
                 </section>
 
             
