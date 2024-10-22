@@ -73,6 +73,8 @@ function App({ container }) {
 
 	const {settings} = useSettingsContext()
 
+	const [activeTabKey, setActiveTabKey] = useState("link")
+
 	const [enableSelection, setEnableSelection] = useState(true)
 	const [findFontEnabled, setFindFontEnabled] = useState(false)
 
@@ -85,6 +87,8 @@ function App({ container }) {
 		underline: false,
 		italics: false
 	})
+
+	const [findFont, setFindFont] = useState({}) // stores the values provided by the Find font tool.
 
 
 	useEffect(() => {
@@ -385,7 +389,15 @@ function App({ container }) {
 				zIndex: 1000000000 // alway stay on top
 			}}>
 			
-			<FindFontToolTip enabled={findFontEnabled} />
+			{ 
+				findFontEnabled &&
+					<FindFontToolTip 
+							onClick={(val) => {
+								setFindFont(val); 
+								setFindFontEnabled(false)
+								setActiveTabKey("find-font") // open the find font tab
+							}} />
+			}
 
 			<div className="tw-flex !tw-select-none tw-items-center tw-w-full tw-justify-between">
 				<div className="tw-bg-[#f4f4f4] tw-cursor-move tw-p-1 tw-px-3 tw-rounded-md"
@@ -599,6 +611,11 @@ function App({ container }) {
 
 						<Tooltip title="What font?" overlayStyle={{ zIndex: 1200000000 }}>
 							<Tag.CheckableTag checked={findFontEnabled}
+								onClick={(e) => {
+										// this is necessary to stop the findFont from receiving the first click 
+										e.preventDefault(); 
+										e.stopPropagation();
+									}} 
 								onChange={(checked) => { setFindFontEnabled(checked) }}
 								className={`${findFontEnabled && "!tw-bg-gray-100"} !tw-text-lg hover:!tw-bg-gray-100 hover:!tw-color-black`}
 								style={{
@@ -631,28 +648,32 @@ function App({ container }) {
 				</div>
 				{/* <CodeSection /> */}
 				<div className="tw-flex tw-w-full tw-h-full tw-max-h-[120px]">
-					<Tabs className="tw-w-full tw-h-full" items={
-						[
-							{
-								key: "link",
-								label: "link",
-								children: <CodeSection fontStyle={currentFont}
-									type="link"
-								/>
-							},
-							{
-								key: "@import",
-								label: "@import",
-								children: <CodeSection fontStyle={currentFont}
-									type="import" />
-							},
-							{
-								key: "find-font",
-								label: "Font type",
-								children: <WhatFontSection />
-							}
-						]
-					} />
+					<Tabs className="tw-w-full tw-h-full" 
+						onChange={(val) => setActiveTabKey(val)}
+						activeKey={activeTabKey}
+						items={
+							[
+								{
+									key: "link",
+									label: "link",
+									children: <CodeSection fontStyle={currentFont}
+										type="link"
+									/>
+								},
+								{
+									key: "@import",
+									label: "@import",
+									children: <CodeSection fontStyle={currentFont}
+										type="import" />
+								},
+								{
+									key: "find-font",
+									label: "Font type",
+									children: <WhatFontSection font={findFont} />
+								}
+							]
+						} 
+					/>
 				</div>
 
 			</div>

@@ -17,7 +17,6 @@ const FindFontToolTip = ({ onClick }) => {
 
     useEffect(() => {
         const findFont = (event) => {
-            const target = event.target
 
             // Get the range of the text the mouse is over
             const caretPos = document.caretPositionFromPoint(event.clientX, event.clientY)
@@ -45,23 +44,33 @@ const FindFontToolTip = ({ onClick }) => {
             setMousePos({ x: event.clientX, y: event.clientY })
         }
 
+        window.addEventListener("mousemove", findFont)
+
+
+        return () => {
+            window.removeEventListener("mousemove", findFont)
+            console.log("removed")
+        }
+    }, [onClick])
+
+    useEffect(() => {
+
         function documentClicked(event){
-            event.stopPropagation();
+            console.log("event: ", event)
             event.preventDefault();
+            event.stopPropagation();
 
             if (onClick)
                 onClick(fontDetails)
         }
 
-        window.addEventListener("mousemove", findFont)
-
         window.addEventListener("click", documentClicked)
 
         return () => {
-            window.removeEventListener("mousemove", findFont)
             window.removeEventListener("click", documentClicked)
         }
-    }, [])
+
+    }, [onClick, fontDetails])
 
     useEffect(() => {
         if (tooltipRef.current) {

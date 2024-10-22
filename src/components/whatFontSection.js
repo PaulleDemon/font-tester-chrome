@@ -19,38 +19,35 @@ function formatCodeString(code) {
  * @param {{fontStyle: object, type: "import"|"link"}} param0 
  * @returns 
  */
-function WhatFontSection({fontFamily="", color="", fontSize=18}){
+function WhatFontSection({font}){
+
 
     const codeRef = useRef()
-
-    // const { family: fontType, 
-    //         category, fontWeight, 
-    //         lineHeight, underline, italics } = fontStyle;
 
     
     const codeString = useMemo(() => {
         
-        const cssRule = [`\t\tfont-family: ${fontFamily};`]
+        const cssRule = [`\t\tfont-family: ${font.fontFamily};`]
 
-        if (color){
-            cssRule.push(`\t\tcolor: ${color};`)
+        if (font.fontColor){
+            cssRule.push(`\t\tcolor: ${font.fontColor};`)
         }
 
-        if (fontSize){
-            cssRule.push(`\t\tfont-size: ${fontSize};`)
+        if (font.fontSize){
+            cssRule.push(`\t\tfont-size: ${font.fontSize};`)
         }
 
-        const fontCode = `
-                    \t.${fontFamily.toLowerCase().replace(/ /g, "-")}-family{
-                        ${cssRule.join("\n")}
-                    \t}
-        `
+        if (font.fontWeight){
+            cssRule.push(`\t\tfont-weight: ${font.fontWeight};`)
+        }
 
-        return `
-            ${fontCode}
-        `
+        const fontCode = `\t.font-family{
+                            ${cssRule.join("\n")}
+                        \t}`
 
-    }, [fontFamily, fontSize, color])
+        return `${fontCode}`
+
+    }, [font])
 
     const onCopy = () => {
         navigator.clipboard.writeText(codeRef.current?.innerText).then(function() {
@@ -66,7 +63,6 @@ function WhatFontSection({fontFamily="", color="", fontSize=18}){
                         tw-h-[150px] tw-w-full">
             <div className="tw-sticky tw-left-0 tw-top-2 tw-w-full tw-flex tw-place-content-end">
                 <button onClick={onCopy} className="hover:!tw-bg-gray-300 hover:!tw-color-black" 
-
 								style={{outline: "none", border: "none", color: "#000", 
 										backgroundColor: "transparent",
 										padding: "0.5rem 0.75rem", borderRadius: "0.375rem"}}>
@@ -75,7 +71,7 @@ function WhatFontSection({fontFamily="", color="", fontSize=18}){
             </div>
             
             <div className="tw-whitespace-break-spaces tw-w-full tw-h-fit tw-text-gray-700" ref={codeRef}>
-                {fontFamily && formatCodeString(codeString)}
+                {font.fontFamily && formatCodeString(codeString)}
             </div>
         </div>
     )
