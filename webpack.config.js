@@ -56,13 +56,19 @@ module.exports = {
       // },
       {
         test: /\.(png|jpe?g|gif|svg)$/,
-        include: path.resolve(__dirname, 'src/assets/font-images'),  // Only images in this folder
+        include: [
+                path.resolve(__dirname, 'src/assets/font-images'), 
+                path.resolve(__dirname, 'src/assets/cursor')
+                ],  // Only images in this folder
         type: 'asset/inline'  // Convert images to base64 and inline them in the bundle
       },
       {
         test: /\.(png|jpe?g|gif|svg|ico)$/,
         type: 'asset/resource',
-        exclude: path.resolve(__dirname, 'src/assets/font-images'),
+        exclude: [
+                  path.resolve(__dirname, 'src/assets/font-images'), 
+                  path.resolve(__dirname, 'src/assets/cursor')
+                ],
         generator: {
           filename: 'assets/[name][ext][query]',
         },

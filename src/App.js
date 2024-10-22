@@ -615,6 +615,7 @@ function App({ container }) {
 										// this is necessary to stop the findFont from receiving the first click 
 										e.preventDefault(); 
 										e.stopPropagation();
+										message.info("Click to show the family")
 									}} 
 								onChange={(checked) => { setFindFontEnabled(checked) }}
 								className={`${findFontEnabled && "!tw-bg-gray-100"} !tw-text-lg hover:!tw-bg-gray-100 hover:!tw-color-black`}
@@ -679,7 +680,7 @@ function App({ container }) {
 			</div>
 
 			<div className="tw-flex tw-w-full tw-place-items-center tw-gap-2 tw-h-10 tw-justify-between">
-				<a href="https://buymeacoffee.com/artpaul"
+				<a href="https://ko-fi.com/artpaul"
 					target="_blank" rel="noopener noreferrer">
 					<img src={BMC_IMG} className="tw-w-8 tw-h-8" alt='BMC' />
 				</a>

@@ -1,5 +1,8 @@
-import { useEffect, useRef, useState } from "react"
+import { memo, useEffect, useRef, useState } from "react"
 import { rgbToHex } from "./utils"
+
+import TargetCursor from "../assets/cursor/target.png"
+
 
 const TOOLTIP_OFFSET = 15
 
@@ -14,6 +17,22 @@ const FindFontToolTip = ({ onClick }) => {
         fontWeight: "",
         fontColor: ""
     })
+
+    useEffect(() => {
+
+        const styleElement = document.createElement('style');
+        styleElement.innerHTML = `
+            body, body * {
+                cursor: url('${TargetCursor}') 10 10, auto !important;
+            }
+        `   
+        document.head.appendChild(styleElement);
+
+        return () => {
+            document.head.removeChild(styleElement);
+        };
+
+    }, [])
 
     useEffect(() => {
         const findFont = (event) => {
@@ -49,16 +68,15 @@ const FindFontToolTip = ({ onClick }) => {
 
         return () => {
             window.removeEventListener("mousemove", findFont)
-            console.log("removed")
         }
     }, [onClick])
 
     useEffect(() => {
 
-        function documentClicked(event){
-            console.log("event: ", event)
-            event.preventDefault();
-            event.stopPropagation();
+        function documentClicked(event) {
+            // console.log("event: ", event)
+            event.preventDefault()
+            event.stopPropagation()
 
             if (onClick)
                 onClick(fontDetails)
@@ -98,8 +116,8 @@ const FindFontToolTip = ({ onClick }) => {
 
     return (
         <>
-            <div ref={tooltipRef}
-                className="tw-fixed tw-left-0 tw-min-w-max tw-w-[350px] tw-max-h-[250px] tw-p-2 tw-overflow-hidden
+            <div ref={tooltipRef} 
+                className="tw-pointer-events-none tw-fixed tw-left-0 tw-min-w-max tw-w-[350px] tw-max-h-[250px] tw-p-2 tw-overflow-hidden
                                     tw-h-fit tw-bg-[#000000da] tw-rounded-md tw-text-white tw-break-words
                                     tw-flex tw-flex-col tw-gap-2 tw-transition-all tw-duration-[0.1s]"
                 style={{
@@ -149,4 +167,4 @@ const FindFontToolTip = ({ onClick }) => {
     )
 }
 
-export default FindFontToolTip
+export default memo(FindFontToolTip)
