@@ -1,8 +1,8 @@
-chrome.runtime.onInstalled.addListener((reason) => {
+chrome.runtime.onInstalled.addListener((detail) => {
 
-	if (reason === 'install') {
+	if (detail.reason === 'install') {
 		chrome.tabs.create({
-		  url: "https://font-tester.foxcraft.tech/thank-you.html"
+		  url: "https://font-tester.foxcraft.tech/thank-you"
 		})
 	}
 
