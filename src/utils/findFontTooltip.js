@@ -1,5 +1,5 @@
 import { memo, useEffect, useRef, useState } from "react"
-import { rgbToHex } from "./utils"
+import { isPointOverText, rgbToHex } from "./utils"
 
 import TargetCursor from "../assets/cursor/target.png"
 
@@ -36,19 +36,15 @@ const FindFontToolTip = ({ onClick }) => {
 
     useEffect(() => {
         const findFont = (event) => {
-
-            // Get the range of the text the mouse is over
-            const caretPos = document.caretPositionFromPoint(event.clientX, event.clientY)
-            if (caretPos && caretPos.offsetNode.nodeType === Node.TEXT_NODE) {
-                const parentElement = caretPos.offsetNode.parentElement
-
-                if (parentElement) {
-                    const computedStyle = window.getComputedStyle(parentElement)
+            if (isPointOverText(event.clientX, event.clientY)) {
+                const element = document.elementFromPoint(event.clientX, event.clientY)
+                if (element) {
+                    const computedStyle = window.getComputedStyle(element)
                     const fontFamily = computedStyle.fontFamily || ""
                     const fontSize = computedStyle.fontSize || ""
                     const fontWeight = computedStyle.fontWeight || ""
                     const fontColor = rgbToHex(computedStyle.color)
-
+    
                     setFontDetails({
                         fontFamily,
                         fontWeight,
@@ -59,13 +55,12 @@ const FindFontToolTip = ({ onClick }) => {
             } else {
                 setFontDetails('')
             }
-
+    
             setMousePos({ x: event.clientX, y: event.clientY })
         }
-
+    
         window.addEventListener("mousemove", findFont)
-
-
+    
         return () => {
             window.removeEventListener("mousemove", findFont)
         }
