@@ -71,12 +71,13 @@ Pluse you get more advanced features, early access, Upcoming Edge/Firefox addons
 | **Support open-source development**                               | 👍️                 | 😎                                                                  |
 | **Priority support** - (priorities your feature requests, issues) | community support | ✅                                                                  |
 | **Lifetime license** (one-time  purchase)                         | 👍️                 | ✅                                                                  |
-| **Lifetime updates**                                              | ❓️                 | ✅                                                                  |
+| **Free updates**                                                  | ❓️                 | ✅                                                                  |
+| **Upload local fonts**                                            | ❌                 | ✅                                                                  |
+| **Adjust font size**                                              | ❌                 | ✅                                                                  |
 | **Early access** to upcoming features                             | ❌                 | ✅                                                                  |
-| **Adjust font size** (upcoming)                                   | ❌                 | ✅                                                                  |
-| **Adjust font color**(upcoming)                                   | ❌                 | ✅                                                                  |
-| **Dark theme** (upcoming)                                         | ❌                 | ✅                                                                  |
-| **Extension for Edge and Firefox** (upcoming)                     | ❌                 | ✅                                                                  |
+| **Adjust font color**                                             | ❌                 | ✅                                                                  |
+| **Dark theme**                                                    | ❌                 | ✅                                                                  |
+| **Extension for Edge and Firefox**                                | ❌                 | ✅                                                                  |
 | **Price**                                                         | Free             | ~~$49~~ $19 (save 61.22%. for limited time)                        |
 | Pre-order now!                                                    |  -                | [Get license](https://foxcraft.gumroad.com/l/font-tester/preorder) |
 

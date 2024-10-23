@@ -4,9 +4,6 @@ import root from 'react-shadow'
 
 window.React = React
 
-// TODO: remove the below styling, because repetition
-import "./styles/tailwind.css"
-import "./styles/index.css"
 
 import tailwindStyles from './styles/tailwind.css'
 import styles from './styles/index.css'
@@ -16,6 +13,7 @@ import { StyleProvider } from '@ant-design/cssinjs'
 import { ConfigProvider } from 'antd'
 
 import App from "./App"
+import { SettingsProvider } from "./context/settingsContext"
 
 
 // Function to create a style element with the provided CSS content
@@ -26,7 +24,7 @@ const createStyleElement = (cssContent) => {
 }
 
 
-(function () {
+function init() {
 	const containerId = 'font-selector-root'
 	const existingContainer = document.getElementById(containerId)
 
@@ -39,6 +37,13 @@ const createStyleElement = (cssContent) => {
 		// Attach Shadow DOM
 		const shadowRoot = container.attachShadow({ mode: 'open' })
 
+		const shadowRootInitializeStyles = document.createElement('style')
+
+		shadowRootInitializeStyles.textContent = `
+			:host{
+				/*font-size: 16px !important;*/
+			}
+		`
 		// Create a root element inside the shadow DOM
 		const shadowRootContainer = document.createElement('div')
 		shadowRootContainer.id = "font-selector-shadow-dom"
@@ -46,10 +51,28 @@ const createStyleElement = (cssContent) => {
 
 		shadowRoot.appendChild(createStyleElement(tailwindStyles))
         shadowRoot.appendChild(createStyleElement(styles))
+		shadowRoot.appendChild(shadowRootInitializeStyles) // this should come after tailwind css as tailwind css other wise tailwind css would interfere
         
 		document.body.appendChild(createStyleElement(styles)) // this is to ensure that the antd message is always on top
+		
+		shadowRoot.addEventListener('keydown', function(event) {
+			// used to prevent webpage from hijacking focus on keydown, this happens in certain websites include Github.
+			const shadowActiveElement = shadowRoot.activeElement;
+
+			// allow arrow up and drown to be propagated so, select components can use arrows to cycle up and down 
+			if (shadowActiveElement && ["ArrowUp", "ArrowDown", "Enter"].includes(event.key)) {
+				// Allow event propagation for Ant Design Select components
+				return;
+			}
+	
+			if (shadowActiveElement) {
+				event.stopPropagation();
+			}
+	
+		}, true);
 
 		const root = ReactDOM.createRoot(shadowRootContainer)
+
 		root.render(
 			<React.StrictMode>
 				<StyleProvider container={shadowRoot}>
@@ -58,15 +81,19 @@ const createStyleElement = (cssContent) => {
 						theme={{
 							components: {
 								Message: {
-									zIndexPopup: 14000
+									zIndexPopup: 1400000000
 								}
 							},
                         }}
 						>
-						<App />
+						<SettingsProvider>
+							<App shadowRoot={shadowRoot}/>
+						</SettingsProvider>
 					</ConfigProvider>
 				</StyleProvider>
 			</React.StrictMode>
 		)
 	}
-})()
+}
+
+init()

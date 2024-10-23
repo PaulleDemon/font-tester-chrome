@@ -39,7 +39,7 @@ function Share({children, className=""}){
         <div onClick={onClick} className={className}>
             {children}
             <Modal title={<h3 className="tw-text-xl tw-font-medium">Share FontTester</h3>} 
-                    styles={{wrapper: {zIndex: 14000, gap: "10px"}}}
+                    styles={{wrapper: {zIndex: 14000000, gap: "10px"}, mask: {zIndex: 12000000 }}}
                     onCancel={onClose}
                     onOk={onClose}
                     footer={null}

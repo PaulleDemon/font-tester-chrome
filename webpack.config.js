@@ -55,8 +55,45 @@ module.exports = {
       //   use: 'raw-loader', // Use raw-loader to get CSS as a string
       // },
       {
+        test: /\.(png|jpe?g|gif|svg)$/,
+        include: [
+                path.resolve(__dirname, 'src/assets/font-images'), 
+                path.resolve(__dirname, 'src/assets/cursor')
+                ],  // Only images in this folder
+        type: 'asset/inline',  // Convert images to base64 and inline them in the bundle
+        use: [
+          {
+            loader: 'image-webpack-loader',
+            options: {
+              mozjpeg: {
+                progressive: true,
+                quality: 80 // Adjust quality to balance size and quality
+              },
+              optipng: {
+                enabled: true,
+              },
+              pngquant: {
+                quality: [0.65, 0.90],
+                speed: 4
+              },
+              gifsicle: {
+                interlaced: false,
+              },
+              // Optionally disable webp if it's not needed
+              webp: {
+                enabled: false,
+              },
+            },
+          },
+        ],
+      },
+      {
         test: /\.(png|jpe?g|gif|svg|ico)$/,
         type: 'asset/resource',
+        exclude: [
+                  path.resolve(__dirname, 'src/assets/font-images'), 
+                  path.resolve(__dirname, 'src/assets/cursor')
+                ],
         generator: {
           filename: 'assets/[name][ext][query]',
         },
