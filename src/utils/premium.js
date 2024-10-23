@@ -143,6 +143,9 @@ function Premium({ children, className = "" }) {
                                 </span>
                                 <span className="tw-text-2xl tw-text-gray-600 tw-ml-1">Forever</span>
                             </h3>
+                            <p className="tw-mt-1 tw-text-sm tw-text-center tw-text-black">
+                                per user
+                            </p>
                             <p className="tw-mt-3 tw-text-center tw-text-gray-600">
                                 Support open-source development 🚀. Plus get added benefits.
                             </p>
@@ -211,7 +214,7 @@ function Premium({ children, className = "" }) {
                     </div>
                     <br />
                         <span className="tw-p-1 tw-bg-green-200">
-                            <b>Note:</b> If you are already a premium user, you can find your premium extension from the shop you purchased. (Gumroad/Ko-fi)
+                            <b>Note:</b> If you are already a premium user, you can find your premium extension from the shop you purchased. (You'll also be emailed about the updates)
                         </span>
                     <br />
                 </section>

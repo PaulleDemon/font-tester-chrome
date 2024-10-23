@@ -5,10 +5,11 @@ import { Select, Slider, Tabs, Tooltip, Button, message, Tag } from "antd"
 import {
 	AimOutlined,
 	CloseOutlined, CrownFilled,
+	DownOutlined,
 	FilterOutlined,
 	FilterTwoTone,
 	GithubFilled, HighlightOutlined, HolderOutlined, ItalicOutlined,
-	QuestionCircleOutlined, RetweetOutlined, SettingFilled, SettingOutlined, ShareAltOutlined,
+	RetweetOutlined, SettingOutlined, ShareAltOutlined,
 	UnderlineOutlined, UndoOutlined,
 	UploadOutlined
 } from "@ant-design/icons"
@@ -23,10 +24,11 @@ import Premium from "./utils/premium"
 import Settings from "./components/settings"
 
 import { getRangeSelectedNodes } from "./utils/selection"
-import { randomInt } from "./utils/utils"
+import { checkSelectionInShadowDOM, randomInt } from "./utils/utils"
 import { useSettingsContext } from "./context/settingsContext"
 import WhatFontSection from "./components/whatFontSection"
 import FindFontToolTip from "./utils/findFontTooltip"
+import AdvancedFeatures from "./components/advancedFeatures"
 
 
 // import { ReactComponent as BMC } from './assets/logos/bmc.svg'
@@ -49,14 +51,15 @@ const importAll = (r) => {
 
 const FontImages = importAll(require.context('./assets/font-images', false, /\.(png|jpe?g|svg)$/));
 
+const WIDGET_WIDTH = 300
+const WIDGET_HEIGHT = 750
 
 const defaultPosition = {
-	x: (window.innerWidth - 300) - 25,
-	y: (window.innerHeight - 750) - 15
+	x: (window.innerWidth - WIDGET_WIDTH) - 25,
+	y: (window.innerHeight - WIDGET_HEIGHT) - 15
 }
 
 
-// TODO: prevent selection on the modal
 function App({ container }) {
 
 	const widgetRef = useRef()
@@ -64,7 +67,7 @@ function App({ container }) {
 	const selectDropDownRef = useRef()
 	const filterDropDownRef = useRef()
 
-	const { position, handleMouseDown } = useMovable({ x: defaultPosition.x, y: defaultPosition.y }) // set the current position, if useEffect is used, recursion error occurs
+	const { position, handleMouseDown, setPosition } = useMovable({ x: defaultPosition.x, y: defaultPosition.y }) // set the current position, if useEffect is used, recursion error occurs
 
 	const [filter, setFilter] = useState([])
 	const [showFilter, setShowFilter] = useState(false)
@@ -77,6 +80,11 @@ function App({ container }) {
 
 	const [enableSelection, setEnableSelection] = useState(true)
 	const [findFontEnabled, setFindFontEnabled] = useState(false)
+
+	const [advanceFeatureOpen, setAdvanceFeatureOpen] = useState(false)
+
+	// this is a helper to help with the arrow down and arrow up cycling
+	const [dropdownActiveFont, setDropDownActiveFont] = useState("") 
 
 	const [fontOptions, setFontOptions] = useState([])
 	const [currentFont, setCurrentFont] = useState({
@@ -115,12 +123,12 @@ function App({ container }) {
 
 			const imageEquivalent = FontImages.find((val) => family === val.name)
 		
-			// console.log("image equivalent: ", family, imageEquivalent, settings.previewFonts)
-		
-			let label = family
+			let label = (<div onMouseEnter={() => setDropDownActiveFont(family)}>
+							{family}
+						</div>)
 		
 			if (imageEquivalent && settings.previewFonts){
-				label = (<div className="tw-h-full tw-w-full">
+				label = (<div className="tw-h-full tw-w-full" onMouseEnter={() => setDropDownActiveFont(family)}>
 							<img src={imageEquivalent.url} alt={family} className="tw-h-full tw-object-contain" />
 						</div>)
 			}
@@ -150,7 +158,40 @@ function App({ container }) {
 
 	}, [filter, Fonts, settings?.previewFonts])
 
+	useEffect(() => {
 
+		// if the window is resized it ensures it don't go outside
+		const handleWindowResize = (event) => {
+			setPosition(prevPosition => {
+				const { innerWidth, innerHeight } = window
+				
+				let newX = prevPosition.x
+				let newY = prevPosition.y
+	
+				// Ensure the element doesn't go beyond the right edge
+				if (prevPosition.x + WIDGET_WIDTH > innerWidth) {
+					newX = (innerWidth - WIDGET_WIDTH) - 15
+				}
+	
+				// Ensure the element doesn't go beyond the bottom edge
+				if (prevPosition.y + WIDGET_HEIGHT > innerHeight) {
+					newY = innerHeight - WIDGET_HEIGHT
+				}
+	
+				return {
+					x: newX < 0 ? 0 : newX, // Ensure it doesn't go out of the left boundary
+					y: newY < 0 ? 0 : newY, // Ensure it doesn't go out of the top boundary
+				}
+			})
+		}
+
+		window.addEventListener("resize", handleWindowResize)
+
+		return () => {
+			window.removeEventListener("resize", handleWindowResize)
+		}
+
+	}, [setPosition])
 
 	useEffect(() => {
 		// check if the font cdn style link exists, else add the link once
@@ -199,15 +240,6 @@ function App({ container }) {
 
 	}, [filterDropDownRef, showFilter])
 
-	// useEffect(() => {
-
-	// 	if (findFontEnabled){
-	// 		setEnableSelection(false)
-	// 	}else{
-	// 		setEnableSelection(true)
-	// 	}
-
-	// }, [findFontEnabled])
 
 	useEffect(() => {
 
@@ -217,29 +249,33 @@ function App({ container }) {
 			window.document.removeEventListener("selectionchange", updateSelection)
 		}
 
-	}, []) // enableSelection dependency
+	}, [enableSelection]) // enableSelection dependency
 
 	useEffect(() => {
 
 		// update font styles like, weight, line height, underline and more 
 		if (currentFont.family !== "" && selectionFontPreview.current) {
-			const currentFontStyle = {
-				fontFamily: `${currentFont.family}, ${currentFont.category}`,
-				fontWeight: currentFont.fontWeight,
-				lineHeight: currentFont.lineHeight,
-				textDecoration: currentFont.underline ? 'underline' : 'none',
-				fontStyle: currentFont.italics ? 'italic' : 'normal',
-			}
-
-			Object.assign(selectionFontPreview.current.style, currentFontStyle)
-
-			document.querySelectorAll("[data-font-selector]").forEach(e => {
-				// assign it to all the elements that the user had selected
-				Object.assign(e.style, currentFontStyle)
-
-			})
-
+			
+			const styleElement = document.querySelector("#font-selector-link")
+			const url = `https://fonts.googleapis.com/css2?family=${encodeURIComponent(currentFont.family)}`
+			styleElement.innerHTML = `@import url(${url});`
 		}
+
+		const currentFontStyle = {
+			fontFamily: `${currentFont.family}, ${currentFont.category}`,
+			fontWeight: currentFont.fontWeight,
+			lineHeight: currentFont.lineHeight,
+			textDecoration: currentFont.underline ? 'underline' : 'none',
+			fontStyle: currentFont.italics ? 'italic' : 'normal',
+		}
+
+		Object.assign(selectionFontPreview.current.style, currentFontStyle)
+
+		document.querySelectorAll("[data-font-selector]").forEach(e => {
+			// assign it to all the elements that the user had selected
+			Object.assign(e.style, currentFontStyle)
+
+		})
 
 	}, [currentFont, selectionFontPreview.current])
 
@@ -254,6 +290,15 @@ function App({ container }) {
 		if (!selectedText) {
 			return
 		}
+
+		if (selection.rangeCount === 0) return;
+
+
+		if (checkSelectionInShadowDOM(container)) {
+			// Don't preview anything selected inside the shadow container
+			return
+		} 
+
 		const range = selection.getRangeAt(0)
 
 		// also for wrapping elements, see https://stackoverflow.com/questions/6328718/how-to-wrap-surround-highlighted-text-with-an-element
@@ -271,6 +316,7 @@ function App({ container }) {
 
 	}, [enableSelection])
 
+
 	const handleClose = () => {
 		// console.log("run time: ", chrome.runtime)
 		onReset() // reset the selection before closing
@@ -286,10 +332,10 @@ function App({ container }) {
 		const fontFamily = Fonts[fontIndex].family
 		const fontCategory = Fonts[fontIndex].category
 
-		const styleElement = document.querySelector("#font-selector-link")
-		const url = `https://fonts.googleapis.com/css2?family=${encodeURIComponent(fontFamily)}`
-		styleElement.innerHTML = `@import url(${url})`
-
+		// const styleElement = document.querySelector("#font-selector-link")
+		// const url = `https://fonts.googleapis.com/css2?family=${encodeURIComponent(fontFamily)}`
+		// styleElement.innerHTML = `@import url(${url})`
+		
 		// setTimeout(() => {
 		// 	selectionFontPreview.current.style.fontFamily = `${fontFamily}, ${fontCategory}`
 		// }, 100)
@@ -301,16 +347,17 @@ function App({ container }) {
 		})
 	}
 
-	// TODO: handle Hover on option
+	
 	const cycleFontsWithKeys = (event) => {
 
 		if (!settings.cycleFonts)
 			return
 
 		const key = event.key
-    	let currentIndex = fontOptions.findIndex(option => option.value === currentFont.family)
+    	// let currentIndex = fontOptions.findIndex(option => option.value === currentFont.family)
+    	let currentIndex = fontOptions.findIndex(option => option.value === dropdownActiveFont)
 
-		console.log("current index: ", currentIndex)
+		// console.log("current index: ", currentIndex)
 
 		// if (currentIndex === -1){
 		// 	currentIndex = 0
@@ -318,20 +365,32 @@ function App({ container }) {
 
 		if (key === 'ArrowDown') {
 			// Move to the next font
-			const nextIndex = (currentIndex + 1) % fontOptions.length;
-			console.log("next index: ", nextIndex, fontOptions[nextIndex])
+			const nextIndex = (currentIndex + 1) % fontOptions.length
+			// console.log("next index: ", nextIndex, fontOptions[nextIndex])
+			
+			const fontFamily = fontOptions[nextIndex].value
+			const category = Fonts.find((val) => val.family === fontFamily)?.category || ""
+			
+			setDropDownActiveFont(fontFamily)
+
 			setCurrentFont({
 							...currentFont,
-							family: Fonts[nextIndex].family, 
-							category: Fonts[nextIndex].category
+							family: fontFamily, 
+							category: category
 						});
 		} else if (key === 'ArrowUp') {
 			// Move to the previous font
-			const prevIndex = (currentIndex - 1 + fontOptions.length) % fontOptions.length;
+			const prevIndex = (currentIndex - 1 + fontOptions.length) % fontOptions.length
+			
+			const fontFamily = fontOptions[prevIndex].value
+			const category = Fonts.find((val) => val.family === fontFamily)?.category || ""
+
+			setDropDownActiveFont(fontFamily)
+
 			setCurrentFont({
 				...currentFont,
-				family: Fonts[prevIndex].family, 
-				category: Fonts[prevIndex].category
+				family: fontFamily, 
+				category: category
 			});
 		}
 
@@ -365,19 +424,26 @@ function App({ container }) {
 
 	function randomFont() {
 
-		const randomType = Fonts[randomInt(0, Fonts.length)]
+		// const randomType = Fonts[randomInt(0, Fonts.length)]
 
-		setCurrentFont(prev => ({
-			...prev,
-			family: randomType.family,
-			category: randomType.category,
-		}))
+		const randomPick = fontOptions[randomInt(0, fontOptions.length - 1)]
+
+		const randomType = Fonts.find(val => val.family === randomPick.value)
+
+		if (randomType){
+			setCurrentFont(prev => ({
+				...prev,
+				family: randomType.family,
+				category: randomType.category,
+			}))
+		}
 
 	}
 
 
 	return (
 		<div ref={widgetRef} className="tw-bg-white tw-text-base tw-overflow-hidden tw-text-black tw-flex tw-flex-col tw-shadow-xl tw-p-3 tw-rounded-xl"
+			id="font-tester-container"
 			style={{
 				position: "fixed",
 				top: position.y,
@@ -511,7 +577,7 @@ function App({ container }) {
 							options={fontOptions}
 							placeholder="select font"
 							onChange={onFontUpdate}
-							onKeyDown={cycleFontsWithKeys}	
+							onKeyDown={cycleFontsWithKeys}
 							style={{ width: "100%" }}
 							filterOption={(input, option) =>
 								(option?.value ?? '').toLowerCase().includes(input.toLowerCase())
@@ -579,6 +645,33 @@ function App({ container }) {
 								<UnderlineOutlined />
 							</Tag.CheckableTag>
 						</Tooltip>
+
+						<div className="tw-relative">
+							<Tooltip title="Advance features" overlayStyle={{ zIndex: 1200000000 }}>
+								<Tag.CheckableTag checked={advanceFeatureOpen}
+									onClick={(e) => {
+											// this is necessary to stop the findFont from receiving the first click 
+											e.preventDefault(); 
+											e.stopPropagation();
+										}} 
+									onChange={(checked) => { setAdvanceFeatureOpen(checked) }}
+									className={`${advanceFeatureOpen && "!tw-bg-gray-100"} tw-relative !tw-text-lg hover:!tw-bg-gray-100 hover:!tw-color-black`}
+									style={{
+										outline: "none", border: "none", color: "#000",
+										backgroundColor: "transparent", display: "flex",
+										justifyContent: "center",
+										padding: "0.5rem 0.75rem", borderRadius: "0.375rem"
+									}}>
+									<DownOutlined />
+									{/* <CrownFilled  className="tw-absolute tw-bottom-[1px] tw-right-1 tw-text-purple-600 tw-text-sm"/> */}
+								</Tag.CheckableTag>
+							</Tooltip>
+							{
+								advanceFeatureOpen && 
+									<AdvancedFeatures />
+							}
+						</div>
+							
 
 					</div>
 

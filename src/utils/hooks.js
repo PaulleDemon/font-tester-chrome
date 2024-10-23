@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, useCallback } from 'react'
 
 /**
  * 
@@ -19,17 +19,18 @@ export const useMovable = (initialPosition = { x: 10, y: 10 }, onWidgetMove) => 
         }
     }
 
-    const handleMouseMove = (e) => {
+    const handleMouseMove = useCallback((e) => {
         if (!isDragging) return;
-        setPosition({
+        const newPosition = {
             x: e.clientX - offset.current.x,
             y: e.clientY - offset.current.y,
-        })
+        }
+        setPosition(newPosition)
 
-        if (onWidgetMove)
-            onWidgetMove({x: e.clientX - offset.current.x, 
-                            y: e.clientY - offset.current.y})
-    }
+        if (onWidgetMove) {
+            onWidgetMove(newPosition)
+        }
+    }, [isDragging, onWidgetMove])
 
     const handleMouseUp = () => {
         setIsDragging(false)
@@ -37,21 +38,19 @@ export const useMovable = (initialPosition = { x: 10, y: 10 }, onWidgetMove) => 
 
     useEffect(() => {
         if (isDragging) {
-            document.addEventListener('mousemove', handleMouseMove);
-            document.addEventListener('mouseup', handleMouseUp);
-        } else {
-            document.removeEventListener('mousemove', handleMouseMove);
-            document.removeEventListener('mouseup', handleMouseUp);
+            document.addEventListener('mousemove', handleMouseMove)
+            document.addEventListener('mouseup', handleMouseUp)
         }
+
         return () => {
-            document.removeEventListener('mousemove', handleMouseMove);
-            document.removeEventListener('mouseup', handleMouseUp);
+            document.removeEventListener('mousemove', handleMouseMove)
+            document.removeEventListener('mouseup', handleMouseUp)
         }
-    }, [isDragging])
+    }, [isDragging, handleMouseMove])
 
     return {
         position,
         handleMouseDown,
+        setPosition
     }
 }
-

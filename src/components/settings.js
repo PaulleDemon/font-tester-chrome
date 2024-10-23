@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 
 import { Modal, Switch } from "antd"
-import { CrownFilled } from "@ant-design/icons"
+import { CrownFilled, InfoCircleOutlined, QuestionCircleOutlined } from "@ant-design/icons"
 import Premium from "../utils/premium"
 import { useSettingsContext } from "../context/settingsContext"
 
@@ -34,6 +34,23 @@ function Settings({children, className=""}){
         
     }
 
+    const footer  = (
+        <div className="tw-flex tw-w-full tw-justify-between">
+            <a href="https://github.com/PaulleDemon/font-tester-chrome" 
+                target="_blank" rel="noopener noreferrer">
+                <span>About</span> 
+                &nbsp;  
+                <InfoCircleOutlined /> 
+            </a>
+            <a href="https://github.com/PaulleDemon/font-tester-chrome" 
+                target="_blank" rel="noopener noreferrer">
+                <span>Help</span> 
+                &nbsp;  
+                <QuestionCircleOutlined /> 
+            </a>
+        </div>
+    )
+
     return (
         <div onClick={onClick} className={className}>
             {children}
@@ -41,7 +58,7 @@ function Settings({children, className=""}){
                     styles={{wrapper: {zIndex: 1400000000, gap: "10px"}}}
                     onCancel={onClose}
                     onOk={onClose}
-                    footer={null}
+                    footer={footer}
                     open={fontModalOpen}>
                 
                 <div className="tw-mt-5 tw-text-lg tw-w-full
