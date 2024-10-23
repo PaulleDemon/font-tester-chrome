@@ -18,7 +18,7 @@ one of the reason I created Font Tester.
 
 Now you can go to your website, click on the extension, test fonts and pick the one you like along with the code.
 
-![font tester demo](./docs/demo/fonttester.gif)
+![font tester demo](./docs/demo/fonttester2.gif)
 
 ## Download
 
@@ -33,14 +33,14 @@ To keep open-source running consider buying a one time [license](https://font-ty
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/L3L612WN7K)
 
-
-## Whom is the meant for?
-* Frontend developers.
-* Website Designers.
-* Landing page designers.
-* Solo SaaS developers.
-* Freelancers and businesses
-* People who want to learn how to create chrome extension with ReactJs.
+## Features of Font Tester
+✅ Test 1000+ google fonts <br>
+✅ Find font types used on any webpage <br>
+✅ Preview fonts on the dropdown <br>
+✅ Move the modal around the webpage. <br>
+✅ Set italics, underline, weights, line height etc. <br>
+✅ Set font size, filter (coming soon...)<br>
+🔥 More on [Roadmap](roadmap.md)
 
 ## How to use Font Tester?
 1. Go to chrome extensions store and download [Font tester](https://chromewebstore.google.com/detail/font-tester/deachoodakeofjlfikfkohihnpcgiaim)
@@ -54,12 +54,6 @@ To keep open-source running consider buying a one time [license](https://font-ty
 During partial text selection, the fonts applied will affect the entire text between the elements, because, inserting elements around selection may affect the style. However, 
 In the future we may wrap an element around the selection, based on the user feedback. 
 
-## Features of Font Tester
-✅ Test 1000+ google fonts <br>
-✅ Move the modal around the webpage. <br>
-✅ Set italics, underline, weights, line height etc. <br>
-✅ Set font size, filter (coming soon...)<br>
-🔥 More on [Roadmap](roadmap.md)
 
 ## License / support
 
@@ -82,14 +76,22 @@ Pluse you get more advanced features, early access, Upcoming Edge/Firefox addons
 | Pre-order now!                                                    |  -                | [Get license](https://foxcraft.gumroad.com/l/font-tester/preorder) |
 
 ---
-**Other ways to support open-source**
-
-* Order a [custom work](https://tally.so/r/woO0Kx).
 
 ## Current limitations
 * Cannot execute the script in chrome extension store, its blocked by default
 * If the font tester doesn't open even after double click on a website, please file an issue
 
+
+## FAQ
+
+#### How to test different fonts on a webpage?
+a. You can use Font Tester extension to test different font's on any webpage.
+
+#### How can I find the fonts used on a webpage?
+a. You can use Font Tester extension to find font's on any webpage.
+
+#### How can I test my local fonts?
+a. You can test local fonts by purchasing license. It comes with more features to help you test different typography.
 
 ## Other free and open-source tools
 
