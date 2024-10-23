@@ -37,6 +37,13 @@ function init() {
 		// Attach Shadow DOM
 		const shadowRoot = container.attachShadow({ mode: 'open' })
 
+		const shadowRootInitializeStyles = document.createElement('style')
+
+		shadowRootInitializeStyles.textContent = `
+			:host{
+				/*font-size: 16px !important;*/
+			}
+		`
 		// Create a root element inside the shadow DOM
 		const shadowRootContainer = document.createElement('div')
 		shadowRootContainer.id = "font-selector-shadow-dom"
@@ -44,9 +51,10 @@ function init() {
 
 		shadowRoot.appendChild(createStyleElement(tailwindStyles))
         shadowRoot.appendChild(createStyleElement(styles))
+		shadowRoot.appendChild(shadowRootInitializeStyles) // this should come after tailwind css as tailwind css other wise tailwind css would interfere
         
 		document.body.appendChild(createStyleElement(styles)) // this is to ensure that the antd message is always on top
-
+		
 		shadowRoot.addEventListener('keydown', function(event) {
 			// used to prevent webpage from hijacking focus on keydown, this happens in certain websites include Github.
 			const shadowActiveElement = shadowRoot.activeElement;
@@ -79,7 +87,7 @@ function init() {
                         }}
 						>
 						<SettingsProvider>
-							<App container={shadowRoot}/>
+							<App shadowRoot={shadowRoot}/>
 						</SettingsProvider>
 					</ConfigProvider>
 				</StyleProvider>

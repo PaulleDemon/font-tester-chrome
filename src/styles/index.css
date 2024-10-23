@@ -1,11 +1,16 @@
-:host {
+/* :host(#font-selector-root){
   font-size: initial !important;
+  font-weight: 800;
+} */
+
+/* #font-tester-container{
+  font-size: 16px !important;
   font-family: sans-serif;
 }
 
 #font-selector-root{
   font-size: initial !important;
-}
+} */
 
 /* :host { font-size: initial } */
 

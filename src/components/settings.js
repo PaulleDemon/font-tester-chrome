@@ -55,7 +55,7 @@ function Settings({children, className=""}){
         <div onClick={onClick} className={className}>
             {children}
             <Modal title={<h3 className="tw-text-xl tw-font-medium">Settings</h3>} 
-                    styles={{wrapper: {zIndex: 1400000000, gap: "10px"}}}
+                    styles={{wrapper: {zIndex: 1400000000, gap: "10px"}, mask: {zIndex: 100000000}}}
                     onCancel={onClose}
                     onOk={onClose}
                     footer={footer}

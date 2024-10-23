@@ -60,7 +60,7 @@ const defaultPosition = {
 }
 
 
-function App({ container }) {
+function App({ shadowRoot }) {
 
 	const widgetRef = useRef()
 	const selectionFontPreview = useRef()
@@ -229,13 +229,13 @@ function App({ container }) {
 		}
 
 		if (showFilter){
-			setTimeout( () => container.addEventListener("click", hideFilterDropDown), 10)
+			setTimeout( () => shadowRoot.addEventListener("click", hideFilterDropDown), 10)
 		}else{
-			container.removeEventListener("click", hideFilterDropDown)
+			shadowRoot.removeEventListener("click", hideFilterDropDown)
 		}
 
 		return () => {
-			container.removeEventListener("click", hideFilterDropDown)
+			shadowRoot.removeEventListener("click", hideFilterDropDown)
 		}
 
 	}, [filterDropDownRef, showFilter])
@@ -294,7 +294,7 @@ function App({ container }) {
 		if (selection.rangeCount === 0) return;
 
 
-		if (checkSelectionInShadowDOM(container)) {
+		if (checkSelectionInShadowDOM(shadowRoot)) {
 			// Don't preview anything selected inside the shadow container
 			return
 		} 
@@ -452,7 +452,8 @@ function App({ container }) {
 				bottom: "auto",
 				width: "300px",
 				height: "750px",
-				zIndex: 1000000000 // alway stay on top
+				zIndex: 1000000000, // alway stay on top
+				fontSize: "16px"
 			}}>
 			
 			{ 
