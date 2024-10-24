@@ -12,9 +12,7 @@
 Finding it difficult to choose the right font? 
 Now test 1000+ free google font types on your website.
 
-Font's adds personality to your website, a sans font on a page gives a different impression
-of the page than a mono font. But picking the right one can be hard and time consuming. This is
-one of the reason I created Font Tester. 
+Get Better at website Typography using this extension.
 
 Now you can go to your website, click on the extension, test fonts and pick the one you like along with the code.
 
@@ -28,10 +26,12 @@ or
 
 You can download the dist folder from releases and load it manually
 
-## Want to support open-source
-To keep open-source running consider buying a one time [license](https://font-type.vercel.app/) or feel free to buy me a coffee.
+## Whats new 🔥?
+* Now find font's from any webpage.
+* Preview fonts on the dropdown.
+* Cycle fonts using arrow keys.
 
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/L3L612WN7K)
+read more in [changelogs](./changelog.md)
 
 ## Features of Font Tester
 ✅ Test 1000+ google fonts <br>
@@ -72,8 +72,8 @@ Pluse you get more advanced features, early access, Upcoming Edge/Firefox addons
 | **Adjust font color**                                             | ❌                 | ✅                                                                  |
 | **Dark theme**                                                    | ❌                 | ✅                                                                  |
 | **Extension for Edge and Firefox**                                | ❌                 | ✅                                                                  |
-| **Price**                                                         | Free             | ~~$49~~ $19 (save 61.22%. for limited time)                        |
-| Pre-order now!                                                    |  -                | [Get license](https://foxcraft.gumroad.com/l/font-tester/preorder) |
+| **Price**                                                         | Free               | ~~$49~~ $19 (save 61.22%. for limited time)                         |
+| order now!                                                        |  -                 | [Get license](https://ko-fi.com/s/0460bd43e6)                       |
 
 ---
 
