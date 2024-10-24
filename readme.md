@@ -3,7 +3,7 @@
 
 <p><img src="./public/logos/logox500.png" alt="font tester logo" width="100" height="100"></p>
 
-[Font tester about ↗️](https://font-type.vercel.app)
+[Font tester about ↗️](https://font-tester.foxcraft.tech)
 
 <a href="https://chromewebstore.google.com/detail/font-tester/deachoodakeofjlfikfkohihnpcgiaim">
     <img src="./docs/badges/chrom-store.png" width="180">
