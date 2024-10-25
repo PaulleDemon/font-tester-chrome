@@ -45,6 +45,9 @@ read more in [changelogs](./changelog.md)
 🔥 More on [Roadmap](roadmap.md)
 
 ## How to use Font Tester?
+
+**For full instructions and demo, read the [Docs](./docs/docs.md)**
+
 1. Go to chrome extensions store and download [Font tester](https://chromewebstore.google.com/detail/font-tester/deachoodakeofjlfikfkohihnpcgiaim)
 2. Now pin the extension from the puzzle extension icon, located at the top right.
 3. Click on the extension, wait few seconds for it to load on your website.

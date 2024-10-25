@@ -4,5 +4,6 @@
       "javascript",
       "typescript"
   ],
-  "editor.colorDecorators": true
+  "editor.colorDecorators": true,
+  "markdown.extension.toc.updateOnSave": false,
 }

@@ -1,2 +1,0 @@
-## Documentation for Font Tester
-
