@@ -8,17 +8,17 @@ Any feature that has 👑 beside it, is meant only for [premium users](./readme.
 ### 1.1.0
 - [x] Randomizer - pick fonts at random 
 - [x] Cycle fonts on arrow up/down
-- [ ] Font size - directly manipulate font size 👑
-- [ ] Font Color - directly manipulate font color 👑
-- [ ] Upload Local fonts 👑
+- [x] Font size - directly manipulate font size 👑
+- [x] Font Color - directly manipulate font color 👑
+- [x] Upload Local fonts 👑
 
 ### 1.5.0
-- [ ] Letter spacing 👑
-- [ ] Underline spacing 👑
+- [x] Letter spacing 👑
+- [x] Underline spacing 👑
 
 ### 2.0.0
 - [x] Filter fonts - Eg: sans, display etc 
-- [ ] Dark theme 👑
+- [x] Dark theme 👑
 - [ ] Extension for FireFox and Edge 👑
 
 

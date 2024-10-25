@@ -39,7 +39,9 @@ read more in [changelogs](./changelog.md)
 ✅ Preview fonts on the dropdown <br>
 ✅ Move the modal around the webpage. <br>
 ✅ Set italics, underline, weights, line height etc. <br>
-✅ Set font size, filter (coming soon...)<br>
+✅ Set font size, filter (premium users)<br>
+✅ Set color, letter spacing (premium users)<br>
+✅ Upload local fonts (premium users)<br>
 🔥 More on [Roadmap](roadmap.md)
 
 ## How to use Font Tester?
