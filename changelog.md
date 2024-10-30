@@ -4,7 +4,8 @@ Read docs for [help](./docs/docs.md)
 
 ## Oct 25 2024
 * Added upload feature (premium).
-* Added advanced features such as adjustable font color, font size, underline offset and more
+* Added advanced features such as adjustable font color, font size, underline offset and more.
+* Added Dark theme
 
 ## Oct 21 2024
 * Added new tool to help find the font on any webpage.
