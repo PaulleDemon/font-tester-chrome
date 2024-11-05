@@ -1,13 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Fondamento&family=chivo&family=Bellota&family=Battambang&family=Archivo+Black&family=Didact+Gothic&family=Sedgwick+Ave&family=Rowdies');
+@import url('https://fonts.googleapis.com/css2?family=Fondamento&family=chivo&family=Bellota&family=Battambang&family=Archivo+Black&family=Didact+Gothic&family=Sedgwick+Ave&family=Rowdies&family=Nosifer&family=Rubik+Doodle+Shadow&family=Quantico&family=Rubik+Glitch');
 /* @import url('https://fonts.googleapis.com/css2?family=Chivo');
 @import url('https://fonts.googleapis.com/css2?family=Bellota');
 @import url('https://fonts.googleapis.com/css2?family=Battambang');
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black'); 
 @import url('https://fonts.googleapis.com/css2?family=Didact+Gothic');
 @import url('https://fonts.googleapis.com/css2?family=Rowdies'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Nosifer'); */
 
-	
+
 :root{
 
     --bg-color: #fff;
@@ -26,6 +27,20 @@ html {
     font-family: "Ubuntu", sans-serif;
 }
 
+.nosifer-family{
+    font-family: "Nosifer", system-ui;
+}
+
+.rubik-doodle-shadow-family {
+    font-family: "Rubik Doodle Shadow", system-ui;
+    letter-spacing: 3px;
+    font-weight: 700;
+}
+
+.rubik-glitch-family {
+    font-family: "Rubik Glitch"  ,system-ui;
+    font-weight: 200;
+}
 
 .fondamento-family{
     font-family: "Fondamento", handwriting;
@@ -36,6 +51,13 @@ html {
     font-family: "Chivo", sans-serif;
 }
 
+.quantico-family {
+    font-family: "Quantico"  ,sans-serif;
+    text-underline-offset: 2px;
+    font-weight: 100;
+    text-decoration: underline;
+    font-style: italic;
+}
 
 .bellota-family{
     font-family: "Bellota", system-ui;
