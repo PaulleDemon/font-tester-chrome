@@ -7,7 +7,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Didact+Gothic');
 @import url('https://fonts.googleapis.com/css2?family=Rowdies'); */
 /* @import url('https://fonts.googleapis.com/css2?family=Nosifer'); */
-
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash');
 
 :root{
 
@@ -26,6 +26,13 @@ html {
     scroll-behavior: smooth;
     /* font-family: "Ubuntu", sans-serif; */
 }
+
+.berkshire-swash-family {
+    font-family: "Berkshire Swash", handwriting;
+    font-color: rgb(38,44,49);
+    font-size: 38px;
+}
+
 
 .nosifer-family{
     font-family: "Nosifer", system-ui;
