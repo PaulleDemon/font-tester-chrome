@@ -80,12 +80,15 @@ function Settings({children, className=""}){
                             />
                     </div>
 
-                    <div className="tw-flex tw-gap-2 tw-place-items-center">
-                        <div className="tw-text-base tw-font-medium">Preview font on dropdown</div>
-                        <Switch value={settings.previewFonts} 
-                                onChange={(value) => handleSettingsChange('previewFonts', value)}
-                            />
-                    </div>
+                    <Premium>
+                        <div className="tw-flex tw-gap-2 tw-place-items-center">
+                            <div className="tw-text-base tw-font-medium">Preview fonts on dropdown</div>
+                            <Switch value={false} 
+                                    onChange={(value) => handleSettingsChange('previewFonts', value)}
+                                />
+                            <CrownFilled className="tw-text-purple-500"/>
+                        </div>
+                    </Premium>
 
                 </div>
 

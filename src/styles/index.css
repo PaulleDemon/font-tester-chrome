@@ -3,16 +3,19 @@
   font-weight: 800;
 } */
 
-/* #font-tester-container{
-  font-size: 16px !important;
-  font-family: sans-serif;
-}
+/*
 
 #font-selector-root{
   font-size: initial !important;
 } */
 
-/* :host { font-size: initial } */
+#font-tester-container{
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+:host { font-size: initial }
 
 /* width */
 #font-selector-shadow-dom ::-webkit-scrollbar {

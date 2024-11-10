@@ -73,7 +73,7 @@ function Premium({ children, className = "" }) {
                             </p>
                             <hr />
                             <ul
-                                className="tw-mt-4 tw-flex tw-flex-col tw-gap-2 tw-text-lg tw-text-gray-600"
+                                className="tw-mt-4 tw-flex tw-flex-col tw-gap-2 tw-text-lg tw-text-gray-800"
                             >
                                 <li className="tw-flex tw-place-items-center tw-gap-2">
                                     <CheckCircleFilled className="tw-text-green-600"/>
@@ -85,7 +85,15 @@ function Premium({ children, className = "" }) {
                                 </li>
                                 <li className="tw-flex tw-place-items-center tw-gap-2">
                                     <CloseCircleFilled className="tw-text-red-600"/>
-                                    <span>Upload local fonts</span>
+                                    <span className="tw-font-medium">Upload local fonts</span>
+                                </li>
+                                <li className="tw-flex tw-place-items-center tw-gap-2">
+                                    <CloseCircleFilled className="tw-text-red-600"/>
+                                    <span className="tw-font-medium">Preview fonts on dropdown</span>
+                                </li>
+                                <li className="tw-flex tw-place-items-center tw-gap-2">
+                                    <CloseCircleFilled className="tw-text-red-600"/>
+                                    <span>Dark mode toggle</span>
                                 </li>
                                 <li className="tw-flex tw-place-items-center tw-gap-2">
                                     <CloseCircleFilled className="tw-text-red-600"/>
@@ -103,10 +111,7 @@ function Premium({ children, className = "" }) {
                                     <CloseCircleFilled className="tw-text-red-600"/>
                                     <span>Firefox, Safari and Edge addons</span>
                                 </li>
-                                <li className="tw-flex tw-place-items-center tw-gap-2">
-                                    <CloseCircleFilled className="tw-text-red-600"/>
-                                    <span>Dark theme</span>
-                                </li>
+                               
                                 <li className="tw-flex tw-place-items-center tw-gap-2">
                                     <CloseCircleFilled className="tw-text-red-600"/>
                                     <span>Adjust font-size and colors</span>
@@ -117,7 +122,7 @@ function Premium({ children, className = "" }) {
                                 </li>
                                 <li className="tw-flex tw-place-items-center tw-gap-2">
                                     <CloseCircleFilled className="tw-text-red-600"/>
-                                    <span>Free access to upcoming features</span>
+                                    <span>Free access to upcoming features and more fonts</span>
                                 </li>
                             </ul>
                             {/* <a
@@ -136,10 +141,10 @@ function Premium({ children, className = "" }) {
                             <div className=" tw-text-white tw-p-1 tw-px-3 tw-bg-blue-500  tw-rounded-full">
                                 Limited time offer
                             </div>
-                            <h3 className="">
+                            <h3 className="tw-m-1">
                                 <span className="tw-text-5xl tw-font-semibold">
                                     <s className="tw-font-medium tw-text-4xl">$49</s>
-                                    <span className="tw-bg-green-100">$19</span>
+                                    <span className="">$19</span>
                                 </span>
                                 <span className="tw-text-2xl tw-text-gray-600 tw-ml-1">Forever</span>
                             </h3>
@@ -151,7 +156,7 @@ function Premium({ children, className = "" }) {
                             </p>
                             <hr />
                             <ul
-                                className="tw-mt-4 tw-flex tw-flex-col tw-gap-2 tw-text-lg tw-text-gray-600"
+                                className="tw-mt-4 tw-flex tw-flex-col tw-gap-2 tw-text-lg tw-text-gray-800"
                             >
                                 <li className="tw-flex tw-place-items-center tw-gap-2">
                                     <CheckCircleFilled className="tw-text-green-600"/>
@@ -163,9 +168,17 @@ function Premium({ children, className = "" }) {
                                 </li>
                                 <li className="tw-flex tw-place-items-center tw-gap-2">
                                     <CheckCircleFilled className="tw-text-green-600"/>
-                                    <span>Upload local fonts</span>
+                                    <span className="tw-font-medium">Upload local fonts</span>
                                 </li>
-                               
+
+                                <li className="tw-flex tw-place-items-center tw-gap-2">
+                                    <CheckCircleFilled className="tw-text-green-600"/>
+                                    <span className="tw-font-medium">Preview Fonts on Dropdown</span>
+                                </li>
+                                <li className="tw-flex tw-place-items-center tw-gap-2">
+                                    <CheckCircleFilled className="tw-text-green-600"/>
+                                    <span>Dark mode toggle</span>
+                                </li>
                                 <li className="tw-flex tw-place-items-center tw-gap-2">
                                     <CheckCircleFilled className="tw-text-green-600"/>
                                     <span>Free updates</span>
@@ -184,10 +197,6 @@ function Premium({ children, className = "" }) {
                                 </li>
                                 <li className="tw-flex tw-place-items-center tw-gap-2">
                                     <CheckCircleFilled className="tw-text-green-600"/>
-                                    <span>Dark theme</span>
-                                </li>
-                                <li className="tw-flex tw-place-items-center tw-gap-2">
-                                    <CheckCircleFilled className="tw-text-green-600"/>
                                     <span>Adjust font-size and colors</span>
                                 </li>
                                 <li className="tw-flex tw-place-items-center tw-gap-2">
@@ -196,7 +205,7 @@ function Premium({ children, className = "" }) {
                                 </li>
                                 <li className="tw-flex tw-place-items-center tw-gap-2">
                                     <CheckCircleFilled className="tw-text-green-600"/>
-                                    <span>Free access to upcoming features</span>
+                                    <span>Free access to all upcoming features and more fonts</span>
                                 </li>
                             </ul>
                         

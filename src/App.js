@@ -49,7 +49,7 @@ const importAll = (r) => {
 	})
   }
 
-const FontImages = importAll(require.context('./assets/font-images', false, /\.(png|jpe?g|svg)$/));
+// const FontImages = importAll(require.context('./assets/font-images', false, /\.(png|jpe?g|svg)$/));
 
 const WIDGET_WIDTH = 300
 const WIDGET_HEIGHT = 750
@@ -121,17 +121,17 @@ function App({ shadowRoot }) {
 
 		const renderFontImage = (family) => {
 
-			const imageEquivalent = FontImages.find((val) => family === val.name)
+			// const imageEquivalent = FontImages.find((val) => family === val.name)
 		
 			let label = (<div onMouseEnter={() => setDropDownActiveFont(family)}>
 							{family}
 						</div>)
 		
-			if (imageEquivalent && settings.previewFonts){
-				label = (<div className="tw-h-full tw-w-full" onMouseEnter={() => setDropDownActiveFont(family)}>
-							<img src={imageEquivalent.url} alt={family} className="tw-h-full tw-object-contain" />
-						</div>)
-			}
+			// if (imageEquivalent && settings.previewFonts){
+			// 	label = (<div className="tw-h-full tw-w-full" onMouseEnter={() => setDropDownActiveFont(family)}>
+			// 				<img src={imageEquivalent.url} alt={family} className="tw-h-full tw-object-contain" />
+			// 			</div>)
+			// }
 		
 			return ({
 				label: label,
@@ -497,7 +497,7 @@ function App({ shadowRoot }) {
 				<div className="tw-flex tw-flex-col tw-gap-1">
 
 					<div className="tw-flex tw-justify-between tw-place-content-center">
-						<h2 className="tw-text-lg">Google fonts</h2>
+						<div className="tw-text-lg">Google fonts</div>
 						<div className="tw-relative">
 							<Tooltip title="Filter fonts" overlayStyle={{ zIndex: 1200000000 }}>
 								<Tag.CheckableTag checked={showFilter}

@@ -8,6 +8,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Rowdies'); */
 /* @import url('https://fonts.googleapis.com/css2?family=Nosifer'); */
 @import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash');
+@import url('https://fonts.googleapis.com/css2?family=Crafty+Girls');
+@import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles');
 
 :root{
 
@@ -25,7 +27,22 @@
 html {
     scroll-behavior: smooth;
     /* font-family: "Ubuntu", sans-serif; */
+    /* font-family: Arial, Helvetica, sans-serif; */
 }
+
+
+.fuzzy-bubbles-family {
+    font-family: "Fuzzy Bubbles"  ,handwriting;
+}
+
+
+.crafty-girls-family {
+    font-family: "Crafty Girls"  ,handwriting;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
 
 .berkshire-swash-family {
     font-family: "Berkshire Swash", handwriting;
@@ -33,10 +50,6 @@ html {
     font-size: 38px;
 }
 
-
-.nosifer-family{
-    font-family: "Nosifer", system-ui;
-}
 
 .rubik-doodle-shadow-family {
     font-family: "Rubik Doodle Shadow", system-ui;
