@@ -2102,8 +2102,8 @@ video {
 }
 
 @media (min-width: 1280px) {
-  .xl\:tw-min-w-\[630px\] {
-    min-width: 630px;
+  .xl\:tw-min-w-\[650px\] {
+    min-width: 650px;
   }
 }
 
