@@ -40,7 +40,7 @@ function Premium({ children, className = "" }) {
                     <br />
                     By buying license, you get advance features, priority support, early access to upcoming features, and &nbsp;
                     <a
-                        href="https://github.com/PaulleDemon/tab=readme-ov-file"
+                        href="https://font-tester.foxcraft.tech/#pricing"
                         target="_blank"
                         rel="noreferrer noopener"
                         className="!tw-text-blue-500"

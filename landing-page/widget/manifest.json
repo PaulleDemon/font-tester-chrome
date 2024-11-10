@@ -1,6 +1,6 @@
 {
     "manifest_version": 3,
-    "name": "Font Tester - Find and test 1000+ fonts on any webpage",
+    "name": "Font Tester - Preview 1000+ fonts on any webpage",
     "short_name": "Font Tester",
     "description": "Test and preview 1000+ font on any webpage. Made for developers",
     "version": "3.2",
