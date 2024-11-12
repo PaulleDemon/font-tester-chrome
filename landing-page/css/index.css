@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Fondamento&family=chivo&family=Bellota&family=Battambang&family=Archivo+Black&family=Didact+Gothic&family=Sedgwick+Ave&family=Rowdies&family=Nosifer&family=Rubik+Doodle+Shadow&family=Quantico&family=Rubik+Glitch');
+/* @import url('https://fonts.googleapis.com/css2?family=Fondamento&family=chivo&family=Bellota&family=Battambang&family=Archivo+Black&family=Didact+Gothic&family=Sedgwick+Ave&family=Rowdies&family=Nosifer&family=Rubik+Doodle+Shadow&family=Quantico&family=Rubik+Glitch'); */
 /* @import url('https://fonts.googleapis.com/css2?family=Chivo');
 @import url('https://fonts.googleapis.com/css2?family=Bellota');
 @import url('https://fonts.googleapis.com/css2?family=Battambang');
@@ -7,10 +7,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Didact+Gothic');
 @import url('https://fonts.googleapis.com/css2?family=Rowdies'); */
 /* @import url('https://fonts.googleapis.com/css2?family=Nosifer'); */
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade');
+
 @import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash');
-@import url('https://fonts.googleapis.com/css2?family=Crafty+Girls');
+/* @import url('https://fonts.googleapis.com/css2?family=Crafty+Girls'); */
 @import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles');
 @import url('https://fonts.googleapis.com/css2?family=Barrio');
+@import url('https://fonts.googleapis.com/css2?family=Bowlby+One');
+@import url('https://fonts.googleapis.com/css2?family=Irish+Grover');
+@import url('https://fonts.googleapis.com/css2?family=Gaegu');
 
 
 :root{
@@ -23,13 +28,50 @@
     --primary-text-color: #000;
     --header-link-hover: #000;
     --input-hover-bd-color: #000;
+    --hero-gradient: #fcfcfc;
 }
 
 
 html {
     scroll-behavior: smooth;
-    /* font-family: "Ubuntu", sans-serif; */
+    font-family: "Ubuntu", sans-serif;
     /* font-family: Arial, Helvetica, sans-serif; */
+}
+
+.hero-bg-gradient{
+    /* background: linear-gradient(180deg, var(--hero-gradient) 13%, rgba(0,0,0,0.258140756302521) 87%); */
+    background: linear-gradient(180deg, var(--hero-gradient) 23%, rgba(0,0,0,0) 90%, var(--hero-gradient) 97%);
+}
+
+.hero-section{
+    background-image: url('../assets/images/background/dots-dark.svg');
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+}
+
+
+.bungee-shade-family {
+    font-family: "Bungee Shade", system-ui;
+    color: #0b0840;
+}
+
+.gaegu-family {
+    font-family: "Gaegu", handwriting;
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.irish-grover-family {
+    font-family: "Irish Grover", system-ui;
+    font-size: 35px;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+.bowlby-one-family{
+    font-family: "Bowlby One", system-ui;
+    letter-spacing: 2px;
 }
 
 .barrio-family {
@@ -207,10 +249,17 @@ header > .collapsible-header{
     opacity: 100 !important;
 }
 
+.purple-bg-grad{
+    background: rgb(126,34,206);
+    background: linear-gradient(90deg, #7e22ce91 8%, #625aafae 31%, #7badbbbc 76%, #54d2d0ca 89%);
+    filter: blur(50px);
+    opacity: 0.5;
+}
+
 .btn{
     padding: 10px 15px;
     width: max-content;
-    border-radius: 5px;
+    border-radius: 10px;
     color: var(--btn-color);
     background-color: var(--btn-bg);
     justify-content: center;
