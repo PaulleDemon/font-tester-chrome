@@ -77,3 +77,71 @@ export function isPointOverText(x, y) {
     }
     return false
 }
+
+
+// export function wrapHighlightSelection(selection) {       
+//     // let selection = window.getSelection().getRangeAt(0)
+//     let selectedContent = selection.extractContents()
+//     var span = document.createElement("span")
+//     // span.style.backgroundColor = "lightpink";
+//     span.appendChild(selectedContent)
+//     selection.insertNode(span)
+
+//     return span
+// }
+
+
+export function wrapHighlightSelection() {
+    getSelectedTextNodes().forEach((selection, index) => {
+        selection.forEach((textNode, nodeNumber) => {
+            let span = document.createElement('span')
+            if (nodeNumber == 0) span.id = "-" + index
+            else span.setAttribute("for", "-" + index)
+            // span.classList.add(className);
+            span.style.backgroundColor = "pink"
+            textNode.before(span)
+            span.appendChild(textNode)
+        });
+    });
+}
+
+function getSelectedTextNodes() {
+    let returnArray = [];
+    let selection = window.getSelection();
+    for (let rangeNumber = selection.rangeCount - 1; rangeNumber >= 0; rangeNumber--) {
+        let rangeNodes = [];
+        let range = selection.getRangeAt(rangeNumber);
+
+        if (range.startContainer === range.endContainer && range.endContainer.nodeType === Node.TEXT_NODE) {
+            range.startContainer.splitText(range.endOffset);
+            let textNode = range.startContainer.splitText(range.startOffset);
+            rangeNodes.push(textNode);
+        } else {
+            let textIterator = document.createNodeIterator(
+                range.commonAncestorContainer,
+                NodeFilter.SHOW_TEXT,
+                (node) => {
+                    if (range.intersectsNode(node)) {
+                        return NodeFilter.FILTER_ACCEPT;
+                    }
+                    return NodeFilter.FILTER_REJECT;
+                }
+            );
+
+            let node;
+            while ((node = textIterator.nextNode())) {
+                if (node.textContent.trim() != "") rangeNodes.push(node);
+            }
+
+            if (range.endContainer.nodeType === Node.TEXT_NODE) {
+                range.endContainer.splitText(range.endOffset);
+                rangeNodes.push(range.endContainer);
+            }
+            if (range.startContainer.nodeType === Node.TEXT_NODE) {
+                rangeNodes.unshift(range.startContainer.splitText(range.startOffset));
+            }
+        }
+        returnArray.unshift(rangeNodes);
+    }
+    return returnArray;
+}

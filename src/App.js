@@ -24,7 +24,7 @@ import Premium from "./utils/premium"
 import Settings from "./components/settings"
 
 import { getRangeSelectedNodes } from "./utils/selection"
-import { checkSelectionInShadowDOM, randomInt } from "./utils/utils"
+import { checkSelectionInShadowDOM, randomInt, wrapHighlightSelection } from "./utils/utils"
 import { useSettingsContext } from "./context/settingsContext"
 import WhatFontSection from "./components/whatFontSection"
 import FindFontToolTip from "./utils/findFontTooltip"
@@ -302,15 +302,30 @@ function App({ shadowRoot }) {
 		const range = selection.getRangeAt(0)
 
 		// also for wrapping elements, see https://stackoverflow.com/questions/6328718/how-to-wrap-surround-highlighted-text-with-an-element
-		const selectedNodes = getRangeSelectedNodes(range)
+		// const selectedNodes = getRangeSelectedNodes(range)
+	
+		// selectedNodes.forEach(node => {
+		// 	if (node.nodeType === node.ELEMENT_NODE) {
+		// 		const defaultStyle = node.getAttribute("style")
+		// 		node.setAttribute("data-default-style", defaultStyle || "")
+		// 		node.setAttribute("data-font-selector", "true")
+		// 	}
+		// })
+		// TODO: keep this inside mouse click instead of selection change to avoid nesting
+		try{
+			
+			// remove it temporarily to prevent it from keep firing when span is added
+			window.document.removeEventListener("selectionchange", updateSelection)
 
-		selectedNodes.forEach(node => {
-			if (node.nodeType === node.ELEMENT_NODE) {
-				const defaultStyle = node.getAttribute("style")
-				node.setAttribute("data-default-style", defaultStyle || "")
-				node.setAttribute("data-font-selector", "true")
-			}
-		})
+			wrapHighlightSelection(selection)
+
+			// wrappedSpan.setAttribute("data-default-style", "")
+			// wrappedSpan.setAttribute("data-font-selector", "true")
+		}finally{
+			setTimeout(() => {
+				window.document.addEventListener("selectionchange", updateSelection)
+			}, 10)
+		}
 
 		selectionFontPreview.current.innerText = selectedText
 
