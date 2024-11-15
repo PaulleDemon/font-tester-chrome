@@ -74,11 +74,8 @@ const FindFontToolTip = ({ root, onClick }) => {
                 event.preventDefault()
                 event.stopPropagation()
 
-                if (event.ctrlKey || event.metaKey){
-                    // prevent click if control key is not pressed   
-                    if (onClick)
-                        onClick(fontDetails)
-                }
+                if (onClick)
+                    onClick(fontDetails)
                 
             }
 

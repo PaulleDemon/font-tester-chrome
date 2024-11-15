@@ -3,7 +3,7 @@
     "name": "Font Tester - Preview 1000+ fonts on any webpage",
     "short_name": "Font Tester",
     "description": "Test and preview 1000+ font on any webpage. Made for developers",
-    "version": "3.2",
+    "version": "3.5",
     "icons": {
         "16": "icons/icon16.png",
         "32": "icons/icon32.png",

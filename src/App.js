@@ -59,6 +59,7 @@ const defaultPosition = {
 	y: (window.innerHeight - WIDGET_HEIGHT) - 15
 }
 
+let previousRange = null
 
 function App({ shadowRoot }) {
 
@@ -340,8 +341,22 @@ function App({ shadowRoot }) {
 			return
 		}
 
-		if (selection.rangeCount === 0) return;
-
+		if (selection.rangeCount === 0) return
+		
+		const currentRange = selection.getRangeAt(0)
+    
+		if (
+			!previousRange ||
+			currentRange.startContainer !== previousRange.startContainer ||
+			currentRange.startOffset !== previousRange.startOffset ||
+			currentRange.endContainer !== previousRange.endContainer ||
+			currentRange.endOffset !== previousRange.endOffset
+		) {
+			// selection changed
+			previousRange = currentRange.cloneRange()
+		}else{
+			return
+		}
 
 		if (checkSelectionInShadowDOM(shadowRoot)) {
 			// Don't preview anything selected inside the shadow container
@@ -745,7 +760,7 @@ function App({ shadowRoot }) {
 										// this is necessary to stop the findFont from receiving the first click 
 										e.preventDefault(); 
 										e.stopPropagation();
-										message.info("Ctrl/Cmd + Click to show the family")
+										message.info("Click to show the family")
 									}} 
 								onChange={(checked) => { setFindFontEnabled(checked) }}
 								className={`${findFontEnabled && "!tw-bg-gray-100"} !tw-text-lg hover:!tw-bg-gray-100 hover:!tw-color-black`}
