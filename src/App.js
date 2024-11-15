@@ -371,7 +371,7 @@ function App({ shadowRoot }) {
 	const handleClose = () => {
 		// console.log("run time: ", chrome.runtime)
 		onReset() // reset the selection before closing
-		chrome.runtime.sendMessage({ action: 'widgetClosed' })
+		chrome.runtime?.sendMessage({ action: 'widgetClosed' })
 	}
 
 	const onFontUpdate = (value) => {
