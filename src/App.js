@@ -251,14 +251,13 @@ function App({ shadowRoot }) {
 
 	useEffect(() => {
 
-		// FIXME: pointerup keeps calling handlewrapselectedtext even if there is no selection
 		window.document.addEventListener("selectionchange", updateSelection)
 		window.document.addEventListener("pointerup", handleWrapSelectedText)
-
+		
+		// window.document.addEventListener("selectionEnd", handleWrapSelectedText)
 		return () => {
 			window.document.removeEventListener("selectionchange", updateSelection)
-			window.document.addEventListener("pointerup", handleWrapSelectedText)
-
+			window.document.removeEventListener("pointerup", handleWrapSelectedText)
 		}
 
 	}, []) // enableSelection dependency

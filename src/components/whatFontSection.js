@@ -75,7 +75,7 @@ function WhatFontSection({font}){
                     font.fontFamily ? 
                             formatCodeString(codeString) : 
                         <div className="tw-p-1 tw-bg-green-100 tw-font-medium tw-text-center">
-                            Use what font target tool to target and find font from page, then click 
+                            Use what font target tool to target and find font from page, then CTRL/CMD + click 
                             on the text document to capture the font.
                         </div>
                 }
