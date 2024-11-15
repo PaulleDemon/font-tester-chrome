@@ -78,7 +78,10 @@ function App({ shadowRoot }) {
 
 	const [activeTabKey, setActiveTabKey] = useState("link")
 
+	
 	const [enableSelection, setEnableSelection] = useState(true)
+	const enableSelectionRef = useRef(enableSelection);
+	
 	const [findFontEnabled, setFindFontEnabled] = useState(false)
 
 	const [advanceFeatureOpen, setAdvanceFeatureOpen] = useState(false)
@@ -97,6 +100,11 @@ function App({ shadowRoot }) {
 	})
 
 	const [findFont, setFindFont] = useState({}) // stores the values provided by the Find font tool.
+
+	// Sync the enableSelection state with the ref
+    useEffect(() => {
+        enableSelectionRef.current = enableSelection
+    }, [enableSelection])
 
 
 	useEffect(() => {
@@ -243,13 +251,17 @@ function App({ shadowRoot }) {
 
 	useEffect(() => {
 
+		// FIXME: pointerup keeps calling handlewrapselectedtext even if there is no selection
 		window.document.addEventListener("selectionchange", updateSelection)
+		window.document.addEventListener("pointerup", handleWrapSelectedText)
 
 		return () => {
 			window.document.removeEventListener("selectionchange", updateSelection)
+			window.document.addEventListener("pointerup", handleWrapSelectedText)
+
 		}
 
-	}, [enableSelection]) // enableSelection dependency
+	}, []) // enableSelection dependency
 
 	useEffect(() => {
 
@@ -281,7 +293,7 @@ function App({ shadowRoot }) {
 
 	const updateSelection = useCallback((evt) => {
 
-		if (!enableSelection)
+		if (!enableSelectionRef.current)
 			return
 
 		const selection = window.getSelection()
@@ -311,25 +323,35 @@ function App({ shadowRoot }) {
 		// 		node.setAttribute("data-font-selector", "true")
 		// 	}
 		// })
-		// TODO: keep this inside mouse click instead of selection change to avoid nesting
-		try{
-			
-			// remove it temporarily to prevent it from keep firing when span is added
-			window.document.removeEventListener("selectionchange", updateSelection)
-
-			wrapHighlightSelection(selection)
-
-			// wrappedSpan.setAttribute("data-default-style", "")
-			// wrappedSpan.setAttribute("data-font-selector", "true")
-		}finally{
-			setTimeout(() => {
-				window.document.addEventListener("selectionchange", updateSelection)
-			}, 10)
-		}
-
 		selectionFontPreview.current.innerText = selectedText
 
-	}, [enableSelection])
+	}, [])
+
+	const handleWrapSelectedText = useCallback((event) => {
+
+		// event.preventDefault()
+		// event.stopPropagation()
+		if (!enableSelectionRef.current)
+			return
+		
+		const selection = window.getSelection()
+		const selectedText = selection.toString()
+		
+		if (!selectedText) {
+			return
+		}
+
+		if (selection.rangeCount === 0) return;
+
+
+		if (checkSelectionInShadowDOM(shadowRoot)) {
+			// Don't preview anything selected inside the shadow container
+			return
+		} 
+
+		wrapHighlightSelection("font-tester")
+
+	}, [])
 
 
 	const handleClose = () => {
@@ -470,10 +492,10 @@ function App({ shadowRoot }) {
 				zIndex: 1000000000, // alway stay on top
 				fontSize: "16px"
 			}}>
-			
 			{ 
 				findFontEnabled &&
 					<FindFontToolTip 
+							root={shadowRoot}
 							onClick={(val) => {
 								setFindFont(val); 
 								setFindFontEnabled(false)
@@ -724,7 +746,7 @@ function App({ shadowRoot }) {
 										// this is necessary to stop the findFont from receiving the first click 
 										e.preventDefault(); 
 										e.stopPropagation();
-										message.info("Click to show the family")
+										message.info("Ctrl/Cmd + Click to show the family")
 									}} 
 								onChange={(checked) => { setFindFontEnabled(checked) }}
 								className={`${findFontEnabled && "!tw-bg-gray-100"} !tw-text-lg hover:!tw-bg-gray-100 hover:!tw-color-black`}

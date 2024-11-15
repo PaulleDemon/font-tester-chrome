@@ -91,57 +91,43 @@ export function isPointOverText(x, y) {
 // }
 
 
-export function wrapHighlightSelection() {
+export function wrapHighlightSelection(id) {
     getSelectedTextNodes().forEach((selection, index) => {
         selection.forEach((textNode, nodeNumber) => {
             let span = document.createElement('span')
-            if (nodeNumber == 0) span.id = "-" + index
-            else span.setAttribute("for", "-" + index)
-            // span.classList.add(className);
-            span.style.backgroundColor = "pink"
+            if (nodeNumber === 0) span.id = id + "-" + index
+            else span.setAttribute("for", id + "-" + index)
+            span.setAttribute("data-default-style", "")
+            span.setAttribute("data-font-selector", "true")
             textNode.before(span)
             span.appendChild(textNode)
-        });
-    });
+        })
+    })
 }
 
 function getSelectedTextNodes() {
-    let returnArray = [];
-    let selection = window.getSelection();
+    let returnArray = []
+    let selection = window.getSelection()
     for (let rangeNumber = selection.rangeCount - 1; rangeNumber >= 0; rangeNumber--) {
-        let rangeNodes = [];
-        let range = selection.getRangeAt(rangeNumber);
-
+        let rangeNodes = []
+        let range = selection.getRangeAt(rangeNumber)
         if (range.startContainer === range.endContainer && range.endContainer.nodeType === Node.TEXT_NODE) {
-            range.startContainer.splitText(range.endOffset);
-            let textNode = range.startContainer.splitText(range.startOffset);
-            rangeNodes.push(textNode);
+            range.startContainer.splitText(range.endOffset)
+            let textNode = range.startContainer.splitText(range.startOffset)
+            rangeNodes.push(textNode)
         } else {
-            let textIterator = document.createNodeIterator(
-                range.commonAncestorContainer,
-                NodeFilter.SHOW_TEXT,
-                (node) => {
-                    if (range.intersectsNode(node)) {
-                        return NodeFilter.FILTER_ACCEPT;
-                    }
-                    return NodeFilter.FILTER_REJECT;
-                }
-            );
-
-            let node;
-            while ((node = textIterator.nextNode())) {
-                if (node.textContent.trim() != "") rangeNodes.push(node);
-            }
-
+            let textIterator = document.createNodeIterator(range.commonAncestorContainer, NodeFilter.SHOW_TEXT, (node) => (node.compareDocumentPosition(range.startContainer) === Node.DOCUMENT_POSITION_PRECEDING && node.compareDocumentPosition(range.endContainer) === Node.DOCUMENT_POSITION_FOLLOWING) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT)
+            let node
+            while (node = textIterator.nextNode()) { if (node.textContent.trim() !== "") rangeNodes.push(node); }
             if (range.endContainer.nodeType === Node.TEXT_NODE) {
-                range.endContainer.splitText(range.endOffset);
-                rangeNodes.push(range.endContainer);
+                range.endContainer.splitText(range.endOffset)
+                rangeNodes.push(range.endContainer)
             }
             if (range.startContainer.nodeType === Node.TEXT_NODE) {
-                rangeNodes.unshift(range.startContainer.splitText(range.startOffset));
+                rangeNodes.unshift(range.startContainer.splitText(range.startOffset))
             }
         }
-        returnArray.unshift(rangeNodes);
+        returnArray.unshift(rangeNodes)
     }
-    return returnArray;
+    return returnArray
 }

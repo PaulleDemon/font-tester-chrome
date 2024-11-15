@@ -71,7 +71,7 @@ If you disable this, the font dropdown will not show preview of the fonts.
 
 You can easily find the font type, by clicking on the what font button and hovering over a text.
 
-Click on the text and the font style will be copied into the modal
+Ctrl/Cmd + Click on the text and the font style will be copied into the modal
 
 ![what font](./images/what-font.png)
 

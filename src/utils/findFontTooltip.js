@@ -6,7 +6,7 @@ import TargetCursor from "../assets/cursor/target.png"
 
 const TOOLTIP_OFFSET = 15
 
-const FindFontToolTip = ({ onClick }) => {
+const FindFontToolTip = ({ root, onClick }) => {
     const tooltipRef = useRef()
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
     const [tooltipDimensions, setTooltipDimensions] = useState({ width: 0, height: 0 })
@@ -58,9 +58,9 @@ const FindFontToolTip = ({ onClick }) => {
     
             setMousePos({ x: event.clientX, y: event.clientY })
         }
-    
+
         window.addEventListener("mousemove", findFont)
-    
+
         return () => {
             window.removeEventListener("mousemove", findFont)
         }
@@ -69,18 +69,25 @@ const FindFontToolTip = ({ onClick }) => {
     useEffect(() => {
 
         function documentClicked(event) {
-            // console.log("event: ", event)
-            event.preventDefault()
-            event.stopPropagation()
+            
+            if (event.target.shadowRoot !== root){
+                event.preventDefault()
+                event.stopPropagation()
 
-            if (onClick)
-                onClick(fontDetails)
+                if (event.ctrlKey || event.metaKey){
+                    // prevent click if control key is not pressed   
+                    if (onClick)
+                        onClick(fontDetails)
+                }
+                
+            }
+
         }
 
-        window.addEventListener("click", documentClicked)
+        window.addEventListener("click", documentClicked, true)
 
         return () => {
-            window.removeEventListener("click", documentClicked)
+            window.removeEventListener("click", documentClicked, true)
         }
 
     }, [onClick, fontDetails])
