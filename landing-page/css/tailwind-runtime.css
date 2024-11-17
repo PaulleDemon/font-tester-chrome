@@ -659,6 +659,16 @@ video {
   margin-right: 1rem;
 }
 
+.tw-my-3 {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.tw-my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
 .tw-ml-1 {
   margin-left: 0.25rem;
 }
@@ -701,6 +711,10 @@ video {
 
 .tw-mt-auto {
   margin-top: auto;
+}
+
+.tw-mb-4 {
+  margin-bottom: 1rem;
 }
 
 .tw-flex {
