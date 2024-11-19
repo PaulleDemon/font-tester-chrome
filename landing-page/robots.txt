@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /thank-you
+Disallow: /thank-you-premium
+
+Sitemap: https://font-tester.foxcraft.tech/sitemap.xml

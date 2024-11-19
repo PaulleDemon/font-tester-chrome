@@ -664,8 +664,7 @@ video {
   margin-bottom: 0.75rem;
 }
 
-.tw-my-4 {
-  margin-top: 1rem;
+.tw-mb-4 {
   margin-bottom: 1rem;
 }
 
@@ -711,10 +710,6 @@ video {
 
 .tw-mt-auto {
   margin-top: auto;
-}
-
-.tw-mb-4 {
-  margin-bottom: 1rem;
 }
 
 .tw-flex {
@@ -1642,6 +1637,11 @@ video {
 .tw-text-yellow-400 {
   --tw-text-opacity: 1;
   color: rgb(250 204 21 / var(--tw-text-opacity));
+}
+
+.tw-text-gray-900 {
+  --tw-text-opacity: 1;
+  color: rgb(17 24 39 / var(--tw-text-opacity));
 }
 
 .tw-underline {
