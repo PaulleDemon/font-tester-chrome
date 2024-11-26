@@ -139,7 +139,7 @@ function Premium({ children, className = "" }) {
                                 tw-border-blue-500 tw-p-8 tw-shadow-xl max-lg:tw-w-[340px]"
                         >
                             <div className=" tw-text-white tw-p-1 tw-px-3 tw-bg-blue-500  tw-rounded-full">
-                                Life time offer
+                                Lifetime deal
                             </div>
                             {/* <h3 className="tw-m-1">
                                 <span className="tw-text-5xl tw-font-semibold">
@@ -152,7 +152,7 @@ function Premium({ children, className = "" }) {
                                 per user
                             </p> */}
                             <p className="tw-mt-3 tw-text-center tw-text-gray-600">
-                                Support open-source development 🚀. Plus get added benefits.
+                                Buy once and use forever 🚀
                             </p>
                             <hr />
                             <ul
