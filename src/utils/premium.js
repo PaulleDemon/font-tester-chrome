@@ -40,7 +40,7 @@ function Premium({ children, className = "" }) {
                     <br />
                     By buying license, you get advance features, priority support, early access to upcoming features, and &nbsp;
                     <a
-                        href="https://font-tester.foxcraft.tech/#pricing"
+                        href="https://font-tester.foxcraft.tech/#pricing?ref=chrome_download"
                         target="_blank"
                         rel="noreferrer noopener"
                         className="!tw-text-blue-500"
@@ -65,9 +65,9 @@ function Premium({ children, className = "" }) {
                         <div
                             className="tw-flex tw-w-[380px] tw-flex-col tw-border-2 tw-place-items-center tw-gap-2 tw-rounded-lg tw-p-8 tw-shadow-xl max-lg:tw-w-[340px]"
                         >
-                            <h3 className="">
+                            {/* <h3 className="">
                                 <span className="tw-text-5xl tw-font-semibold">$0</span>
-                            </h3>
+                            </h3> */}
                             <p className="tw-mt-3 tw-text-base tw-text-center tw-text-gray-600">
                                 Free to use forever, but for added features and to support open-source development, consider buying lifetime license.
                             </p>
@@ -139,9 +139,9 @@ function Premium({ children, className = "" }) {
                                 tw-border-blue-500 tw-p-8 tw-shadow-xl max-lg:tw-w-[340px]"
                         >
                             <div className=" tw-text-white tw-p-1 tw-px-3 tw-bg-blue-500  tw-rounded-full">
-                                Limited time offer
+                                Life time offer
                             </div>
-                            <h3 className="tw-m-1">
+                            {/* <h3 className="tw-m-1">
                                 <span className="tw-text-5xl tw-font-semibold">
                                     <s className="tw-font-medium tw-text-4xl">$49</s>
                                     <span className="">$19</span>
@@ -150,7 +150,7 @@ function Premium({ children, className = "" }) {
                             </h3>
                             <p className="tw-mt-1 tw-text-sm tw-text-center tw-text-black">
                                 per user
-                            </p>
+                            </p> */}
                             <p className="tw-mt-3 tw-text-center tw-text-gray-600">
                                 Support open-source development 🚀. Plus get added benefits.
                             </p>
@@ -210,7 +210,7 @@ function Premium({ children, className = "" }) {
                             </ul>
                         
                             <a
-                                href="https://ko-fi.com/s/0460bd43e6"
+                                href="https://font-tester.foxcraft.tech/#pricing?ref=chrome_download"
                                 target="_blank"
                                 rel="noreferrer noopener"
                                 className="tw-mt-8 !tw-bg-purple-500 !tw-text-white tw-gap-2 tw-text-lg tw-rounded-md !tw-font-semibold tw-w-full tw-flex tw-place-content-center tw-p-2 tw-mx-2"
