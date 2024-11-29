@@ -130,17 +130,11 @@ function App({ shadowRoot }) {
 
 		const renderFontImage = (family) => {
 
-			// const imageEquivalent = FontImages.find((val) => family === val.name)
 		
 			let label = (<div onMouseEnter={() => setDropDownActiveFont(family)}>
 							{family}
 						</div>)
 		
-			// if (imageEquivalent && settings.previewFonts){
-			// 	label = (<div className="tw-h-full tw-w-full" onMouseEnter={() => setDropDownActiveFont(family)}>
-			// 				<img src={imageEquivalent.url} alt={family} className="tw-h-full tw-object-contain" />
-			// 			</div>)
-			// }
 		
 			return ({
 				label: label,
