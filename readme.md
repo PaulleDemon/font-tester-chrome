@@ -60,11 +60,9 @@ During partial text selection, the fonts applied will affect the entire text bet
 In the future we may wrap an element around the selection, based on the user feedback. 
 
 
-## License / support
+## License
 
-Though the extension is free to use forever, there is an optional license you can buy to support open-source development. This will provide me with funds to develop an upcoming tool for Python developers.
-
-Pluse you get more advanced features, early access, Upcoming Edge/Firefox addons.
+Get advanced features and more
 | Type                                                              | Free              | Premium                                                            |
 |-------------------------------------------------------------------|-------------------|--------------------------------------------------------------------|
 | **Support open-source development**                               | 👍️                 | 😎                                                                  |
@@ -77,8 +75,8 @@ Pluse you get more advanced features, early access, Upcoming Edge/Firefox addons
 | **Adjust font color**                                             | ❌                 | ✅                                                                  |
 | **Dark theme**                                                    | ❌                 | ✅                                                                  |
 | **Extension for Edge and Firefox**                                | ❌                 | ✅                                                                  |
-| **Price**                                                         | Free               | ~~$49~~ $19 (save 61.22%. for limited time)                         |
-| order now!                                                        |  -                 | [Get license](https://ko-fi.com/s/0460bd43e6)                       |
+| **Price**                                                         | Free                |   [Price](https://font-tester.foxcraft.tech/#pricing)                      |
+| order now!                                                        |  -                 | [Get license](https://font-tester.foxcraft.tech/#pricing)                       |
 
 ---
 
