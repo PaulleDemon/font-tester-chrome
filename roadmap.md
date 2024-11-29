@@ -23,4 +23,4 @@ Any feature that has 👑 beside it, is meant only for [premium users](./readme.
 
 
 ### 3.0.0
-- [x] Find ways to display the fonts in dropdown itself (try showing fonts as images instead, like canva does) 👑
+- [x] Find ways to display the fonts in dropdown itself 👑
