@@ -684,6 +684,10 @@ video {
   margin-top: 2.5rem;
 }
 
+.tw-mt-16 {
+  margin-top: 4rem;
+}
+
 .tw-mt-2 {
   margin-top: 0.5rem;
 }
@@ -710,10 +714,6 @@ video {
 
 .tw-mt-auto {
   margin-top: auto;
-}
-
-.tw-mt-16 {
-  margin-top: 4rem;
 }
 
 .tw-flex {
@@ -800,6 +800,10 @@ video {
   height: 100%;
 }
 
+.tw-h-\[70px\] {
+  height: 70px;
+}
+
 .tw-max-h-\[100px\] {
   max-height: 100px;
 }
@@ -844,6 +848,10 @@ video {
   min-height: 300px;
 }
 
+.tw-min-h-\[350px\] {
+  min-height: 350px;
+}
+
 .tw-min-h-\[40px\] {
   min-height: 40px;
 }
@@ -866,6 +874,10 @@ video {
 
 .tw-min-h-full {
   min-height: 100%;
+}
+
+.tw-min-h-\[250px\] {
+  min-height: 250px;
 }
 
 .\!tw-w-full {
@@ -936,6 +948,10 @@ video {
   width: max-content;
 }
 
+.tw-w-\[70px\] {
+  width: 70px;
+}
+
 .tw-min-w-\[350px\] {
   min-width: 350px;
 }
@@ -998,6 +1014,14 @@ video {
 
 .tw-max-w-full {
   max-width: 100%;
+}
+
+.tw-max-w-\[550px\] {
+  max-width: 550px;
+}
+
+.tw-max-w-\[650px\] {
+  max-width: 650px;
 }
 
 .tw--translate-x-1\/2 {
@@ -1357,6 +1381,11 @@ video {
   background-color: rgb(254 240 138 / var(--tw-bg-opacity));
 }
 
+.tw-bg-green-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(134 239 172 / var(--tw-bg-opacity));
+}
+
 .tw-bg-opacity-0 {
   --tw-bg-opacity: 0;
 }
@@ -1424,6 +1453,11 @@ video {
   padding-right: 1rem;
 }
 
+.tw-px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
 .tw-px-\[10\%\] {
   padding-left: 10%;
   padding-right: 10%;
@@ -1444,13 +1478,16 @@ video {
   padding-bottom: 1rem;
 }
 
-.tw-px-6 {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+.tw-pt-6 {
+  padding-top: 1.5rem;
 }
 
 .tw-text-center {
   text-align: center;
+}
+
+.tw-text-justify {
+  text-align: justify;
 }
 
 .\!tw-text-4xl {
@@ -1556,6 +1593,10 @@ video {
 
 .tw-leading-relaxed {
   line-height: 1.625;
+}
+
+.tw-leading-8 {
+  line-height: 2rem;
 }
 
 .\!tw-text-black {
@@ -2093,6 +2134,10 @@ video {
 
   .max-md\:tw-max-w-\[100vw\] {
     max-width: 100vw;
+  }
+
+  .max-md\:tw-max-w-full {
+    max-width: 100%;
   }
 
   .max-md\:tw-flex-col {

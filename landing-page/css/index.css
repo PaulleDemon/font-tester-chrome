@@ -16,6 +16,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Bowlby+One');
 @import url('https://fonts.googleapis.com/css2?family=Irish+Grover');
 @import url('https://fonts.googleapis.com/css2?family=Gaegu');
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter');
+
+
+.architects-daughter-family {
+    font-family: "Architects Daughter", handwriting;
+    /* font-size: 22px; */
+    letter-spacing: 1px;
+    font-weight: 400;
+    /* line-height: 1.9; */
+}
 
 
 :root{
