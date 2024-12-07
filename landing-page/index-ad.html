@@ -1,0 +1,1065 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Font Tester - Test and pick from over 1000+ fonts</title>
+        <meta name="description" content="Font tester a browser extension to help you pick font from over 1000+ fonts" />
+        <link
+            rel="shortcut icon"
+            href="./assets/logo/icon48.png"
+            type="image/x-icon"
+        />
+
+        <meta name="twitter:card" content="summary_large_image"> <!-- Type of card -->
+        <meta name="twitter:site" content="@pauls_freeman"> <!-- Your Twitter handle -->
+        <meta name="twitter:creator" content="@pauls_freeman">
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:title" content="Font Tester - Test and pick from over 1000+ fonts" />
+        <meta property="og:description" content="Font tester a browser extension to help you pick font from over 1000+ font" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://github.com/PaulleDemon/font-tester-chrome" />
+        <!--Replace with the current website url-->
+        <meta property="og:image" content="https://raw.githubusercontent.com/PaulleDemon/font-tester-chrome/refs/heads/main/docs/og-image.png" />
+
+        <!-- <link rel="stylesheet" href="./css/tailwind-runtime.css" /> -->
+        <link rel="stylesheet" href="./css/tailwind-build.css?build=0.8">
+        <link rel="stylesheet" href="css/index.css?build=0.8" />
+
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
+            integrity="sha512-dPXYcDub/aeb08c63jRq/k6GaKccl256JQy/AnOq7CAnEZ9FzSL9wSbcZkMp4R26vBsMLFYH4kQ67/bbV8XaCQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-61T5DC5QKB"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-61T5DC5QKB');
+        </script>
+
+    </head>
+    <body
+        class="tw-flex tw-min-h-[100vh] tw-flex-col tw-bg-white tw-text-black"
+    >
+        <header
+            class="tw-max-w-lg:tw-px-4 tw-max-w-lg:tw-mr-auto tw-absolute tw-top-0 tw-z-20 tw-flex tw-h-[60px] tw-w-full tw-bg-opacity-0 tw-px-[5%] lg:tw-justify-around"
+        >
+            <a class="tw-h-[50px] tw-w-[50px] tw-p-[4px]" href="">
+                <img
+                    src="./assets/logo/logo.svg"
+                    alt="logo"
+                    class="tw-object tw-h-full tw-w-full"
+                />
+            </a>
+            <div
+                class="collapsible-header animated-collapse max-lg:tw-shadow-md"
+                id="collapsed-header-items"
+            >
+                <div
+                    class="tw-flex tw-h-full tw-w-max tw-gap-5 tw-text-base max-lg:tw-mt-[30px] max-lg:tw-flex-col max-lg:tw-place-items-end max-lg:tw-gap-5 lg:tw-mx-auto lg:tw-place-items-center"
+                >
+                    <a class="header-links" href=""> About </a>
+                    <a class="header-links" href="#pricing"> Pricing </a>
+                    <a class="header-links" href="#features"> Features </a>
+                    <a class="header-links" href="https://github.com/PaulleDemon/font-tester-chrome/blob/main/docs/docs.md"> Docs </a>
+                    <a class="header-links" href="https://github.com/PaulleDemon/font-tester-chrome"> Github </a>
+                </div>
+                <div
+                    class="tw-mx-4 tw-flex tw-place-items-center tw-gap-[20px] tw-text-base max-md:tw-w-full max-md:tw-flex-col max-md:tw-place-content-center"
+                >
+                    <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://chromewebstore.google.com/detail/font-tester/deachoodakeofjlfikfkohihnpcgiaim"
+                        aria-label="signup"
+                        class="tw-rounded-md tw-border-[1px] tw-border-black tw-bg-transparent tw-px-3 tw-py-2 tw-text-black tw-transition-colors tw-duration-[0.3s] hover:tw-bg-black hover:tw-text-white"
+                    >
+                        <span>Download</span>
+                        <i class="bi bi-download"></i>
+                    </a>
+                </div>
+            </div>
+            <button
+                class="bi bi-list tw-absolute tw-right-3 tw-top-3 tw-z-50 tw-text-3xl tw-text-black lg:tw-hidden"
+                onclick="toggleHeader()"
+                aria-label="menu"
+                id="collapse-btn"
+            ></button>
+        </header>
+
+        <section
+            class="hero-section tw-relative tw-flex tw-min-h-[60vh] tw-w-full tw-max-w-[100vw] tw-flex-col tw-overflow-hidden max-md:tw-mt-[50px]"
+            id="hero-section"
+        >   
+
+            <!-- video container -->
+            <div class="tw-fixed tw-bg-[#000000af] dark:tw-bg-[#80808085] tw-top-0 tw-left-1/2 tw--translate-x-1/2 tw-z-20 tw-transition-opacity
+                tw-duration-300 tw-scale-0 tw-opacity-0 tw-p-2
+                tw-w-full tw-h-full tw-flex tw-place-content-center tw-place-items-center" id="video-container-bg">
+
+                <div class="tw-max-w-[80vw] max-lg:tw-max-w-full max-lg:tw-w-full tw-scale-0 tw-transition-transform tw-duration-500 tw-p-6 tw-rounded-xl  max-lg:tw-px-2 tw-w-full tw-gap-2 tw-shadow-md 
+                            tw-h-[90vh] max-lg:tw-h-auto max-lg:tw-min-h-[400px] tw-bg-white dark:tw-bg-[#16171A] tw-max-h-full
+                            " id="video-container">
+                    <div class="tw-w-full tw-flex">
+                        <button type="button" onclick="closeVideo()" class="tw-ml-auto tw-text-xl" title="close">
+                            <i class="bi bi-x-circle-fill"></i>
+                        </button>
+                    </div>
+                    <div class="tw-flex tw-w-full  tw-rounded-xl tw-px-[5%] max-md:tw-px-2 tw-min-h-[300px] tw-max-h-[90%] tw-h-full">
+
+                        <div class="tw-relative tw-bg-black tw-min-w-full tw-min-h-full tw-overflow-clip tw-rounded-md">
+                            <!-- add your youtube video link here -->
+                            <iframe class="tw-absolute tw-top-[50%] tw--translate-y-[50%] tw-left-[50%] tw--translate-x-[50%] tw-w-full tw-h-full" 
+                                src="https://www.youtube.com/embed/YnLEy8jLzD8?si=ODkIz3pipjxYr87p&amp;start=127&amp;controls=1&rel=1&showinfo=0&autoplay=0&loop=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+        
+                    </div>
+                </div>  
+            </div>
+
+            <div
+                class="tw-relative hero-bg-gradient tw-flex tw-h-full max-lg:tw-mt-10 max-lg:tw-min-h-[60vh] tw-min-h-[50vh] tw-w-full tw-flex-col tw-place-content-center tw-gap-6 tw-p-[5%] max-xl:tw-place-items-center max-lg:tw-p-4"
+            >
+                <div
+                    class="tw-flex tw-flex-col tw-place-content-center tw-items-center"
+                >
+                    <div
+                        class="reveal-up bowlby-one-family tw-text-center tw-text-6xl tw-font-semibold tw-uppercase tw-leading-[90px] max-lg:tw-text-4xl max-md:tw-leading-snug"
+                    >
+                        <span class=""> Choose Better
+                        <br />
+                        <span class="tw-px-3 tw-bg-[#ffe27a]">Fonts</span> 
+                        <!-- <br /> -->
+                        for your website   </span>
+                        
+                        <!-- <span class=""> on any website </span> -->
+                    </div>
+                    
+                </div>
+
+                <div class="purple-bg-grad tw-absolute tw-right-[30%] tw-top-[40%] 
+                            tw-h-[120px] tw-w-[120px]"></div>
+
+                <div class="tw-flex tw-flex-col tw-w-full tw-place-items-center tw-place-content-center">
+                    
+                    <div
+                        class="reveal-up tw-mt-3 tw-max-w-[450px] tw-p-2 tw-text-center tw-text-black max-lg:tw-max-w-full"
+                    >
+                        Texts makes up 80% of your UI. The right font doesn't just display information—it shapes perception. Choose the perfect font, and turn casual visitors into loyal customers.
+                    </div>
+
+                    <div
+                        class="reveal-up tw-mt-10 tw-flex tw-place-items-center tw-gap-4"
+                    >
+                        <a
+                            class="btn tw-bg-[#7e22ce85] tw-shadow-lg tw-shadow-primary tw-flex tw-gap-1
+                                    tw-transition-transform tw-duration-[0.3s] hover:tw-scale-x-[1.03] tw-group"
+                            href="#pricing"
+                        >
+                            Get now
+                            <i class="bi bi-arrow-right tw-transition-transform group-hover:tw-translate-x-1 tw-duration-300"></i>
+                        </a>
+                        <button
+                            class="btn tw-flex tw-gap-2 !tw-border-solid !tw-border-[1px] !tw-border-black
+                                    !tw-text-black !tw-bg-transparent tw-transition-colors tw-duration-[0.3s] 
+                                    hover:!tw-bg-white hover:!tw-text-black"
+                            onclick="openVideo()"
+                            
+                        >
+                            <i class="bi bi-play-circle-fill"></i>
+                            <span>Watch demo</span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div
+                class="reveal-up tw-flex tw-flex-col tw-min-h-[200px] tw-place-content-center tw-items-center"
+                >
+                <h4 class="tw-text-2xl tw-mt-4">As seen on</h4>
+
+                <div class="tw-mt-4 tw-flex tw-mb-4 tw-gap-4 tw-place-items-center tw-place-content-center">
+
+                    <!-- <a href='https://www.saashub.com/font-tester?utm_source=badge&utm_campaign=badge&utm_content=font-tester&badge_variant=color&badge_kind=approved' target='_blank'>
+                        <img src="https://cdn-b.saashub.com/img/badges/approved-color.png?v=1" 
+                        alt="Font Tester badge" style="max-width: 150px;"
+                        class="tw-object-contain tw-w-full tw-grayscale hover:tw-grayscale-0"
+                    /></a> -->
+
+                    <a href="https://www.saashub.com/font-tester" 
+                        class="tw-w-[150px] tw-overflow-hidden" target="_blank" rel="noopener noreferrer">
+                        <img src="https://cdn-b.saashub.com/img/badges/approved-color.png?v=1" 
+                            class="tw-object-contain tw-w-full tw-grayscale hover:tw-grayscale-0"
+                                alt="SaaS hub" srcset="">
+                    </a>
+                    <a href="https://www.producthunt.com/products/font-tester" 
+                        class="tw-w-[50px] tw-overflow-hidden" target="_blank" rel="noopener noreferrer">
+                        <img src="./assets/images/brands/product-hunt.png" 
+                            class="tw-object-contain tw-h-full tw-grayscale hover:tw-grayscale-0"
+                                alt="Product hunt" srcset="">
+                    </a>
+                   
+                    <a href="https://www.indiehackers.com/product/font-tester" class="tw-w-[50px] tw-overflow-hidden" target="_blank" rel="noopener noreferrer">
+                        <img src="./assets/images/brands/indie-hackers.png" 
+                            class="tw-object-contain tw-h-full tw-grayscale hover:tw-grayscale-0"
+                                alt="Indie hackers" srcset="">
+                    </a>
+                 
+                  
+                </div>
+               
+            </div>
+
+        </section>
+
+
+        <section
+            class="tw-relative tw-flex tw-w-full tw-min-h-[50vh] tw-max-w-[100vw] tw-flex-col tw-place-content-center tw-place-items-center tw-overflow-hidden tw-p-8"
+        >
+            
+            <div class="tw-my-3 tw-text-2xl">
+                Recognitions
+            </div>
+            <div class="tw-flex tw-gap-6 max-lg:tw-flex-col">
+                <a href="https://www.producthunt.com/posts/font-tester-2?embed=true&utm_source=badge-top-post-topic-badge&utm_medium=badge&utm_souce=badge-font&#0045;tester&#0045;2" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/top-post-topic-badge.svg?post_id=612285&theme=light&period=weekly&topic_id=44" alt="Font&#0032;Tester - Elevate&#0032;your&#0032;landing&#0032;page&#0032;with&#0032;better&#0032;Typography | Product Hunt" 
+                    style="width: 230px; height: 54px;" width="250" height="54" /></a>
+
+                <a href="https://www.producthunt.com/posts/font-tester-2?embed=true&utm_source=badge-top-post-badge&utm_medium=badge&utm_souce=badge-font&#0045;tester&#0045;2" target="_blank">
+                    <img src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=612285&theme=light&period=daily" 
+                        alt="Font&#0032;Tester - Elevate&#0032;your&#0032;landing&#0032;page&#0032;with&#0032;better&#0032;Typography | Product Hunt" 
+                        style="width: 230px; height: 54px;" width="250" height="54"
+                        class=""
+                        />
+                </a>
+                <a href="https://www.producthunt.com/posts/font-tester-2?embed=true&utm_source=badge-top-post-topic-badge&utm_medium=badge&utm_souce=badge-font&#0045;tester&#0045;2" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/top-post-topic-badge.svg?post_id=612285&theme=light&period=weekly&topic_id=164" alt="Font&#0032;Tester - Elevate&#0032;your&#0032;landing&#0032;page&#0032;with&#0032;better&#0032;Typography | Product Hunt" 
+                    style="width: 230px; height: 54px;" width="250" height="54" /></a>
+            </div>
+
+            <div class="tw-mt-10 tw-flex tw-border-[1px] max-lg:tw-w-full tw-border-black tw-rounded-md tw-p-2 tw-max-w-[850px] tw-w-[1000px] tw-min-h-[550px] max-lg:tw-min-w-[320px] max-lg:tw-min-h-[250px] max-lg:tw-h-auto">
+
+                <div class="tw-relative tw-bg-black tw-min-w-full tw-min-h-full tw-overflow-clip tw-rounded-md">
+                    <iframe class="tw-absolute tw-top-[50%] tw--translate-y-[50%] tw-left-[50%] tw--translate-x-[50%] tw-w-full tw-h-full" src="https://www.youtube.com/embed/AK-kV8xaxIc?si=1i_QZS_XD7tg7uO3&amp;controls=1&rel=0&showinfo=0&autoplay=0&loop=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <!-- <img class="tw-object-contain tw-w-full tw-h-full" 
+                        alt="font tester gif" src="./assets/images/home/fonttester.gif" > -->
+                </div>
+
+            </div>
+        </section>
+
+        <section
+            class="tw-relative tw-mt-1 tw-flex tw-min-h-[100vh] tw-p-1 tw-w-full tw-max-w-[100vw] tw-flex-col tw-place-items-center lg:tw-p-6"
+        >
+
+            <h2 class="bungee-shade-family tw-text-5xl tw-leading-relaxed tw-font-semibold max-md:tw-text-3xl tw-text-center">
+                Try it
+            </h2>
+            
+            <div
+                class="tw-mt-[5%] tw-flex tw-h-full tw-w-full tw-place-content-center tw-gap-8 tw-p-4 max-lg:tw-max-w-full max-lg:tw-flex-col"
+            >
+                <div
+                    class="tw-relative  tw-flex tw-flex-col tw-gap-10 tw-h-full tw-max-w-[50%] max-lg:tw-max-w-full tw-px-[5%] max-lg:tw-px-4 
+                                max-lg:tw-gap-2 max-lg:tw-w-full lg:tw-top-2 tw-place-items-center"
+                >   
+
+                    <div class="tw-text-4xl tw-uppercase irish-grover-family tw-text-center">
+                        Typography defines
+                        <br />
+                        Your brand
+                    </div>
+
+                    <div class="tw-mt-4 gaegu-family max-md:tw-text-base tw-text-xl tw-max-w-[340px]">
+                        <span class="tw-font-semibold tw-text-blue-900">
+                            Want to transform your brand’s image?
+                        </span>
+                        <br/>
+                        <br/>
+                            <span>
+                                A website isn't just about colors and color pallets, it's also how you present the information 
+                                to your visitors, Typefaces and fonts plays a key role.
+                            </span>
+                        <br/>
+                        <br/>
+                            <span>
+                                It can tell a lot about you and your brand.
+                            </span>
+                        <br/>
+                        <br/>
+                        <span>
+                            However, it can be hard to test and pick a
+                            good typeface for your website without preview.
+                        </span>
+                    </div>
+
+                    <div class="tw-p-4 tw-max-w-[350px] tw-bg-yellow-200">
+                        Don't believe me? Highlight some text on this page and preview it with different fonts to see the difference for yourself. You'll be surprised!
+                    </div>
+                    <div class="tw-absolute tw-bottom-14 tw--right-16 tw-w-[130px] 
+                                max-lg:tw-hidden tw-rotate-[-20deg]">
+                        <img src="./assets/images/background/dashed-arrow.svg" alt="curve arrow" srcset="">
+                    </div>
+                </div>
+                
+                <div
+                    class="tw-relative tw-flex tw-max-w-[30%] max-lg:tw-max-w-full tw-flex-col tw-place-items-start tw-gap-4  tw-p-2 max-lg:tw-place-items-center max-lg:tw-place-content-center max-lg:tw-w-full"
+                >
+
+                    <div
+                        class="tw-top-20 lg:tw-sticky tw-max-h-[800px] tw-h-fit tw-max-w-[850px] max-lg:tw-max-h-fit max-lg:tw-max-w-[320px]  tw-rounded-lg"
+                    >
+                        <div class="tw-w-full tw-flex tw-flex-col tw-place-items-center">
+                            <div class="tw-m-1 gaegu-family tw-text-lg tw-text-blue-800  tw-font-bold">
+                                Highlight a text in this page and pick a font from dropdown
+                            </div>
+
+                            <div class="tw-text-base tw-mt-10 tw-text-red-700 tw-hidden" id="chrome-api-error">
+                                Chrome API unavailable, Please use a chromium 
+                                based browser to try this tool.
+                            </div>
+                        
+                            <div class="tw-shadow-lg tw-mt-2 tw-w-fit tw-h-fit tw-p-1">
+                                <div id="font-selector-widget"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section
+            class="tw-flex tw-w-full tw-flex-col tw-place-content-center tw-place-items-center tw-gap-[10%] tw-p-[5%] tw-px-[10%]"
+            id="features"
+        >
+            <h3
+                class="bowlby-one-family tw-text-center tw-uppercase tw-text-gray-800 tw-text-3xl tw-font-medium max-md:tw-text-2xl"
+            >
+                Feature Highlights
+            </h3>
+            <div class="tw-mt-8 tw-relative tw-gap-10 tw-p-4 tw-grid tw-place-items-center tw-grid-cols-3 max-lg:tw-flex max-lg:tw-flex-col">
+
+
+                <div class="reveal-up  tw-w-[350px] tw-border-[1px] tw-h-[400px] tw-rounded-md tw-place-items-center tw-p-4
+                             tw-bg-[#fdfdfd] max-md:tw-w-[320px] dark:tw-bg-[#141414] dark:tw-border-[#1f2123] tw-flex tw-flex-col tw-gap-3">
+
+                    <div class="tw-w-full tw-h-[250px]
+                                tw-p-4
+                                tw-rounded-xl 
+                                 tw-backdrop-blur-2xl
+                                 tw-overflow-hidden tw-flex tw-place-content-center">
+                        <img src="./assets/images/features/font-library.png" 
+                                alt="Prompt library" class="tw-w-auto tw-h-full tw-object-contain">
+                    </div>
+                    <h3 class="tw-text-2xl max-md:tw-text-xl">
+                        Font Library
+                    </h3>
+                    <p class="tw-text-gray-700 dark:tw-text-gray-300 tw-px-4 tw-text-center tw-text-sm">
+                        Choose from over 1000+ Google fonts
+                    </p>
+                </div>
+                
+                <div class="reveal-up tw-w-[350px] max-md:tw-w-[320px] tw-border-[1px] tw-h-[400px] tw-rounded-md tw-place-items-center tw-p-4
+                         tw-bg-[#fdfdfd] dark:tw-bg-[#141414] dark:tw-border-[#1f2123] tw-flex tw-flex-col tw-gap-3">
+
+                    <div class="tw-w-full tw-h-[250px]
+                                tw-p-4
+                                tw-rounded-xl 
+                                 tw-backdrop-blur-2xl
+                                 tw-overflow-hidden tw-flex tw-place-content-center">
+                        <img src="./assets/images/features/upload-fonts.png" 
+                                alt="Web search" class="tw-w-auto tw-h-full tw-object-contain">
+                    </div>
+                    <h3 class="tw-text-2xl max-md:tw-text-xl">
+                        Upload Local Fonts
+                    </h3>
+                    <p class="tw-text-gray-700 dark:tw-text-gray-300 tw-px-4 tw-text-center tw-text-sm">
+                        Easily upload and test local fonts. Best part is that nothing is  uploaded to the cloud. 
+                    </p>
+                </div>
+
+                <div class="reveal-up tw-w-[350px] max-md:tw-w-[320px] tw-border-[1px] tw-h-[400px] tw-rounded-lg tw-place-items-center tw-p-4
+                             tw-bg-[#fdfdfd] dark:tw-bg-[#141414] dark:tw-border-[#1f2123] tw-flex tw-flex-col tw-gap-3">
+
+                    <div class="tw-w-full tw-h-[250px]
+                                tw-p-4
+                                tw-rounded-xl 
+                                 tw-backdrop-blur-2xl
+                                 tw-overflow-hidden tw-flex tw-place-content-center">
+                        <img src="./assets/images/features/target-tool.png" 
+                                alt="Target tool" class="tw-w-auto tw-h-full tw-object-contain">
+                    </div>
+                    <h3 class="tw-text-2xl max-md:tw-text-xl">
+                        Find The Font
+                    </h3>
+                    <p class="tw-text-gray-700 dark:tw-text-gray-300 tw-px-4 tw-text-center tw-text-sm">
+                        Easily find the font on any webpage with the target tool
+                    </p>
+                </div>
+
+                <div class="reveal-up tw-w-[350px] max-md:tw-w-[320px] tw-border-[1px] tw-h-[400px] tw-rounded-lg tw-place-items-center tw-p-4
+                             tw-bg-[#fdfdfd] dark:tw-bg-[#141414] dark:tw-border-[#1f2123] tw-flex tw-flex-col tw-gap-3">
+
+                    <div class="tw-w-full tw-h-[250px]
+                                tw-p-4
+                                 tw-rounded-xl 
+                                 tw-backdrop-blur-2xl
+                                 tw-overflow-hidden tw-flex tw-place-content-center">
+                        <img src="./assets/images/features/palette.png" 
+                                alt="History" class="tw-w-auto tw-h-full tw-object-contain">
+                    </div>
+                    <h3 class="tw-text-2xl max-md:tw-text-xl">
+                        Test Color and Font Size
+                    </h3>
+                    <p class="tw-text-gray-700 dark:tw-text-gray-300 tw-px-4 tw-text-center tw-text-sm">
+                        Don't just test fonts, try which font color works on the page
+                    </p>
+                </div>
+
+                <div class="reveal-up tw-w-[350px] max-md:tw-w-[320px] tw-border-[1px] tw-h-[400px] tw-rounded-lg tw-place-items-center tw-p-4
+                             tw-bg-[#fdfdfd] dark:tw-bg-[#141414] dark:tw-border-[#1f2123] tw-flex tw-flex-col tw-gap-3">
+
+                    <div class="tw-w-full tw-h-[250px]
+                                tw-p-4
+                                tw-rounded-xl 
+                                 tw-backdrop-blur-2xl
+                                 tw-overflow-hidden tw-flex tw-place-content-center">
+                        <img src="./assets/images/features/font-weight.png" 
+                                alt="Import content" class="tw-w-auto tw-h-full tw-object-contain">
+                    </div>
+                    <h3 class="tw-text-2xl max-md:tw-text-xl">
+                       Font weight, Line Height and more
+                    </h3>
+                    <p class="tw-text-gray-700 dark:tw-text-gray-300 tw-px-4 tw-text-center tw-text-sm">
+                        Effortlessly test font weight, line height, underline and other
+                        typography attributes
+                    </p>
+                </div>
+
+                <div class="reveal-up tw-w-[350px] max-md:tw-w-[320px] tw-border-[1px] tw-h-[400px] tw-rounded-lg tw-place-items-center tw-p-4
+                             tw-bg-[#fdfdfd] dark:tw-bg-[#141414] dark:tw-border-[#1f2123] tw-flex tw-flex-col tw-gap-3">
+
+                    <div class="tw-w-full tw-h-[250px]
+                                tw-p-4
+                                tw-rounded-xl 
+                                 tw-backdrop-blur-2xl
+                                 tw-overflow-hidden tw-flex tw-place-content-center">
+                        <img src="./assets/images/features/copy-code.png" 
+                                alt="Copy Code" class="tw-w-auto tw-h-full tw-object-contain">
+                    </div>
+                    <h3 class="tw-text-2xl max-md:tw-text-xl">
+                        Copy Code
+                    </h3>
+                    <p class="tw-text-gray-700 dark:tw-text-gray-300 tw-px-4 tw-text-center tw-text-sm">
+                        Easily generate and copy css code for the fonts. 
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+        
+        <section
+            class="tw-mt-5 tw-flex tw-w-full tw-flex-col tw-place-items-center tw-p-[5%]"
+        >
+            <h3
+                class="bowlby-one-family tw-text-gray-800 tw-uppercase tw-text-3xl tw-font-medium max-md:tw-text-2xl"
+            >
+                Wall of Love
+            </h3>
+
+            <!-- Testimonials -->
+            <div class="tw-max-w-[750px] max-md:tw-max-w-[100vw]">
+                <div
+                    class="swiper tw-mt-8 tw-flex tw-flex-col tw-gap-10 tw-space-y-8"
+                >
+                    <div class="swiper-wrapper">
+                        <div
+                            class="swiper-slide tw-flex tw-place-content-center"
+                        >
+                            <div
+                                class="tw-flex tw-h-fit tw-max-w-[750px] tw-place-content-center tw-place-items-center tw-gap-10 tw-rounded-lg tw-p-4"
+                            >
+                                <div class="tw-flex tw-place-items-center">
+                                    <div
+                                        class="tw-h-[80px] tw-w-[80px] tw-overflow-hidden tw-rounded-full max-lg:tw-h-[80px] max-lg:tw-w-[80px]"
+                                    >
+                                        <img
+                                            src="./assets/images/testimonials/muhammad.jpg"
+                                            class="tw-h-full tw-w-full tw-object-cover"
+                                            alt="muhammad"
+                                        />
+                                    </div>
+                                </div>
+                                <div
+                                    class="tw-flex tw-max-w-[450px] tw-flex-col tw-gap-4"
+                                >
+                                    <q
+                                        class="tw-mt-4 tw-italic tw-text-gray-800"
+                                    >
+                                        The extension is amazing. Highly recommended for people who have hard time choosing font for their projects. 
+
+                                    </q>
+                                    <b>- Muhammad Zohaib</b>
+                                    <div class="tw-mt-2 tw-text-yellow-400">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="swiper-slide tw-flex tw-place-content-center"
+                        >
+                            <div
+                                class="tw-flex tw-h-fit tw-max-w-[750px] tw-place-content-center tw-place-items-center tw-gap-10 tw-rounded-lg tw-p-4"
+                            >
+                                <div class="tw-flex tw-place-items-center">
+                                    <div
+                                        class="tw-h-[80px] tw-w-[80px] tw-overflow-hidden tw-rounded-full max-lg:tw-h-[80px] max-lg:tw-w-[80px]"
+                                    >
+                                        <img
+                                            src="./assets/images/testimonials/manuel.jpg"
+                                            class="tw-h-full tw-w-full tw-object-cover"
+                                            alt="man"
+                                        />
+                                    </div>
+                                </div>
+                                <div
+                                    class="tw-flex tw-max-w-[450px] tw-flex-col tw-gap-4"
+                                >
+                                    <q
+                                        class="tw-mt-4 tw-italic tw-text-gray-800"
+                                    >
+                                        Pretty useful! It helps test different fonts to decide which one would fit better, supernice!
+                                    </q>
+                                    <b>- Manuel Sánchez</b>
+                                    <div class="tw-mt-2 tw-text-yellow-400">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div
+                            class="swiper-slide tw-flex tw-place-content-center"
+                        >
+                            <div
+                                class="tw-flex tw-h-fit tw-max-w-[750px] tw-place-content-center tw-place-items-center tw-gap-10 tw-rounded-lg tw-p-4"
+                            >
+                                <div class="tw-flex tw-place-items-center">
+                                    <div
+                                        class="tw-h-[80px] tw-w-[80px] tw-overflow-hidden tw-rounded-full max-lg:tw-h-[80px] max-lg:tw-w-[80px]"
+                                    >
+                                        <img
+                                            src="./assets/images/testimonials/francisco.jpg"
+                                            class="tw-h-full tw-w-full tw-object-cover"
+                                            alt="man"
+                                        />
+                                    </div>
+                                </div>
+                                <div
+                                    class="tw-flex tw-max-w-[450px] tw-flex-col tw-gap-4"
+                                >
+                                    <q
+                                        class="tw-mt-4 tw-italic tw-text-gray-800"
+                                    >
+                                        Simply great!!! Thanks Paul. Something like that was needed. Blessings!
+
+                                    </q>
+                                    <b>- Francisco Zapata</b>
+                                    <div class="tw-mt-2 tw-text-yellow-400">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="pagination-container tw-flex tw-place-content-center"
+                    ></div>
+
+                    <div class="tw-flex tw-place-content-center tw-gap-6">
+                        <div
+                            class="testmonial-prev tw-flex tw-h-[40px] tw-w-[40px] tw-place-content-center tw-place-items-center tw-rounded-full tw-border-2 tw-border-solid tw-border-gray-300 tw-text-2xl"
+                        >
+                            <i class="bi bi-arrow-left"></i>
+                        </div>
+                        <div
+                            class="testmonial-next tw-flex tw-h-[40px] tw-w-[40px] tw-place-content-center tw-place-items-center tw-rounded-full tw-border-2 tw-border-solid tw-border-gray-300 tw-text-2xl"
+                        >
+                            <i class="bi bi-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section
+            class="tw-mt-5 tw-flex tw-w-full tw-flex-col tw-place-items-center tw-place-content-center"
+         >
+            <h3
+                class="bowlby-one-family tw-text-gray-800 tw-uppercase tw-text-3xl tw-font-medium max-md:tw-text-2xl"
+            >
+                Creator's Note
+            </h3>
+            <div class="tw-flex tw-flex-col tw-gap-2 tw-min-h-[250px] tw-pt-6 tw-place-content-center tw-place-items-center">
+
+                <div class="tw-flex tw-flex-col tw-gap-2 tw-min-h-[250px] tw-pt-6 tw-place-content-center tw-place-items-center">
+
+                    <div class="fuzzy-bubbles-family tw-max-w-[650px] max-md:tw-max-w-full tw-p-3 tw-leading-8 
+                                tw-text-xl max-md:tw-text-base tw-text-justify tw-px-6">
+                        While designing a landing page for a client, I faced repeated dissatisfaction with the design. 
+                        I started experimenting with various fonts from Google Fonts, I finally found one that made the client super happy. 
+                        <br>
+                        <br>
+                        That's when I understood impact Font's have on websites.
+                        However, the process of copying and testing fonts one by one was incredibly tedious.
+                        <br>
+                        <br>
+                        To solve this, I built a Font Tester tool, making it easier to test and preview multiple fonts without switching or refreshing, 
+                        saving significant time.
+                        <br>
+                        <br>
+                        Remember most websites have 80% text, so make sure you pay attention to the fonts you use. It can play significant role.
+                        <br>
+                        <br>
+                        I hope it saves you hours of effort.
+                    </div>
+                    <div class="tw-flex tw-gap-2 tw-place-content-center tw-place-items-center">
+                        <div class="tw-flex tw-w-[70px] tw-h-[70px] tw-rounded-full">
+                            <img src="./assets/images/paul.png" alt="Paul">
+                        </div>
+                        <span class="tw-text-2xl">- Paul</span>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section
+            class="tw-mt-5 tw-flex tw-w-full tw-flex-col tw-place-items-center tw-p-[2%] max-lg:tw-p-2"
+            id="pricing"
+        >
+            <h3
+                class="tw-text-3xl bowlby-one-family tw-text-center tw-text-gray-800 tw-uppercase max-md:tw-text-2xl"
+            >
+                Upgrade your typography
+            </h3>
+
+            <!-- pricing -->
+            <div
+                class="tw-mt-10 tw-flex tw-flex-wrap tw-place-content-center tw-gap-8 max-lg:tw-flex-col"
+            >
+                
+                <div
+                    class="tw-flex tw-w-[400px] tw-flex-col tw-place-items-center tw-gap-2 tw-rounded-lg tw-border-2 
+                                tw-border-blue-500 tw-p-8 tw-shadow-xl max-lg:tw-w-[340px]"
+                >
+                    <div class=" tw-text-white tw-p-1 tw-px-3 tw-bg-blue-500  tw-rounded-full">
+                        Ends in few days
+                    </div>
+                    <h3 class="">
+                        <span class="tw-text-5xl tw-font-semibold">
+                            <s class="tw-font-medium tw-text-4xl">$49</s>    
+                            <span>$29<span class="tw-text-2xl"></span></span>
+                        </span>
+                        <span class="tw-text-2xl tw-text-gray-600">Forever</span>
+                    </h3>
+                    <span class="tw-text-lg tw-text-gray-800">Per user</span>
+                    <p class="tw-mt-3 tw-text-center tw-text-black">
+                        Get a life-time license 🚀. Plus get added benefits.
+                    </p>
+                    <hr />
+                     <ul
+                        class="tw-mt-4 tw-flex tw-flex-col tw-gap-2 tw-text-lg tw-text-black"
+                    >
+                        <li class="tw-flex tw-place-items-center tw-gap-2">
+                            <i class="bi bi-check-circle-fill tw-text-green-600 tw-text-base"></i>
+                            <span>Select from 1000+ google fonts</span>
+                        </li>
+                        <li class="tw-flex tw-place-items-center tw-gap-2">
+                            <i class="bi bi-check-circle-fill tw-text-green-600 tw-text-base"></i>
+                            <span>Find font family on any webpage</span>
+                        </li>
+                        <li class="tw-flex tw-place-items-center tw-gap-2 tw-font-medium">
+                            <i class="bi bi-check-circle-fill tw-text-green-600  tw-text-base"></i>
+                            <span>Upload local fonts</span>
+                        </li>
+
+                        <li class="tw-flex tw-place-items-center tw-gap-2 tw-font-medium">
+                            <i class="bi bi-check-circle-fill tw-text-green-600  tw-text-base"></i>
+                            <span>Preview fonts on dropdown</span>
+                        </li>
+
+                        <li class="tw-flex tw-place-items-center tw-gap-2">
+                            <i class="bi bi-check-circle-fill tw-text-green-600  tw-text-base"></i>
+                            <span>Adjust font-size and colors</span>
+                        </li>
+                        <li class="tw-flex tw-place-items-center tw-gap-2">
+                            <i class="bi bi-check-circle-fill tw-text-green-600  tw-text-base"></i>
+                            <span>Letter spacing and underline spacing</span>
+                        </li>
+
+                        <li class="tw-flex tw-place-items-center tw-gap-2">
+                            <i class="bi bi-check-circle-fill tw-text-green-600  tw-text-base"></i>
+                            <span>Commercial use</span>
+                        </li>
+
+                        <li class="tw-flex tw-place-items-center tw-gap-2">
+                            <i class="bi bi-check-circle-fill tw-text-green-600  tw-text-base"></i>
+                            <span>Free updates</span>
+                        </li>
+                        <li class="tw-flex tw-place-items-center tw-gap-2">
+                            <i class="bi bi-check-circle-fill tw-text-green-600  tw-text-base"></i>
+                            <span>Priority support</span>
+                        </li>
+                        <li class="tw-flex tw-place-items-center tw-gap-2">
+                            <i class="bi bi-check-circle-fill tw-text-green-600  tw-text-base"></i>
+                            <span>Early access to new features</span>
+                        </li>
+                        <li class="tw-flex tw-place-items-center tw-gap-2">
+                            <i class="bi bi-check-circle-fill tw-text-green-600  tw-text-base"></i>
+                            <span>Firefox, Safari and Edge addons</span>
+                        </li>
+                        <li class="tw-flex tw-place-items-center tw-gap-2">
+                            <i class="bi bi-check-circle-fill tw-text-green-600  tw-text-base"></i>
+                            <span>Dark theme</span>
+                        </li>
+                        
+                    </ul>
+                    <!-- <a
+                        href="https://foxcraft.gumroad.com/l/font-tester/preorder"
+                        data-gumroad-overlay-checkout="true"
+                        class="btn tw-mt-8 !tw-w-full tw-transition-transform tw-duration-[0.3s] hover:tw-scale-x-[1.02]"
+                    >
+                        Get now
+                    </a> -->
+                    <a
+                        href="https://ko-fi.com/s/0460bd43e6"
+                        class="btn tw-mt-8 tw-font-medium !tw-w-full tw-transition-transform tw-duration-[0.3s] hover:tw-scale-x-[1.02]"
+                    >
+                        Get pro license
+                    </a>
+                </div>
+               
+            </div>
+        </section>
+
+
+        <section
+            class="tw-flex tw-w-full tw-flex-col tw-place-content-center tw-place-items-center tw-gap-[10%] tw-p-[5%] tw-px-[10%]"
+        >
+            <h3
+                class="tw-text-4xl bowlby-one-family tw-text-gray-800 max-md:tw-text-2xl"
+            >
+                Faq
+            </h3>
+            <div
+                class="tw-mt-5 tw-flex tw-min-h-[300px] tw-w-full tw-max-w-[850px] tw-flex-col tw-gap-4"
+            >
+                <div
+                    class="faq tw-w-full"
+                >
+                    <div
+                        class="faq-accordion tw-flex tw-w-full tw-select-none tw-text-xl max-md:tw-text-lg"
+                    >
+                        <span>Where can I test before purchase?</span>
+                        <i class="bi bi-plus tw-ml-auto tw-font-semibold"></i>
+                    </div>
+                    <div class="content">
+                        You can use this test 
+                        <a href="https://halloween-hero.netlify.app/" 
+                        rel="noopener noreferrer" target="_blank" 
+                            class="tw-font-medium tw-underline tw-underline-offset-1">Halloween site</a> 
+                    </div>
+                </div>
+
+                <div
+                    class="faq tw-w-full"
+                >
+                    <div
+                        class="faq-accordion tw-flex tw-w-full tw-select-none tw-text-xl max-md:tw-text-lg"
+                    >
+                        <span>Can I find the font on a webpage?</span>
+                        <i class="bi bi-plus tw-ml-auto tw-font-semibold"></i>
+                    </div>
+                    <div class="content">
+                        Yes, you can use the target tool to find the font on the webpage
+                    </div>
+                </div>
+                <!-- <div
+                    class="faq tw-w-full"
+                >
+                    <div
+                        class="faq-accordion tw-flex tw-w-full tw-select-none tw-text-xl max-md:tw-text-lg"
+                    >
+                        <span>Can I try the extension for free?</span>
+                        <i class="bi bi-plus tw-ml-auto tw-font-semibold"></i>
+                    </div>
+                    <div class="content">
+                        Yes, the chrome extension is free to use forever, however to support 
+                        open-source development, some features are only available to premium users.
+                    </div>
+                </div> -->
+
+                <div
+                    class="faq tw-w-full"
+                >
+                    <div
+                        class="faq-accordion tw-flex tw-w-full tw-select-none tw-text-xl max-md:tw-text-lg"
+                    >
+                        <span>Is Safari, Edge and Firefox addons available?</span>
+                        <i class="bi bi-plus tw-ml-auto tw-font-semibold"></i>
+                    </div>
+                    <div class="content">
+                        The Safari, Edge and firefox addons will be available for premium users when released.
+                        If you purchase a license, you'll be notified when its released.
+                    </div>
+                </div>
+
+                <div
+                    class="faq tw-w-full"
+                >
+                    <div
+                        class="faq-accordion tw-flex tw-w-full tw-select-none tw-text-xl max-md:tw-text-lg"
+                    >
+                        <span>Where can I find the upcoming features?</span>
+                        <i class="bi bi-plus tw-ml-auto tw-font-semibold"></i>
+                    </div>
+                    <div class="content">
+                        You can find the upcoming features on the
+                        <a
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href="https://github.com/PaulleDemon/font-tester-chrome/blob/main/roadmap.md"
+                            class="tw-underline"
+                            >Roadmap</a
+                        >
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section
+            class="tw-flex tw-w-full tw-flex-col tw-place-content-center tw-place-items-center tw-gap-[5%] tw-p-[3%] tw-px-[10%]"
+            id="blog-section"
+            >
+            <h3 class="tw-text-4xl bowlby-one-family tw-font-medium tw-text-gray-800 max-md:tw-text-2xl">Blogs</h3>
+            <div class="tw-mt-8 tw-flex tw-min-h-[300px] tw-w-full 
+                        max-lg:tw-flex-col tw-place-items-center
+                        tw-place-content-center tw-gap-8" id="blogs">
+                
+                
+            
+            </div>
+        </section>
+       
+
+        <footer
+            class="tw-mt-auto tw-flex tw-w-full tw-place-content-around tw-gap-3 tw-p-[5%] tw-px-[10%] tw-text-black max-md:tw-flex-col"
+        >
+            <div
+                class="tw-flex tw-h-full tw-w-[250px] tw-flex-col tw-place-items-center tw-gap-6 max-md:tw-w-full"
+            >
+                <img
+                    src="./assets/logo/logo.svg"
+                    alt="logo"
+                    srcset=""
+                    class="tw-max-w-[120px]"
+                />
+              
+                <div class="tw-mt-3 tw-text-lg tw-font-semibold">Follow</div>
+                <div class="tw-flex tw-gap-4 tw-text-2xl">
+                    <a href="https://www.youtube.com/@paultalkstech" 
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        aria-label="Youtube">
+                        <i class="bi bi-youtube"></i>
+                    </a>
+                    <a
+                        href="https://twitter.com/@pauls_freeman"
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        aria-label="Twitter"
+                    >
+                        <i class="bi bi-twitter"></i>
+                    </a>
+                    <a
+                        href="https://github.com/PaulleDemon"
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        class="tw-h-[40px] tw-w-[40px]"
+                        aria-label="Github"
+                    >
+                        <i class="bi bi-github"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="tw-flex tw-h-full tw-w-[250px] tw-flex-col tw-gap-4">
+                <!-- <h2 class="tw-text-3xl max-md:tw-text-xl">Company</h2> -->
+                <div class="tw-flex tw-flex-col tw-gap-3 max-md:tw-text-sm">
+                    <a href="#features" class="footer-link">Features</a>
+                    <a href="#pricing" class="footer-link">Pricing</a>
+                    <a href="https://github.com/PaulleDemon/font-tester-chrome/blob/main/roadmap.md" class="footer-link">Roadmap</a>
+                </div>
+            </div>
+
+            <div class="tw-flex tw-h-full tw-w-[250px] tw-flex-col tw-gap-4">
+                <div class="tw-flex tw-flex-col tw-gap-3 max-md:tw-text-sm">
+                    <a href="" class="footer-link">About</a>
+                    <a href="#faq" class="footer-link">FAQ</a>
+                    <a href="https://tally.so/r/wv0LRX" class="footer-link">Support</a>
+                    <a href="https://github.com/PaulleDemon/font-tester-chrome" class="footer-link">Github</a>
+                    <a href="https://github.com/PaulleDemon/font-tester-chrome" class="footer-link">Report issue</a>
+                </div>
+            </div>
+        </footer>
+    </body>
+
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js"
+        integrity="sha512-B1lby8cGcAUU3GR+Fd809/ZxgHbfwJMp0jLTVfHiArTuUt++VqSlJpaJvhNtRf3NERaxDNmmxkdx2o+aHd4bvw=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    ></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/ScrollTrigger.min.js"
+        integrity="sha512-AY2+JxnBETJ0wcXnLPCcZJIJx0eimyhz3OJ55k2Jx4RtYC+XdIi2VtJQ+tP3BaTst4otlGG1TtPJ9fKrAUnRdQ=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    ></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js" integrity="sha512-Ysw1DcK1P+uYLqprEAzNQJP+J4hTx4t/3X2nbVwszao8wD+9afLjBQYjz7Uk4ADP+Er++mJoScI42ueGtQOzEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css" integrity="sha512-rd0qOHVMOcez6pLWPVFIv7EfSdGKLt+eafXh4RO/12Fgr41hDQxfGvoi1Vy55QIVcQEujUE1LQrATCLl2Fs+ag==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script src="./widget/content.js?build=1.3"></script>
+
+    <script src="./scripts/utils.js"></script>
+    <script src="./index.js"></script>
+
+    <style>
+        .swiper-pagination-bullet {
+            width: 10px;
+            height: 10px;
+            text-align: center;
+            /* font-size: 12px; */
+            opacity: 1;
+            background: #dad8d8fa;
+            left: auto;
+        }
+        .swiper-pagination-bullet:hover {
+            color: #000;
+            opacity: 1;
+            background: #ede0e0bd;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: #000000 !important;
+        }
+
+        .swiper {
+            padding: 10px !important;
+        }
+    </style>
+
+    <script>
+        const swiper = new Swiper('.swiper', {
+            // Optional parameters
+            direction: 'horizontal',
+            loop: true,
+            centeredSlides: true,
+
+            // If we need pagination
+            pagination: {
+                el: '.pagination-container',
+                clickable: true,
+                renderBullet: function (index, className) {
+                    return `<span class="${className}"></span>`
+                },
+            },
+            // Navigation arrows
+            navigation: {
+                nextEl: '.testmonial-next',
+                prevEl: '.testmonial-prev',
+            },
+        })
+    </script>
+    <script>
+
+        const blogsList = [
+            {
+                "title": "Change the way you design, Learn about Typography",
+                "description": "If you want to change the way your website and brand is perceived, its not too hard....",
+                "url": "https://medium.com/@paul_Art/change-the-way-you-design-guide-for-typography-font-and-typeface-b23103c75e76",
+                "image_url": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*JQluw6sA8UfVCmxHJ-13lw.png"
+            },
+            {
+                "title": "15 Essential tools for Frontend developers",
+                "description": "So, you want to boost your productivity as a frontend developer....",
+                "url": "https://dev.to/paul_freeman/15-essential-tools-and-resources-for-frontend-developers-4jn4",
+                "image_url": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fidpziptpphu2o7vbxede.png"
+            },
+            {
+                "title": "Here's how building a chrome extension went",
+                "description": "Recently I had a client for whom I had to make a landing page...",
+                "url": "https://dev.to/paul_freeman/heres-what-i-learned-from-building-a-chrome-extension-1986",
+                "image_url": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8b77rnrjlwkoymsrokko.png"
+            },
+          ]	
+    
+        const blogContainer = document.getElementById('blogs');
+        blogContainer.innerHTML = blogsList.map(blog => {
+                return (`
+                    <a href="${blog.url}" target="_blank" rel="noopener noreferrer" 
+                        class="tw-w-[350px] tw-min-w-[350px] max-md:tw-min-w-[300px] tw-h-[360px] 
+                                tw-rounded-md tw-overflow-hidden">
+                        
+                        <div class="tw-h-[230px] tw-w-full tw-bg-[#000] tw-rounded-md tw-overflow-hidden tw-flex tw-place-content-center">
+                            <img src="${blog.image_url}" alt="${blog.title}" 
+                                    class="tw-object-cover tw-w-full tw-transition-transform tw-duration-700 hover:tw-scale-[1.3]">
+                        </div>
+                        <div class="tw-mt-2 tw-flex tw-flex-col tw-gap-2 tw-p-1">
+                            <h3 class="tw-text-lg tw-font-medium">${blog.title}</h3>
+                            <p class="tw-text-bg-gray-500 tw-text-sm">${blog.description}</p>
+                        </div>
+                    </a>
+                `)
+            }).join('')
+      
+    </script>
+
+    <script>
+                
+        if (typeof window.chrome !== "undefined") {
+            console.log("Chrome API is available.");
+        } else {
+            console.log("unavailable api")
+            document.getElementById("chrome-api-error").classList.remove("tw-hidden")
+        }
+
+    </script>
+
+</html>
