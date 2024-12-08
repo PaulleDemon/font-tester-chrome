@@ -44,6 +44,24 @@
 
             gtag('config', 'G-61T5DC5QKB');
         </script>
+        <!-- Facebook Pixel Code -->
+        <script>
+            !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window,document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '1426745001481419'); 
+            fbq('track', 'PageView');
+        </script>
+        <noscript>
+            <img height="1" width="1" 
+            src="https://www.facebook.com/tr?id=1426745001481419&ev=PageView
+            &noscript=1"/>
+        </noscript>
 
     </head>
     <body
@@ -756,6 +774,7 @@
                         Get now
                     </a> -->
                     <a
+                        id="purchase-btn"
                         href="https://ko-fi.com/s/0460bd43e6"
                         class="btn tw-mt-8 tw-font-medium !tw-w-full tw-transition-transform tw-duration-[0.3s] hover:tw-scale-x-[1.02]"
                     >
@@ -844,18 +863,12 @@
                     <div
                         class="faq-accordion tw-flex tw-w-full tw-select-none tw-text-xl max-md:tw-text-lg"
                     >
-                        <span>Where can I find the upcoming features?</span>
+                        <span>Will there be any updates?</span>
                         <i class="bi bi-plus tw-ml-auto tw-font-semibold"></i>
                     </div>
                     <div class="content">
-                        You can find the upcoming features on the
-                        <a
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            href="https://github.com/PaulleDemon/font-tester-chrome/blob/main/roadmap.md"
-                            class="tw-underline"
-                            >Roadmap</a
-                        >
+                        Yes we update it based on feedback, and you'll be notified via email, whenever 
+                        new updates are available.
                     </div>
                 </div>
             </div>
@@ -1060,6 +1073,15 @@
             document.getElementById("chrome-api-error").classList.remove("tw-hidden")
         }
 
+    </script>
+
+    <script type="text/javascript">
+        document.getElementById('purchase-btn').addEventListener('click', function() {
+            fbq('track', 'AddToCart', {
+                value: 29,
+                currency: 'usd',
+            });
+        }, false);
     </script>
 
 </html>
