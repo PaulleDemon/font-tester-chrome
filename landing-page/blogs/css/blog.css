@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Bowlby+One');
+
+
+.blog > *+*{
+    margin-top: 20px;
+}
+
+.blog h1{
+    font-family: "Bowlby One", system-ui;
+    letter-spacing: 2px;
+}
+
+.blog h2{
+    margin-top: 40px;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.blog h3{
+    font-size: 22px;
+    font-weight: 600;
+}
+
+
+.blog h4{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.blog p{
+    margin-top: 20px;
+}
+
+.blog ul{
+    padding-left: 20px;
+    list-style: disc;
+    margin-bottom: 10px;
+}
+
+.blog ol{
+    padding-left: 20px;
+    list-style: decimal;
+    margin-bottom: 10px;
+}

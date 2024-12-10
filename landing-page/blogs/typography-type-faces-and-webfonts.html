@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Typography, type faces and web fonts - A comprehensive guide for your website</title>
+        <meta name="description" content="struggling to find the perfect font for your website? learn about typography, typeface and web fonts" />
+        <link
+            rel="shortcut icon"
+            href="./assets/logo/icon48.png"
+            type="image/x-icon"
+        />
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:title" content="Typography, type faces and web fonts - Font Tester" />
+        <meta property="og:description" content="struggling to find the perfect font for your website? learn about typography, typeface and web fonts" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://github.com/PaulleDemon/font-tester-chrome" />
+        <!--Replace with the current website url-->
+        <meta property="og:image" content="https://raw.githubusercontent.com/PaulleDemon/font-tester-chrome/refs/heads/main/docs/og-image.png" />
+
+        <link rel="stylesheet" href="../css/tailwind-runtime.css" />
+        <!-- <link rel="stylesheet" href="./css/tailwind-build.css?build=0.8"> -->
+        <link rel="stylesheet" href="../css/index.css?build=0.8" />
+        <link rel="stylesheet" href="css/blog.css" />
+
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
+            integrity="sha512-dPXYcDub/aeb08c63jRq/k6GaKccl256JQy/AnOq7CAnEZ9FzSL9wSbcZkMp4R26vBsMLFYH4kQ67/bbV8XaCQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-61T5DC5QKB"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-61T5DC5QKB');
+        </script>
+
+    </head>
+    <body
+        class="tw-flex tw-min-h-[100vh] tw-flex-col tw-bg-white tw-text-black"
+    >
+        <header
+            class="tw-max-w-lg:tw-px-4 tw-max-w-lg:tw-mr-auto tw-absolute tw-top-0 tw-z-20 tw-flex tw-h-[60px] tw-w-full tw-bg-opacity-0 tw-px-[5%] lg:tw-justify-around"
+        >
+            <a class="tw-h-[50px] tw-w-[50px] tw-p-[4px]" href="">
+                <img
+                    src="../assets/logo/logo.svg"
+                    alt="logo"
+                    class="tw-object tw-h-full tw-w-full"
+                />
+            </a>
+            <div
+                class="collapsible-header animated-collapse max-lg:tw-shadow-md"
+                id="collapsed-header-items"
+            >
+                <div
+                    class="tw-flex tw-h-full tw-w-max tw-gap-5 tw-text-base max-lg:tw-mt-[30px] max-lg:tw-flex-col max-lg:tw-place-items-end max-lg:tw-gap-5 lg:tw-mx-auto lg:tw-place-items-center"
+                >
+                    <a class="header-links" href="https://font-tester.foxcraft.tech/"> About </a>
+                    <a class="header-links" href="https://font-tester.foxcraft.tech/#pricing"> Pricing </a>
+                    <a class="header-links" href="https://font-tester.foxcraft.tech/#features"> Features </a>
+                    <a class="header-links" href="https://font-tester.foxcraft.tech/blogs"> Blogs </a>
+                </div>
+                <div
+                    class="tw-mx-4 tw-flex tw-place-items-center tw-gap-[20px] tw-text-base max-md:tw-w-full max-md:tw-flex-col max-md:tw-place-content-center"
+                >
+                    <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://font-tester.foxcraft.tech
+                        aria-label="signup"
+                        class="tw-rounded-md tw-border-[1px] tw-border-black tw-bg-transparent tw-px-3 tw-py-2 tw-text-black tw-transition-colors tw-duration-[0.3s] hover:tw-bg-black hover:tw-text-white"
+                    >
+                        <span>Preview fonts</span>
+                        <!-- <i class="bi bi-download"></i> -->
+                    </a>
+                </div>
+            </div>
+            <button
+                class="bi bi-list tw-absolute tw-right-3 tw-top-3 tw-z-50 tw-text-3xl tw-text-black lg:tw-hidden"
+                onclick="toggleHeader()"
+                aria-label="menu"
+                id="collapse-btn"
+            ></button>
+        </header>
+
+        <section
+            class="tw-relative tw-m tw-flex tw-min-h-[60vh] tw-place-items-center tw-w-full tw-max-w-[100vw] tw-flex-col tw-overflow-hidden max-md:tw-mt-[50px]"
+        >   
+
+            <div class="tw-mt-[100px] tw-flex tw-flex-col tw-gap-4 tw-max-w-[800px] tw-px-4">
+                <h1 class="tw-text-4xl bowlby-one-family tw-text-gray-800 tw-mt-10">Typography, type faces and web fonts</h1>
+            
+                <div class="blog tw-mt-4 tw-text-lg tw-text-justify tw-text-gray-900">
+                    
+                    <p>
+                        Selecting the perfect font for your website can feel like a daunting task, 
+                        especially when you’re bombarded with countless options. Fonts do more than
+                        just display text; they shape how users perceive your brand, influence 
+                        readability, and impact overall user experience. Whether you're designing a personal blog, 
+                        an e-commerce site, or a corporate website, understanding the basics of typography, 
+                        the differences between typeface and font, and the role of web fonts will help you make the right 
+                        choices.
+                    </p>
+
+                    <p>
+                        In this blog, we’ll take a deep dive into the world of fonts, from the technical aspects to actionable tips, ensuring your website stands out with impeccable typography.
+                    </p>
+
+                    <h2>
+                        What is Typography and Why Does it Matter?
+                    </h2>
+                    <p>
+                        Typography isn’t just about choosing a stylish font—it’s the art and science of arranging text in a way that makes it legible, engaging, and visually appealing. It encompasses everything from font selection to spacing, alignment, and hierarchy.
+                    </p>
+
+                    <p>
+                        Here’s why typography matters:
+
+                        <ul>
+                            <li><b>Improves Readability:</b> Clear and well-structured typography ensures your audience can consume your content effortlessly.</li>
+                            <li><b>Reinforces Brand Identity:</b> Fonts convey emotion and tone, helping users connect with your brand’s personality.</li>
+                            <li><b>Enhances User Experience:</b> Thoughtful typography creates a polished and professional look that builds trust.</li>
+                            <li><b>Improves Readability:</b> Clear and well-structured typography ensures your audience can consume your content effortlessly.</li>
+                        </ul>
+                        For example, tech startups often lean toward clean, sans-serif fonts like Roboto or Open Sans to project modernity, while high-end brands might prefer serif fonts like Garamond for a more refined and classic feel.
+                    </p>
+
+                    <h2>
+                        Typography Basics: Key Elements to Consider
+                    </h2>
+                    <p>
+                        When crafting the typography for your website, consider these elements:
+                        <ul>
+                            <li><b>Font Size:</b> A base font size of 16px is ideal for body text, ensuring readability across all devices.</li>
+                            <li><b>Line Height (Leading):</b> Use a line height of 1.5 to prevent cramped or overcrowded text.</li>
+                            <li><b>Letter Spacing (Tracking):</b> Adjust spacing to improve the visual flow of your content, especially for headings or logos.</li>
+                            <li><b>Alignment:</b> Align text consistently to maintain structure and avoid visual clutter.</li>
+                        </ul>
+                    </p>
+
+                
+                    <h2>
+                        Typeface vs. Font: Clearing Up the Confusion
+                    </h2>
+
+                    <p>
+                        The terms "typeface" and "font" are often used interchangeably, but they’re not the same thing. Here’s the difference:
+                    </p>
+
+                    <ul>
+                        <li>
+                            <b>Typeface: </b>
+                            Refers to the family of fonts sharing a common design. For example, Arial and Times New Roman are typefaces.
+                        </li>
+                        <li>
+                            <b>Font: </b>
+                            A specific style, weight, or variation within a typeface, such as Arial Bold or Times New Roman Italic.
+                        </li>
+                    </ul>
+
+                    <p>
+                        Think of a typeface as a song, and a font as the various instruments playing it in different tones and intensities.
+                    </p>
+
+                    <h2>
+                        What are Web Fonts?
+                    </h2>
+
+                    <p>
+                        Web fonts are fonts optimized for digital use, ensuring consistent rendering across browsers and devices. Unlike traditional fonts installed on your computer, web fonts are hosted online and loaded dynamically onto your website.
+                    </p>
+
+                    <h4>
+                        Benefits of Using Web Fonts
+                    </h4>
+
+                    <ul>
+                        <li>
+                            <b>Cross-Browser Compatibility:</b>
+                            Web fonts ensure your text looks the same on all browsers.
+                        </li>
+                        <li>
+                            <b>Improved Performance:</b>
+                            Modern web fonts are designed to load quickly, enhancing page speed.
+                        </li>
+                        <li>
+                            <b>Greater Design Freedom:</b>
+                            Access to thousands of unique font styles enables creative flexibility.
+                        </li>
+                     
+                    </ul>
+
+                    <div
+                        class="tw-mt-10 tw-flex tw-flex-col tw-gap-2 max-lg:tw-flex-col
+                                tw-border-gray-800 tw-border-solid tw-border-[2px] tw-max-w-[750px]
+                                tw-rounded-md tw-px-4 tw-py-2"
+                    >
+                        <h3
+                            class="tw-text-xl tw-text-gray-800 tw-font-medium max-md:tw-text-2xl"
+                        >
+                            80% of Your Website is Text – Make It Count!
+                        </h3>
+                        
+                        <div class="">
+                            Unable to pick the perfect font for your website? try font tester and 
+                            test 1000+ fonts directly on your website.
+                        </div>
+                        
+                        <a href="http://font-tester.foxcraft.tech" class="tw-bg-black tw-ml-auto tw-flex tw-gap-2 tw-text-white tw-p-2 tw-px-3 tw-rounded-md tw-w-fit">
+                            <span>Try font tester</span>
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <h3>
+                        Popular Web Font Providers
+                    </h3>
+                    <p>Here are some trusted sources to find web fonts for your project:</p>
+
+                    <ol>
+                        <li>
+                            <a href="https://fonts.google.com/"><b>Google Fonts</b></a>
+                            <ul>
+                                <li>
+                                    Free and easy to integrate with just a few lines of code.
+                                </li>
+                                <li>
+                                    Popular choices: Roboto, Open Sans, Lato.
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="https://fonts.adobe.com/"><b>Adobe Fonts</b></a>
+                            <ul>
+                                <li>
+                                    Offers an extensive library of premium fonts included with Adobe Creative Cloud.
+                                </li>
+                                <li>
+                                    Recommended options: Proxima Nova, Museo Sans, Source Sans Pro.
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="https://www.fontsquirrel.com/"><b>Font Squirrel</b></a>
+                            <ul>
+                                <li>
+                                    A collection of high-quality, free fonts with commercial licenses.
+                                </li>
+                            </ul>
+                        </li>
+
+                    </ol>
+
+                    <h2>
+                        Best Practices for Using Fonts on Your Website
+                    </h2>
+                    <p>
+                        To ensure your website’s typography is both functional and visually appealing, follow these best practices:
+                    </p>
+                    <ol>
+                        <li>
+                            <b>Stick to 2-3 Font Families</b>
+                            <ul>
+                                <li>
+                                    Avoid overwhelming your design with too many fonts. Pair one font for headings and another for body text.
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <b>Use Readable Font Sizes</b>
+                            <ul>
+                                <li>
+                                    A minimum font size of 16px for body text ensures readability across all screens.
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <b>Optimize Font Loading</b>
+                            <ul>
+                                <li>
+                                    Use modern formats like WOFF2 for better performance.
+                                </li>
+                                <li>
+                                    Implement asynchronous loading to prevent slow page load times.
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <b>Test Your Fonts</b>
+                            <ul>
+                                <li>
+                                    Preview fonts directly on your website using tools like 
+                                        <a href="http://font-tester.foxcraft.tech">Font Tester.</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <b>Fallback Fonts</b>
+                            <ul>
+                                <li>
+                                    Define backup fonts in case the primary font fails to load. For example:
+                                    
+                                    <pre class="tw-p-2 tw-bg-gray-100 tw-bg-opacity-80 tw-px-4 tw-mt-4">font-family: 'Roboto', 'Arial', sans-serif; </pre>
+                                </li>
+                            </ul>
+                        </li>
+                    </ol>
+
+                    <h2>
+                        The Role of Typography in Branding
+                    </h2>
+                    <p>
+                        Typography isn’t just a design choice—it’s a branding tool. Different fonts evoke different emotions, making font selection crucial for conveying your brand’s message
+                    </p>
+
+                    <ul>
+                        <li>
+                            <b>Modern and Minimalist:</b>
+                            Use sans-serif fonts like Helvetica or Montserrat.
+                        </li>
+                        <li>
+                            <b>Classic and Elegant:</b>
+                            Opt for serif fonts like Georgia or Baskerville.
+                        </li>
+                        <li>
+                            <b>Playful and Quirky:</b>
+                            Explore handwritten fonts like Pacifico or Lobster.
+                        </li>
+                    </ul>
+
+                    <p>
+                        Consistent typography across your website, marketing materials, and social media creates a cohesive brand identity that resonates with your audience.
+                    </p>
+
+                    <p class="tw-mt-10">
+                        Typography is more than just arranging letters—it’s about creating a seamless and enjoyable reading experience while reflecting your brand’s essence. By understanding the principles of typography, distinguishing between typefaces and fonts, and leveraging web fonts effectively, you can elevate your website’s design and user experience.
+
+                        Now it’s your turn to put these tips into action! Explore tools like Google Fonts, Adobe Fonts, or Font Tester to find the perfect font for your next project.
+                    </p>
+
+                </div>
+            </div>
+
+        </section>
+        <section
+            class="tw-mt-5 tw-flex tw-w-full tw-min-h-[60vh] tw-flex-col tw-place-items-center tw-place-content-center tw-p-[2%] max-lg:tw-p-2"
+        >
+
+            <div
+                class="tw-mt-10 tw-flex tw-flex-col tw-gap-2 max-lg:tw-flex-col
+                        tw-border-gray-800 tw-border-solid tw-border-[2px] tw-max-w-[750px]
+                        tw-rounded-md tw-px-4 tw-py-2
+                        "
+            >
+
+                <h3
+                    class="tw-text-xl tw-text-gray-800 tw-font-medium max-md:tw-text-2xl"
+                >
+                    80% of Your Website is Text – Make It Count!
+                </h3>
+                
+                <div class="">
+                    Unable to pick the perfect font for your website? try font tester and 
+                    test 1000+ fonts directly on your website.
+                </div>
+                
+                <a href="http://font-tester.foxcraft.tech" class="tw-bg-black tw-ml-auto tw-flex tw-gap-2 tw-text-white tw-p-2 tw-px-3 tw-rounded-md tw-w-fit">
+                    <span>Try font tester</span>
+                    <i class="bi bi-arrow-right"></i>
+                </a>
+
+              
+            </div>
+        </section>
+       
+
+        <footer
+            class="tw-mt-auto tw-flex tw-w-full tw-place-content-around tw-gap-3 tw-p-[5%] tw-px-[10%] tw-text-black max-md:tw-flex-col"
+        >
+            <div
+                class="tw-flex tw-h-full tw-w-[250px] tw-flex-col tw-place-items-center tw-gap-6 max-md:tw-w-full"
+            >
+
+                <a href="http://font-tester.foxcraft.tech">
+                    <img
+                        src="../assets/logo/logo.svg"
+                        alt="logo"
+                        srcset=""
+                        class="tw-max-w-[120px]"
+                    />
+                </a>
+                <div class="tw-mt-3 tw-text-lg tw-font-semibold">Follow</div>
+                <div class="tw-flex tw-gap-4 tw-text-2xl">
+                    <a href="https://www.youtube.com/@paultalkstech" 
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        aria-label="Youtube">
+                        <i class="bi bi-youtube"></i>
+                    </a>
+                    <a
+                        href="https://twitter.com/@pauls_freeman"
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        aria-label="Twitter"
+                    >
+                        <i class="bi bi-twitter"></i>
+                    </a>
+                    <a
+                        href="https://github.com/PaulleDemon"
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        class="tw-h-[40px] tw-w-[40px]"
+                        aria-label="Github"
+                    >
+                        <i class="bi bi-github"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="tw-flex tw-h-full tw-w-[250px] tw-flex-col tw-gap-4">
+                <!-- <h2 class="tw-text-3xl max-md:tw-text-xl">Company</h2> -->
+                <div class="tw-flex tw-flex-col tw-gap-3 max-md:tw-text-sm">
+                    <a href="https://font-tester.foxcraft.tech/blogs/list" class="footer-link">Blogs</a>
+                    <a href="https://font-tester.foxcraft.tech/#features" class="footer-link">Features</a>
+                    <a href="https://font-tester.foxcraft.tech/#pricing" class="footer-link">Pricing</a>
+                    <a href="https://github.com/PaulleDemon/font-tester-chrome/blob/main/roadmap.md" class="footer-link">Roadmap</a>
+                </div>
+            </div>
+
+            <div class="tw-flex tw-h-full tw-w-[250px] tw-flex-col tw-gap-4">
+                <div class="tw-flex tw-flex-col tw-gap-3 max-md:tw-text-sm">
+                    <a href="https://font-tester.foxcraft.tech/" class="footer-link">About</a>
+                    <a href="https://font-tester.foxcraft.tech/#faq" class="footer-link">FAQ</a>
+                    <a href="https://tally.so/r/wv0LRX" class="footer-link">Support</a>
+                    <a href="https://github.com/PaulleDemon/font-tester-chrome" class="footer-link">Github</a>
+                    <a href="https://github.com/PaulleDemon/font-tester-chrome" class="footer-link">Report issue</a>
+                </div>
+            </div>
+        </footer>
+    </body>
+
+ 
+    <script src="../scripts/utils.js"></script>
+
+
+</html>
