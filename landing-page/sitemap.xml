@@ -7,4 +7,10 @@
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
+  <url>
+    <loc>https://font-tester.foxcraft.tech/blogs/list/</loc>
+    <lastmod>2024-12-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
 </urlset>

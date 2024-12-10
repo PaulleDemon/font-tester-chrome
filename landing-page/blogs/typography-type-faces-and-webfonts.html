@@ -66,7 +66,7 @@
                     <a class="header-links" href="https://font-tester.foxcraft.tech/"> About </a>
                     <a class="header-links" href="https://font-tester.foxcraft.tech/#pricing"> Pricing </a>
                     <a class="header-links" href="https://font-tester.foxcraft.tech/#features"> Features </a>
-                    <a class="header-links" href="https://font-tester.foxcraft.tech/blogs"> Blogs </a>
+                    <a class="header-links" href="https://font-tester.foxcraft.tech/blogs/list"> Blogs </a>
                 </div>
                 <div
                     class="tw-mx-4 tw-flex tw-place-items-center tw-gap-[20px] tw-text-base max-md:tw-w-full max-md:tw-flex-col max-md:tw-place-content-center"
@@ -90,10 +90,54 @@
                 id="collapse-btn"
             ></button>
         </header>
+        
+        <div id="toast" class="tw-p-2 tw-px-4 tw-bg-black tw-h-max tw-z-[5000] tw-fixed 
+                            tw-top-[5%] tw-left-[50%] tw-translate-x-[-50%] 
+                            tw-place-items-center
+                            tw-hidden tw-rounded-md
+                            tw-border-0 tw-text-white" 
+                    role="alert">
+            <div class="tw-flex tw-gap-1">
+            <div class="toast-body" id="toast-body">
+            
+            </div>
+            <button type="button" class="bi bi-x tw-text-lg" aria-label="Close"></button>
+            </div>
+        </div>
 
         <section
             class="tw-relative tw-m tw-flex tw-min-h-[60vh] tw-place-items-center tw-w-full tw-max-w-[100vw] tw-flex-col tw-overflow-hidden max-md:tw-mt-[50px]"
         >   
+
+        <div class="tw-m-2 tw-p-2 tw-min-w-[30px] tw-min-h-[80px] 
+                    tw-flex lg:tw-flex-col lg:tw-fixed 
+                    tw-place-content-center tw-justify-around 
+                    tw-mt-5
+                    md:tw-top-[10%] 
+                    md:tw-text-2xl
+                    max-sm:tw-text-xl 
+                    lg:tw-right-[10%] max-sm:tw-rounded-full">
+            <a class="tw-m-2 tw-cursor-pointer social-share-link" id="twitter-share"  
+            target="_blank" rel="noreferrer" aria-label="share to twitter">
+                <i class="bi bi-twitter-x"></i>
+            </a>
+            <a class="tw-m-2 tw-cursor-pointer social-share-link" id="linkedin-share" 
+            target="_blank" rel="noreferrer"  aria-label="share to linkedin">
+                <i class="bi bi-linkedin"></i>
+            </a>
+            <a class="tw-m-2 tw-cursor-pointer social-share-link" id="reddit-share" 
+            target="_blank" rel="noreferrer"  aria-label="share to reddit">
+                <i class="bi bi-reddit"></i>
+            </a>
+            <a class="tw-m-2 tw-cursor-pointer social-share-link" id="facebook-share" 
+            target="_blank" rel="noreferrer"  aria-label="share to facebook">
+                <i class="bi bi-facebook"></i>
+            </a>
+            <div class="tw-m-2 tw-cursor-pointer social-share-link" id="copy-link" aria-label="copy link">
+                <i class="bi bi-share-fill"></i>
+            </div>
+
+            </div>
 
             <div class="tw-mt-[100px] tw-flex tw-flex-col tw-gap-4 tw-max-w-[800px] tw-px-4">
                 <h1 class="tw-text-4xl bowlby-one-family tw-text-gray-800 tw-mt-10">Typography, type faces and web fonts</h1>
@@ -449,6 +493,29 @@
 
  
     <script src="../scripts/utils.js"></script>
+    <script src="../scripts/common.js"></script>
 
-
+    <script>
+    
+        // copy share button
+        const twitter = document.getElementById("twitter-share")
+        const reddit = document.getElementById("reddit-share")
+        const linkedin = document.getElementById("linkedin-share")
+        const facebook = document.getElementById("facebook-share")
+        const copy_link = document.getElementById("copy-link")
+    
+        twitter.href = `https://twitter.com/share?url=${window.location.href}&text="Check out this blog"`
+        linkedin.href = `https://www.linkedin.com/shareArticle?mini=true&url=${window.location.href}&title="Check out this blog"`
+        reddit.href = `https://reddit.com/submit?url=${window.location.href}&title="Check out this blog"`
+        facebook.href = `https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`
+        
+        copy_link.onclick = () => {
+            navigator.clipboard.writeText(window.location.href).then(function() {
+                toastAlert(null, "Link copied")
+              }, function(err) {
+                callback_form_toast_body.innerText = `Error copying link`
+              })
+        }
+    
+    </script>
 </html>
