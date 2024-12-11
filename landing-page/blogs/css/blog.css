@@ -5,6 +5,11 @@
     margin-top: 20px;
 }
 
+.blog a{
+    text-decoration: underline;
+    
+}
+
 .blog h1{
     font-family: "Bowlby One", system-ui;
     letter-spacing: 2px;
