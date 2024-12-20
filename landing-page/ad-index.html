@@ -3,8 +3,8 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Font Tester - Test and pick from over 1000+ fonts</title>
-        <meta name="description" content="Font tester a browser extension to help you pick font from over 1000+ fonts" />
+        <title>Font Tester - Test and preview over 1000+ fonts on any website</title>
+        <meta name="description" content="Font is tester a browser extension to help you preview over 1000+ fonts live on any website" />
         <link
             rel="shortcut icon"
             href="./assets/logo/icon48.png"
@@ -16,16 +16,16 @@
         <meta name="twitter:creator" content="@pauls_freeman">
 
         <!-- Open Graph / Facebook -->
-        <meta property="og:title" content="Font Tester - Test and pick from over 1000+ fonts" />
-        <meta property="og:description" content="Font tester a browser extension to help you pick font from over 1000+ font" />
+        <meta property="og:title" content="Font Tester - Test and preview over 1000+ fonts on any website" />
+        <meta property="og:description" content="Font tester is a browser extension to help you pick font from over 1000+ font" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://github.com/PaulleDemon/font-tester-chrome" />
         <!--Replace with the current website url-->
         <meta property="og:image" content="https://raw.githubusercontent.com/PaulleDemon/font-tester-chrome/refs/heads/main/docs/og-image.png" />
 
         <!-- <link rel="stylesheet" href="./css/tailwind-runtime.css" /> -->
-        <link rel="stylesheet" href="./css/tailwind-build.css?build=0.8">
-        <link rel="stylesheet" href="css/index.css?build=0.8" />
+        <link rel="stylesheet" href="./css/tailwind-build.css?build=0.9">
+        <link rel="stylesheet" href="css/index.css?build=0.9" />
 
         <link
             rel="stylesheet"
@@ -494,142 +494,213 @@
             </h3>
 
             <!-- Testimonials -->
-            <div class="tw-max-w-[750px] max-md:tw-max-w-[100vw]">
+            <div
+                class="tw-mt-8 tw-gap-10 tw-space-y-8 max-md:tw-columns-1 lg:tw-columns-2 xl:tw-columns-3"
+            >
                 <div
-                    class="swiper tw-mt-8 tw-flex tw-flex-col tw-gap-10 tw-space-y-8"
+                    class="tw-flex tw-h-fit tw-bg-[#F6F7FB] tw-w-[350px] tw-break-inside-avoid 
+                    tw-flex-col tw-gap-3 tw-rounded-lg tw-p-4 max-lg:tw-w-[320px] tw-border-[#E5E7EB] tw-border-[1px]"
                 >
-                    <div class="swiper-wrapper">
+                    
+                    <p class="tw-mt-1 tw-text-gray-800">
+                        I’ve only just started using it, but I already love it and bought the pro version to support the developer. Very useful and easy to use, does exactly what it promises.
+                    </p>
+
+                    <div class="tw-flex tw-place-items-center tw-gap-3">
                         <div
-                            class="swiper-slide tw-flex tw-place-content-center"
+                            class="tw-h-[50px] tw-w-[50px] tw-overflow-hidden tw-rounded-full tw-border-[2px] tw-border-solid tw-border-primary"
                         >
-                            <div
-                                class="tw-flex tw-h-fit tw-max-w-[750px] tw-place-content-center tw-place-items-center tw-gap-10 tw-rounded-lg tw-p-4"
-                            >
-                                <div class="tw-flex tw-place-items-center">
-                                    <div
-                                        class="tw-h-[80px] tw-w-[80px] tw-overflow-hidden tw-rounded-full max-lg:tw-h-[80px] max-lg:tw-w-[80px]"
-                                    >
-                                        <img
-                                            src="./assets/images/testimonials/muhammad.jpg"
-                                            class="tw-h-full tw-w-full tw-object-cover"
-                                            alt="muhammad"
-                                        />
-                                    </div>
-                                </div>
-                                <div
-                                    class="tw-flex tw-max-w-[450px] tw-flex-col tw-gap-4"
-                                >
-                                    <q
-                                        class="tw-mt-4 tw-italic tw-text-gray-800"
-                                    >
-                                        The extension is amazing. Highly recommended for people who have hard time choosing font for their projects. 
-
-                                    </q>
-                                    <b>- Muhammad Zohaib</b>
-                                    <div class="tw-mt-2 tw-text-yellow-400">
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                    </div>
-                                </div>
-                            </div>
+                            <img
+                                src="./assets/images/testimonials/brocke.jpg"
+                                class="tw-h-full tw-w-full tw-object-cover"
+                                alt="Filip Brocke"
+                            />
                         </div>
-                        <div
-                            class="swiper-slide tw-flex tw-place-content-center"
-                        >
-                            <div
-                                class="tw-flex tw-h-fit tw-max-w-[750px] tw-place-content-center tw-place-items-center tw-gap-10 tw-rounded-lg tw-p-4"
-                            >
-                                <div class="tw-flex tw-place-items-center">
-                                    <div
-                                        class="tw-h-[80px] tw-w-[80px] tw-overflow-hidden tw-rounded-full max-lg:tw-h-[80px] max-lg:tw-w-[80px]"
-                                    >
-                                        <img
-                                            src="./assets/images/testimonials/manuel.jpg"
-                                            class="tw-h-full tw-w-full tw-object-cover"
-                                            alt="man"
-                                        />
-                                    </div>
-                                </div>
-                                <div
-                                    class="tw-flex tw-max-w-[450px] tw-flex-col tw-gap-4"
-                                >
-                                    <q
-                                        class="tw-mt-4 tw-italic tw-text-gray-800"
-                                    >
-                                        Pretty useful! It helps test different fonts to decide which one would fit better, supernice!
-                                    </q>
-                                    <b>- Manuel Sánchez</b>
-                                    <div class="tw-mt-2 tw-text-yellow-400">
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                    </div>
-                                </div>
-
+                        <div class="tw-flex tw-flex-col tw-gap-1">
+                            <div class="tw-font-semibold">Filip Brocke</div>
+                            <div class=" tw-text-yellow-400">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
                             </div>
+                            <!-- <div class="tw-text-[#4b4b4b]">ABC, cto</div> -->
                         </div>
-                        <div
-                            class="swiper-slide tw-flex tw-place-content-center"
-                        >
-                            <div
-                                class="tw-flex tw-h-fit tw-max-w-[750px] tw-place-content-center tw-place-items-center tw-gap-10 tw-rounded-lg tw-p-4"
-                            >
-                                <div class="tw-flex tw-place-items-center">
-                                    <div
-                                        class="tw-h-[80px] tw-w-[80px] tw-overflow-hidden tw-rounded-full max-lg:tw-h-[80px] max-lg:tw-w-[80px]"
-                                    >
-                                        <img
-                                            src="./assets/images/testimonials/francisco.jpg"
-                                            class="tw-h-full tw-w-full tw-object-cover"
-                                            alt="man"
-                                        />
-                                    </div>
-                                </div>
-                                <div
-                                    class="tw-flex tw-max-w-[450px] tw-flex-col tw-gap-4"
-                                >
-                                    <q
-                                        class="tw-mt-4 tw-italic tw-text-gray-800"
-                                    >
-                                        Simply great!!! Thanks Paul. Something like that was needed. Blessings!
-
-                                    </q>
-                                    <b>- Francisco Zapata</b>
-                                    <div class="tw-mt-2 tw-text-yellow-400">
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
+                        
                     </div>
+                </div>    
 
-                    <div
-                        class="pagination-container tw-flex tw-place-content-center"
-                    ></div>
+                <div
+                    class="tw-flex tw-h-fit tw-bg-[#F6F7FB] tw-w-[350px] tw-break-inside-avoid 
+                    tw-flex-col tw-gap-3 tw-rounded-lg tw-p-4 max-lg:tw-w-[320px] tw-border-[#E5E7EB] tw-border-[1px]"
+                >
+                    
+                    <p class="tw-mt-1 tw-text-gray-800">
+                        The extension is amazing. Highly recommended for people who have hard time choosing font for their projects.
+                    </p>
 
-                    <div class="tw-flex tw-place-content-center tw-gap-6">
+                    <div class="tw-flex tw-place-items-center tw-gap-3">
                         <div
-                            class="testmonial-prev tw-flex tw-h-[40px] tw-w-[40px] tw-place-content-center tw-place-items-center tw-rounded-full tw-border-2 tw-border-solid tw-border-gray-300 tw-text-2xl"
+                            class="tw-h-[50px] tw-w-[50px] tw-overflow-hidden tw-rounded-full tw-border-[2px] tw-border-solid tw-border-primary"
                         >
-                            <i class="bi bi-arrow-left"></i>
+                            <img
+                                src="./assets/images/testimonials/muhammad.jpg"
+                                class="tw-h-full tw-w-full tw-object-cover"
+                                alt="muhammad"
+                            />
                         </div>
-                        <div
-                            class="testmonial-next tw-flex tw-h-[40px] tw-w-[40px] tw-place-content-center tw-place-items-center tw-rounded-full tw-border-2 tw-border-solid tw-border-gray-300 tw-text-2xl"
-                        >
-                            <i class="bi bi-arrow-right"></i>
+                        <div class="tw-flex tw-flex-col tw-gap-1">
+                            <div class="tw-font-semibold">Muhammad</div>
+                            <div class=" tw-text-yellow-400">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                            <!-- <div class="tw-text-[#4b4b4b]">ABC, cto</div> -->
                         </div>
                     </div>
                 </div>
+                
+                <div
+                    class="tw-flex tw-h-fit tw-bg-[#F6F7FB] tw-w-[350px] tw-break-inside-avoid 
+                    tw-flex-col tw-gap-3 tw-rounded-lg tw-p-4 max-lg:tw-w-[320px] tw-border-[#E5E7EB] tw-border-[1px]"
+                >
+                    
+                    <p class="tw-mt-1 tw-text-gray-800">
+                        Oh thank God for this! Just spent 2 hours last week doing the whole download-test-delete dance with fonts for a client project. 
+                     
+                        The fact I can test right on the actual website instead of Figma mockups is chef's kiss.
+                    </p>
+
+                    <div class="tw-flex tw-place-items-center tw-gap-3">
+                        <div
+                            class="tw-h-[50px] tw-w-[50px] tw-overflow-hidden tw-rounded-full tw-border-[2px] tw-border-solid tw-border-primary"
+                        >
+                            <img
+                                src="./assets/images/testimonials/alison.jpg"
+                                class="tw-h-full tw-w-full tw-object-cover"
+                                alt="Alison Eyo"
+                            />
+                        </div>
+                        <div class="tw-flex tw-flex-col tw-gap-1">
+                            <div class="tw-font-semibold">Alison Eyo</div>
+                            <div class=" tw-text-yellow-400">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                            <!-- <div class="tw-text-[#4b4b4b]">ABC, cto</div> -->
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div
+                    class="tw-flex tw-h-fit tw-bg-[#F6F7FB] tw-w-[350px] tw-break-inside-avoid 
+                    tw-flex-col tw-gap-3 tw-rounded-lg tw-p-4 max-lg:tw-w-[320px] tw-border-[#E5E7EB] tw-border-[1px]"
+                >
+                    
+                    <p class="tw-mt-1 tw-text-gray-800">
+                        Pretty useful! It helps test different fonts to decide which one would fit better, supernice!
+                    </p>
+
+                    <div class="tw-flex tw-place-items-center tw-gap-3">
+                        <div
+                            class="tw-h-[50px] tw-w-[50px] tw-overflow-hidden tw-rounded-full tw-border-[2px] tw-border-solid tw-border-primary"
+                        >
+                            <img
+                                src="./assets/images/testimonials/manuel.jpg"
+                                class="tw-h-full tw-w-full tw-object-cover"
+                                alt="Manuel"
+                            />
+                        </div>
+                        <div class="tw-flex tw-flex-col tw-gap-1">
+                            <div class="tw-font-semibold">Manuel Sánchez</div>
+                            <div class=" tw-text-yellow-400">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                            <!-- <div class="tw-text-[#4b4b4b]">ABC, cto</div> -->
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <div
+                    class="tw-flex tw-h-fit tw-bg-[#F6F7FB] tw-w-[350px] tw-break-inside-avoid 
+                    tw-flex-col tw-gap-3 tw-rounded-lg tw-p-4 max-lg:tw-w-[320px] tw-border-[#E5E7EB] tw-border-[1px]"
+                >
+                    
+                    <p class="tw-mt-1 tw-text-gray-800">
+                        Simply great!!! Thanks Paul. Something like that was needed. Blessings!
+                    </p>
+
+                    <div class="tw-flex tw-place-items-center tw-gap-3">
+                        <div
+                            class="tw-h-[50px] tw-w-[50px] tw-overflow-hidden tw-rounded-full tw-border-[2px] tw-border-solid tw-border-primary"
+                        >
+                            <img
+                                src="./assets/images/testimonials/francisco.jpg"
+                                class="tw-h-full tw-w-full tw-object-cover"
+                                alt="Manuel"
+                            />
+                        </div>
+                        <div class="tw-flex tw-flex-col tw-gap-1">
+                            <div class="tw-font-semibold">Francisco Zapata</div>
+                            <div class=" tw-text-yellow-400">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                            <!-- <div class="tw-text-[#4b4b4b]">ABC, cto</div> -->
+                        </div>
+                        
+                    </div>
+                </div>
+               <div
+                    class="tw-flex tw-h-fit tw-bg-[#F6F7FB] tw-w-[350px] tw-break-inside-avoid 
+                    tw-flex-col tw-gap-3 tw-rounded-lg tw-p-4 max-lg:tw-w-[320px] tw-border-[#E5E7EB] tw-border-[1px]"
+                >
+                    
+                    <p class="tw-mt-1 tw-text-gray-800">
+                        Simple and useful, what all product should be!
+                    </p>
+
+                    <div class="tw-flex tw-place-items-center tw-gap-3">
+                        <div
+                            class="tw-h-[50px] tw-w-[50px] tw-overflow-hidden tw-rounded-full tw-border-[2px] tw-border-solid tw-border-primary"
+                        >
+                            <img
+                                src="./assets/images/testimonials/jorge.jpg"
+                                class="tw-h-full tw-w-full tw-object-cover"
+                                alt="Manuel"
+                            />
+                        </div>
+                        <div class="tw-flex tw-flex-col tw-gap-1">
+                            <div class="tw-font-semibold">Jorge Alcántara</div>
+                            <div class=" tw-text-yellow-400">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                            <!-- <div class="tw-text-[#4b4b4b]">ABC, cto</div> -->
+                        </div>
+                        
+                    </div>
+                </div>
+
             </div>
         </section>
         
