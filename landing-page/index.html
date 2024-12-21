@@ -20,7 +20,7 @@
         <meta property="og:image" content="https://raw.githubusercontent.com/PaulleDemon/font-tester-chrome/refs/heads/main/docs/og-image.png" />
 
         <!-- <link rel="stylesheet" href="./css/tailwind-runtime.css" /> -->
-        <link rel="stylesheet" href="./css/tailwind-build.css?build=0.9">
+        <link rel="stylesheet" href="./css/tailwind-build.css?build=1.0">
         <link rel="stylesheet" href="css/index.css?build=0.8" />
 
         <link
@@ -189,7 +189,7 @@
                 >
                 <h4 class="tw-text-2xl tw-mt-4">As seen on</h4>
 
-                <div class="tw-mt-4 tw-flex tw-mb-4 tw-gap-4 tw-place-items-center tw-place-content-center">
+                <div class="tw-mt-4 tw-max-h-[150px]  tw-flex tw-mb-4 tw-gap-4 tw-place-items-center tw-place-content-center">
 
                     <!-- <a href='https://www.saashub.com/font-tester?utm_source=badge&utm_campaign=badge&utm_content=font-tester&badge_variant=color&badge_kind=approved' target='_blank'>
                         <img src="https://cdn-b.saashub.com/img/badges/approved-color.png?v=1" 
@@ -210,9 +210,10 @@
                                 alt="Product hunt" srcset="">
                     </a>
                    
-                    <a href="https://www.indiehackers.com/product/font-tester" class="tw-w-[50px] tw-overflow-hidden" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.indiehackers.com/product/font-tester" 
+                    class="tw-w-[50px] tw-max-h-[100px] tw-overflow-hidden" target="_blank" rel="noopener noreferrer">
                         <img src="./assets/images/brands/indie-hackers.png" 
-                            class="tw-object-contain tw-h-full tw-grayscale hover:tw-grayscale-0"
+                            class="tw-object-contain tw-grayscale hover:tw-grayscale-0"
                                 alt="Indie hackers" srcset="">
                     </a>
                  
@@ -323,9 +324,12 @@
                                 Highlight a text in this page and pick a font from dropdown
                             </div>
 
-                            <div class="tw-text-base tw-mt-10 tw-text-red-700 tw-hidden" id="chrome-api-error">
+                            <div class="tw-text-base tw-max-w-[350px] tw-mt-10 tw-text-red-700 tw-hidden" id="chrome-api-error">
                                 Chrome API unavailable, Please use a chromium 
-                                based browser to try this tool.
+                                based browser such as Chrome, Edge etc to try this tool.
+                                <br>
+                                This will soon be available for other browsers such as 
+                                Firefox and Safari.
                             </div>
                         
                             <div class="tw-shadow-lg tw-mt-2 tw-w-fit tw-h-fit tw-p-1">

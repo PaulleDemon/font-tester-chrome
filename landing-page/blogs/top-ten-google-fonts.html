@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Top ten google fonts for your website</title>
+        <meta name="description" content="Explore the top 10 Google Fonts for modern websites, including Roboto, Lato, and Montserrat. Discover their best use cases and previews to enhance your web design" />
+        <link
+            rel="shortcut icon"
+            href="../assets/logo/icon48.png"
+            type="image/x-icon"
+        />
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:title" content="Top ten google fonts for your website" />
+        <meta property="og:description" content="Explore the top 10 Google Fonts for modern websites, including Roboto, Lato, and Montserrat. Discover their best use cases and previews to enhance your web design" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://github.com/PaulleDemon/font-tester-chrome" />
+        <!--Replace with the current website url-->
+        <meta property="og:image" content="https://raw.githubusercontent.com/PaulleDemon/font-tester-chrome/refs/heads/main/docs/og-image.png" />
+
+        <link rel="stylesheet" href="../css/tailwind-runtime.css" />
+        <!-- <link rel="stylesheet" href="./css/tailwind-build.css?build=0.8"> -->
+        <link rel="stylesheet" href="../css/index.css?build=0.8" />
+        <link rel="stylesheet" href="css/blog.css" />
+
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
+            integrity="sha512-dPXYcDub/aeb08c63jRq/k6GaKccl256JQy/AnOq7CAnEZ9FzSL9wSbcZkMp4R26vBsMLFYH4kQ67/bbV8XaCQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-61T5DC5QKB"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-61T5DC5QKB');
+        </script>
+
+    </head>
+    <body
+        class="tw-flex tw-min-h-[100vh] tw-flex-col tw-bg-white tw-text-black"
+    >
+        <header
+            class="tw-max-w-lg:tw-px-4 tw-max-w-lg:tw-mr-auto tw-absolute tw-top-0 tw-z-20 tw-flex tw-h-[60px] tw-w-full tw-bg-opacity-0 tw-px-[5%] lg:tw-justify-around"
+        >
+            <a class="tw-h-[50px] tw-w-[50px] tw-p-[4px]" href="">
+                <img
+                    src="../assets/logo/logo.svg"
+                    alt="logo"
+                    class="tw-object tw-h-full tw-w-full"
+                />
+            </a>
+            <div
+                class="collapsible-header animated-collapse max-lg:tw-shadow-md"
+                id="collapsed-header-items"
+            >
+                <div
+                    class="tw-flex tw-h-full tw-w-max tw-gap-5 tw-text-base max-lg:tw-mt-[30px] max-lg:tw-flex-col max-lg:tw-place-items-end max-lg:tw-gap-5 lg:tw-mx-auto lg:tw-place-items-center"
+                >
+                    <a class="header-links" href="https://font-tester.foxcraft.tech/"> About </a>
+                    <a class="header-links" href="https://font-tester.foxcraft.tech/#pricing"> Pricing </a>
+                    <a class="header-links" href="https://font-tester.foxcraft.tech/#features"> Features </a>
+                    <a class="header-links" href="https://font-tester.foxcraft.tech/blogs/list"> Blogs </a>
+                </div>
+                <div
+                    class="tw-mx-4 tw-flex tw-place-items-center tw-gap-[20px] tw-text-base max-md:tw-w-full max-md:tw-flex-col max-md:tw-place-content-center"
+                >
+                    <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://font-tester.foxcraft.tech"
+                        aria-label="signup"
+                        class="tw-rounded-md tw-border-[1px] tw-border-black tw-bg-transparent tw-px-3 tw-py-2 tw-text-black tw-transition-colors tw-duration-[0.3s] hover:tw-bg-black hover:tw-text-white"
+                    >
+                        <span>Preview fonts</span>
+                        <!-- <i class="bi bi-download"></i> -->
+                    </a>
+                </div>
+            </div>
+            <button
+                class="bi bi-list tw-absolute tw-right-3 tw-top-3 tw-z-50 tw-text-3xl tw-text-black lg:tw-hidden"
+                onclick="toggleHeader()"
+                aria-label="menu"
+                id="collapse-btn"
+            ></button>
+        </header>
+        
+        <div id="toast" class="tw-p-2 tw-px-4 tw-bg-black tw-h-max tw-z-[5000] tw-fixed 
+                            tw-top-[5%] tw-left-[50%] tw-translate-x-[-50%] 
+                            tw-place-items-center
+                            tw-hidden tw-rounded-md
+                            tw-border-0 tw-text-white" 
+                    role="alert">
+            <div class="tw-flex tw-gap-1">
+            <div class="toast-body" id="toast-body">
+            
+            </div>
+            <button type="button" class="bi bi-x tw-text-lg" aria-label="Close"></button>
+            </div>
+        </div>
+
+        <section
+            class="tw-relative tw-m tw-flex tw-min-h-[60vh] tw-place-items-center tw-w-full tw-max-w-[100vw] tw-flex-col tw-overflow-hidden max-md:tw-mt-[50px]"
+        >   
+
+        <div class="tw-m-2 tw-p-2 tw-min-w-[30px] tw-min-h-[80px] 
+                    tw-flex lg:tw-flex-col lg:tw-fixed 
+                    tw-place-content-center tw-justify-around 
+                    tw-mt-5
+                    md:tw-top-[10%] 
+                    md:tw-text-2xl
+                    max-sm:tw-text-xl 
+                    lg:tw-right-[10%] max-sm:tw-rounded-full">
+            <a class="tw-m-2 tw-cursor-pointer social-share-link" id="twitter-share"  
+            target="_blank" rel="noreferrer" aria-label="share to twitter">
+                <i class="bi bi-twitter-x"></i>
+            </a>
+            <a class="tw-m-2 tw-cursor-pointer social-share-link" id="linkedin-share" 
+            target="_blank" rel="noreferrer"  aria-label="share to linkedin">
+                <i class="bi bi-linkedin"></i>
+            </a>
+            <a class="tw-m-2 tw-cursor-pointer social-share-link" id="reddit-share" 
+            target="_blank" rel="noreferrer"  aria-label="share to reddit">
+                <i class="bi bi-reddit"></i>
+            </a>
+            <a class="tw-m-2 tw-cursor-pointer social-share-link" id="facebook-share" 
+            target="_blank" rel="noreferrer"  aria-label="share to facebook">
+                <i class="bi bi-facebook"></i>
+            </a>
+            <div class="tw-m-2 tw-cursor-pointer social-share-link" id="copy-link" aria-label="copy link">
+                <i class="bi bi-share-fill"></i>
+            </div>
+
+            </div>
+
+            <div class="tw-mt-[100px] tw-flex tw-flex-col tw-gap-4 tw-max-w-[800px] tw-px-4">
+                <h1 class="tw-text-4xl bowlby-one-family tw-text-gray-800 tw-mt-10">
+                    Top 10 Google Fonts for Modern Websites
+                </h1>
+            
+                <div class="blog tw-mt-4 tw-text-lg tw-text-justify tw-text-gray-900">
+                    
+                    <p>
+                        Typography is a critical aspect of web design. The right font can transform your website’s aesthetic, improve readability, and enhance the user experience. Google Fonts offers a vast library of free fonts, making it an essential resource for designers and developers alike. But with so many options, how do you choose the best fonts for your website?
+                      </p>
+                      <p>
+                        In this blog, we’ll showcase <strong>10 of the best Google Fonts</strong> for modern websites. You’ll also find previews for each font, so you can visualize how they might look in your projects.
+                      </p>
+                    
+                      <h2>1. Roboto</h2>
+                      <p>
+                        <a href="https://fonts.google.com/specimen/Roboto">Roboto</a> is a versatile sans-serif font that has become a staple in web design. Known for its clean lines and readability, it’s perfect for both headlines and body text.
+                      </p>
+                      <img src="./assets/google-fonts-blog/roboto.png" alt="roboto">
+
+                      <p><strong>Best For:</strong> Blogs, e-commerce, and corporate websites.</p>
+                    
+                      <h2>2. Open Sans</h2>
+                      <p>
+                        <a href="https://fonts.google.com/specimen/Open+Sans">Open Sans</a> is another popular choice, designed for legibility across various screen sizes. Its friendly appearance makes it ideal for user-centric websites.
+                      </p>
+                      <img src="./assets/google-fonts-blog/open-sans.png" alt="open-sans">
+
+                      <p><strong>Best For:</strong> Portfolio sites, tech startups, and educational platforms.</p>
+                    
+                      <h2>3. Lato</h2>
+                      <p>
+                        <a href="https://fonts.google.com/specimen/Lato">Lato</a>  offers a balance of professional and casual, with subtle round edges that add personality without compromising clarity.
+                      </p>
+                      <img src="./assets/google-fonts-blog/lato.png" alt="lato">
+
+                      
+                      <p><strong>Best For:</strong> Blogs, creative agencies, and SaaS websites.</p>
+                    
+                      <h2>4. Montserrat</h2>
+                      <p>
+                        Inspired by urban typography from the early 20th century, <a href="https://fonts.google.com/specimen/Montserrat">Montserrat</a>  is bold and modern. Its geometric structure makes it stand out.
+                      </p>
+                      <img src="./assets/google-fonts-blog/montserrat.png" alt="montserrat">
+
+                      <p><strong>Best For:</strong> Landing pages, personal blogs, and fashion websites.</p>
+                    
+                      <h2>5. Nunito</h2>
+                      <p>
+                        <a href="https://fonts.google.com/specimen/Nunito">Nunito</a>  combines a rounded aesthetic with excellent readability, making it a great choice for user-friendly interfaces.
+                      </p>
+                      <img src="./assets/google-fonts-blog/nunito.png" alt="nunito">
+                      
+                      <p><strong>Best For:</strong> Mobile apps, non-profit websites, and community platforms.</p>
+                    
+                      <h2>6. Poppins</h2>
+                      <p>
+                        <a href="https://fonts.google.com/specimen/Poppins/">Poppins</a> is a geometric sans-serif font with a modern flair. Its uniform strokes create a visually pleasing experience.
+                      </p>
+                      <img src="./assets/google-fonts-blog/poppins.png" alt="poppins">
+
+                      <p><strong>Best For:</strong> Tech startups, SaaS products, and creative portfolios.</p>
+                    
+                      <h2>7. Merriweather</h2>
+                      <p>
+                        For those who need a serif font, <a href="https://fonts.google.com/specimen/Merriweather">Merriweather</a> is a top pick. It’s designed for readability on screens and works well for long-form content.
+                      </p>
+                      <img src="./assets/google-fonts-blog/merriweather.png" alt="merriweather">
+
+                      <p><strong>Best For:</strong> News websites, blogs, and online publications.</p>
+                    
+                      <h2>8. Raleway</h2>
+                      <p>
+                        <a href="https://fonts.google.com/specimen/Raleway">Raleway</a> is an elegant sans-serif font with a minimalist touch. Its thin weights are great for sophisticated designs.
+                      </p>
+                      <img src="./assets/google-fonts-blog/raleway.png" alt="raleway">
+
+                      <p><strong>Best For:</strong> Fashion websites, design agencies, and lifestyle blogs.</p>
+                    
+                      <h2>9. Playfair Display</h2>
+                      <p>
+                        This serif font is ideal for creating a classic and luxurious vibe. 
+                        <a href="https://fonts.google.com/specimen/Playfair+Display">Playfair Display</a> is often paired with sans-serif fonts for modern designs.
+                      </p>
+                      <img src="./assets/google-fonts-blog/playfair.png" alt="playfair">
+                      
+                      <p><strong>Best For:</strong> Luxury brands, wedding websites, and editorial designs.</p>
+                    
+                      <h2>10. Ubuntu</h2>
+                      <p>
+                        <a href="https://fonts.google.com/specimen/Ubuntu">Ubuntu</a>
+                         is a unique font designed specifically for the Ubuntu operating system. Its modern and approachable style makes it suitable for tech-centric websites.
+                      </p>
+                      <img src="./assets/google-fonts-blog/ubunutu.png" alt="ubuntu">
+                      <p><strong>Best For:</strong> Tech blogs, developer tools, and open-source projects.</p>
+                    
+                      <h2>Choosing the Right Font for Your Website</h2>
+                      <p>
+                        When selecting a font, consider your brand’s personality and the user experience you want to deliver. Experiment with combinations of fonts for headings and body text to create a unique and cohesive design.
+                      </p>
+                      <p>
+                        To make this process easier, try our 
+                        <a href="http://font-tester.foxcraft.tech">
+                            <strong>Font Tester Tool</strong>
+                        </a>. Preview Google Fonts and custom fonts in real-time, compare styles, and find the perfect match for your project.
+                      </p>
+
+                      <h2>Conclusion</h2>
+                      <p>
+                        Google Fonts provides a wealth of options for modern web design, but the key is choosing fonts that align with your website’s purpose and audience. Start exploring these top 10 fonts today, and let your typography speak volumes.
+                      </p>
+                     
+
+            </div>
+
+        </section>
+        <section
+            class="tw-mt-5 tw-flex tw-w-full tw-min-h-[60vh] tw-flex-col tw-place-items-center tw-place-content-center tw-p-[2%] max-lg:tw-p-2"
+        >
+
+            <div
+                class="tw-mt-10 tw-flex tw-flex-col tw-gap-2 max-lg:tw-flex-col
+                        tw-border-gray-800 tw-border-solid tw-border-[2px] tw-max-w-[750px]
+                        tw-rounded-md tw-px-4 tw-py-2
+                        "
+            >
+
+                <h3
+                    class="tw-text-xl tw-text-gray-800 tw-font-medium max-md:tw-text-2xl"
+                >
+                    80% of Your Website is Text – Make It Count!
+                </h3>
+                
+                <div class="">
+                    Unable to pick the perfect font for your website? try font tester and 
+                    test 1000+ fonts directly on your website.
+                </div>
+                
+                <a href="http://font-tester.foxcraft.tech" class="tw-bg-black tw-ml-auto tw-flex tw-gap-2 tw-text-white tw-p-2 tw-px-3 tw-rounded-md tw-w-fit">
+                    <span>Try font tester</span>
+                    <i class="bi bi-arrow-right"></i>
+                </a>
+
+              
+            </div>
+        </section>
+       
+
+        <footer
+            class="tw-mt-auto tw-flex tw-w-full tw-place-content-around tw-gap-3 tw-p-[5%] tw-px-[10%] tw-text-black max-md:tw-flex-col"
+        >
+            <div
+                class="tw-flex tw-h-full tw-w-[250px] tw-flex-col tw-place-items-center tw-gap-6 max-md:tw-w-full"
+            >
+
+                <a href="http://font-tester.foxcraft.tech">
+                    <img
+                        src="../assets/logo/logo.svg"
+                        alt="logo"
+                        srcset=""
+                        class="tw-max-w-[120px]"
+                    />
+                </a>
+                <div class="tw-mt-3 tw-text-lg tw-font-semibold">Follow</div>
+                <div class="tw-flex tw-gap-4 tw-text-2xl">
+                    <a href="https://www.youtube.com/@paultalkstech" 
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        aria-label="Youtube">
+                        <i class="bi bi-youtube"></i>
+                    </a>
+                    <a
+                        href="https://twitter.com/@pauls_freeman"
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        aria-label="Twitter"
+                    >
+                        <i class="bi bi-twitter"></i>
+                    </a>
+                    <a
+                        href="https://github.com/PaulleDemon"
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        class="tw-h-[40px] tw-w-[40px]"
+                        aria-label="Github"
+                    >
+                        <i class="bi bi-github"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="tw-flex tw-h-full tw-w-[250px] tw-flex-col tw-gap-4">
+                <!-- <h2 class="tw-text-3xl max-md:tw-text-xl">Company</h2> -->
+                <div class="tw-flex tw-flex-col tw-gap-3 max-md:tw-text-sm">
+                    <a href="https://font-tester.foxcraft.tech/blogs/list" class="footer-link">Blogs</a>
+                    <a href="https://font-tester.foxcraft.tech/#features" class="footer-link">Features</a>
+                    <a href="https://font-tester.foxcraft.tech/#pricing" class="footer-link">Pricing</a>
+                    <a href="https://github.com/PaulleDemon/font-tester-chrome/blob/main/roadmap.md" class="footer-link">Roadmap</a>
+                </div>
+            </div>
+
+            <div class="tw-flex tw-h-full tw-w-[250px] tw-flex-col tw-gap-4">
+                <div class="tw-flex tw-flex-col tw-gap-3 max-md:tw-text-sm">
+                    <a href="https://font-tester.foxcraft.tech/" class="footer-link">About</a>
+                    <a href="https://font-tester.foxcraft.tech/#faq" class="footer-link">FAQ</a>
+                    <a href="https://tally.so/r/wv0LRX" class="footer-link">Support</a>
+                    <a href="https://github.com/PaulleDemon/font-tester-chrome" class="footer-link">Github</a>
+                    <a href="https://github.com/PaulleDemon/font-tester-chrome" class="footer-link">Report issue</a>
+                </div>
+            </div>
+        </footer>
+    </body>
+
+ 
+    <script src="../scripts/utils.js"></script>
+    <script src="../scripts/common.js"></script>
+
+    <script>
+    
+        // copy share button
+        const twitter = document.getElementById("twitter-share")
+        const reddit = document.getElementById("reddit-share")
+        const linkedin = document.getElementById("linkedin-share")
+        const facebook = document.getElementById("facebook-share")
+        const copy_link = document.getElementById("copy-link")
+    
+        twitter.href = `https://twitter.com/share?url=${window.location.href}&text="Check out this blog"`
+        linkedin.href = `https://www.linkedin.com/shareArticle?mini=true&url=${window.location.href}&title="Check out this blog"`
+        reddit.href = `https://reddit.com/submit?url=${window.location.href}&title="Check out this blog"`
+        facebook.href = `https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`
+        
+        copy_link.onclick = () => {
+            navigator.clipboard.writeText(window.location.href).then(function() {
+                toastAlert(null, "Link copied")
+              }, function(err) {
+                callback_form_toast_body.innerText = `Error copying link`
+              })
+        }
+    
+    </script>
+</html>
