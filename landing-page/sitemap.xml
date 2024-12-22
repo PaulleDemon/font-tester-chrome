@@ -13,4 +13,10 @@
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
+  <url>
+    <loc>https://font-tester.foxcraft.tech/blogs/font-tester-preview-your-fonts-live</loc>
+    <lastmod>2024-12-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
 </urlset>
