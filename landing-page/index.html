@@ -19,8 +19,8 @@
         <!--Replace with the current website url-->
         <meta property="og:image" content="https://raw.githubusercontent.com/PaulleDemon/font-tester-chrome/refs/heads/main/docs/og-image.png" />
 
-        <!-- <link rel="stylesheet" href="./css/tailwind-runtime.css" /> -->
-        <link rel="stylesheet" href="./css/tailwind-build.css?build=1.0">
+        <link rel="stylesheet" href="./css/tailwind-runtime.css" />
+        <!-- <link rel="stylesheet" href="./css/tailwind-build.css?build=1.0"> -->
         <link rel="stylesheet" href="css/index.css?build=0.8" />
 
         <link
@@ -259,7 +259,7 @@
         </section>
 
         <section
-            class="tw-relative tw-mt-1 tw-flex tw-min-h-[100vh] tw-p-1 tw-w-full tw-max-w-[100vw] tw-flex-col tw-place-items-center lg:tw-p-6"
+            class="tw-relative tw-mt-1 tw-flex tw-flex-col tw-gap-4 tw-min-h-[100vh] tw-p-1 tw-w-full tw-max-w-[100vw] tw-place-items-center lg:tw-p-6"
         >
 
             <h2 class="bungee-shade-family tw-text-5xl tw-leading-relaxed tw-font-semibold max-md:tw-text-3xl tw-text-center">
@@ -339,6 +339,10 @@
                     </div>
                 </div>
             </div>
+            <a href="https://font-tester-demo.pages.dev/" rel="noreferrer nooopener target="_blank" class="tw-mt-8 tw-bg-black tw-max-w-[200px] tw-w-fit tw-text-white tw-p-3 tw-px-4 tw-rounded-md">
+                <span>Try on test site</span>
+                <i class="bi bi-arrow-up-right"></i>
+            </a>
         </section>
         
         <section
@@ -387,7 +391,26 @@
                         Upload Custom Fonts
                     </h3>
                     <p class="tw-text-gray-700 dark:tw-text-gray-300 tw-px-4 tw-text-center tw-text-sm">
-                        Easily upload and test custom fonts. Best part is that nothing is  uploaded to the cloud. 
+                        Easily upload and test custom fonts. Best part is that nothing is uploaded to the cloud. 
+                    </p>
+                </div>
+
+                <div class="reveal-up tw-w-[350px] max-md:tw-w-[320px] tw-border-[1px] tw-h-[400px] tw-rounded-lg tw-place-items-center tw-p-4
+                             tw-bg-[#fdfdfd] dark:tw-bg-[#141414] dark:tw-border-[#1f2123] tw-flex tw-flex-col tw-gap-3">
+
+                    <div class="tw-w-full tw-h-[250px]
+                                tw-p-4
+                                tw-rounded-xl 
+                                 tw-backdrop-blur-2xl
+                                 tw-overflow-hidden tw-flex tw-place-content-center">
+                        <img src="./assets/images/features/multi-fonts.png" 
+                                alt="Import content" class="tw-w-auto tw-h-full tw-object-contain">
+                    </div>
+                    <h3 class="tw-text-2xl">
+                       Compare multiple fonts
+                    </h3>
+                    <p class="tw-text-gray-700 dark:tw-text-gray-300 tw-px-4 tw-text-center tw-text-sm">
+                        Easily preview and compare multiple fonts at once with multi-preview feature 
                     </p>
                 </div>
 
@@ -425,27 +448,7 @@
                         Test Color and Font Size
                     </h3>
                     <p class="tw-text-gray-700 dark:tw-text-gray-300 tw-px-4 tw-text-center tw-text-sm">
-                        Don't just test fonts, try which font color works on the page
-                    </p>
-                </div>
-
-                <div class="reveal-up tw-w-[350px] max-md:tw-w-[320px] tw-border-[1px] tw-h-[400px] tw-rounded-lg tw-place-items-center tw-p-4
-                             tw-bg-[#fdfdfd] dark:tw-bg-[#141414] dark:tw-border-[#1f2123] tw-flex tw-flex-col tw-gap-3">
-
-                    <div class="tw-w-full tw-h-[250px]
-                                tw-p-4
-                                tw-rounded-xl 
-                                 tw-backdrop-blur-2xl
-                                 tw-overflow-hidden tw-flex tw-place-content-center">
-                        <img src="./assets/images/features/font-weight.png" 
-                                alt="Import content" class="tw-w-auto tw-h-full tw-object-contain">
-                    </div>
-                    <h3 class="tw-text-2xl max-md:tw-text-xl">
-                       Font weight, Line Height and more
-                    </h3>
-                    <p class="tw-text-gray-700 dark:tw-text-gray-300 tw-px-4 tw-text-center tw-text-sm">
-                        Effortlessly test font weight, line height, underline and other
-                        typography attributes
+                        Don't just test fonts, try which font color, font size, weight works on the page
                     </p>
                 </div>
 
@@ -1002,7 +1005,7 @@
                         </li>
                         <li class="tw-flex tw-place-items-center tw-gap-2">
                             <i class="bi bi-check-circle-fill tw-text-green-600  tw-text-base"></i>
-                            <span class="tw-font-medium">Live compare multiple different fonts (upcoming)</span>
+                            <span class="tw-font-medium">Live compare multiple different fonts</span>
                         </li>
                         <li class="tw-flex tw-place-items-center tw-gap-2">
                             <i class="bi bi-check-circle-fill tw-text-green-600  tw-text-base"></i>
@@ -1092,7 +1095,7 @@
                     </div>
                     <div class="content">
                         You can use this test 
-                        <a href="https://halloween-hero.netlify.app/" 
+                        <a href="https://font-tester-demo.pages.dev/" 
                         rel="noopener noreferrer" target="_blank" 
                             class="tw-font-medium tw-underline tw-underline-offset-1">Halloween site</a> 
                     </div>
