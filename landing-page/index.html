@@ -19,8 +19,8 @@
         <!--Replace with the current website url-->
         <meta property="og:image" content="https://raw.githubusercontent.com/PaulleDemon/font-tester-chrome/refs/heads/main/docs/og-image.png" />
 
-        <!-- <link rel="stylesheet" href="./css/tailwind-runtime.css" /> -->
-        <link rel="stylesheet" href="./css/tailwind-build.css?build=1.1">
+        <link rel="stylesheet" href="./css/tailwind-runtime.css" />
+        <!-- <link rel="stylesheet" href="./css/tailwind-build.css?build=1.1"> -->
         <link rel="stylesheet" href="css/index.css?build=0.8" />
 
         <link
@@ -247,15 +247,42 @@
                     style="width: 230px; height: 54px;" width="250" height="54" /></a>
             </div>
 
-            <div class="tw-mt-10 tw-flex tw-border-[1px] max-lg:tw-w-full tw-border-black tw-rounded-md tw-p-2 tw-max-w-[850px] tw-w-[1000px] tw-min-h-[550px] max-lg:tw-min-w-[320px] max-lg:tw-min-h-[250px] max-lg:tw-h-auto">
+            <div class="tw-mt-8 tw-flex tw-gap-8 tw-flex-col">
 
-                <div class="tw-relative tw-bg-black tw-min-w-full tw-min-h-full tw-overflow-clip tw-rounded-md">
-                    <!-- <iframe class="tw-absolute tw-top-[50%] tw--translate-y-[50%] tw-left-[50%] tw--translate-x-[50%] tw-w-full tw-h-full" src="https://www.youtube.com/embed/AK-kV8xaxIc?si=1i_QZS_XD7tg7uO3&amp;controls=1&rel=0&showinfo=0&autoplay=0&loop=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
-                    <img class="tw-object-contain tw-w-full tw-h-full" 
-                        alt="font tester gif" src="./assets/images/fonttester2.gif" >
+                <div class="tw-flex tw-flex-col tw-gap-4">
+                    <span class="tw-text-2xl tw-font-medium tw-text-center">Live preview fonts</span>
+                    <div class="tw-mt-2 tw-flex tw-border-[1px] max-lg:tw-w-full tw-border-black tw-rounded-md tw-p-2 tw-max-w-[650px] tw-w-[1000px] tw-min-h-[450px] max-lg:tw-min-w-[320px] max-lg:tw-min-h-[250px] max-lg:tw-h-auto">
+
+                        <div class="tw-relative tw-bg-black tw-min-w-full tw-min-h-full tw-overflow-clip tw-rounded-md">
+                            <!-- <iframe class="tw-absolute tw-top-[50%] tw--translate-y-[50%] tw-left-[50%] tw--translate-x-[50%] tw-w-full tw-h-full" src="https://www.youtube.com/embed/AK-kV8xaxIc?si=1i_QZS_XD7tg7uO3&amp;controls=1&rel=0&showinfo=0&autoplay=0&loop=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+                            <img class="tw-object-contain tw-w-full tw-h-full" 
+                                alt="font tester gif" src="./assets/images/fonttester2.gif" >
+                        </div>
+                    </div>
                 </div>
+                <div class="tw-flex tw-flex-col tw-gap-4">
+                    <span class="tw-text-2xl tw-font-medium tw-text-center">Live compare multiple fonts</span>
+                    <div class="tw-mt-2 tw-flex tw-border-[1px] max-lg:tw-w-full tw-border-black tw-rounded-md tw-p-2 tw-max-w-[650px] tw-w-[1000px] tw-min-h-[450px] max-lg:tw-min-w-[320px] max-lg:tw-min-h-[250px] max-lg:tw-h-auto">
 
+                        <div class="tw-relative tw-bg-black tw-min-w-full tw-min-h-full tw-overflow-clip tw-rounded-md">
+                            <!-- <iframe class="tw-absolute tw-top-[50%] tw--translate-y-[50%] tw-left-[50%] tw--translate-x-[50%] tw-w-full tw-h-full" src="https://www.youtube.com/embed/AK-kV8xaxIc?si=1i_QZS_XD7tg7uO3&amp;controls=1&rel=0&showinfo=0&autoplay=0&loop=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+                            <video class="tw-object-contain tw-w-full tw-h-full" 
+                                src="./assets/multi-preview.m4v" autoplay muted controls loop>
+                                your browser doesn't support video tags
+                            </video>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+            <a
+                class="btn tw-mt-5 tw-bg-[#7e22ce85] tw-shadow-lg tw-shadow-primary tw-flex tw-gap-1
+                        tw-transition-transform tw-duration-[0.3s] hover:tw-scale-x-[1.03] tw-group"
+                href="#pricing"
+            >
+                Get now
+                <i class="bi bi-arrow-right tw-transition-transform group-hover:tw-translate-x-1 tw-duration-300"></i>
+            </a>
         </section>
 
         <section
@@ -346,7 +373,7 @@
         </section>
         
         <section
-            class="tw-flex tw-w-full tw-flex-col tw-place-content-center tw-place-items-center tw-gap-[10%] tw-p-[5%] tw-px-[10%]"
+            class="tw-flex tw-w-full tw-flex-col tw-place-content-center tw-place-items-center tw-gap-[10%] tw-p-[2%] tw-px-[10%]"
             id="features"
         >
             <h3
@@ -472,6 +499,15 @@
                 </div>
 
             </div>
+
+            <a
+                class="tw-mt-3 btn tw-bg-[#7e22ce85] tw-shadow-lg tw-shadow-primary tw-flex tw-gap-1
+                        tw-transition-transform tw-duration-[0.3s] hover:tw-scale-x-[1.03] tw-group"
+                href="#pricing"
+            >
+                Make it yours
+                <i class="bi bi-arrow-right tw-transition-transform group-hover:tw-translate-x-1 tw-duration-300"></i>
+            </a>
 
         </section>
         

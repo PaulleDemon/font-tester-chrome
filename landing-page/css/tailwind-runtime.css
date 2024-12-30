@@ -900,6 +900,10 @@ video {
   min-height: 40px;
 }
 
+.tw-min-h-\[450px\] {
+  min-height: 450px;
+}
+
 .tw-min-h-\[50vh\] {
   min-height: 50vh;
 }
