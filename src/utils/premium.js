@@ -85,6 +85,10 @@ function Premium({ children, className = "" }) {
                                 </li>
                                 <li className="tw-flex tw-place-items-center tw-gap-2">
                                     <CloseCircleFilled className="tw-text-red-600"/>
+                                    <span className="tw-font-medium">Compare multiple fonts live</span>
+                                </li>
+                                <li className="tw-flex tw-place-items-center tw-gap-2">
+                                    <CloseCircleFilled className="tw-text-red-600"/>
                                     <span className="tw-font-medium">Upload local fonts</span>
                                 </li>
                                 <li className="tw-flex tw-place-items-center tw-gap-2">
@@ -103,10 +107,7 @@ function Premium({ children, className = "" }) {
                                     <CloseCircleFilled className="tw-text-red-600"/>
                                     <span>Priority support</span>
                                 </li>
-                                <li className="tw-flex tw-place-items-center tw-gap-2">
-                                    <CloseCircleFilled className="tw-text-red-600"/>
-                                    <span>Early access to new features</span>
-                                </li>
+                               
                                 <li className="tw-flex tw-place-items-center tw-gap-2">
                                     <CloseCircleFilled className="tw-text-red-600"/>
                                     <span>Firefox, Safari and Edge addons</span>
@@ -151,8 +152,8 @@ function Premium({ children, className = "" }) {
                             <p className="tw-mt-1 tw-text-sm tw-text-center tw-text-black">
                                 per user
                             </p> */}
-                            <p className="tw-mt-3 tw-text-center tw-text-gray-600">
-                                Buy once and use forever 🚀
+                            <p className="tw-mt-3 tw-text-center">
+                                Get a life-time license (no subscriptions). Plus get added benefits 🚀 .
                             </p>
                             <hr />
                             <ul
@@ -165,6 +166,10 @@ function Premium({ children, className = "" }) {
                                 <li className="tw-flex tw-place-items-center tw-gap-2">
                                     <CheckCircleFilled className="tw-text-green-600"/>
                                     <span>Commercial use</span>
+                                </li>
+                                <li className="tw-flex tw-place-items-center tw-gap-2">
+                                    <CheckCircleFilled className="tw-text-green-600"/>
+                                    <span className="tw-font-medium">Live compare multiple fonts</span>
                                 </li>
                                 <li className="tw-flex tw-place-items-center tw-gap-2">
                                     <CheckCircleFilled className="tw-text-green-600"/>
@@ -187,10 +192,7 @@ function Premium({ children, className = "" }) {
                                     <CheckCircleFilled className="tw-text-green-600"/>
                                     <span>Priority support</span>
                                 </li>
-                                <li className="tw-flex tw-place-items-center tw-gap-2">
-                                    <CheckCircleFilled className="tw-text-green-600"/>
-                                    <span>Early access to new features</span>
-                                </li>
+                                
                                 <li className="tw-flex tw-place-items-center tw-gap-2">
                                     <CheckCircleFilled className="tw-text-green-600"/>
                                     <span>Firefox, Safari and Edge addons</span>

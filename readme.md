@@ -12,11 +12,16 @@
 Finding it difficult to choose the right font? 
 Now test 1000+ free google font types on your website.
 
-Get Better at website Typography using this extension.
+So whether you are a type designer demoing your type, web developer or creative agency, get Better at website Typography using this extension.
 
 Now you can go to your website, click on the extension, test fonts and pick the one you like along with the code.
 
 ![font tester demo](./docs/demo/fonttester2.gif)
+
+
+### Compare multiple fonts live
+
+
 
 ## Download
 
@@ -35,13 +40,14 @@ read more in [changelogs](./changelog.md)
 
 ## Features of Font Tester
 ✅ Test 1000+ google fonts <br>
+✅ Upload custom fonts (premium users)<br>
+✅ Live compare multiple fonts (premium users) <br>
 ✅ Find font types used on any webpage <br>
 ✅ Preview fonts on the dropdown <br>
 ✅ Move the modal around the webpage. <br>
 ✅ Set italics, underline, weights, line height etc. <br>
 ✅ Set font size, filter (premium users)<br>
 ✅ Set color, letter spacing (premium users)<br>
-✅ Upload local fonts (premium users)<br>
 🔥 More on [Roadmap](roadmap.md)
 
 ## How to use Font Tester?
@@ -68,8 +74,10 @@ Get advanced features and more
 | **Support open-source development**                               | 👍️                 | 😎                                                                  |
 | **Priority support** - (priorities your feature requests, issues) | community support | ✅                                                                  |
 | **Lifetime license** (one-time  purchase)                         | 👍️                 | ✅                                                                  |
-| **Free updates**                                                  | ❓️                 | ✅                                                                  |
+| **Live compare multiple fonts**                                   | ❌                 | ✅                                                                  |
+| **Add to collection (upcoming)**                                  | ❌                 | ✅                                                                  |
 | **Upload local fonts**                                            | ❌                 | ✅                                                                  |
+| **Preview fonts on dropdown**                                     | ❌                 | ✅                                                                  |
 | **Adjust font size**                                              | ❌                 | ✅                                                                  |
 | **Early access** to upcoming features                             | ❌                 | ✅                                                                  |
 | **Adjust font color**                                             | ❌                 | ✅                                                                  |

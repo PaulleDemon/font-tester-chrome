@@ -4,6 +4,7 @@ import React, { useCallback, useEffect, useRef, useState } from "react"
 import { Select, Slider, Tabs, Tooltip, Button, message, Tag } from "antd"
 import {
 	AimOutlined,
+	AppstoreAddOutlined,
 	CloseOutlined, CrownFilled,
 	DownOutlined,
 	FilterOutlined,
@@ -717,6 +718,20 @@ function App({ shadowRoot }) {
 									<AdvancedFeatures />
 							}
 						</div>
+
+						<Premium>
+							<Tooltip title="Compare fonts" overlayStyle={{ zIndex: 1200000000 }}>
+								<button className="tw-relative hover:!tw-bg-gray-100 hover:!tw-color-black"
+									style={{
+										outline: "none", border: "none", color: "#000",
+										backgroundColor: "transparent",
+										padding: "0.5rem 0.75rem", borderRadius: "0.375rem"
+									}}>
+									<AppstoreAddOutlined />
+									<CrownFilled  className="tw-absolute tw-bottom-[1px] tw-right-1 tw-text-purple-600 tw-text-sm"/>
+								</button>
+							</Tooltip>
+						</Premium>
 							
 
 					</div>
