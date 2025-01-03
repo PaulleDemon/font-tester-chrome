@@ -21,10 +21,7 @@ Now you can go to your website, click on the extension, test fonts and pick the 
 
 ### Compare multiple fonts live
 
-
-https://github.com/user-attachments/assets/2fe335df-f7b9-4860-b743-0dc993072a4e
-
-
+https://github.com/user-attachments/assets/bd6a20d1-2552-4ed1-a6f8-c66b10f7d5a3
 
 
 ## Download
