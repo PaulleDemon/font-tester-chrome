@@ -19,7 +19,7 @@ Now you can go to your website, click on the extension, test fonts and pick the 
 ![font tester demo](./docs/demo/fonttester2.gif)
 
 
-### Compare multiple fonts live
+### Compare multiple fonts side-by-side
 
 https://github.com/user-attachments/assets/bd6a20d1-2552-4ed1-a6f8-c66b10f7d5a3
 
