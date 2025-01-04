@@ -19,8 +19,15 @@ Any feature that has 👑 beside it, is meant only for [premium users](./readme.
 ### 2.0.0
 - [x] Filter fonts - Eg: sans, display etc 
 - [x] Dark theme 👑
-- [ ] Extension for FireFox and Edge 👑
-
 
 ### 3.0.0
 - [x] Find ways to display the fonts in dropdown itself 👑
+
+### 3.7.0
+- [x] Compare fonts side by side 👑
+
+### 3.8.0
+- [ ] Add to collection 👑
+
+-----
+- [ ] Extension for FireFox and Edge
