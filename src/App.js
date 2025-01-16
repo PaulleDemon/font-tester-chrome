@@ -189,6 +189,9 @@ function App({ shadowRoot }) {
 			})
 		}
 
+		// refer: https://github.com/PaulleDemon/font-tester-chrome
+		handleWindowResize() // this is a temp fix to the default position that's causing thee widget to go over the top when scaled
+
 		window.addEventListener("resize", handleWindowResize)
 
 		return () => {
