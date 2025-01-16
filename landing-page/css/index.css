@@ -18,6 +18,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Gaegu');
 @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter');
 
+@import url('https://fonts.googleapis.com/css2?family=AR+One+Sans');
+
 
 .architects-daughter-family {
     font-family: "Architects Daughter", handwriting;
@@ -64,6 +66,10 @@ html {
 .bungee-shade-family {
     font-family: "Bungee Shade", system-ui;
     color: #0b0840;
+}
+
+.ar-one-sans-family {
+    font-family: "AR One Sans", sans-serif;
 }
 
 .gaegu-family {
