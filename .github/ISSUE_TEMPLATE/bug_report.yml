@@ -11,16 +11,6 @@ body:
         Thanks for taking the time to fill out this bug report!
 
   - type: input
-    id: template-name
-    attributes:
-      label: Template name
-      description: Please tell us which template is the issue related to
-      placeholder: Template name
-      value: "Template name"
-    validations:
-        required: true
-
-  - type: input
     id: browser
     attributes:
       label: Browser & version
