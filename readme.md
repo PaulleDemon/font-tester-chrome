@@ -1,16 +1,29 @@
-# Font tester - Fonts made easy (chrome extension)
+<img src="./docs/images/font-tester-readme.png" alt="font tester logo">
+
+<p align="center"> <h1>Font tester</h1> </p>
+
+<p align="center"><img src="./public/logos/logox500.png" alt="font tester logo" width="100" height="100"></p>
+
+<p align="center"> <i>Effortlessly pick impactful fonts for your website</i></p>
 
 
-<p><img src="./public/logos/logox500.png" alt="font tester logo" width="100" height="100"></p>
 
-[Font tester about ↗️](https://font-tester.foxcraft.tech)
+---
 
-<a href="https://chromewebstore.google.com/detail/font-tester/deachoodakeofjlfikfkohihnpcgiaim">
+[About Font tester ↗️](https://font-tester.foxcraft.tech) . [Download Font tester ↗️](https://chromewebstore.google.com/detail/font-tester/deachoodakeofjlfikfkohihnpcgiaim) . [Docs ↗️](./docs/docs.md)
+
+<!-- <a href="https://chromewebstore.google.com/detail/font-tester/deachoodakeofjlfikfkohihnpcgiaim">
     <img src="./docs/badges/chrom-store.png" width="180">
-</a>
+</a> -->
 
-Finding it difficult to choose the right font? 
-Now test 1000+ free google font types on your website.
+---
+
+<img src="./docs/images/steve-statement.png" alt="steve jobs on typography">
+
+
+**Texts make up 80% of your website, make it count!**
+
+Now test 1000+ free google font types and custom types faces on your website.
 
 So whether you are a type designer demoing your type, web developer or creative agency, get Better at website Typography using this extension.
 
@@ -36,13 +49,14 @@ You can download the dist folder from releases and load it manually
 * Now find font's from any webpage.
 * Preview fonts on the dropdown.
 * Cycle fonts using arrow keys.
+* Compare different fonts side by side
 
 read more in [changelogs](./changelog.md)
 
-## Features of Font Tester
+## Why Font Tester is awesome 
 ✅ Test 1000+ google fonts <br>
-✅ Upload custom fonts (premium users)<br>
-✅ Live compare multiple fonts (premium users) <br>
+✅ Upload custom fonts <br>
+✅ Live compare multiple fonts <br>
 ✅ Find font types used on any webpage <br>
 ✅ Preview fonts on the dropdown <br>
 ✅ Move the modal around the webpage. <br>
