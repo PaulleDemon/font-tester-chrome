@@ -19,8 +19,8 @@
         <!--Replace with the current website url-->
         <meta property="og:image" content="https://raw.githubusercontent.com/PaulleDemon/font-tester-chrome/refs/heads/main/docs/og-image.png" />
 
-        <!-- <link rel="stylesheet" href="./css/tailwind-runtime.css" /> -->
-        <link rel="stylesheet" href="./css/tailwind-build.css?build=1.1">
+        <link rel="stylesheet" href="./css/tailwind-runtime.css" />
+        <!-- <link rel="stylesheet" href="./css/tailwind-build.css?build=1.1"> -->
         <link rel="stylesheet" href="css/index.css?build=0.8" />
 
         <link
@@ -133,19 +133,35 @@
 
             <div
                 class="tw-relative hero-bg-gradient tw-flex tw-h-full max-lg:tw-mt-10 max-lg:tw-min-h-[60vh] tw-min-h-[50vh] tw-w-full tw-flex-col tw-place-content-center tw-gap-6 tw-p-[5%] max-xl:tw-place-items-center max-lg:tw-p-4"
-            >
+            >   
+
+
+                <div class="tw-w-[80px] tw-absolute max-lg:tw-top-[10%] tw-top-[30%] tw-left-[10%] tw--rotate-12 tw-flex tw-place-content-center 
+                            tw-text-lg tw-bg-gray-200 tw-h-[40px] tw-p-[1px] tw-rounded-sm tw-place-items-center">
+                    <div class="tw-w-[20px] bi bi-type-bold tw-rounded-sm tw-text-center"></div>
+                    <div class="tw-w-[30px] tw-h-full bi bi-type-italic tw-place-content-center tw-place-items-center tw-flex tw-text-center tw-rounded-sm tw-bg-black tw-text-white"></div>
+                    <div class="tw-w-[20px] bi bi-type-underline tw-rounded-sm tw-text-center"></div>
+                </div>
+
                 <div
-                    class="tw-flex tw-flex-col tw-place-content-center tw-items-center"
-                >
+                    class="tw-flex tw-flex-col tw-relative tw-place-content-center tw-items-center"
+                >   
+
                     <div
-                        class="reveal-up bowlby-one-family tw-text-center tw-text-6xl tw-font-semibold tw-uppercase tw-leading-[90px] max-lg:tw-text-4xl max-md:tw-leading-snug"
+                        class="tw-mt-4 tw-h-[350px] tw-w-fit tw-relative tw-place-content-center tw-text-center tw-text-7xl tw-font-medium tw-uppercase tw-leading-[90px] max-lg:tw-text-4xl max-md:tw-leading-snug"
                     >
-                        <span class=""> Choose impactful
-                        <br />
-                        <span class="tw-px-3 tw-bg-[#ffe27a]">Fonts</span> 
+
+                        <span class=""> Increase conversions
+                            <br />
+                            with impactful
+                            <span class="tw-bg-[#7EE0B8] tw-min-w-[150px] tw-w-[150px] tw-max-w-[150px] tw-px-3 tw-p-1 ">
+                                <span id="fonts" class="">Fonts</span> 
+                            </span>
                         <!-- <br /> -->
-                        for your brand </span>
-                        
+                        </span>
+                        <div class="tw-absolute tw-bottom-5 tw-right-0">
+                            <img src="./assets/images/home/cursor.svg" alt="cursor">
+                        </div>
                         <!-- <span class=""> on any website </span> -->
                     </div>
                     
@@ -191,7 +207,7 @@
             <div
                 class="reveal-up tw-flex tw-flex-col tw-min-h-[200px] tw-place-content-center tw-items-center"
                 >
-                <h4 class="tw-text-xl tw-mt-4 tw-font-medium tw-uppercase tw-text-center tw-m-1">Powerful extension for your font needs</h4>
+                <h4 class="tw-text-xl tw-mt-4 tw-font-medium tw-uppercase tw-text-center tw-m-1 tw-mx-3">Powerful extension for your font needs</h4>
 
                 <div class="tw-mt-4 tw-flex tw-mb-4 tw-gap-4 tw-place-items-center tw-place-content-center">
 
@@ -337,7 +353,7 @@
                                 max-lg:tw-gap-2 max-lg:tw-w-full lg:tw-top-2 tw-place-items-center"
                 >   
 
-                    <div class="tw-text-4xl tw-uppercase irish-grover-family tw-text-center">
+                    <div class="tw-text-4xl tw-uppercase aboreto-family tw-font-bold tw-text-center">
                         Typography defines
                         <br />
                         Your brand
@@ -1346,6 +1362,8 @@
             </div>
         </footer>
     </body>
+   
+
     <script src="https://cdn.jsdelivr.net/npm/@polar-sh/checkout@0.1/dist/embed.global.js" defer data-auto-init></script>
 
     <script
@@ -1470,5 +1488,14 @@
         }
 
     </script>
+
+     <!-- Load jQuery from a CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.6.1/jquery.lettering.min.js" integrity="sha512-VJ/iYbiu1eJ6yLimfTi65t2R9TFcG5D9X8ZCfbbEFhTfPnKJh8byoKXEawi5ScJZBYL1eiirL1+MczZDx0Tz9Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+     <script src="https://cdn.jsdelivr.net/npm/textillate@0.4.1/jquery.textillate.min.js"></script>
+     <link href="
+     https://cdn.jsdelivr.net/npm/textillate@0.4.1/assets/animate.min.css
+     " rel="stylesheet">
 
 </html>

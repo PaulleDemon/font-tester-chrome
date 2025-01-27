@@ -151,5 +151,89 @@ sections.forEach((sec) => {
 
 
 const reviewContainer = document.querySelector(".review-container")
-const reviewSlideShow = new SlideShow(reviewContainer, true, 10000)
 
+
+/**---- fonts animation */
+const textElement = document.getElementById('fonts');
+
+// GSAP Timeline
+// const tl = gsap.timeline({ repeat: -1, repeatDelay: 2 }); // Repeat infinitely with delay between iterations
+const fonts = ['bungee-shade-family', 'aboreto-family', 'Courier New', 'Verdana'];
+
+let currentFontIndex = 0;
+
+// function changeFont() {
+//     // Animate text out (upward)
+//     gsap.to(textElement, {
+//       y: '-100%',
+//       textOpacity: 0,
+//       duration: 0.5,
+//       ease: 'power2.out',
+//       onComplete: () => {
+//         // Update the font and text after it moves out
+//         textElement.className = `tw-px-3 tw-bg-[#ffe27a] ${fonts[currentFontIndex]}`
+//         // textElement.textContent = 'Your Text Here'
+
+//         // Animate text back in (upward)
+//         gsap.fromTo(
+//           textElement,
+//           { y: '100%', textOpacity: 0 },
+//           { y: '0%', textOpacity: 1, duration: 0.5, ease: 'power2.inOut' }
+//         )
+
+//         // Update the font index for the next cycle
+//         currentFontIndex = (currentFontIndex + 1) % fonts.length
+//       },
+//     })
+// }
+
+//   // Change font every 3 seconds
+// setInterval(changeFont, 3000)
+
+document.addEventListener("load", function(){
+    console.log("Loaded")
+    $('#fonts').textillate({
+        selector: "#fonts",
+        loop: true, 
+        minDisplayTime: 10,
+        autoStart: true,
+        in: {
+            // set the effect name
+            effect: 'flipInX',
+        
+            // set the delay factor applied to each consecutive character
+            delayScale: 1.5,
+        
+            // set the delay between each character
+            delay: 50,
+        
+            // set to true to animate all the characters at the same time
+            sync: true,
+        
+            // randomize the character sequence
+            // (note that shuffle doesn't make sense with sync = true)
+            shuffle: false,
+        
+            // reverse the character sequence
+            // (note that reverse doesn't make sense with sync = true)
+            reverse: false,
+        
+            // callback that executes once the animation has finished
+            callback: function () {
+
+                textElement.className = `tw-px-3 tw-bg-[#ffe27a] ${fonts[currentFontIndex]}`
+                currentFontIndex = (currentFontIndex + 1) % fonts.length
+                console.log("working")
+            }
+        },
+
+        callback: function () {
+
+            textElement.className = `tw-px-3 tw-bg-[#ffe27a] ${fonts[currentFontIndex]}`
+            currentFontIndex = (currentFontIndex + 1) % fonts.length
+            console.log("working")
+        }
+    
+    })
+})
+    
