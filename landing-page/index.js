@@ -77,7 +77,7 @@ gsap.fromTo(".slide-in", {
 const videoBg = document.querySelector("#video-container-bg")
 const videoContainer = document.querySelector("#video-container")
 
-function openVideo(){
+function openVideo() {
     videoBg.classList.remove("tw-scale-0", "tw-opacity-0")
     videoBg.classList.add("tw-scale-100", "tw-opacity-100")
     videoContainer.classList.remove("tw-scale-0")
@@ -86,7 +86,7 @@ function openVideo(){
     document.body.classList.add("modal-open")
 }
 
-function closeVideo(){
+function closeVideo() {
     videoContainer.classList.add("tw-scale-0")
     videoContainer.classList.remove("tw-scale-100")
 
@@ -94,7 +94,7 @@ function closeVideo(){
         videoBg.classList.remove("tw-scale-100", "tw-opacity-100")
         videoBg.classList.add("tw-scale-0", "tw-opacity-0")
     }, 400)
-   
+
 
     document.body.classList.remove("modal-open")
 
@@ -108,7 +108,7 @@ faqAccordion.forEach(function (btn) {
 
         // Toggle 'rotate' class to rotate the arrow
         let content = this.nextElementSibling
-        
+
         // content.classList.toggle('!tw-hidden')
         if (content.style.maxHeight === '200px') {
             content.style.maxHeight = '0px'
@@ -129,14 +129,16 @@ const sections = gsap.utils.toArray("section")
 
 sections.forEach((sec) => {
 
-    const revealUptimeline = gsap.timeline({paused: true, 
-                                            scrollTrigger: {
-                                                            trigger: sec,
-                                                            start: "10% 80%", // top of trigger hits the top of viewport
-                                                            end: "20% 90%",
-                                                            // markers: true,
-                                                            // scrub: 1,
-                                                        }})
+    const revealUptimeline = gsap.timeline({
+        paused: true,
+        scrollTrigger: {
+            trigger: sec,
+            start: "10% 80%", // top of trigger hits the top of viewport
+            end: "20% 90%",
+            // markers: true,
+            // scrub: 1,
+        }
+    })
 
     revealUptimeline.to(sec.querySelectorAll(".reveal-up"), {
         opacity: 1,
@@ -160,80 +162,36 @@ const textElement = document.getElementById('fonts');
 // const tl = gsap.timeline({ repeat: -1, repeatDelay: 2 }); // Repeat infinitely with delay between iterations
 const fonts = ['bungee-shade-family', 'aboreto-family', 'Courier New', 'Verdana'];
 
-let currentFontIndex = 0;
 
-// function changeFont() {
-//     // Animate text out (upward)
-//     gsap.to(textElement, {
-//       y: '-100%',
-//       textOpacity: 0,
-//       duration: 0.5,
-//       ease: 'power2.out',
-//       onComplete: () => {
-//         // Update the font and text after it moves out
-//         textElement.className = `tw-px-3 tw-bg-[#ffe27a] ${fonts[currentFontIndex]}`
-//         // textElement.textContent = 'Your Text Here'
+const countries = ["United states", "Canada", "Mexico", "Brazil", "Argentina", "Sweden",
+    "Turkey", "England", "Ireland", "Finland", "Norway", "India", "Sri Lanka",
+    "China", "Russia", "Australia", "Singapore", "Malaysia"
+]
 
-//         // Animate text back in (upward)
-//         gsap.fromTo(
-//           textElement,
-//           { y: '100%', textOpacity: 0 },
-//           { y: '0%', textOpacity: 1, duration: 0.5, ease: 'power2.inOut' }
-//         )
+const places = [
+"Eiffle Tower", "Great Wall of China", "Taj Mahal", 
+"Bali", "Maldives", "Leaning tower of Pisa", "Statue of Liberty",   
+]
 
-//         // Update the font index for the next cycle
-//         currentFontIndex = (currentFontIndex + 1) % fonts.length
-//       },
-//     })
-// }
 
-//   // Change font every 3 seconds
-// setInterval(changeFont, 3000)
+const countriesContainer = document.querySelector(".countries-container")
 
-document.addEventListener("load", function(){
-    console.log("Loaded")
-    $('#fonts').textillate({
-        selector: "#fonts",
-        loop: true, 
-        minDisplayTime: 10,
-        autoStart: true,
-        in: {
-            // set the effect name
-            effect: 'flipInX',
-        
-            // set the delay factor applied to each consecutive character
-            delayScale: 1.5,
-        
-            // set the delay between each character
-            delay: 50,
-        
-            // set to true to animate all the characters at the same time
-            sync: true,
-        
-            // randomize the character sequence
-            // (note that shuffle doesn't make sense with sync = true)
-            shuffle: false,
-        
-            // reverse the character sequence
-            // (note that reverse doesn't make sense with sync = true)
-            reverse: false,
-        
-            // callback that executes once the animation has finished
-            callback: function () {
-
-                textElement.className = `tw-px-3 tw-bg-[#ffe27a] ${fonts[currentFontIndex]}`
-                currentFontIndex = (currentFontIndex + 1) % fonts.length
-                console.log("working")
-            }
-        },
-
-        callback: function () {
-
-            textElement.className = `tw-px-3 tw-bg-[#ffe27a] ${fonts[currentFontIndex]}`
-            currentFontIndex = (currentFontIndex + 1) % fonts.length
-            console.log("working")
-        }
+function addSlidingPlace(place, container){
     
-    })
-})
-    
+    const imageContainer = `
+            <div class="tw-min-w-fit tw-p-2 tw-px-3 tw-w-max tw-h-[50px]
+                        tw-border-solid tw-border-[1px] tw-flex 
+                        tw-rounded-md tw-border-black
+                        tw-place-items-center tw-place-content-center
+                        tw-overflow-clip sliding-image">
+                ${place}
+            </div>
+    `
+
+    container.innerHTML += imageContainer
+
+}
+
+
+countries.forEach( img => addSlidingPlace(img, countriesContainer))
+countries.forEach( img => addSlidingPlace(img, countriesContainer))

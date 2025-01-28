@@ -12,17 +12,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter');
 
 @import url('https://fonts.googleapis.com/css2?family=AR+One+Sans');
+@import url('https://fonts.googleapis.com/css2?family=Almarai');
 
+@import url('https://fonts.googleapis.com/css2?family=Abel');
+@import url('https://fonts.googleapis.com/css2?family=Castoro+Titling');
 
-.architects-daughter-family {
-    font-family: "Architects Daughter", handwriting;
-    /* font-size: 22px; */
-    letter-spacing: 1px;
-    font-weight: 400;
-    /* line-height: 1.9; */
-}
-
-
+	
 :root{
 
     --bg-color: #fff;
@@ -55,6 +50,9 @@ html {
     background-size: cover;
 }
 
+.castoro-titling-family {
+    font-family: "Castoro Titling", system-ui;
+}
 
 .bungee-shade-family {
     font-family: "Bungee Shade", system-ui;
@@ -65,6 +63,22 @@ html {
     font-family: "Aboreto", system-ui;
 }
 
+.abel-family {
+    font-family: "Abel", sans-serif;
+}
+
+.architects-daughter-family {
+    font-family: "Architects Daughter", handwriting;
+    /* font-size: 22px; */
+    letter-spacing: 1px;
+    font-weight: 400;
+/* line-height: 1.9; */
+}
+
+
+.almarai-family {
+    font-family: "Almarai", sans-serif;
+}
 
 .ar-one-sans-family {
     font-family: "AR One Sans", sans-serif;
@@ -182,6 +196,27 @@ header > .collapsible-header{
     transition: width 0.3s ease;
 }
 
+.brick-shadow{
+    box-shadow: 10px 10px  black;
+}
+
+.btn-primary{
+    background-color: #b3db24;
+    transition: all 0.3s;
+    padding: 10px 30px;
+    box-shadow: 4px 4px  black;
+    border-radius: 5px;
+    position: relative;
+}
+
+.btn-primary:hover{
+    transform: translate(-10px, -10px);
+    box-shadow: 10px 10px  black;
+}
+
+.extension-btn{
+    box-shadow: 4px 4px  black;
+}
 
 .header-links {
     display: flex;
@@ -323,57 +358,6 @@ header > .collapsible-header{
 
 .footer-link:hover{
     color: #0b0b0b;
-}
-
-/* Navigation dots styling */
-.dots-container {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.dot {
-    height: 10px;
-    width: 10px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    margin: 0 5px;
-    cursor: pointer;
-}
-
-.dots-container .active,
-.dot:hover {
-    background-color: #717171;
-}
-
-/* Next & previous buttons */
-.prev,
-.next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    padding: 16px;
-    margin-top: -22px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-    z-index: 10;
-}
-
-/* Position the "next button" to the right */
-.next {
-    right: 0px;
-    border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover,
-.next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
 }
 
 
