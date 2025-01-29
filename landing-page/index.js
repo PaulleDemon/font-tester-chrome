@@ -162,36 +162,3 @@ const textElement = document.getElementById('fonts');
 // const tl = gsap.timeline({ repeat: -1, repeatDelay: 2 }); // Repeat infinitely with delay between iterations
 const fonts = ['bungee-shade-family', 'aboreto-family', 'Courier New', 'Verdana'];
 
-
-const countries = ["United states", "Canada", "Mexico", "Brazil", "Argentina", "Sweden",
-    "Turkey", "England", "Ireland", "Finland", "Norway", "India", "Sri Lanka",
-    "China", "Russia", "Australia", "Singapore", "Malaysia"
-]
-
-const places = [
-"Eiffle Tower", "Great Wall of China", "Taj Mahal", 
-"Bali", "Maldives", "Leaning tower of Pisa", "Statue of Liberty",   
-]
-
-
-const countriesContainer = document.querySelector(".countries-container")
-
-function addSlidingPlace(place, container){
-    
-    const imageContainer = `
-            <div class="tw-min-w-fit tw-p-2 tw-px-3 tw-w-max tw-h-[50px]
-                        tw-border-solid tw-border-[1px] tw-flex 
-                        tw-rounded-md tw-border-black
-                        tw-place-items-center tw-place-content-center
-                        tw-overflow-clip sliding-image">
-                ${place}
-            </div>
-    `
-
-    container.innerHTML += imageContainer
-
-}
-
-
-countries.forEach( img => addSlidingPlace(img, countriesContainer))
-countries.forEach( img => addSlidingPlace(img, countriesContainer))

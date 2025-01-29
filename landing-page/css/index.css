@@ -237,17 +237,35 @@ header > .collapsible-header{
     border-radius: 10px;
     transition: all 0.3s;
     transform: translate(-5px, -5px);
-
-
+    background-color: #ffffbc;
 }
 
 
 .benefits-card:hover{
     /* transform: translate(-5px, -5px); */
-    border-color: #820af3;
-    box-shadow: 15px 15px  #820af3;
+    /* border-color: #820af3; */
+    box-shadow: 15px 15px  #040404;
     z-index: 1;
 }
+
+.blog-card{
+    position: relative;
+    z-index: 2;
+}
+
+.blog-card::after{
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: calc(100%);
+    height: calc(100%);
+    border-radius: 10px;
+    z-index: -1;
+    border: 2px solid #000;
+    background-color: #ffd45d;
+}
+
 
 /* .video-shadow::before{
     content: "";
