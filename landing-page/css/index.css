@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
-/* @import url('https://fonts.googleapis.com/css2?family=Fondamento&family=chivo&family=Bellota&family=Battambang&family=Archivo+Black&family=Didact+Gothic&family=Sedgwick+Ave&family=Rowdies&family=Nosifer&family=Rubik+Doodle+Shadow&family=Quantico&family=Rubik+Glitch'); */
+@import url('https://fonts.googleapis.com/css2?family=Fondamento&family=chivo&family=Bellota&family=Battambang&family=Archivo+Black&family=Didact+Gothic&family=Sedgwick+Ave&family=Rowdies&family=Nosifer&family=Rubik+Doodle+Shadow&family=Quantico&family=Rubik+Glitch');
+
+@import url('https://fonts.googleapis.com/css2?family=Bangers');
 
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Shade');
 @import url('https://fonts.googleapis.com/css2?family=Aboreto');
@@ -16,6 +18,15 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Abel');
 @import url('https://fonts.googleapis.com/css2?family=Castoro+Titling');
+@import url('https://fonts.googleapis.com/css2?family=Fascinate');
+@import url('https://fonts.googleapis.com/css2?family=Limelight');
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy');
+@import url('https://fonts.googleapis.com/css2?family=Chango');
+
+@import url('https://fonts.googleapis.com/css2?family=Audiowide');
+
+
+	
 
 	
 :root{
@@ -54,6 +65,10 @@ html {
     font-family: "Castoro Titling", system-ui;
 }
 
+.chango-family {
+    font-family: "Chango", system-ui;
+}
+
 .bungee-shade-family {
     font-family: "Bungee Shade", system-ui;
     /* color: #0b0840; */
@@ -67,6 +82,14 @@ html {
     font-family: "Abel", sans-serif;
 }
 
+.bangers-family {
+    font-family: "Bangers", system-ui;
+}
+
+.luckiest-guy-family {
+    font-family: "Luckiest Guy", system-ui;
+}
+
 .architects-daughter-family {
     font-family: "Architects Daughter", handwriting;
     /* font-size: 22px; */
@@ -75,6 +98,13 @@ html {
 /* line-height: 1.9; */
 }
 
+.fascinate-family {
+    font-family: "Fascinate", system-ui;
+}
+
+.limelight-family {
+    font-family: "Limelight", system-ui;
+}
 
 .almarai-family {
     font-family: "Almarai", sans-serif;
@@ -102,6 +132,11 @@ html {
 
 .fuzzy-bubbles-family {
     font-family: "Fuzzy Bubbles"  ,handwriting;
+}
+
+.audiowide-family {
+    font-family: "Audiowide", system-ui;
+    letter-spacing: 2px;
 }
 
 
@@ -196,6 +231,36 @@ header > .collapsible-header{
     transition: width 0.3s ease;
 }
 
+.benefits-card{
+    box-shadow: 10px 10px  black;
+    position: relative;
+    border-radius: 10px;
+    transition: all 0.3s;
+    transform: translate(-5px, -5px);
+
+
+}
+
+
+.benefits-card:hover{
+    /* transform: translate(-5px, -5px); */
+    border-color: #820af3;
+    box-shadow: 15px 15px  #820af3;
+    z-index: 1;
+}
+
+/* .video-shadow::before{
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    border-radius: 10px;
+    z-index: -2;
+    background-color: #000;
+} */
+
 .brick-shadow{
     box-shadow: 10px 10px  black;
 }
@@ -207,6 +272,7 @@ header > .collapsible-header{
     box-shadow: 4px 4px  black;
     border-radius: 5px;
     position: relative;
+    text-align: center;
 }
 
 .btn-primary:hover{
@@ -237,18 +303,6 @@ header > .collapsible-header{
     color: var(--primary-text-color);
 }
 
-
-.signup-img-section{
-    background-image: url("../assets/images/home/darkbg.png");
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: cover;
-}
-
-.edge-gradient{
-    background: rgb(28, 28, 28);
-    background: linear-gradient(83deg, #ffffff 0%, #ffffff00 20%, #ffffff00 80%, rgb(255, 255, 255) 100%);
-}
 
 .scroller{
     /* width: max-content;
@@ -341,6 +395,31 @@ header > .collapsible-header{
     display: inline-block;
     margin: 0 20px;
 }
+
+
+.marquee-container {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    background: black;
+    color: white;
+    padding: 10px 0;
+  }
+
+    .marquee-wrapper {
+        display: flex;
+        gap: 20px; /* Adjust spacing between texts */
+        animation: marquee 60s linear infinite;
+    }
+
+    @keyframes marquee {
+        from {
+            transform: translateX(0);
+        }
+        to {
+            transform: translateX(-50%);
+        }
+    }
   
 @keyframes scroll {
     0% {
@@ -367,12 +446,17 @@ header > .collapsible-header{
 .faq{
     background-color: #fff;
     color: #000000;
-    border: 1px solid #000;
+    border-radius: 20px;
+    border: 2px solid #000;
+    /* box-shadow: 5px 5px #0000009a; */
+    transition: 0.3s all;
 }
 
 .faq-accordion {
     background-color: inherit;
     color: #000000;
+    border-radius: 20px;
+
     cursor: pointer;
     padding: 15px 18px;
     width: 100%;
@@ -384,6 +468,8 @@ header > .collapsible-header{
 
 .faq .content {
     padding: 0px 18px;
+    border-radius: 20px;
+
     color: #232323;
     height: max-content;
     overflow: hidden;
@@ -393,9 +479,10 @@ header > .collapsible-header{
     transition: max-height 0.4s, padding 0.4s;
 }
 
-.faq-accordion .active,
-.faq-accordion:hover {
+.faq-accordion .active{
     /* background-color: #2e2c2c; */
+    /* box-shadow: 5px 5px #0000009a; */
+
 }
 
 @media not all and (min-width: 1024px) {
