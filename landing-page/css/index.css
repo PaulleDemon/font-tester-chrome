@@ -256,25 +256,41 @@ header > .collapsible-header{
 }
 
 .benefits-card{
-    box-shadow: 10px 10px  black;
+    /* box-shadow: 10px 10px  black; */
     position: relative;
     border-radius: 10px;
     transition: all 0.3s;
     transform: translate(-5px, -5px);
-    background-color: #ffffbc;
+    background-color: #ffec95;
+    z-index: 1;
 }
 
 
 .benefits-card:hover{
     /* transform: translate(-5px, -5px); */
     /* border-color: #820af3; */
-    box-shadow: 15px 15px  #040404;
+    box-shadow: 15px 15px  #e3c3ff;
     z-index: 1;
 }
 
+.benefits-card::after{
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: calc(100%);
+    height: calc(100%);
+    border-radius: 10px;
+    z-index: -1;
+    border: 2px solid #000;
+    background-color: #ffffff;
+}
+
 .blog-card{
+    transition: all 0.3s;
     position: relative;
     z-index: 2;
+    border-radius: 10px !important;
 }
 
 .blog-card::after{
@@ -290,6 +306,12 @@ header > .collapsible-header{
     background-color: #ffd45d;
 }
 
+.blog-card:hover{
+    /* transform: translate(-5px, -5px); */
+    /* border-color: #820af3; */
+    box-shadow: 20px 20px  #ca8dff;
+    z-index: 1;
+}
 
 .video-shadow::before{
     content: "";

@@ -757,6 +757,21 @@ video {
   margin-bottom: 0.75rem;
 }
 
+.tw-my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.tw-my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.tw-my-6 {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
 .tw-mb-4 {
   margin-bottom: 1rem;
 }
@@ -811,6 +826,10 @@ video {
 
 .tw-mt-auto {
   margin-top: auto;
+}
+
+.tw-mt-6 {
+  margin-top: 1.5rem;
 }
 
 .tw-flex {
@@ -975,6 +994,10 @@ video {
 
 .tw-max-h-full {
   max-height: 100%;
+}
+
+.tw-max-h-\[860px\] {
+  max-height: 860px;
 }
 
 .tw-min-h-\[100px\] {
@@ -1539,6 +1562,11 @@ video {
   border-bottom-width: 2px;
 }
 
+.tw-border-y-4 {
+  border-top-width: 4px;
+  border-bottom-width: 4px;
+}
+
 .tw-border-b-2 {
   border-bottom-width: 2px;
 }
@@ -1845,6 +1873,65 @@ video {
 .\!tw-bg-\[\#ebd8b5\] {
   --tw-bg-opacity: 1 !important;
   background-color: rgb(235 216 181 / var(--tw-bg-opacity)) !important;
+}
+
+.tw-bg-\[\#24282D\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(36 40 45 / var(--tw-bg-opacity));
+}
+
+.\!tw-bg-\[\#7e22ce85\] {
+  background-color: #7e22ce85 !important;
+}
+
+.\!tw-bg-\[\#d3a1ff\] {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(211 161 255 / var(--tw-bg-opacity)) !important;
+}
+
+.tw-bg-\[\#0f0f0f\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(15 15 15 / var(--tw-bg-opacity));
+}
+
+.tw-bg-\[\#0e0e0e\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(14 14 14 / var(--tw-bg-opacity));
+}
+
+.tw-bg-yellow-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(254 249 195 / var(--tw-bg-opacity));
+}
+
+.\!tw-bg-purple-300 {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(216 180 254 / var(--tw-bg-opacity)) !important;
+}
+
+.\!tw-bg-green-300 {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(134 239 172 / var(--tw-bg-opacity)) !important;
+}
+
+.\!tw-bg-purple-400 {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(192 132 252 / var(--tw-bg-opacity)) !important;
+}
+
+.\!tw-bg-yellow-300 {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(253 224 71 / var(--tw-bg-opacity)) !important;
+}
+
+.\!tw-bg-yellow-500 {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(234 179 8 / var(--tw-bg-opacity)) !important;
+}
+
+.\!tw-bg-yellow-400 {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(250 204 21 / var(--tw-bg-opacity)) !important;
 }
 
 .tw-bg-opacity-0 {
