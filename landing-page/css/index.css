@@ -24,10 +24,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Chango');
 
 @import url('https://fonts.googleapis.com/css2?family=Audiowide');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono');
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime');
+@import url('https://fonts.googleapis.com/css2?family=Sixtyfour');
 
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono');
 
 	
-
 	
 :root{
 
@@ -61,8 +64,25 @@ html {
     background-size: cover;
 }
 
+.ubuntu-family{
+    font-family: "Ubuntu", sans-serif;
+}
+
+.sixtyfour-family {
+    font-family: "Sixtyfour", monospace;
+}
+
+.share-tech-mono-family {
+    font-family: "Share Tech Mono", monospace;
+}
+
+
 .castoro-titling-family {
     font-family: "Castoro Titling", system-ui;
+}
+
+.courier-prime-family {
+    font-family: "Courier Prime", monospace;
 }
 
 .chango-family {
@@ -84,6 +104,10 @@ html {
 
 .bangers-family {
     font-family: "Bangers", system-ui;
+}
+
+.ibm-plex-mono-family {
+    font-family: "IBM Plex Mono", monospace;
 }
 
 .luckiest-guy-family {
@@ -267,17 +291,20 @@ header > .collapsible-header{
 }
 
 
-/* .video-shadow::before{
+.video-shadow::before{
     content: "";
     position: absolute;
-    top: 0px;
-    left: 0px;
-    width: calc(100% + 10px);
-    height: calc(100% + 10px);
+    top: -20px;
+    left: -20px;
+    width: calc(100% + 40px);
+    height: calc(100% + 40px);
     border-radius: 10px;
-    z-index: -2;
-    background-color: #000;
-} */
+    z-index: 0;
+    border: 2px solid black;
+    box-shadow: -10px 10px black;
+
+    /* background-color: #000; */
+}
 
 .brick-shadow{
     box-shadow: 10px 10px  black;
@@ -497,10 +524,14 @@ header > .collapsible-header{
     transition: max-height 0.4s, padding 0.4s;
 }
 
-.faq-accordion .active{
-    /* background-color: #2e2c2c; */
+.faq .active{
+    /* background-color: #2e2c2c !important; */
     /* box-shadow: 5px 5px #0000009a; */
 
+}
+
+.faq-active{
+    box-shadow: 5px 5px #000000d2;
 }
 
 @media not all and (min-width: 1024px) {

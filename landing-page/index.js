@@ -74,14 +74,21 @@ gsap.fromTo(".slide-in", {
 })
 
 
+const videoTitle = document.querySelector("#video-title")
+
 const videoBg = document.querySelector("#video-container-bg")
 const videoContainer = document.querySelector("#video-container")
+const videoSrc = document.querySelector("#youtube-video-player")
 
-function openVideo() {
+function openVideo(src, title="") {
     videoBg.classList.remove("tw-scale-0", "tw-opacity-0")
     videoBg.classList.add("tw-scale-100", "tw-opacity-100")
     videoContainer.classList.remove("tw-scale-0")
     videoContainer.classList.add("tw-scale-100")
+
+    videoSrc.setAttribute("src", src)
+
+    videoTitle.innerHTML = title
 
     document.body.classList.add("modal-open")
 }
@@ -105,6 +112,7 @@ const faqAccordion = document.querySelectorAll('.faq-accordion')
 faqAccordion.forEach(function (btn) {
     btn.addEventListener('click', function () {
         this.classList.toggle('active')
+        this.parentNode.classList.toggle('faq-active')
 
         // Toggle 'rotate' class to rotate the arrow
         let content = this.nextElementSibling
