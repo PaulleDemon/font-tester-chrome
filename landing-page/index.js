@@ -159,14 +159,22 @@ sections.forEach((sec) => {
 })
 
 
-
-const reviewContainer = document.querySelector(".review-container")
-
-
-/**---- fonts animation */
-const textElement = document.getElementById('fonts');
-
-// GSAP Timeline
-// const tl = gsap.timeline({ repeat: -1, repeatDelay: 2 }); // Repeat infinitely with delay between iterations
-const fonts = ['bungee-shade-family', 'aboreto-family', 'Courier New', 'Verdana'];
-
+const vsOpts = {
+    slides: document.querySelectorAll('.v-slide'),
+    list: document.querySelector('.v-slides'),
+    duration: 3,
+    lineHeight: 100
+  };
+  
+  const vSlide = gsap.timeline({ repeat: -1, paused: true });
+  
+  vsOpts.slides.forEach((_, i) => {
+    vSlide.to(vsOpts.list, {
+      y: i * -1 * vsOpts.lineHeight,
+      duration: vsOpts.duration / vsOpts.slides.length,
+      ease: "power2.inOut"
+    });
+  });
+  
+  vSlide.play();
+  

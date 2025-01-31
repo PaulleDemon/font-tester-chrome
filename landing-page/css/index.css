@@ -1,22 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Fondamento&family=chivo&family=Bellota&family=Battambang&family=Archivo+Black&family=Didact+Gothic&family=Sedgwick+Ave&family=Rowdies&family=Nosifer&family=Rubik+Doodle+Shadow&family=Quantico&family=Rubik+Glitch');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Nosifer&family=Rubik+Doodle+Shadow&family=Rubik+Glitch');
 
 @import url('https://fonts.googleapis.com/css2?family=Bangers');
 
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Shade');
-@import url('https://fonts.googleapis.com/css2?family=Aboreto');
 
-/* @import url('https://fonts.googleapis.com/css2?family=Crafty+Girls'); */
-@import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles');
-@import url('https://fonts.googleapis.com/css2?family=Barrio');
 @import url('https://fonts.googleapis.com/css2?family=Bowlby+One');
-@import url('https://fonts.googleapis.com/css2?family=Gaegu');
 @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter');
 
 @import url('https://fonts.googleapis.com/css2?family=AR+One+Sans');
-@import url('https://fonts.googleapis.com/css2?family=Almarai');
 
-@import url('https://fonts.googleapis.com/css2?family=Abel');
 @import url('https://fonts.googleapis.com/css2?family=Castoro+Titling');
 @import url('https://fonts.googleapis.com/css2?family=Fascinate');
 @import url('https://fonts.googleapis.com/css2?family=Limelight');
@@ -25,10 +18,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Audiowide');
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono');
-@import url('https://fonts.googleapis.com/css2?family=Courier+Prime');
 @import url('https://fonts.googleapis.com/css2?family=Sixtyfour');
 
 @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono');
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace');
 
 	
 	
@@ -81,9 +74,6 @@ html {
     font-family: "Castoro Titling", system-ui;
 }
 
-.courier-prime-family {
-    font-family: "Courier Prime", monospace;
-}
 
 .chango-family {
     font-family: "Chango", system-ui;
@@ -94,13 +84,6 @@ html {
     /* color: #0b0840; */
 }
 
-.aboreto-family {
-    font-family: "Aboreto", system-ui;
-}
-
-.abel-family {
-    font-family: "Abel", sans-serif;
-}
 
 .bangers-family {
     font-family: "Bangers", system-ui;
@@ -130,33 +113,21 @@ html {
     font-family: "Limelight", system-ui;
 }
 
-.almarai-family {
-    font-family: "Almarai", sans-serif;
-}
 
 .ar-one-sans-family {
     font-family: "AR One Sans", sans-serif;
 }
 
-.gaegu-family {
-    font-family: "Gaegu", handwriting;
-    font-size: 22px;
-    font-weight: 400;
-}
 
 .bowlby-one-family{
     font-family: "Bowlby One", system-ui;
     letter-spacing: 2px;
 }
 
-.barrio-family {
-    font-family: "Barrio"  ,system-ui;
-    color: rgb(26,47,102);
+.bruno-ace-family {
+    font-family: "Bruno Ace", system-ui;
 }
 
-.fuzzy-bubbles-family {
-    font-family: "Fuzzy Bubbles"  ,handwriting;
-}
 
 .audiowide-family {
     font-family: "Audiowide", system-ui;
@@ -164,68 +135,16 @@ html {
 }
 
 
-.crafty-girls-family {
-    font-family: "Crafty Girls"  ,handwriting;
-    font-size: 18px;
-    font-weight: 600;
-    letter-spacing: 3px;
-}
-
-
-.rubik-doodle-shadow-family {
-    font-family: "Rubik Doodle Shadow", system-ui;
-    letter-spacing: 3px;
-    font-weight: 700;
-}
-
 .rubik-glitch-family {
     font-family: "Rubik Glitch"  ,system-ui;
     font-weight: 200;
 }
 
-.fondamento-family{
-    font-family: "Fondamento", handwriting;
-    font-weight: 700;
-}
-
-.chivo-family{
-    font-family: "Chivo", sans-serif;
-}
-
-.quantico-family {
-    font-family: "Quantico"  ,sans-serif;
-    text-underline-offset: 2px;
-    font-weight: 100;
-    text-decoration: underline;
-    font-style: italic;
-}
-
-.bellota-family{
-    font-family: "Bellota", system-ui;
-    font-weight: 600;
-}
-
-.battambang-family{
-    font-family: "Battambang", system-ui;
-    font-weight: 500;
-}
 
 .archivo-black-family{
     font-family: "Archivo Black", sans-serif;
     font-weight: 400;
     line-height: 1.3;
-}
-
-.didact-gothic-family{
-    font-family: "Didact Gothic", sans-serif;
-    text-decoration: underline;
-    font-style: italic;
-}
-
-.sedgwick-ave-family{
-    font-family: "Sedgwick Ave", handwriting;
-    font-weight: 500;
-    line-height: 1.5;
 }
 
 .rowdies-family{
@@ -261,7 +180,9 @@ header > .collapsible-header{
     border-radius: 10px;
     transition: all 0.3s;
     transform: translate(-5px, -5px);
-    background-color: #ffec95;
+    /* background-color: #ff625d; */
+    /* background-color: #dbb2ff; */
+    border: 2px solid black;
     z-index: 1;
 }
 
@@ -269,11 +190,11 @@ header > .collapsible-header{
 .benefits-card:hover{
     /* transform: translate(-5px, -5px); */
     /* border-color: #820af3; */
-    box-shadow: 15px 15px  #e3c3ff;
+    box-shadow: 15px 15px  #D3A1FF;
     z-index: 1;
 }
 
-.benefits-card::after{
+/* .benefits-card::after{
     content: "";
     position: absolute;
     top: -10px;
@@ -284,6 +205,25 @@ header > .collapsible-header{
     z-index: -1;
     border: 2px solid #000;
     background-color: #ffffff;
+} */
+
+
+.testi-card{ /* testimonial card*/
+    position: relative;
+    box-shadow: 10px 10px #ffd45d;
+}
+
+.testi-card::after{
+    /* content: "";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: calc(100%);
+    height: calc(100%);
+    border-radius: 10px;
+    z-index: -1;
+    border: 2px solid #ffffff;
+    background-color: #ffd45d; */
 }
 
 .blog-card{
@@ -371,30 +311,18 @@ header > .collapsible-header{
 }
 
 
-.scroller{
-    /* width: max-content;
-    flex-wrap: nowrap; */
-    animation: scroll 40s forwards linear infinite;
+v-slider-frame {
+    height: 50px;
+    overflow: hidden;
+    text-align: center;
   }
-  
-  .scroller[data-direction="right"] {
-      animation-direction: reverse;
+  ul.v-slides {
+    list-style-type: none;
+    transform: translateY(100px);
+    padding:0;
   }
-  
-  .scroller[data-direction="left"] {
-      animation-direction: forwards;
-  }
-  
-  .scroller[data-direction="left"] {
-      animation-direction: forwards;
-  }
-  
-  .scroller[data-speed="fast"]{
-      animation-duration: 30s;
-  }
-  
-  .scroller[data-speed="slow"]{
-      animation-duration: 80s;
+  .v-slide {
+    line-height: 100px;
   }
 
 .opacity-0{
