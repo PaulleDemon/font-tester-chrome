@@ -1060,6 +1060,10 @@ video {
   min-height: 100%;
 }
 
+.tw-min-h-\[80vh\] {
+  min-height: 80vh;
+}
+
 .\!tw-w-full {
   width: 100% !important;
 }
@@ -1880,6 +1884,11 @@ video {
 .tw-bg-yellow-300 {
   --tw-bg-opacity: 1;
   background-color: rgb(253 224 71 / var(--tw-bg-opacity));
+}
+
+.tw-bg-\[\#24282D\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(36 40 45 / var(--tw-bg-opacity));
 }
 
 .tw-bg-opacity-0 {
