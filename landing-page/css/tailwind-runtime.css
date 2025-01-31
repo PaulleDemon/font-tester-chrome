@@ -936,10 +936,6 @@ video {
   height: 60px;
 }
 
-.tw-h-\[70px\] {
-  height: 70px;
-}
-
 .tw-h-\[80px\] {
   height: 80px;
 }
@@ -1052,16 +1048,12 @@ video {
   min-height: 80px;
 }
 
-.tw-min-h-\[90vh\] {
-  min-height: 90vh;
+.tw-min-h-\[80vh\] {
+  min-height: 80vh;
 }
 
 .tw-min-h-full {
   min-height: 100%;
-}
-
-.tw-min-h-\[80vh\] {
-  min-height: 80vh;
 }
 
 .\!tw-w-full {
@@ -1154,10 +1146,6 @@ video {
 
 .tw-w-\[550px\] {
   width: 550px;
-}
-
-.tw-w-\[70px\] {
-  width: 70px;
 }
 
 .tw-w-\[80px\] {
@@ -1754,11 +1742,6 @@ video {
   background-color: #f0f0f0ef;
 }
 
-.tw-bg-\[\#f2f3f4\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(242 243 244 / var(--tw-bg-opacity));
-}
-
 .tw-bg-\[\#f8f8f845\] {
   background-color: #f8f8f845;
 }
@@ -1884,11 +1867,6 @@ video {
 .tw-bg-yellow-300 {
   --tw-bg-opacity: 1;
   background-color: rgb(253 224 71 / var(--tw-bg-opacity));
-}
-
-.tw-bg-\[\#24282D\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(36 40 45 / var(--tw-bg-opacity));
 }
 
 .tw-bg-opacity-0 {
@@ -2148,10 +2126,6 @@ video {
   letter-spacing: 2px;
 }
 
-.tw-tracking-wide {
-  letter-spacing: 0.025em;
-}
-
 .tw-tracking-wider {
   letter-spacing: 0.05em;
 }
@@ -2184,11 +2158,6 @@ video {
 .tw-text-blue-400 {
   --tw-text-opacity: 1;
   color: rgb(96 165 250 / var(--tw-text-opacity));
-}
-
-.tw-text-blue-600 {
-  --tw-text-opacity: 1;
-  color: rgb(37 99 235 / var(--tw-text-opacity));
 }
 
 .tw-text-blue-800 {
@@ -2568,10 +2537,6 @@ video {
     display: none;
   }
 
-  .max-xl\:tw-min-w-\[300px\] {
-    min-width: 300px;
-  }
-
   .max-xl\:tw-place-items-center {
     place-items: center;
   }
@@ -2592,6 +2557,10 @@ video {
 
   .max-lg\:tw-top-\[10\%\] {
     top: 10%;
+  }
+
+  .max-lg\:tw-bottom-0 {
+    bottom: 0px;
   }
 
   .max-lg\:tw-mt-10 {
@@ -2620,6 +2589,14 @@ video {
 
   .max-lg\:tw-h-auto {
     height: auto;
+  }
+
+  .max-lg\:tw-h-fit {
+    height: fit-content;
+  }
+
+  .max-lg\:tw-h-\[50px\] {
+    height: 50px;
   }
 
   .max-lg\:tw-max-h-\[400px\] {
@@ -2664,6 +2641,10 @@ video {
 
   .max-lg\:tw-min-w-\[320px\] {
     min-width: 320px;
+  }
+
+  .max-lg\:tw-min-w-\[50px\] {
+    min-width: 50px;
   }
 
   .max-lg\:tw-max-w-\[320px\] {
@@ -2903,10 +2884,6 @@ video {
 }
 
 @media (min-width: 1280px) {
-  .xl\:tw-min-w-\[650px\] {
-    min-width: 650px;
-  }
-
   .xl\:tw-columns-3 {
     columns: 3;
   }
