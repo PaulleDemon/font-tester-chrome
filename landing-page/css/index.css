@@ -484,6 +484,16 @@ v-slider-frame {
     box-shadow: 5px 5px #000000d2;
 }
 
+
+.grid-bg{
+    background-image: url(../assets/images/home/grid.svg);
+}
+
+.star-bg{
+    background-image: url(../assets/images/home/stars.svg);
+    background-blend-mode: overlay;
+}
+
 @media not all and (min-width: 1024px) {
     header .collapsible-header {
         position: fixed;
