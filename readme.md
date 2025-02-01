@@ -4,7 +4,7 @@
 
 <p align="center"><img src="./public/logos/logox500.png" alt="font tester logo" width="100" height="100"></p>
 
-<p align="center"> <i>Effortlessly pick impactful fonts for your website</i></p>
+<p align="center"> <i>Effortlessly pick fonts that demands attention</i></p>
 
 
 
@@ -27,7 +27,6 @@ Now test 1000+ free google font types and custom types faces on your website.
 
 So whether you are a type designer demoing your type, web developer or creative agency, get Better at website Typography using this extension.
 
-Now you can go to your website, click on the extension, test fonts and pick the one you like along with the code.
 
 ![font tester demo](./docs/demo/fonttester2.gif)
 
