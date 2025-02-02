@@ -27,7 +27,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Anta');
 
-	
+@import url('https://fonts.googleapis.com/css2?family=Inter');
+@import url('https://fonts.googleapis.com/css2?family=New+Rocker');
+
+
 :root{
 
     --bg-color: #fff;
@@ -60,8 +63,16 @@ html {
     background-size: cover;
 }
 
+.new-rocker-family {
+    font-family: "New Rocker", system-ui;
+}
+
 .anta-family {
     font-family: "Anta", sans-serif;
+}
+
+.inter-family {
+    font-family: "Inter", sans-serif;
 }
 
 .attention-font{
