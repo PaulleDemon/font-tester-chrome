@@ -23,7 +23,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono');
 @import url('https://fonts.googleapis.com/css2?family=Bruno+Ace');
 
-	
+@import url('https://fonts.googleapis.com/css2?family=Candal');
+
+@import url('https://fonts.googleapis.com/css2?family=Anta');
+
 	
 :root{
 
@@ -57,6 +60,14 @@ html {
     background-size: cover;
 }
 
+.anta-family {
+    font-family: "Anta", sans-serif;
+}
+
+.attention-font{
+    filter: invert(71%) sepia(19%) saturate(6063%) hue-rotate(90deg) brightness(96%) contrast(74%);
+}
+
 .ubuntu-family{
     font-family: "Ubuntu", sans-serif;
 }
@@ -72,6 +83,11 @@ html {
 
 .castoro-titling-family {
     font-family: "Castoro Titling", system-ui;
+}
+
+.candal-family {
+    font-family: "Candal", sans-serif;
+    text-transform: uppercase;
 }
 
 
@@ -210,7 +226,8 @@ header > .collapsible-header{
 
 .testi-card{ /* testimonial card*/
     position: relative;
-    box-shadow: 10px 10px #ffd45d;
+    /* box-shadow: 10px 10px #ffd45d; */
+    box-shadow: 10px 10px #ffe089;
 }
 
 .testi-card::after{
@@ -233,7 +250,7 @@ header > .collapsible-header{
     border-radius: 10px !important;
 }
 
-.blog-card::after{
+/* .blog-card::after{
     content: "";
     position: absolute;
     top: 10px;
@@ -244,12 +261,12 @@ header > .collapsible-header{
     z-index: -1;
     border: 2px solid #000;
     background-color: #ffd45d;
-}
+} */
 
 .blog-card:hover{
     /* transform: translate(-5px, -5px); */
     /* border-color: #820af3; */
-    box-shadow: 20px 20px  #ca8dff;
+    box-shadow: 20px 20px  #ffd45d;
     z-index: 1;
 }
 

@@ -162,7 +162,7 @@ sections.forEach((sec) => {
 const vsOpts = {
     slides: document.querySelectorAll('.v-slide'),
     list: document.querySelector('.v-slides'),
-    duration: 3,
+    duration: 10,
     lineHeight: 100
   };
   
