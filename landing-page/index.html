@@ -20,8 +20,8 @@
         <!--Replace with the current website url-->
         <meta property="og:image" content="https://raw.githubusercontent.com/PaulleDemon/font-tester-chrome/refs/heads/main/docs/font-tester.png" />
 
-        <!-- <link rel="stylesheet" href="./css/tailwind-runtime.css" /> -->
-        <link rel="stylesheet" href="./css/tailwind-build.css?build=1.7">
+        <link rel="stylesheet" href="./css/tailwind-runtime.css" />
+        <!-- <link rel="stylesheet" href="./css/tailwind-build.css?build=1.7"> -->
         <link rel="stylesheet" href="css/index.css?build=1.2" />
 
         <link
@@ -44,14 +44,15 @@
 
     </head>
     <body
-        class="tw-flex tw-min-h-[100vh] tw-flex-col tw-bg-white tw-text-black"
+        class="tw-flex tw-min-h-[100vh] tw-flex-col tw-bg-[#161616] tw-text-white"
     >
         <header
-            class="tw-max-w-lg:tw-px-4 tw-max-w-lg:tw-mr-auto tw-absolute tw-top-0 tw-z-20 tw-flex tw-h-[60px] tw-w-full tw-bg-opacity-0 tw-px-[5%] lg:tw-justify-around"
+            class="tw-max-w-lg:tw-px-4 tw-max-w-lg:tw-mr-auto tw-absolute tw-top-0 tw-z-20 tw-flex tw-h-[60px] tw-w-full 
+                    tw-bg-opacity-0 tw-text-white tw-px-[5%] lg:tw-justify-around"
         >
 
             <div class="tw-flex tw-gap-1 tw-min-w-max tw-place-items-center">
-                <a class="tw-h-[50px] tw-w-[50px] tw-p-[4px]" href="">
+                <a class="tw-h-[50px] tw-bg-white tw-w-[50px] tw-p-[4px]" href="">
                     <img
                         src="./assets/logo/logo.svg"
                         alt="logo"
@@ -81,7 +82,7 @@
                         rel="noopener noreferrer"
                         href="https://chromewebstore.google.com/detail/font-tester/deachoodakeofjlfikfkohihnpcgiaim"
                         aria-label="signup"
-                        class="tw-rounded-md tw-border-[1px] tw-border-black tw-bg-transparent tw-px-3 tw-py-2 tw-text-black tw-transition-colors tw-duration-[0.3s] hover:tw-bg-black hover:tw-text-white"
+                        class="tw-rounded-md tw-border-2 tw-border-gray-100 tw-bg-transparent tw-px-3 tw-py-2 tw-transition-colors tw-duration-[0.3s] hover:tw-bg-gray-100 hover:tw-text-black"
                     >
                         <span>Download</span>
                         <i class="bi bi-download"></i>
@@ -97,9 +98,9 @@
         </header>
 
         <section
-            class="hero-section tw-relative tw-flex tw-min-h-[60vh] tw-w-full tw-max-w-[100vw] 
+            class="tw-relative tw-flex tw-min-h-[100vh] tw-w-full tw-max-w-[100vw] 
                         tw-flex-col tw-overflow-hidden max-md:tw-mt-[50px]
-                        tw-border-b-2 tw-border-black
+                        tw-border-b-2 tw-border-black tw-mt-[80px] grid-bg 
                         "
             id="hero-section"
         >   
@@ -138,43 +139,47 @@
             </div>
 
             <div
-                class="tw-relative hero-bg-gradient tw-flex tw-h-full max-lg:tw-mt-10 max-lg:tw-min-h-[60vh] tw-min-h-[50vh] tw-w-full tw-flex-col tw-place-content-center tw-gap-6 tw-p-[5%] max-xl:tw-place-items-center max-lg:tw-p-4"
+                class="tw-relative tw-flex tw-h-full max-lg:tw-mt-10 max-lg:tw-min-h-[60vh] 
+                        tw-min-h-[50vh] tw-w-full tw-flex-col tw-place-content-center 
+                        tw-gap-6"
             >   
 
                 <!-- <div class="tw-absolute tw-top-[200px] tw-left-0 tw-w-full tw-h-[1px] tw-bg-black"></div>
                 <div class="tw-absolute tw-top-[380px] tw-left-0 tw-w-full tw-h-[1px] tw-bg-black"></div> -->
 
                 <div class="tw-w-[80px] tw-absolute max-lg:tw-top-[5%] tw-top-[30%] tw-left-[10%] tw--rotate-12 tw-flex tw-place-content-center 
-                            tw-text-lg tw-bg-gray-200 tw-h-[35px] tw-p-[1px] tw-rounded-sm tw-place-items-center">
-                    <div class="tw-w-[30px] bi bi-type-bold tw-rounded-sm tw-text-center"></div>
-                    <div class="tw-w-[30px] tw-h-full bi bi-type-italic tw-place-content-center tw-place-items-center tw-flex tw-text-center tw-rounded-sm tw-bg-black tw-text-white"></div>
-                    <div class="tw-w-[30px] bi bi-type-underline tw-rounded-sm tw-text-center"></div>
+                            tw-text-lg  tw-h-[35px] tw-p-[1px] tw-rounded-lg tw-place-items-center !tw-border-gray-300 tw-border-2">
+                    <div class="tw-w-[30px] bi bi-type-bold tw-rounded-sm tw-text-center tw- tw-text-gray-300"></div>
+                    <div class="tw-w-[30px] tw-h-full bi bi-type-italic tw-place-content-center tw-place-items-center tw-flex tw-text-center tw-rounded-sm tw-bg-gray-300 tw-text-black"></div>
+                    <div class="tw-w-[30px] bi bi-type-underline tw-rounded-sm tw-text-center tw-text-gray-300"></div>
                 </div>
 
                 <div
                     class="tw-flex tw-flex-col tw-relative tw-place-content-center tw-items-center"
                 >   
-                    <div class="tw-absolute max-xl:tw-hidden tw-top-[100px] tw-left-0 tw-w-full tw-h-[1px] tw-bg-[#7e7e7e9e]"></div>
+                    <!-- <div class="tw-absolute max-xl:tw-hidden tw-top-[100px] tw-left-0 tw-w-full tw-h-[1px] tw-bg-[#7e7e7e9e]"></div>
                     <div class="tw-absolute max-xl:tw-hidden tw-bottom-[80px] tw-left-0 tw-w-full tw-h-[1px] tw-bg-[#7e7e7e9e]"></div>
                     <div class="tw-absolute max-xl:tw-hidden tw-bottom-[80px] tw-rotate-90 tw--left-1/2 tw-w-full tw-h-[1px] tw-bg-[#7e7e7e9e]"></div>
-                    <div class="tw-absolute max-xl:tw-hidden tw-bottom-[80px] tw-rotate-90 tw--right-1/2 tw-w-full tw-h-[1px] tw-bg-[#7e7e7e9e]"></div>
+                    <div class="tw-absolute max-xl:tw-hidden tw-bottom-[80px] tw-rotate-90 tw--right-1/2 tw-w-full tw-h-[1px] tw-bg-[#7e7e7e9e]"></div> -->
 
                     <div
-                        class="tw-mt-4 tw-h-[350px] max-lg:tw-h-fit tw-px-3 tw-w-fit tw-relative tw-place-content-center 
-                            tw-text-7xl tw-font-normal tw-uppercase tw-leading-[90px] 
-                            max-lg:tw-text-3xl max-md:tw-leading-snug max-2xl:tw-text-7xl"
+                        class="tw-mt-4  max-lg:tw-h-fit tw-px-3 tw-w-fit tw-relative tw-place-content-center 
+                            tw-uppercase
+                             max-md:tw-leading-snug "
                     >
 
-                        <span class="tw-uppercase tw-text-center max-lg:tw-px-3 inter-family tw-font-semibold "> 
-                            <i class="bi bi-eyedropper max-lg:tw-hidden tw-text-4xl max-lg:tw-text-lg"></i>
-                            Choose fonts that 
+                        <span class="tw-uppercase tw-h-[450px] soria-font-family  tw-text-center max-lg:tw-px-3
+                                     tw-font-semibold tw-text-[130px] max-lg:tw-text-[40px] lg:tw-leading-[120px]"> 
+                            <!-- <i class="bi bi-eyedropper max-lg:tw-hidden tw-text-center tw-text-4xl max-lg:tw-text-lg tw-font-light"></i> -->
+                            Choose <span class="text-image rakkas-family">fonts</span> that 
                             <br />
                             <span class="tw-flex tw-w-fulll  tw-text-center tw-place-items-center tw-gap-2">
-                                demand <i class="bi bi-bullseye max-lg:tw-hidden tw-text-center tw-text-4xl max-lg:tw-text-lg tw-font-light"></i> 
-                                <span class="tw-overflow-hidden new-rocker-family tw-font-normal tw-bg-green-300 tw-px-3 tw-h-[100px] max-lg:tw-h-[50px] max-lg:tw-min-w-[50px] tw-min-w-[150px]">
+                                demand 
+                                <!-- <i class="bi bi-bullseye max-lg:tw-hidden tw-text-center tw-text-4xl max-lg:tw-text-lg tw-font-light"></i>  -->
+                                <span class="typefesse-font-family text-image tw-font-normal tw-text-[100px] tw-capitalize">Attention.</span>
+                                <!-- <span class="tw-overflow-hidden new-rocker-family tw-font-normal tw-bg-green-700 tw-px-3 tw-h-[100px] max-lg:tw-h-[50px] max-lg:tw-min-w-[50px] tw-min-w-[150px]">
                                 
-                                    Attention
-                                </span>
+                                </span> -->
                                 
 
                                 <!-- <span class="tw-overflow-hidden tw-h-[100px] max-lg:tw-h-[50px] max-lg:tw-min-w-[50px] tw-min-w-[150px]"> -->
@@ -218,21 +223,16 @@
                             </span>
                         <!-- <br /> -->
                         </span>
-                        <div class="tw-absolute max-lg:tw-hidden tw-bottom-5 tw-right-0">
-                            <img src="./assets/images/home/cursor.svg" alt="cursor">
-                        </div>
-                        <!-- <span class=""> on any website </span> -->
+                      
                     </div>
                     
                 </div>
 
-                <!-- <div class="purple-bg-grad tw-absolute tw-right-[30%] tw-top-[40%] 
-                            tw-h-[120px] tw-w-[120px]"></div> -->
-
                 <div class="tw-flex tw-flex-col tw-w-full tw-place-items-center tw-place-content-center">
                     
                     <div
-                        class="reveal-up tw-mt-3 tw-max-w-[450px] tw-p-2 tw-text-center tw-text-black max-lg:tw-max-w-full"
+                        class="tw-mt-3 tw-max-w-[650px] tw-px-4 tw-p-2 tw-text-center max-lg:tw-text-justify inter-family 
+                        max-lg:tw-text-[16px] tw-text-[24px] max-lg:tw-max-w-[300px]"
                     >
                         Text makes up 80% of your UI. The right font doesn't just display information—it shapes perception. Choose the perfect font, and turn casual visitors into loyal customers.
                     </div>
@@ -241,7 +241,7 @@
                         class="reveal-up tw-mt-10 tw-flex tw-place-items-center tw-gap-4"
                     >
                         <a
-                            class="btn-primary !tw-bg-green-300 tw-shadow-lg tw-shadow-primary tw-flex tw-gap-1
+                            class="btn tw-shadow-lg tw-text-[20px] max-lg:tw-text-[14px] tw-flex tw-gap-1
                                     tw-transition-transform tw-duration-[0.3s] hover:tw-scale-x-[1.03] tw-group"
                             href="#pricing"
                         >
@@ -249,8 +249,8 @@
                             <i class="bi bi-arrow-right tw-transition-transform group-hover:tw-translate-x-1 tw-duration-300"></i>
                         </a>
                         <button
-                            class="btn-primary tw-flex tw-gap-2 !tw-border-solid !tw-border-[1px] !tw-border-black
-                                    !tw-text-black !tw-bg-transparent tw-transition-colors tw-duration-[0.3s] 
+                            class="btn tw-flex tw-gap-2 !tw-border-solid !tw-border-[2px] !tw-border-jite
+                                     !tw-bg-transparent tw-transition-colors tw-duration-[0.3s] !tw-text-gray-100
                                     hover:!tw-bg-white hover:!tw-text-black"
                             onclick="openVideo('https://www.youtube.com/embed/kQ9Ih4cIlmU?si=jL7LC6Iy1AQHCGUK&controls=1&rel=0&showinfo=0&autoplay=0&loop=1&mute=1')"
                             
@@ -266,7 +266,7 @@
             <div
                 class="reveal-up tw-flex tw-flex-col tw-min-h-[200px] tw-place-content-center tw-items-center"
                 >
-                <h4 class="tw-text-xl tw-mt-4 almarai-family max-lg:tw-text-lg tw-font-semibold tw-uppercase tw-text-center tw-m-1 tw-mx-3">Powerful extension for your font needs</h4>
+                <h4 class="tw-text-xl tw-mt-4 inter-family max-lg:tw-text-lg tw-uppercase tw-text-center tw-m-1 tw-mx-3">Powerful extension for your font needs</h4>
 
                 <div class="tw-mt-4 tw-flex tw-mb-4 tw-gap-4 tw-place-items-center tw-place-content-center">
 
@@ -276,7 +276,7 @@
                         class="tw-object-contain tw-w-full tw-grayscale hover:tw-grayscale-0"
                     /></a> -->
 
-                    <div  class="tw-w-[40px] tw-h-[40px] tw-border-[1px]
+                    <div  class="tw-w-[40px] tw-h-[40px]  tw-border-gray-300
                                  tw-rounded-full tww-border-black">
                         <img src="./assets/images/brands/chrome.svg" 
                             class="tw-object-contain tw-w-full"
@@ -334,93 +334,31 @@
 
         </section>
 
-        
-        <!-- <section
-            class="tw-relative castoro-titling-family  tw-flex tw-w-full tw-min-h-[50vh] tw-max-w-[100vw] tw-flex-col tw-place-content-center tw-place-items-center tw-overflow-hidden tw-p-8"
-        >   
-            <div class="tw-absolute max-xl:tw-hidden tw-top-[100px] tw-left-0 tw-w-full tw-h-[1px] tw-bg-[#0000009e]"></div>
-            <div class="tw-absolute max-xl:tw-hidden tw-bottom-[80px] tw-left-0 tw-w-full tw-h-[1px] tw-bg-[#0000009e]"></div>
-            <div class="tw-absolute max-xl:tw-hidden tw-bottom-[80px] tw-rotate-90 tw--left-1/2 tw-w-full tw-h-[1px] tw-bg-[#0000009e]"></div>
-            <div class="tw-absolute max-xl:tw-hidden tw-bottom-[80px] tw-rotate-90 tw--right-1/2 tw-w-full tw-h-[1px] tw-bg-[#0000009e]"></div>
-
-            <div class="tw-flex tw-flex-col brick-shadow tw-rounded-xl tw-p-4 tw-pb-8 tw-group
-                            tw-border-2 tw-border-black tw-place-items-center tw-relative">
-
-                    <div class="tw-absolute tw-top-4 tw-left-4 tw-w-[10px] tw-h-[10px] tw-bg-black 
-                                tw-rounded-full tw-border-solid tw-border-black tw-border-2 group-hover:tw-bg-white"></div>
-                    <div class="tw-absolute tw-top-4 tw-right-4 tw-w-[10px] tw-h-[10px] tw-bg-black 
-                                tw-rounded-full tw-border-solid tw-border-black tw-border-2 group-hover:tw-bg-white"></div>
-                    <div class="tw-absolute tw-bottom-4 tw-right-4 tw-w-[10px] tw-h-[10px] tw-bg-black 
-                                tw-rounded-full tw-border-solid tw-border-black tw-border-2 group-hover:tw-bg-white"></div>
-                    <div class="tw-absolute tw-bottom-4 tw-left-4 tw-w-[10px] tw-h-[10px] tw-bg-black 
-                                tw-rounded-full tw-border-solid tw-border-black tw-border-2 group-hover:tw-bg-white"></div>
-                    
-                    <div class="tw-my-3 tw-text-2xl tw-font-semibold">
-                        Recognitions
-                    </div>
-                    <div class=" tw-flex tw-gap-6 max-lg:tw-flex-col">
-                        <a href="https://www.producthunt.com/posts/font-tester-2?embed=true&utm_source=badge-top-post-topic-badge&utm_medium=badge&utm_souce=badge-font&#0045;tester&#0045;2" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/top-post-topic-badge.svg?post_id=612285&theme=light&period=weekly&topic_id=44" alt="Font&#0032;Tester - Elevate&#0032;your&#0032;landing&#0032;page&#0032;with&#0032;better&#0032;Typography | Product Hunt" 
-                            style="width: 230px; height: 54px;" width="250" height="54" /></a>
-
-                        <a href="https://www.producthunt.com/posts/font-tester-2?embed=true&utm_source=badge-top-post-badge&utm_medium=badge&utm_souce=badge-font&#0045;tester&#0045;2" target="_blank">
-                            <img src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=612285&theme=light&period=daily" 
-                                alt="Font&#0032;Tester - Elevate&#0032;your&#0032;landing&#0032;page&#0032;with&#0032;better&#0032;Typography | Product Hunt" 
-                                style="width: 230px; height: 54px;" width="250" height="54"
-                                class=""
-                                />
-                        </a>
-                        <a href="https://www.producthunt.com/posts/font-tester-2?embed=true&utm_source=badge-top-post-topic-badge&utm_medium=badge&utm_souce=badge-font&#0045;tester&#0045;2" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/top-post-topic-badge.svg?post_id=612285&theme=light&period=weekly&topic_id=164" alt="Font&#0032;Tester - Elevate&#0032;your&#0032;landing&#0032;page&#0032;with&#0032;better&#0032;Typography | Product Hunt" 
-                            style="width: 230px; height: 54px;" width="250" height="54" /></a>
-                    </div>
-            </div>
-        </section> -->
-
+    
         <section
-            class="tw-relative star-bg castoro-titling-family tw-min-h-[100vh] tw-text-white tw-bg-[#24282d] tw-border-y-2 tw-border-black tw-border-solid  tw-flex tw-w-full tw-max-w-[100vw] tw-flex-col tw-place-content-center tw-place-items-center tw-overflow-hidden tw-p-8"
+            class="tw-relative castoro-titling-family tw-min-h-[100vh]  tw-flex tw-w-full tw-max-w-[100vw] tw-flex-col tw-place-content-center tw-place-items-center tw-overflow-hidden tw-p-8"
         >   
 
-             <!-- <div class="stardust"></div> -->
+            <h2 class="tw-text-6xl tw-relative ubuntu-family tw-min-h-[50vh] tw-place-items-center tw-flex tw-p-2">
+                <div class="tw-absolute max-xl:tw-hidden tw-top-[100px] tw-left-0 tw-w-full tw-h-[1px] tw-bg-[#3d9eff]"></div>
+                <div class="tw-absolute max-xl:tw-hidden tw-bottom-[80px] tw-left-0 tw-w-full tw-h-[1px] tw-bg-[#3d9eff]"></div>
+                <!-- <div class="tw-absolute max-xl:tw-hidden tw-bottom-[80px] tw-rotate-90 tw--left-1/2 tw-w-full tw-h-[1px] tw-bg-[#0000009e]"></div> -->
+                <!-- <div class="tw-absolute max-xl:tw-hidden tw-bottom-[80px] tw-rotate-90 tw--right-1/2 tw-w-full tw-h-[1px] tw-bg-[#0000009e]"></div> -->
 
+                
+                Typography is an art <br> anyone can perfect with <br>the right tool.
+            </h2>
                
             <div class="tw-relative tw-flex tw-w-full tw-h-full max-lg:tw-flex-col tw-gap-4 ">
                 
-                <div class="tw-w-1/2 max-lg:tw-w-full tw-place-content-center tw-place-items-center tw-flex tw-flex-col">
-                    <div class="tw-text-4xl max-lg:tw-text-3xl max-lg:tw-text-center tw-uppercase sixtyfour-family tw-max-w-[550px] tw-leading-relaxed">
-                        Steve Jobs and <br>typography
-                    </div>
-                    <div class="tw-text-2xl max-lg:tw-max-w-full tw-max-w-[500px] max-lg:tw-text-xl share-tech-mono-family tw-mt-10 ">
-                        Steve Jobs dropped out of college to learn Typography and it changed Apple's design forever. 
-                        <br>
-                        <br>
-                        The first Macintosh computer was the first to introduce beautiful typography to personal computing.
-                        <br>
-                        <br>
-                        Since then, it has revolutionized design across various mediums—posters, websites, billboards, and beyond
-                        <br>
-                        <br>
-                        I made this to make it easy for anyone to choose beautiful typography that complements designs and keeps people's attention to what you have to say.
-                    </div>
+                <div class="tw-relative tw-flex tw-w-full tw-h-[350px] max-lg:tw-h-[200px] max-lg:tw-w-full tw-rounded-md
+                ">
+
+                    <iframe class=" tw-w-full tw-h-full" src="https://www.youtube.com/embed/_6Dc5tBpDgM?si=77M9vZVlzpN1nRCz&amp;controls=1&rel=0&showinfo=0&autoplay=0&loop=1&mute=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                
                 </div>
 
-                <div class="tw-w-1/2 max-lg:tw-w-full tw-place-content-center tw-place-items-center tw-flex">
-                    <div class="tw-relative max-lg:tw-max-w-full max-lg:tw-w-full max-lg:tw-min-w-[200px] tw-min-w-[550px] 
-                                    tw-w-[550px] tw-h-[600px] max-lg:tw-max-h-[400px] tw-px-10 tw-py-8 tw-bg-[#d4c3a3] tw-rounded-md">
-                        <div class="tw-w-full tw-h-[350px] max-lg:tw-h-[200px] tw-bg-gray-800 tw-border-8 tw-border-[#fff] tw-rounded-md tw-overflow-hidden">
-                            <div class="tw-relative tw-flex tw-w-full tw-h-[350px] max-lg:tw-h-[200px] max-lg:tw-w-full tw-rounded-md
-                                        ">
-    
-                                <iframe class=" tw-w-full tw-h-full" src="https://www.youtube.com/embed/_6Dc5tBpDgM?si=77M9vZVlzpN1nRCz&amp;controls=1&rel=0&showinfo=0&autoplay=0&loop=1&mute=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                            
-                            </div>
-                        
-                        </div>
-                        <div class="tw-absolute tw-left-10 tw-bottom-[100px] max-lg:tw-bottom-[80px] tw-w-[30px] tw-h-[30px]">
-                            <img src="./assets/images/home/apple_logo.png" class="tw-object-contain" alt="apple mac book">
-                        </div>
-                        <div class="tw-absolute tw-bottom-[110px] max-lg:tw-bottom-[90px] tw-right-[25px] tw-w-[150px] tw-bg-black tw-h-[10px]"></div>
-                    </div>
-                </div>
-                
+               
             </div>
                
 
@@ -438,36 +376,7 @@
             class="tw-relative tw-mt-1 tw-flex tw-flex-col tw-gap-4 tw-min-h-[100vh] tw-p-1 tw-w-full tw-max-w-[100vw] tw-place-items-center lg:tw-p-6"
         >
 
-            <!-- <h2 class="fascinate-family tw-relative tw-text-6xl tw-leading-relaxed tw-rounded-md
-             tw-text-white max-md:tw-text-3xl tw-uppercase tw-text-center tw-bg-[#1E1919] tw-p-6 tw-px-8"
-                id="demo"
-                >
-
-                <div class="tw-absolute tw-top-4 tw-left-4 tw-w-[10px] tw-h-[10px]
-                                tw-rounded-full tw-border-solid tw-bg-white"></div>
-                <div class="tw-absolute tw-top-4 tw-right-4 tw-w-[10px] tw-h-[10px] 
-                            tw-rounded-full tw-border-solid tw-bg-white"></div>
-                <div class="tw-absolute tw-bottom-4 tw-right-4 tw-w-[10px] tw-h-[10px] 
-                            tw-rounded-full tw-border-solid tw-bg-white"></div>
-                <div class="tw-absolute tw-bottom-4 tw-left-4 tw-w-[10px] tw-h-[10px] 
-                            tw-rounded-full tw-border-solid tw-bg-white"></div>
-                
-
-                <div class="tw-w-[40px] tw-h-[40px] tw-min-w-[20px] tw-rounded-full tw-bg-orange-300"></div>
-                
-                Typography is an art <br> anyone can perfect with <br>the right tool
-                <div class="tw-ml-auto tw-w-[40px] tw-h-[40px] tw-min-w-[20px] tw-rounded-full tw-bg-green-300"></div>
-            </h2> -->
-            
-            <h2 class="tw-text-6xl tw-relative ubuntu-family tw-min-h-[50vh] tw-place-items-center tw-flex tw-p-2">
-                <div class="tw-absolute max-xl:tw-hidden tw-top-[100px] tw-left-0 tw-w-full tw-h-[1px] tw-bg-[#3d9eff]"></div>
-                <div class="tw-absolute max-xl:tw-hidden tw-bottom-[80px] tw-left-0 tw-w-full tw-h-[1px] tw-bg-[#3d9eff]"></div>
-                <!-- <div class="tw-absolute max-xl:tw-hidden tw-bottom-[80px] tw-rotate-90 tw--left-1/2 tw-w-full tw-h-[1px] tw-bg-[#0000009e]"></div> -->
-                <!-- <div class="tw-absolute max-xl:tw-hidden tw-bottom-[80px] tw-rotate-90 tw--right-1/2 tw-w-full tw-h-[1px] tw-bg-[#0000009e]"></div> -->
-
-                
-                Typography is an art <br> anyone can perfect with <br>the right tool.
-            </h2>
+          
 
             <div
                 class="tw-mt-[5%] brick-shadow tw-max-w-[80%] tw-border-4 tw-border-solid tw-border-black tw-flex tw-h-full 
