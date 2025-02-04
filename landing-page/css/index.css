@@ -30,6 +30,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter');
 @import url('https://fonts.googleapis.com/css2?family=New+Rocker');
 @import url('https://fonts.googleapis.com/css2?family=Rakkas');
+@import url('https://fonts.googleapis.com/css2?family=Bigshot+One');
 
 	
 
@@ -85,6 +86,17 @@ html {
 .typefesse-font-family {
     font-family: "typefesse-font";
 }
+
+.bigshot-one-family {
+    font-family: "Bigshot One", system-ui;
+}
+
+
+.outlined-text {
+    color: transparent;
+    -webkit-text-stroke: 1px rgb(255, 255, 255);
+    text-shadow: -7px -7px  white;
+  }
 
 .text-image {
     background: linear-gradient(45deg, #9affab, #fad0c4, #fad0c4, #c2c4fb);
@@ -326,12 +338,13 @@ header > .collapsible-header{
     width: calc(100% + 40px);
     height: calc(100% + 40px);
     border-radius: 10px;
-    z-index: 0;
-    border: 2px solid black;
-    box-shadow: -10px 10px black;
+    z-index: -1;
+    border: 2px solid #ffffff;
+    box-shadow: -10px 10px white;
 
     /* background-color: #000; */
 }
+
 
 .brick-shadow{
     box-shadow: 10px 10px  rgb(248, 248, 248);
@@ -563,10 +576,6 @@ v-slider-frame {
     height: 100vh;
   }
 
-.star-bg{
-    background-image: url(../assets/images/home/stars.svg);
-    background-blend-mode: overlay;
-}
 
 @media not all and (min-width: 1024px) {
     header .collapsible-header {
