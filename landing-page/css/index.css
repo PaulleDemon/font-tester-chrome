@@ -43,7 +43,7 @@
     --btn-bg: #000;/* button bg color*/
 
     --primary-text-color: #000;
-    --header-link-hover: #000;
+    --header-link-hover: #db9eff;
     --input-hover-bd-color: #000;
     --hero-gradient: #fcfcfc;
 }
@@ -380,7 +380,7 @@ header > .collapsible-header{
 
 
 .header-links:hover {
-    color: #000000;
+    color: var(--header-link-hover);
     /* background-color: var(--header-link-hover); */
 }
 
