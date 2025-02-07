@@ -1,31 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Rubik+Glitch');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black');
 
-@import url('https://fonts.googleapis.com/css2?family=Bangers');
-
-@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade');
 
 @import url('https://fonts.googleapis.com/css2?family=Bowlby+One');
-@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter');
 
 @import url('https://fonts.googleapis.com/css2?family=AR+One+Sans');
 
 @import url('https://fonts.googleapis.com/css2?family=Castoro+Titling');
-@import url('https://fonts.googleapis.com/css2?family=Fascinate');
-@import url('https://fonts.googleapis.com/css2?family=Limelight');
-@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy');
-@import url('https://fonts.googleapis.com/css2?family=Chango');
 
-@import url('https://fonts.googleapis.com/css2?family=Audiowide');
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono');
-@import url('https://fonts.googleapis.com/css2?family=Sixtyfour');
 
 @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono');
-@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace');
 
-@import url('https://fonts.googleapis.com/css2?family=Candal');
 
-@import url('https://fonts.googleapis.com/css2?family=Anta');
 
 @import url('https://fonts.googleapis.com/css2?family=Inter');
 @import url('https://fonts.googleapis.com/css2?family=New+Rocker');
@@ -113,32 +100,12 @@ html {
     text-transform: uppercase;
 }
 
-.new-rocker-family {
-    font-family: "New Rocker", system-ui;
-}
-
-.anta-family {
-    font-family: "Anta", sans-serif;
-}
-
 .inter-family {
     font-family: "Inter", sans-serif;
 }
 
-.attention-font{
-    filter: invert(71%) sepia(19%) saturate(6063%) hue-rotate(90deg) brightness(96%) contrast(74%);
-}
-
 .ubuntu-family{
     font-family: "Ubuntu", sans-serif;
-}
-
-.sixtyfour-family {
-    font-family: "Sixtyfour", monospace;
-}
-
-.share-tech-mono-family {
-    font-family: "Share Tech Mono", monospace;
 }
 
 
@@ -146,47 +113,9 @@ html {
     font-family: "Castoro Titling", system-ui;
 }
 
-.candal-family {
-    font-family: "Candal", sans-serif;
-}
-
-
-.chango-family {
-    font-family: "Chango", system-ui;
-}
-
-.bungee-shade-family {
-    font-family: "Bungee Shade", system-ui;
-    /* color: #0b0840; */
-}
-
-
-.bangers-family {
-    font-family: "Bangers", system-ui;
-}
 
 .ibm-plex-mono-family {
     font-family: "IBM Plex Mono", monospace;
-}
-
-.luckiest-guy-family {
-    font-family: "Luckiest Guy", system-ui;
-}
-
-.architects-daughter-family {
-    font-family: "Architects Daughter", handwriting;
-    /* font-size: 22px; */
-    letter-spacing: 1px;
-    font-weight: 400;
-/* line-height: 1.9; */
-}
-
-.fascinate-family {
-    font-family: "Fascinate", system-ui;
-}
-
-.limelight-family {
-    font-family: "Limelight", system-ui;
 }
 
 
@@ -200,32 +129,10 @@ html {
     letter-spacing: 2px;
 }
 
-.bruno-ace-family {
-    font-family: "Bruno Ace", system-ui;
-}
-
-
-.audiowide-family {
-    font-family: "Audiowide", system-ui;
-    letter-spacing: 2px;
-}
-
-
-.rubik-glitch-family {
-    font-family: "Rubik Glitch"  ,system-ui;
-    font-weight: 200;
-}
-
-
 .archivo-black-family{
     font-family: "Archivo Black", sans-serif;
     font-weight: 400;
     line-height: 1.3;
-}
-
-.rowdies-family{
-    font-family: "Rowdies", system-ui;
-    font-weight: 400;
 }
 
 
