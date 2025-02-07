@@ -340,7 +340,7 @@ header > .collapsible-header{
     border-radius: 10px;
     z-index: -1;
     border: 2px solid #ffffff;
-    box-shadow: -10px 10px white;
+    box-shadow: -10px 10px #ffffff;
 
     /* background-color: #000; */
 }
@@ -567,6 +567,7 @@ v-slider-frame {
 
 .grid-bg {
     /* background-color: white; */
+    background-size: 40px 40px;
     background-image: 
       repeating-linear-gradient(0deg, #aba8a81a, #f1f1f11a 1px, transparent 1px, transparent 40px),
       repeating-linear-gradient(90deg, #aba8a81a, #f1f1f11a 1px, transparent 1px, transparent 40px);
@@ -590,14 +591,14 @@ v-slider-frame {
         padding-top: 5%;
         padding-bottom: 5%;
         place-items: end;
-        background-color: #e4e4e4;
-        color: #111111;
+        background-color: #262525;
+        color: #e1dfdf;
         overflow-y: auto;
         box-shadow: 3px 0px 3px 2px #9f9f9f;
     }
 
     .header-links{
-        color: #0c0c0c;
+        color: #f1f1f1;
     }
     
 }

@@ -90,7 +90,7 @@
                 </div>
             </div>
             <button
-                class="bi bi-list tw-absolute tw-right-3 tw-top-3 tw-z-50 tw-text-3xl tw-text-black lg:tw-hidden"
+                class="bi bi-list tw-absolute tw-right-3 tw-top-3 tw-z-50 tw-text-3xl tw-text-white lg:tw-hidden"
                 onclick="toggleHeader()"
                 aria-label="menu"
                 id="collapse-btn"
@@ -98,19 +98,20 @@
         </header>
 
         <section
-            class="tw-mt-[100px] tw-relative tw-flex tw-min-h-[150vh] tw-w-full tw-max-w-[100vw] 
-                        tw-flex-col tw-overflow-hidden max-md:tw-mt-[50px] tw-h-fit"
+            class="tw-mt-[80px] max-lg:tw-mt-[50px] tw-relative tw-flex tw-min-h-[100vh] tw-w-full tw-max-w-[100vw] 
+                        tw-flex-col tw-overflow-hidden max-md:tw-mt-[50px] tw-h-full 
+                        tw-place-content-center tw-place-items-center"
             id="hero-section"
         >   
 
             <!-- video container -->
-            <div class="tw-fixed tw-bg-[#f8f8f845] dark:tw-bg-[#80808085] tw-top-0 tw-left-1/2 tw--translate-x-1/2 tw-z-20 tw-transition-opacity
+            <div class="tw-fixed tw-bg-[#8080802a] tw-top-0 tw-left-1/2 tw--translate-x-1/2 tw-z-20 tw-transition-opacity
                 tw-duration-300 tw-scale-0 tw-opacity-0 tw-p-2
                 tw-w-full tw-h-full tw-flex tw-place-content-center tw-place-items-center" id="video-container-bg">
 
                 <div class="tw-max-w-[80vw] max-lg:tw-max-w-full max-lg:tw-w-full tw-scale-0 tw-transition-transform tw-duration-500 tw-p-6 tw-rounded-xl 
-                            max-lg:tw-px-2 tw-w-full tw-gap-2 tw-shadow-md tw-border-2 tw-border-black brick-shadow
-                            tw-h-[90vh] max-lg:tw-h-auto max-lg:tw-min-h-[400px] tw-bg-white tw-max-h-full
+                            max-lg:tw-px-2 tw-w-full tw-gap-2 tw-shadow-md tw-border-[1px] tw-border-[#dadada] brick-shadow
+                            tw-h-[90vh] max-lg:tw-h-auto max-lg:tw-min-h-[400px] tw-bg-[#171717] tw-max-h-full
                             " id="video-container">
                     <div class="tw-w-full tw-flex">
                         <button type="button" onclick="closeVideo()" class="tw-ml-auto tw-text-xl" title="close">
@@ -137,84 +138,41 @@
             </div>
 
             <div
-                class="tw-relative tw-flex tw-h-full max-lg:tw-mt-10 max-lg:tw-min-h-[40vh] 
-                        tw-min-h-[80vh] tw-w-full tw-flex-col tw-place-content-center 
-                        tw-gap-6"
+                class="tw-relative tw-flex tw-h-full max-lg:tw-mt-10  tw-w-full tw-flex-col tw-place-content-center 
+                        tw-place-items-center tw-gap-6"
             >   
 
                 <!-- <div class="tw-absolute tw-top-[200px] tw-left-0 tw-w-full tw-h-[1px] tw-bg-black"></div>
                 <div class="tw-absolute tw-top-[380px] tw-left-0 tw-w-full tw-h-[1px] tw-bg-black"></div> -->
 
-                <div class="tw-w-[80px] tw-absolute max-lg:tw-top-[5%] tw-top-[30%] tw-left-[10%] tw--rotate-12 tw-flex tw-place-content-center 
-                            tw-text-lg  tw-h-[35px] tw-p-[1px] tw-rounded-lg tw-place-items-center !tw-border-gray-300 tw-border-2">
+                <div class="tw-w-[80px] tw-absolute max-lg:tw-top-[2%] tw-top-[5%] tw-left-[10%] tw--rotate-12 tw-flex tw-place-content-center 
+                            tw-text-lg tw-h-[35px] tw-p-[1px] tw-rounded-lg tw-place-items-center !tw-border-gray-300 tw-border-2">
                     <div class="tw-w-[30px] bi bi-type-bold tw-rounded-sm tw-text-center tw- tw-text-gray-300"></div>
                     <div class="tw-w-[30px] tw-h-full bi bi-type-italic tw-place-content-center tw-place-items-center tw-flex tw-text-center tw-rounded-sm tw-bg-gray-300 tw-text-black"></div>
                     <div class="tw-w-[30px] bi bi-type-underline tw-rounded-sm tw-text-center tw-text-gray-300"></div>
                 </div>
 
                 <div
-                    class="tw-flex tw-flex-col tw-relative tw-place-content-center tw-items-center"
+                    class="tw-flex tw-flex-col tw-h-full tw-relative tw-place-content-center"
                 >   
                
                     <div
-                        class="tw-mt-4  max-lg:tw-h-fit tw-px-3 tw-w-fit tw-relative tw-place-content-center 
-                            tw-uppercase
+                        class="tw-mt-4 tw-flex  max-lg:tw-h-fit tw-px-3 tw-w-fit tw-relative tw-place-content-center 
+                            tw-uppercase 
                              max-md:tw-leading-snug "
                     >
 
-                        <span class="tw-uppercase tw-h-[450px] soria-font-family  tw-text-center max-lg:tw-px-3
-                                     tw-font-semibold tw-text-[130px] max-lg:tw-text-[40px] lg:tw-leading-[120px]"> 
+                        <span class="tw-uppercase  soria-font-family tw-text-center max-lg:tw-px-4
+                                     tw-font-semibold tw-text-[100px] max-lg:tw-text-[50px] 
+                                     lg:tw-leading-[120px] tw-break-words tw-w-full"> 
                             <!-- <i class="bi bi-eyedropper max-lg:tw-hidden tw-text-center tw-text-4xl max-lg:tw-text-lg tw-font-light"></i> -->
-                            Choose <span class="text-image rakkas-family">fonts</span> that 
-                            <br />
-                            <span class="tw-flex tw-w-fulll  tw-text-center tw-place-items-center tw-gap-2">
-                                demand 
-                                <!-- <i class="bi bi-bullseye max-lg:tw-hidden tw-text-center tw-text-4xl max-lg:tw-text-lg tw-font-light"></i>  -->
-                                <span class="typefesse-font-family text-image tw-font-normal tw-text-[100px] max-lg:tw-text-[40px] tw-capitalize">Attention.</span>
-                                <!-- <span class="tw-overflow-hidden new-rocker-family tw-font-normal tw-bg-green-700 tw-px-3 tw-h-[100px] max-lg:tw-h-[50px] max-lg:tw-min-w-[50px] tw-min-w-[150px]">
-                                
-                                </span> -->
-                                
-
-                                <!-- <span class="tw-overflow-hidden tw-h-[100px] max-lg:tw-h-[50px] max-lg:tw-min-w-[50px] tw-min-w-[150px]"> -->
-                                    <!-- <span id="fonts" class="">Attention</span>  -->
-                                    <!-- <div class="v-slider-frame tw-overflow col-sm-3 offset-sm-3">
-                                        <ul class="v-slides tw-w-[350px]">
-                                            <li class="v-slide ar-one-sans-family">Attention</li>
-                                            <li class="v-slide bangers-family tw-tracking-wider">Attention</li>
-                                            <li class="v-slide bungee-shade-family">Attention</li>
-                                            <li class="v-slide">Attention</li>
-                                            <li class="v-slide tw-w-full">
-                                                <img src="./assets/images/svg-fonts/1.svg" 
-                                                        alt="" class="tw-w-full attention-font">
-                                            </li>
-                                            <li class="v-slide tw-w-full">
-                                                <img src="./assets/images/svg-fonts/2.svg" 
-                                                        alt="" class="tw-w-full attention-font">
-                                            </li>
-                                            <li class="v-slide tw-w-full">
-                                                <img src="./assets/images/svg-fonts/3.svg" 
-                                                        alt="" class="tw-w-full attention-font">
-                                            </li>
-                                            <li class="v-slide tw-w-full">
-                                                <img src="./assets/images/svg-fonts/4.svg" 
-                                                        alt="" class="tw-w-full attention-font">
-                                            </li>
-                                            <li class="v-slide tw-w-full">
-                                                <img src="./assets/images/svg-fonts/5.svg" 
-                                                        alt="" class="tw-w-full attention-font">
-                                            </li>
-                                          
-                                        </ul>
-                                      </div> -->
-                                  
-
-                                    <!-- <img src="./assets/images/home/fonts-styles/1.svg" class="tw-w-[300px] tw-h-full"> -->
-                                    <!-- <span class="tw-w-[280px] tw-h-full"> -->
-                                    
-                                    <!-- </span> -->
-                                <!-- </span> -->
-                            </span>
+                            Pick <span class="text-image rakkas-family">fonts</span> that 
+                            <br class="max-lg:tw-hidden"/>
+                            demand 
+                            <!-- <i class="bi bi-bullseye max-lg:tw-hidden tw-text-center tw-text-4xl max-lg:tw-text-lg tw-font-light"></i>  -->
+                            <span class="typefesse-font-family text-image tw-font-normal tw-text-[100px] 
+                                        max-lg:tw-text-[50px] tw-capitalize">Attention.</span>
+                      
                         <!-- <br /> -->
                         </span>
                       
@@ -239,7 +197,7 @@
                             class="btn tw-flex tw-gap-2 !tw-border-solid !tw-border-[2px] !tw-border-jite
                                      !tw-bg-transparent tw-transition-colors tw-duration-[0.3s] !tw-text-gray-100
                                     hover:!tw-bg-white hover:!tw-text-black"
-                            onclick="openVideo('https://www.youtube.com/embed/kQ9Ih4cIlmU?si=jL7LC6Iy1AQHCGUK&controls=1&rel=0&showinfo=0&autoplay=0&loop=1&mute=1')"
+                            onclick="openVideo()"
                             
                         >
                             <i class="bi bi-play-circle-fill"></i>
@@ -258,25 +216,10 @@
 
             </div>
 
-            
-            
-            <div class="tw-mt-10 max-lg:tw-text-[40px]
-                        tw-text-[300px] outlined-text tw-text-white tw-text-center
-                        tw-uppercase bigshot-one-family">
-                Fonts
-            </div>
-
-        </section>
-
-    
-        <section
-            class="tw-relative castoro-titling-family tw-min-h-[100vh]  tw-flex tw-w-full tw-max-w-[100vw] tw-flex-col tw-place-content-center tw-place-items-center tw-overflow-hidden tw-p-8"
-        >   
-
-             <div
-                    class="reveal-up tw-flex tw-flex-col tw-place-content-center tw-items-center"
-                    >
-                <h4 class="tw-text-xl tw-mt-4 inter-family max-lg:tw-text-lg tw-uppercase tw-text-center tw-m-1 tw-mx-3">Powerful extension for your font needs</h4>
+            <div
+                class="tw-flex tw-flex-col tw-place-content-center tw-items-center"
+                >
+                <h4 class="tw-text-xl tw-mt-20 inter-family max-lg:tw-text-lg tw-uppercase tw-text-center tw-m-1 tw-mx-3">Powerful browser extension for all your font needs</h4>
 
                 <div class="tw-mt-4 tw-flex tw-mb-4 tw-gap-4 tw-place-items-center tw-place-content-center">
 
@@ -302,7 +245,23 @@
             
             </div>
 
-            
+        </section>
+
+        <section
+            class="tw-relative lg:tw-min-h-[50vh]  tw-flex tw-w-full tw-max-w-[100vw] tw-flex-col 
+                    tw-place-content-center tw-place-items-center tw-overflow-hidden tw-p-8"
+        >   
+            <div class="tw-mt-10 max-lg:tw-text-[80px]
+                    tw-text-[300px] outlined-text tw-text-white tw-text-center
+                    tw-uppercase bigshot-one-family">
+                Fonts
+            </div>
+        
+        </section>
+
+        <section
+            class="tw-relative lg:tw-min-h-[100vh]  tw-flex tw-w-full tw-max-w-[100vw] tw-flex-col tw-place-content-center tw-place-items-center tw-overflow-hidden tw-p-8"
+        >   
                
             <div class="tw-mt-10 tw-relative tw-flex tw-place-content-center tw-w-full tw-h-full 
                         max-lg:tw-flex-col tw-gap-4 ">
@@ -320,7 +279,7 @@
                
 
             <a
-                class="btn-primary tw-text-black tw-mt-8 tw-shadow-lg  tw-flex tw-gap-1
+                class="btn-primary tw-text-black tw-shadow-lg tw-mt-14 tw-flex tw-gap-1
                         tw-transition-transform tw-duration-[0.3s] hover:tw-scale-x-[1.03] tw-group"
                 href="#pricing"
             >
@@ -397,7 +356,7 @@
                         <div class="tw-p-4 tw-max-w-[350px] tw-border-[1px] tw-border-white  tw-m-2 tw-rounded-md">
                             Don't believe me? Highlight some text on this page and preview it with different fonts to see the difference for yourself. You'll be surprised!
                         </div>
-                        <div class="tw-absolute tw-top-1/2 tw--right-16 tw-w-[130px] 
+                        <div class="tw-absolute tw-bottom-14 tw--right-16 tw-w-[130px] 
                                     max-lg:tw-hidden tw-rotate-[-20deg]">
                             <img src="./assets/images/background/dashed-arrow.svg" alt="curve arrow" srcset="">
                         </div>
@@ -416,11 +375,12 @@
                                     Highlight a text in this page and pick a font from dropdown
                                 </div>
 
-                                <div class="tw-text-base tw-max-w-[350px] tw-mt-10 tw-text-red-700 tw-hidden" id="chrome-api-error">
-                                    Chrome API unavailable, Please use a chromium 
+                                <div class="tw-text-base tw-max-w-[350px] tw-mt-10 tw-text-red-400 tw-hidden" id="chrome-api-error">
+                                    Please open this website in a chromium 
                                     based browser such as Chrome, Edge etc to try this tool.
                                     <br>
-                                    This will soon be available for other browsers such as 
+                                    <br>
+                                    This extension will soon be available for other browsers such as 
                                     Firefox and Safari.
                                 </div>
                             
@@ -553,7 +513,7 @@
             <h3
                 class="archivo-black-family tw-text-center tw-text-gray-100 tw-uppercase tw-text-3xl tw-font-medium max-md:tw-text-2xl"
             >
-                Hear it from people like you
+                Hear it from people you trust
             </h3>
 
             <div
@@ -777,13 +737,13 @@
             >
                 <div
                     class="tw-flex tw-w-[350px] tw-flex-col tw-place-items-center tw-gap-2 tw-rounded-lg tw-border-[1px]
-                            tw-border-outlineColor tw-bg-[#080808] tw-border-[#1f2123] tw-p-8 tw-shadow-xl max-lg:tw-w-[320px]"
+                            tw-border-outlineColor tw-bg-[#0f0f0f] tw-border-[#1f2123] tw-p-8 tw-shadow-xl max-lg:tw-w-[320px]"
                 >
                     <h3 class="">
                         <span class="tw-text-5xl max-md:tw-text-3xl tw-font-semibold">$0</span>
                         <!-- <span class="tw-text-2xl tw-text-gray-300"></span> -->
                     </h3>
-                    <p class="tw-mt-3 tw-text-center tw-text-gray-100">
+                    <p class="tw-mt-3 tw-text-center tw-text-gray-100 tw-text-sm">
                         Simple features, for pro features and to support open-source development, get a lifetime license.
                     </p>
                     <hr />
@@ -810,10 +770,12 @@
 
                     </ul>
                     <a
-                        href="#"
+                        href="https://chromewebstore.google.com/detail/font-tester/deachoodakeofjlfikfkohihnpcgiaim"
                         class="btn tw-mt-auto !tw-w-full tw-transition-transform tw-duration-[0.3s] 
                                 hover:tw-scale-x-[1.02]  !tw-bg-transparent !tw-border-[1px]
                                  tw-border-white !tw-text-white"
+                        target="_blank"
+                        rel="noopener noreferrer"
                     >
                         Get now
                     </a>
@@ -821,15 +783,15 @@
                 
                 <div
                     class="tw-flex tw-w-[350px] tw-flex-col tw-place-items-center tw-gap-2 tw-rounded-lg tw-border-[1px]
-                            tw-border-outlineColor tw-bg-[#080808] tw-border-[#ffffff] tw-p-8 tw-shadow-xl max-lg:tw-w-[320px]"
+                            tw-border-outlineColor tw-bg-[#0f0f0f] tw-border-[#c2ff9f] tw-p-8 tw-shadow-xl max-lg:tw-w-[320px]"
                 >
                     <span class="tw-bg-blue-500 tw-text-white tw-px-3 tw-rounded-full tw-my-2">Popular</span>
                     <h3 class="">
                         <span class="tw-text-5xl max-md:tw-text-3xl tw-font-semibold">$29</span>
                         <span class="tw-text-2xl tw-text-gray-200">Forever</span>
                     </h3>
-                    <p class="tw-mt-3 tw-text-centertw-text-gray-100">
-                        Get a life-time license (no subscriptions). Support development and get added benefits 🚀 .
+                    <p class="tw-mt-3 tw-text-centertw-text-gray-100 tw-text-sm">
+                        Pay once and use all the premium features forever. Activate upto 3 devices
                     </p>
                     <hr />
                     <ul
@@ -879,9 +841,9 @@
                     </ul>
                     <a
                         href="#"
-                        class="btn tw-mt-auto !tw-w-full tw-transition-transform tw-duration-[0.3s] 
-                                hover:tw-scale-x-[1.02]  !tw-bg-transparent !tw-border-[1px]
-                                 tw-border-white !tw-bg-white"
+                        class="btn tw-mt-auto !tw-w-full tw-transition-transform tw-duration-300 
+                                hover:tw-scale-[1.03]  !tw-bg-transparent !tw-border-[1px]
+                                 tw-border-white !tw-bg-white tw-font-medium"
                     >
                         Use Pro
                     </a>
@@ -1158,7 +1120,7 @@
 
             <div class="tw-mt-4 tw-flex tw-flex-col tw-place-items-center tw-rounded-lg tw-p-2 tw-max-w-[460px] tw-h-[100px]">
                 <h4 class="tw-text-xl max-md:tw-text-lg tw-font-medium">Have more questions or want to collaborate?</h4>
-                <a href="https://tally.so/r/wv0LRX" class="tw-mt-4 btn tw-max-w-[150px] tw-w-fit tw-p-3 tw-px-4 tw-rounded-md">
+                <a href="https://tally.so/r/wv0LRX" class="tw-mt-4 btn tw-max-w-[150px] tw-w-fit hover:tw-scale-[1.03] tw-duration-200 tw-p-3 tw-px-4 tw-rounded-md">
                     Contact us
                 </a>
             </div>
@@ -1182,16 +1144,17 @@
         <section
             class="tw-relative tw-flex tw-p-2  tw-w-full tw-min-h-[60vh]  tw-flex-col tw-place-content-center tw-place-items-center tw-overflow-hidden"
         >   
-             <div class="reveal-up tw-w-full tw-h-full tw-min-h-[450px] max-lg:tw-max-w-full tw-rounded-md lg:tw-py-[5%] tw-bg-[#262525] tw-place-content-center tw-items-center 
+             <div class="tw-w-full tw-h-full tw-min-h-[450px] max-lg:tw-max-w-full tw-rounded-md lg:tw-py-[5%] tw-bg-[#262525] tw-place-content-center tw-items-center 
                         tw-flex tw-flex-col tw-max-w-[80%] tw-gap-4 tw-p-4">
                
-                <h3 class="reveal-up tw-text-4xl tw-font-medium max-md:tw-text-3xl tw-text-center tw-leading-normal">
-                    Get people to pay attention to what you have to say
+                <h3 class=" tw-text-4xl tw-font-medium max-md:tw-text-3xl tw-text-center tw-leading-normal">
+                    Pick fonts without breaking your head
                 </h3>
               
                 <div class="tw-mt-8 tw-relative tw-flex max-lg:tw-flex-col tw-gap-5">
 
-                    <a href="#pricing" class="btn  reveal-up !tw-rounded-full !tw-p-4 tw-font-medium">
+                    <a href="https://buy.polar.sh/polar_cl_fRPHZbxozPEcNbVYBHiqcdIqzKJNGhyDrHV7T3kvkxh" 
+                        class="btn  !tw-rounded-full !tw-p-4 tw-font-medium hover:tw-scale-[1.04] tw-duration-300">
                         Get Font Tester
                     </a>
                 </div>
@@ -1210,7 +1173,7 @@
                     src="./assets/logo/logo.svg"
                     alt="logo"
                     srcset=""
-                    class="tw-max-w-[120px]"
+                    class="tw-max-w-[80px] tw-bg-gray-200"
                 />
               
                 <div class="tw-mt-3 tw-text-lg tw-font-semibold">Follow</div>

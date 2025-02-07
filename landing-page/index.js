@@ -86,9 +86,9 @@ function openVideo(src, title="") {
     videoContainer.classList.remove("tw-scale-0")
     videoContainer.classList.add("tw-scale-100")
 
-    videoSrc.setAttribute("src", src)
+    // videoSrc.setAttribute("src", src)
 
-    videoTitle.innerHTML = title
+    // videoTitle.innerHTML = title
 
     document.body.classList.add("modal-open")
 }
