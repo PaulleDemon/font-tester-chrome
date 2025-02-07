@@ -504,12 +504,12 @@ v-slider-frame {
 }
 
 .footer-link{
-    color: #434242;
+    color: #f5f5f5;
     transition: color 0.3s;
 }
 
 .footer-link:hover{
-    color: #0b0b0b;
+    color: #b8b7ba;
 }
 
 
@@ -517,19 +517,18 @@ v-slider-frame {
 /* Style for the collapsible content such as faq commonly known as: accordion */
 
 .faq{
-    background-color: #fff;
-    color: #000000;
+    background-color: #211f1f;
+    color: #fff;
     border-radius: 20px;
-    border: 2px solid #000;
+    border: 1px solid #504d4d;
     /* box-shadow: 5px 5px #0000009a; */
     transition: 0.3s all;
 }
 
 .faq-accordion {
     background-color: inherit;
-    color: #000000;
+    color: #fffefe;
     border-radius: 20px;
-
     cursor: pointer;
     padding: 15px 18px;
     width: 100%;
@@ -542,8 +541,7 @@ v-slider-frame {
 .faq .content {
     padding: 0px 18px;
     border-radius: 20px;
-
-    color: #232323;
+    color: #ffffff;
     height: max-content;
     overflow: hidden;
     background-color: transparent;
@@ -559,7 +557,7 @@ v-slider-frame {
 }
 
 .faq-active{
-    box-shadow: 5px 5px #000000d2;
+    box-shadow: 5px 5px #868585d2;
 }
 
 
@@ -573,7 +571,7 @@ v-slider-frame {
       repeating-linear-gradient(0deg, #aba8a81a, #f1f1f11a 1px, transparent 1px, transparent 40px),
       repeating-linear-gradient(90deg, #aba8a81a, #f1f1f11a 1px, transparent 1px, transparent 40px);
     width: 100%;
-    height: 100vh;
+    height: 100%;
   }
 
 
