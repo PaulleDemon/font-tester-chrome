@@ -9,6 +9,46 @@ const collapseHeaderItems = document.getElementById("collapsed-header-items")
 
 
 
+/**------------- affiliate operation --------------- */
+
+const AFFILIATES = {
+    'kailash': 'https://buy.polar.sh/polar_cl_Gs3JzGcIdIbwNqyQJyQnV0HMzgMsHsBvQ1OwA15Eh3B',
+
+}
+
+
+function checkAffiliate() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const affiliateKey = urlParams.get('aff')?.toLowerCase();
+    // console.log("affiliate key: ", affiliateKey)
+    const existingAffiliate = Cookies.get('affiliate');
+
+    if (existingAffiliate) {
+        // console.log(`Using stored affiliate: ${existingAffiliate}`);
+        return AFFILIATES[existingAffiliate] || null;
+    }
+
+    if (affiliateKey && AFFILIATES[affiliateKey]) {
+        Cookies.set('affiliate', affiliateKey, { expires: 30, path: '/' });
+        // console.log(`New affiliate set: ${affiliateKey}`);
+        return AFFILIATES[affiliateKey];
+    }
+
+    return null;
+}
+
+const affiliateUrl = checkAffiliate();
+if (affiliateUrl) {
+
+    const checkoutLink = document.querySelector("#checkout-link")
+
+    checkoutLink.setAttribute("href", affiliateUrl)
+}
+
+/** ------------------------- */
+
+
+
 function onHeaderClickOutside(e) {
 
     if (!collapseHeaderItems.contains(e.target)) {
