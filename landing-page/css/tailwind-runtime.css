@@ -2002,6 +2002,16 @@ video {
   line-height: 1.75rem;
 }
 
+.tw-text-7xl {
+  font-size: 4.5rem;
+  line-height: 1;
+}
+
+.tw-text-9xl {
+  font-size: 8rem;
+  line-height: 1;
+}
+
 .\!tw-font-semibold {
   font-weight: 600 !important;
 }
