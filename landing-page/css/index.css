@@ -483,6 +483,8 @@ v-slider-frame {
   }
 
 
+
+
 @media not all and (min-width: 1024px) {
     header .collapsible-header {
         position: fixed;

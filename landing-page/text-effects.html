@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Font Tester - Test and preview fonts</title>
+        <title>Font Tester - Text effects using CSS and HTML</title>
         <meta name="description" content="Font Tester is a browser extension to help you preview and compare 1000+ fonts live on any website" />
         <link
             rel="shortcut icon"
@@ -108,9 +108,37 @@
             <h1 class="tw-text-9xl tw-mt-5 max-lg:tw-text-3xl outlined-text bigshot-one-family">
                 Text Effects
             </h1>
-            <p class="tw-my-6 tw-text-lg">A collection of text effects for web using html, css and js</p>
+            <p class="tw-my-6 tw-text-lg">A curated collection of text effects for web using html, css and js</p>
 
-            
+
+            <div class="tw-flex tw-flex-wrap tw-gap-3 tw-justify-around tw-w-full"
+                    id="effects-data-container">
+                <div class="tw-w-[450px] tw-h-[400px] tw-p-2 tw-rounded-md 
+                            tw-border-[1px] tw-border-[#656667] tw-bg-[#171717]">
+
+                    <div  class="template-preview">
+                        <p class="codepen" data-height="300" data-default-tab="result" data-slug-hash="XJrrPRj" data-pen-title="15. Dancing shadow" data-user="nefejames" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                            <span>See the Pen <a href="https://codepen.io/nefejames/pen/XJrrPRj">
+                            15. Dancing shadow</a> by Emadamerho Nefe (<a href="https://codepen.io/nefejames">@nefejames</a>)
+                            on <a href="https://codepen.io">CodePen</a>.</span>
+                          </p>
+                    </div>
+                    <div class="tw-flex tw-h-[100px] tw-w-full tw-justify-between tw-place-content-center tw-place-items-center" >
+                        <h2 class="tw-text-xl tw-font-medium">Shadow</h2>
+
+                    
+                        <a href="" target="_blank" rel="noopener noreferrer" 
+                                                class="tw-rounded-full tw-flex tw-border-white tw-border-[1px] 
+                                                        tw-w-[30px] tw-h-[30px] tw-place-content-center
+                                                        tw-text-lg 
+                                                        ">
+                            <i class="bi bi-arrow-up-right"></i>
+                        </a>
+                    </div>
+                </div>  
+                
+              
+            </div>
 
         </section>
 
@@ -178,8 +206,8 @@
     </body>
    
 
+    <script async src="https://public.codepenassets.com/embed/index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@polar-sh/checkout@0.1/dist/embed.global.js" defer data-auto-init></script>
-
     <script
         src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js"
         integrity="sha512-B1lby8cGcAUU3GR+Fd809/ZxgHbfwJMp0jLTVfHiArTuUt++VqSlJpaJvhNtRf3NERaxDNmmxkdx2o+aHd4bvw=="
@@ -195,76 +223,6 @@
 
     <script src="./scripts/utils.js"></script>
     <script src="./index.js"></script>
-
-   
-    <script>
-
-        const blogsList = [
-            {
-                "title": "Change the way you design, Learn about Typography",
-                "description": "If you want to change the way your website and brand is perceived, its not too hard....",
-                "url": "https://medium.com/@paul_Art/change-the-way-you-design-guide-for-typography-font-and-typeface-b23103c75e76",
-                "image_url": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*JQluw6sA8UfVCmxHJ-13lw.png"
-            },
-            {
-                "title": "15 Essential tools for Frontend developers",
-                "description": "So, you want to boost your productivity as a frontend developer....",
-                "url": "https://dev.to/paul_freeman/15-essential-tools-and-resources-for-frontend-developers-4jn4",
-                "image_url": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fidpziptpphu2o7vbxede.png"
-            },
-            {
-                "title": "Here's how building a chrome extension went",
-                "description": "Recently I had a client for whom I had to make a landing page...",
-                "url": "https://dev.to/paul_freeman/heres-what-i-learned-from-building-a-chrome-extension-1986",
-                "image_url": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8b77rnrjlwkoymsrokko.png"
-            },
-          ]	
-    
-        const blogContainer = document.getElementById('blogs');
-        blogContainer.innerHTML = blogsList.map(blog => {
-                return (`
-                   
-                    <a
-                        href="${blog.url}"
-                        class="tw-flex tw-h-[500px] tw-w-[400px] tw-flex-col tw-gap-2 tw-overflow-clip tw-rounded-lg tw-p-4 max-lg:tw-w-[350px]"
-                    >
-                        <div
-                            class="tw-h-[350px] tw-min-h-[350px] tw-w-full tw-overflow-hidden tw-rounded-2xl"
-                        >
-                            <img
-                                src="${blog.image_url}"
-                                alt="${blog.title}"
-                                class="tw-h-full tw-w-full tw-object-cover tw-transition-transform tw-duration-700 hover:tw-scale-[1.3]"
-                            />
-                        </div>
-
-                        <h3 class="tw-text-lg tw-font-medium">${blog.title}</h3>
-                        <p class="tw-text-bg-gray-500 tw-text-sm">${blog.description}</p>
-                        
-                    </a>
-                `)
-            }).join('')
-      
-    </script>
-
-    <script>
-                
-        if (typeof window.chrome !== "undefined") {
-            console.log("Chrome API is available.");
-        } else {
-            console.log("unavailable api")
-            document.getElementById("chrome-api-error").classList.remove("tw-hidden")
-        }
-
-    </script>
-
-     <!-- Load jQuery from a CDN -->
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.6.1/jquery.lettering.min.js" integrity="sha512-VJ/iYbiu1eJ6yLimfTi65t2R9TFcG5D9X8ZCfbbEFhTfPnKJh8byoKXEawi5ScJZBYL1eiirL1+MczZDx0Tz9Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-     <script src="https://cdn.jsdelivr.net/npm/textillate@0.4.1/jquery.textillate.min.js"></script>
-     <link href="
-     https://cdn.jsdelivr.net/npm/textillate@0.4.1/assets/animate.min.css
-     " rel="stylesheet">
+    <script src="./scripts/text-effects.js"></script>
 
 </html>

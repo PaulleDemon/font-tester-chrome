@@ -865,6 +865,10 @@ video {
   height: 250px;
 }
 
+.tw-h-\[30px\] {
+  height: 30px;
+}
+
 .tw-h-\[350px\] {
   height: 350px;
 }
@@ -1029,6 +1033,10 @@ video {
   min-height: 100%;
 }
 
+.tw-min-h-\[50px\] {
+  min-height: 50px;
+}
+
 .\!tw-w-full {
   width: 100% !important;
 }
@@ -1083,6 +1091,10 @@ video {
 
 .tw-w-\[40px\] {
   width: 40px;
+}
+
+.tw-w-\[450px\] {
+  width: 450px;
 }
 
 .tw-w-\[500px\] {
@@ -1187,6 +1199,10 @@ video {
 
 .tw-max-w-\[500px\] {
   max-width: 500px;
+}
+
+.tw-max-w-\[550px\] {
+  max-width: 550px;
 }
 
 .tw-max-w-\[60px\] {
@@ -1342,6 +1358,10 @@ video {
 
 .tw-items-center {
   align-items: center;
+}
+
+.tw-justify-end {
+  justify-content: flex-end;
 }
 
 .tw-justify-center {
@@ -1535,6 +1555,11 @@ video {
   border-color: rgb(62 63 63 / var(--tw-border-opacity));
 }
 
+.tw-border-\[\#656667\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(101 102 103 / var(--tw-border-opacity));
+}
+
 .tw-border-\[\#9c9d9f97\] {
   border-color: #9c9d9f97;
 }
@@ -1621,6 +1646,11 @@ video {
 .\!tw-bg-gray-800 {
   --tw-bg-opacity: 1 !important;
   background-color: rgb(31 41 55 / var(--tw-bg-opacity)) !important;
+}
+
+.\!tw-bg-purple-200 {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(233 213 255 / var(--tw-bg-opacity)) !important;
 }
 
 .\!tw-bg-purple-500 {
@@ -1966,6 +1996,11 @@ video {
   line-height: 1;
 }
 
+.tw-text-9xl {
+  font-size: 8rem;
+  line-height: 1;
+}
+
 .tw-text-\[100px\] {
   font-size: 100px;
 }
@@ -2000,16 +2035,6 @@ video {
 .tw-text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
-}
-
-.tw-text-7xl {
-  font-size: 4.5rem;
-  line-height: 1;
-}
-
-.tw-text-9xl {
-  font-size: 8rem;
-  line-height: 1;
 }
 
 .\!tw-font-semibold {
@@ -2211,6 +2236,11 @@ video {
 .tw-text-yellow-400 {
   --tw-text-opacity: 1;
   color: rgb(250 204 21 / var(--tw-text-opacity));
+}
+
+.tw-text-primary {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .tw-underline {
@@ -2556,6 +2586,10 @@ video {
 
   .max-xl\:tw-hidden {
     display: none;
+  }
+
+  .max-xl\:tw-max-w-full {
+    max-width: 100%;
   }
 
   .max-xl\:tw-flex-col {
