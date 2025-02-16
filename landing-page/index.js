@@ -42,7 +42,7 @@ if (affiliateUrl) {
 
     const checkoutLink = document.querySelector("#checkout-link")
 
-    checkoutLink.setAttribute("href", affiliateUrl)
+    checkoutLink?.setAttribute("href", affiliateUrl)
 }
 
 /** ------------------------- */
