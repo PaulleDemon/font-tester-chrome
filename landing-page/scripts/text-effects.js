@@ -17,6 +17,7 @@ async function fetchDB(){
 
         return await response.json()
     }catch(e){
+        console.error(e)
         showAlert("Failed to fetch DB, please reload or try again later")
         return 
     }
@@ -56,7 +57,7 @@ function loadEffects(data) {
                         <span>See the Pen 
                         <a href="${x.codeLink}">
                             ${x.title}
-                        </a> by ${x.author} (<a href="${x.userLink}">@${x.username}</a>)
+                        </a> by ${x.author} (<a href="https://codepen.io/${x.username}">@${x.username}</a>)
                         on <a href="https://codepen.io">CodePen</a>.</span>
                     </p>
                 </div>
