@@ -20,8 +20,8 @@
         <!--Replace with the current website url-->
         <meta property="og:image" content="https://raw.githubusercontent.com/PaulleDemon/font-tester-chrome/refs/heads/main/docs/font-tester.png" />
 
-        <!-- <link rel="stylesheet" href="./css/tailwind-build.css?build=1.8"> -->
-        <link rel="stylesheet" href="./css/tailwind-runtime.css" />
+        <link rel="stylesheet" href="./css/tailwind-build.css?build=1.9">
+        <!-- <link rel="stylesheet" href="./css/tailwind-runtime.css" /> -->
         <link rel="stylesheet" href="css/index.css?build=1.3" />
 
         <link
@@ -53,14 +53,14 @@
         >
 
             <div class="tw-flex tw-gap-1 tw-min-w-max tw-place-items-center">
-                <a class="tw-h-[50px] tw-bg-white tw-w-[50px] tw-p-[4px]" href="./index.html">
+                <a class="tw-h-[40px] tw-bg-white tw-w-[40px] tw-p-[4px]" href="./index.html">
                     <img
                         src="./assets/logo/logo.svg"
                         alt="logo"
                         class="tw-object tw-h-full tw-w-full"
                     />
                 </a>
-                <h1 class="tw-font-medium">Font Tester</h1>
+                <h1 class="tw-font-medium tw-text-xl">Font Tester</h1>
             </div>
             <div
                 class="collapsible-header animated-collapse max-lg:tw-shadow-md"
@@ -111,10 +111,23 @@
             <p class="tw-my-6 tw-text-lg">A curated collection of text effects for web using html, css and js</p>
 
 
+            <div class="tw-my-2 tw-flex tw-max-w-[700px]">
+                <div>
+
+                </div>
+                <a href="https://github.com/PaulleDemon/font-tester-chrome" 
+                    class="tw-border-[#656667] tw-px-2 tw-p-1 tw-bg-[#171717] 
+                            tw-border-[1px] tw-rounded-md hover:tw-bg-[#fff] tw-duration-300 tw-transition-colors
+                            hover:tw-text-[#000]">
+                    <i class="bi bi-github"></i>&nbsp;
+                    <span>Github</span>
+                </a>
+            </div>
+
             <div class="tw-flex tw-mt-6 tw-flex-wrap tw-gap-8 tw-place-content-center 
                         tw-px-6 tw-p-4 tw-w-full"
                     id="effects-data-container">
-                <div class="tw-w-[450px] tw-h-[400px] tw-p-2 tw-rounded-md 
+                <div class="tw-w-[450px] tw-h-[420px] tw-p-2 tw-rounded-md 
                             tw-border-[1px] tw-border-[#656667] tw-bg-[#171717]">
 
                     <div  class="template-preview">
@@ -124,17 +137,23 @@
                             on <a href="https://codepen.io">CodePen</a>.</span>
                           </p>
                     </div>
-                    <div class="tw-flex tw-h-[100px] tw-w-full tw-justify-between tw-place-content-center tw-place-items-center" >
-                        <h2 class="tw-text-xl tw-font-medium">Shadow</h2>
-
+                
+                    <div class="tw-flex tw-flex-col tw-gap-2 tw-min-h-[50px] tw-h-[100px] tw-w-full tw-place-content-center tw-place-items-center" >
                     
-                        <a href="" target="_blank" rel="noopener noreferrer" 
-                                                class="tw-rounded-full tw-flex tw-border-white tw-border-[1px] 
-                                                        tw-w-[30px] tw-h-[30px] tw-place-content-center
-                                                        tw-text-lg 
-                                                        ">
-                            <i class="bi bi-arrow-up-right"></i>
-                        </a>
+                        <div class="tw-uppercase tw-gap-2 tw-flex tw-place-items-center" title="This effect is interactive"> <div class="tw-w-[5px] tw-h-[5px] tw-bg-green-500 tw-rounded-full"></div> interactive</div>
+    
+                        <div class="tw-flex tw-justify-between tw-w-full tw-h-full tw-place-content-center tw-place-items-center">
+                            <h2 class="tw-text-xl inter-family tw-uppercase">Shadow</h2>
+    
+                            <a href="" target="_blank" rel="noopener noreferrer" 
+                                                    class="tw-rounded-full tw-flex tw-border-white tw-border-[1px] 
+                                                            tw-w-[30px] tw-h-[30px] tw-place-content-center
+                                                            tw-text-lg"
+                                                    title="open in codepen">        
+                                <i class="bi bi-arrow-up-right"></i>
+                            </a>
+                        </div>
+                    <div class="tw-text-[#3A3B3B] tw-place-content-start tw-w-full">by ${x.author}</div>
                     </div>
                 </div>  
                 
@@ -196,11 +215,17 @@
 
             <div class="tw-flex tw-h-full tw-w-[250px] tw-flex-col tw-gap-4">
                 <div class="tw-flex tw-flex-col tw-gap-3 max-md:tw-text-sm">
-                    <a href="" class="footer-link">About</a>
+                    <a href="./index.html" class="footer-link">About</a>
                     <a href="./index.html#faq" class="footer-link">FAQ</a>
                     <a href="https://tally.so/r/wv0LRX" class="footer-link">Support</a>
                     <a href="https://github.com/PaulleDemon/font-tester-chrome" class="footer-link">Github</a>
                     <a href="https://github.com/PaulleDemon/font-tester-chrome" class="footer-link">Report issue</a>
+                </div>
+            </div>
+
+            <div class="tw-flex tw-h-full tw-w-[250px] tw-flex-col tw-gap-4">
+                <div class="tw-flex tw-flex-col tw-gap-3 max-md:tw-text-sm">
+                    <a href="./text-effects.html" class="footer-link">Text effects</a>
                 </div>
             </div>
         </footer>
