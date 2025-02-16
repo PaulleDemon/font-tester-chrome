@@ -1,8 +1,4 @@
 
-const toastAlert = document.querySelector("#toast-alert")
-let toastAlertTimeout = null
-
-let dbCache = []
 
 const urlParams = new URLSearchParams(window.location.search)
 

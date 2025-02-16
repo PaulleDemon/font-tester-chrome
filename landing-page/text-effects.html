@@ -18,7 +18,7 @@
         <meta property="og:url" content="https://font-tester.foxcraft.tech" />
         <meta name="twitter:card" content="summary_large_image">
         <!--Replace with the current website url-->
-        <meta property="og:image" content="https://raw.githubusercontent.com/PaulleDemon/font-tester-chrome/refs/heads/main/docs/font-tester.png" />
+        <meta property="og:image" content="https://font-tester.foxcraft.tech/assets/og/text-effects.jpg" />
 
         <link rel="stylesheet" href="./css/tailwind-build.css?build=1.9">
         <!-- <link rel="stylesheet" href="./css/tailwind-runtime.css" /> -->
@@ -46,7 +46,21 @@
     </head>
     <body
         class="grid-bg tw-flex tw-min-h-[100vh] tw-flex-col tw-bg-[#161616] tw-text-white"
-    >
+    >   
+        <div id="toast" class="tw-p-2 tw-px-4 tw-bg-black tw-h-max tw-z-[5000] tw-fixed 
+                tw-top-[5%] tw-left-[50%] tw-translate-x-[-50%] 
+                tw-place-items-center
+                tw-hidden tw-rounded-md
+                tw-border-0 tw-text-white" 
+            role="alert">
+            <div class="tw-flex tw-gap-1">
+                <div class="toast-body" id="toast-body">
+
+                </div>
+                <button type="button" class="bi bi-x tw-text-lg" aria-label="Close"></button>
+            </div>
+        </div>
+
         <header
             class="tw-max-w-lg:tw-px-4 tw-max-w-lg:tw-mr-auto tw-absolute tw-top-0 tw-z-20 tw-flex tw-h-[60px] tw-w-full 
                     tw-bg-opacity-0 tw-text-white tw-px-[5%] lg:tw-justify-around"
@@ -111,9 +125,12 @@
             <p class="tw-my-6 tw-text-lg tw-p-2">A curated collection of text effects for web using html, css and js</p>
 
 
-            <div class="tw-my-2 tw-flex tw-max-w-[700px]">
-                <div>
-
+            <div class="tw-my-2 tw-flex tw-max-w-[700px] tw-gap-4">
+                <div href="https://github.com/PaulleDemon/font-tester-chrome" 
+                    class="tw-border-[#656667] tw-px-2 tw-p-1 tw-bg-[#171717] 
+                            tw-border-[1px] tw-rounded-md">
+                    <i class="bi bi-bookmark"></i>&nbsp;
+                    <span>Bookmark</span>
                 </div>
                 <a href="https://github.com/PaulleDemon/font-tester-chrome" 
                     class="tw-border-[#656667] tw-px-2 tw-p-1 tw-bg-[#171717] 
@@ -122,6 +139,13 @@
                     <i class="bi bi-github"></i>&nbsp;
                     <span>Github</span>
                 </a>
+                <div id="share"
+                    class="tw-border-[#656667] tw-px-2 tw-p-1 tw-bg-[#171717] 
+                            tw-border-[1px] tw-rounded-md hover:tw-bg-[#fff] tw-duration-300 tw-transition-colors
+                            hover:tw-text-[#000] tw-cursor-pointer">
+                    <i class="bi bi-share"></i>&nbsp;
+                    <span>Share</span>
+                </div>
             </div>
 
             <div class="tw-flex tw-mt-6 tw-flex-wrap tw-gap-8 tw-place-content-center 
@@ -248,7 +272,22 @@
     ></script>
 
     <script src="./scripts/utils.js"></script>
+    <script src="./scripts/common.js"></script>
     <script src="./index.js"></script>
     <script src="./scripts/text-effects.js"></script>
+
+    <script>
+
+        const copy_link = document.getElementById("share")
+    
+        copy_link.onclick = () => {
+            navigator.clipboard.writeText(window.location.href).then(function() {
+                toastAlert(null, "Link copied")
+              }, function(err) {
+                toastAlert(null, "Error copying")
+
+              })
+        }
+    </script>
 
 </html>
