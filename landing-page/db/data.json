@@ -55,8 +55,8 @@
     },
     {
         "title": "Painted",
-        "author": "Paul",
-        "username": "art-paul",
+        "author": "Beau Smith",
+        "username": "beau",
         "codeLink": "https://codepen.io/art-paul/pen/zxYGeby"
     },
     {
@@ -202,11 +202,10 @@
         "interactive": true
     },
     {
-        "title": "Line transition",
+        "title": "Multi-color",
         "author": "Shireen Taj",
-        "username": "gayane-gasparyan",
-        "codeLink": "https://codepen.io/TajShireen/pen/YzZmbep",
-        "interactive": true
+        "username": "TajShireen",
+        "codeLink": "https://codepen.io/TajShireen/pen/YzZmbep"
     },
     {
         "title": "The Aurora",
@@ -225,6 +224,13 @@
         "author": "NANOUU",
         "username": "antoniasymeonidou",
         "codeLink": "https://codepen.io/art-paul/pen/xbxGoXb"
+    },
+    {
+        "title": "Line transition",
+        "author": "Gayane Gasparyan",
+        "username": "gayane-gasparyan",
+        "codeLink": "https://codepen.io/art-paul/pen/KwKdVBd",
+        "interactive": true
     }
     
 ]
