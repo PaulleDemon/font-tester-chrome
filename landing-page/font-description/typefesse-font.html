@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Font Tester - Test and preview fonts</title>
+        <meta name="description" content="Font Tester is a browser extension to help you preview and compare 1000+ fonts live on any website" />
+        <link
+            rel="shortcut icon"
+            href="../assets/logo/icon48.png"
+            type="image/x-icon"
+        />
+
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:image" content="https://raw.githubusercontent.com/PaulleDemon/font-tester-chrome/refs/heads/main/docs/font-tester.png">
+        <meta name="twitter:title" content="Font Tester - Font Typefesse">
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:title" content="Font Tester - Font Typefesse" />
+        <meta property="og:description" content="Font Typefesse" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://font-tester.foxcraft.tech" />
+        
+        <!--Replace with the current website url-->
+        <meta property="og:image" content="https://raw.githubusercontent.com/PaulleDemon/font-tester-chrome/refs/heads/main/docs/font-tester.png" />
+
+        <!-- <link rel="stylesheet" href="../css/tailwind-runtime.css" /> -->
+        <link rel="stylesheet" href="../css/tailwind-build.css?build=1.9">
+        <link rel="stylesheet" href="../css/index.css?build=1.3" />
+
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
+            integrity="sha512-dPXYcDub/aeb08c63jRq/k6GaKccl256JQy/AnOq7CAnEZ9FzSL9wSbcZkMp4R26vBsMLFYH4kQ67/bbV8XaCQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-61T5DC5QKB"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-61T5DC5QKB');
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.5/js.cookie.min.js" integrity="sha512-nlp9/l96/EpjYBx7EP7pGASVXNe80hGhYAUrjeXnu/fyF5Py0/RXav4BBNs7n5Hx1WFhOEOWSAVjGeC3oKxDVQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    </head>
+    <body
+        class="grid-bg tw-flex tw-min-h-[100vh] tw-flex-col tw-bg-[#161616] tw-text-white"
+    >
+        <header
+            class="tw-max-w-lg:tw-px-4 tw-max-w-lg:tw-mr-auto tw-absolute tw-top-0 tw-z-20 tw-flex tw-h-[60px] tw-w-full 
+                    tw-bg-opacity-0 tw-text-white tw-px-[5%] lg:tw-justify-around"
+        >
+
+            <div class="tw-flex tw-gap-1 tw-min-w-max tw-place-items-center">
+                <a class="tw-h-[50px] tw-bg-white tw-w-[50px] tw-p-[4px]" href="">
+                    <img
+                        src="../assets/logo/logo.svg"
+                        alt="logo"
+                        class="tw-object tw-h-full tw-w-full"
+                    />
+                </a>
+                <h1 class="tw-font-medium">Font Tester</h1>
+            </div>
+            <div
+                class="collapsible-header animated-collapse max-lg:tw-shadow-md"
+                id="collapsed-header-items"
+            >
+                <div
+                    class="tw-flex tw-h-full tw-w-max tw-gap-5 tw-text-base max-lg:tw-mt-[30px] max-lg:tw-flex-col max-lg:tw-place-items-end max-lg:tw-gap-5 lg:tw-mx-auto lg:tw-place-items-center"
+                >
+                    <a class="header-links" href=""> About </a>
+                    <a class="header-links" href="#pricing"> Pricing </a>
+                    <a class="header-links" href="#features"> Features </a>
+                    <a class="header-links" href="https://github.com/PaulleDemon/font-tester-chrome/blob/main/docs/docs.md"> Docs </a>
+                    <a class="header-links" href="https://github.com/PaulleDemon/font-tester-chrome"> Github </a>
+                </div>
+                <div
+                    class="tw-mx-4 tw-flex tw-place-items-center tw-gap-[20px] tw-text-base max-md:tw-w-full max-md:tw-flex-col max-md:tw-place-content-center"
+                >
+                    <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://chromewebstore.google.com/detail/font-tester/deachoodakeofjlfikfkohihnpcgiaim"
+                        aria-label="signup"
+                        class="tw-rounded-md tw-border-2 tw-border-gray-100 tw-bg-transparent tw-px-3 tw-py-2 tw-transition-colors tw-duration-[0.3s] hover:tw-bg-gray-100 hover:tw-text-black"
+                    >
+                        <span>Download</span>
+                        <i class="bi bi-download"></i>
+                    </a>
+                </div>
+            </div>
+            <button
+                class="bi bi-list tw-absolute tw-right-3 tw-top-3 tw-z-50 tw-text-3xl tw-text-white lg:tw-hidden"
+                onclick="toggleHeader()"
+                aria-label="menu"
+                id="collapse-btn"
+            ></button>
+        </header>
+
+        <section
+            class="tw-mt-[80px] max-lg:tw-mt-[50px] tw-relative tw-flex tw-min-h-[60vh] tw-w-full tw-max-w-[100vw] 
+                        tw-flex-col tw-overflow-hidden max-md:tw-mt-[50px] tw-h-full 
+                         tw-place-items-center"
+            id="hero-section"
+        >   
+
+            <div>
+                <img src="./assets/Typefesse.svg" alt="typefesse" class="">
+            </div>  
+
+            <div class="tw-flex tw-flex-col tw-gap-3  tw-max-w-[650px] tw-p-2">
+
+    
+                <h2 class="tw-text-3xl inter-family">Typefesse</h2>
+                <div class="tw-text-lg">
+                    Typefesse is a whimsical typeface designed with butt-shaped letters, where the characters are formed through the natural folds of the body, creating a unique reading experience.
+                </div>
+
+                <a href="https://velvetyne.fr/fonts/typefesse/?ref=font-tester" 
+                    rel="noopener noreferrer" target="_blank" class="btn tw-mt-6">
+                    Get Font
+                </a>
+            </div>
+
+        </section>
+
+  
+    
+       
+        <section
+            class="tw-relative tw-flex tw-p-2  tw-w-full tw-min-h-[60vh]  tw-flex-col tw-place-content-center tw-place-items-center tw-overflow-hidden"
+        >   
+             <div class="tw-w-full tw-h-full tw-min-h-[450px] max-lg:tw-max-w-full tw-rounded-md lg:tw-py-[5%] tw-bg-[#262525] tw-place-content-center tw-items-center 
+                        tw-flex tw-flex-col tw-max-w-[80%] tw-gap-4 tw-p-4">
+               
+                <h3 class=" tw-text-4xl tw-font-medium max-md:tw-text-3xl tw-text-center tw-leading-normal">
+                    Try this font on real website
+                </h3>
+              
+                <div class="tw-mt-8 tw-relative tw-flex max-lg:tw-flex-col tw-gap-5">
+
+                    <a href="../index.html#pricing" 
+                        class="btn  !tw-rounded-full !tw-p-4 tw-font-medium hover:tw-scale-[1.04] tw-duration-300">
+                        Get Font Tester
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+
+        <footer
+            class="tw-mt-auto tw-flex tw-w-full tw-bg-[#161616] tw-place-content-around tw-gap-3 tw-p-[5%] tw-px-[10%] tw-text-gray-100 max-md:tw-flex-col"
+        >
+            <div
+                class="tw-flex tw-h-full tw-w-[250px] tw-flex-col tw-place-items-center tw-gap-6 max-md:tw-w-full"
+            >
+                <img
+                    src="../assets/logo/logo.svg"
+                    alt="logo"
+                    srcset=""
+                    class="tw-max-w-[80px] tw-bg-gray-200"
+                />
+              
+                <div class="tw-mt-3 tw-text-lg tw-font-semibold">Follow</div>
+                <div class="tw-flex tw-gap-4 tw-text-2xl">
+                    <a href="https://www.youtube.com/@paultalkstech" 
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        aria-label="Youtube">
+                        <i class="bi bi-youtube"></i>
+                    </a>
+                    <a
+                        href="https://twitter.com/@pauls_freeman"
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        aria-label="Twitter"
+                    >
+                        <i class="bi bi-twitter"></i>
+                    </a>
+                    <a
+                        href="https://github.com/PaulleDemon"
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        class="tw-h-[40px] tw-w-[40px]"
+                        aria-label="Github"
+                    >
+                        <i class="bi bi-github"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="tw-flex tw-h-full tw-w-[250px] tw-flex-col tw-gap-4">
+                <!-- <h2 class="tw-text-3xl max-md:tw-text-xl">Company</h2> -->
+                <div class="tw-flex tw-flex-col tw-gap-3 max-md:tw-text-sm">
+                    <a href="https://font-tester.foxcraft.tech/blogs/list" class="footer-link">Blogs</a>
+                    <a href="../index.html#features" class="footer-link">Features</a>
+                    <a href="../index.html#pricing" class="footer-link">Pricing</a>
+                    <a href="https://github.com/PaulleDemon/font-tester-chrome/blob/main/roadmap.md" class="footer-link">Roadmap</a>
+                </div>
+            </div>
+
+            <div class="tw-flex tw-h-full tw-w-[250px] tw-flex-col tw-gap-4">
+                <div class="tw-flex tw-flex-col tw-gap-3 max-md:tw-text-sm">
+                    <a href="../index.html" class="footer-link">About</a>
+                    <a href="../index.html#faq" class="footer-link">FAQ</a>
+                    <a href="https://tally.so/r/wv0LRX" class="footer-link">Support</a>
+                    <a href="https://github.com/PaulleDemon/font-tester-chrome" class="footer-link">Github</a>
+                    <a href="https://github.com/PaulleDemon/font-tester-chrome" class="footer-link">Report issue</a>
+                </div>
+            </div>
+            <div class="tw-flex tw-h-full tw-w-[250px] tw-flex-col tw-gap-4">
+                <div class="tw-flex tw-flex-col tw-gap-3 max-md:tw-text-sm">
+                    <a href="../text-effects.html" class="footer-link">Text effects</a>
+                </div>
+            </div>
+        </footer>
+    </body>
+   
+
+    <script src="https://cdn.jsdelivr.net/npm/@polar-sh/checkout@0.1/dist/embed.global.js" defer data-auto-init></script>
+
+
+    <script src="./scripts/utils.js"></script>
+    <script src="./index.js"></script>
+
+     <!-- Load jQuery from a CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.6.1/jquery.lettering.min.js" integrity="sha512-VJ/iYbiu1eJ6yLimfTi65t2R9TFcG5D9X8ZCfbbEFhTfPnKJh8byoKXEawi5ScJZBYL1eiirL1+MczZDx0Tz9Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+     <script src="https://cdn.jsdelivr.net/npm/textillate@0.4.1/jquery.textillate.min.js"></script>
+     <link href="
+     https://cdn.jsdelivr.net/npm/textillate@0.4.1/assets/animate.min.css
+     " rel="stylesheet">
+
+</html>

@@ -793,6 +793,10 @@ video {
   margin-top: 2rem;
 }
 
+.tw-mt-\[10\%\] {
+  margin-top: 10%;
+}
+
 .tw-mt-\[100px\] {
   margin-top: 100px;
 }
@@ -2325,6 +2329,11 @@ video {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
+.tw-invert {
+  --tw-invert: invert(100%);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
 .tw-backdrop-blur-2xl {
   --tw-backdrop-blur: blur(40px);
   -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
@@ -2807,8 +2816,8 @@ video {
     line-height: 2.5rem;
   }
 
-  .max-lg\:tw-text-5xl {
-    font-size: 3rem;
+  .max-lg\:tw-text-7xl {
+    font-size: 4.5rem;
     line-height: 1;
   }
 
@@ -2836,11 +2845,6 @@ video {
   .max-lg\:tw-text-sm {
     font-size: 0.875rem;
     line-height: 1.25rem;
-  }
-
-  .max-lg\:tw-text-7xl {
-    font-size: 4.5rem;
-    line-height: 1;
   }
 
   .max-lg\:tw-opacity-70 {
