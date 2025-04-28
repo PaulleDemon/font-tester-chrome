@@ -1,6 +1,6 @@
 <img src="./docs/images/font-tester-readme.png" alt="font tester logo">
 
-<p align="center"> <h1>Font tester</h1> </p>
+<p align="center"> <h1>Font tester - Test Your Fonts On Live Webpages Effortlesly</h1> </p>
 
 <p align="center"><img src="./public/logos/logox500.png" alt="font tester logo" width="100" height="100"></p>
 
