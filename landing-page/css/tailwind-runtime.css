@@ -2349,6 +2349,10 @@ video {
   text-decoration-line: underline;
 }
 
+.tw-line-through {
+  text-decoration-line: line-through;
+}
+
 .\!tw-no-underline {
   text-decoration-line: none !important;
 }

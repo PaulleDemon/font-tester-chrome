@@ -675,6 +675,99 @@
                     </section>
 
                 </div>
+                <div class="swiper-slide">
+                    <section
+                        class="tw-mt-[80px] max-lg:tw-mt-[50px] tw-relative tw-flex tw-min-h-[80vh] tw-w-full tw-max-w-[100vw] 
+                        tw-flex-col tw-overflow-hidden max-md:tw-mt-[50px] tw-h-full 
+                         tw-place-items-center tw-bg-[#232222] tw-p-2"
+                    >
+                        <h3
+                            class="archivo-black-family tw-text-center tw-text-gray-100 tw-uppercase tw-text-xl tw-font-medium max-md:tw-text-2xl"
+                        >
+                            Access all the features
+                        </h3>
+                        
+                        <div
+                            class="tw-flex tw-mt-4 tw-w-fit tw-flex-col tw-place-items-center tw-gap-2 tw-rounded-lg tw-border-[1px]
+                                    tw-border-outlineColor tw-bg-[#0f0f0f] tw-border-[#c2ff9f] tw-p-8 tw-shadow-xl max-lg:tw-w-full"
+                        >
+                            <span class="tw-bg-blue-500 tw-text-white tw-text-base tw-px-3 tw-rounded-full tw-my-2">offer ends soon</span>
+                            <h3 class="">
+                                <span class="tw-text-3xl max-md:tw-text-3xl tw-font-semibold">
+                                    <span class="tw-line-through tw-text-2xl">$29</span>
+                                    <span class="">$19</span>    
+                                </span>
+                                <span class="tw-text-2xl tw-text-gray-200">Forever</span>
+                            </h3>
+                            <p class="tw-mt-3 tw-text-centertw-text-gray-100 tw-text-sm">
+                                Pay once, and use all the premium features forever. Activate upto 3 devices
+                            </p>
+                            <hr />
+                            <div
+                                class="tw-my-4 tw-flex tw-gap-4 tw-text-base tw-text-gray-200"
+                            >
+                                <ul class="tw-my-4 tw-flex tw-flex-col tw-gap-4 tw-text-base tw-text-gray-200">
+                                    <li class="tw-flex tw-gap-2">
+                                        <i class="bi bi-check-circle-fill tw-text-green-300"></i>
+                                        <span>Everything in free</span>    
+                                    </li>
+                                    <li class="tw-flex tw-gap-2">
+                                        <i class="bi bi-check-circle-fill tw-text-green-300"></i>
+                                        <span class="tw-font-medium">Commercial use</span>    
+                                    </li>
+                                    <li class="tw-flex tw-gap-2">
+                                        <i class="bi bi-check-circle-fill tw-text-green-300"></i>
+                                        <span class="tw-font-medium">Upload and test custom fonts</span>    
+                                    </li>
+                                    <li class="tw-flex tw-gap-2">
+                                        <i class="bi bi-check-circle-fill tw-text-green-300"></i>
+                                        <span class="tw-font-medium">Preview fonts on dropdown</span>    
+                                    </li>
+                                    <li class="tw-flex tw-gap-2">
+                                        <i class="bi bi-check-circle-fill tw-text-green-300"></i>
+                                        <span class="tw-font-medium">Compare fonts side-by-side</span>    
+                                    </li>
+                                    <li class="tw-flex tw-gap-2">
+                                        <i class="bi bi-check-circle-fill tw-text-green-300"></i>
+                                        <span>Add to collection (upcoming)</span>    
+                                    </li>
+
+                                </ul>
+                            
+                              
+                                <ul class="tw-my-4 tw-flex tw-flex-col tw-gap-4 tw-text-base tw-text-gray-200">
+                                    <li class="tw-flex tw-gap-2">
+                                        <i class="bi bi-check-circle-fill tw-text-green-300"></i>
+                                        <span>Adjust font-size and colors</span>    
+                                    </li>
+                                    <li class="tw-flex tw-gap-2">
+                                        <i class="bi bi-check-circle-fill tw-text-green-300"></i>
+                                        <span>Letter spacing and underline spacing</span>    
+                                    </li>
+                                    <li class="tw-flex tw-gap-2">
+                                        <i class="bi bi-check-circle-fill tw-text-green-300"></i>
+                                        <span>Free updates</span>    
+                                    </li>
+                                    <li class="tw-flex tw-gap-2">
+                                        <i class="bi bi-check-circle-fill tw-text-green-300"></i>
+                                        <span>Dark mode</span>    
+                                    </li>
+                                </ul>
+                            </div>
+                            <a
+                                id="checkout-link"
+                                href="https://buy.polar.sh/polar_cl_fRPHZbxozPEcNbVYBHiqcdIqzKJNGhyDrHV7T3kvkxh"
+                                class="btn tw-mt-auto !tw-w-full tw-transition-transform tw-duration-300 
+                                        hover:tw-scale-[1.03] tw-text-lg  !tw-bg-transparent !tw-border-[1px]
+                                        tw-border-white !tw-bg-white tw-font-medium"
+                            >
+                                Use Pro
+                            </a>
+                        </div>
+                       
+                    </section>
+
+                </div>
             </div>
             <!-- Wrapper with relative positioning -->
             <div class="relative mt-4 w-full flex justify-center">
@@ -805,7 +898,7 @@
         });
         document.querySelectorAll('input[name="occupation"]').forEach((input) => {
             input.addEventListener('change', () => {
-                swiper.next()
+                swiper.slideNext()
             })
         })
     </script>
