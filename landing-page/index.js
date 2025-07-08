@@ -13,7 +13,7 @@ const collapseHeaderItems = document.getElementById("collapsed-header-items")
 
 const AFFILIATES = {
     'kailash': 'https://buy.polar.sh/polar_cl_Gs3JzGcIdIbwNqyQJyQnV0HMzgMsHsBvQ1OwA15Eh3B',
-
+    'lifetimo.com': 'https://buy.polar.sh/polar_cl_YMHYM1aB05Jgsq1rnEiqX7UnxyO4iCBC7WE7W0AWRi7'
 }
 
 
