@@ -6,4 +6,5 @@
   ],
   "editor.colorDecorators": true,
   "markdown.extension.toc.updateOnSave": false,
+  "liveServer.settings.port": 5501,
 }
